@@ -9,6 +9,12 @@ public class inicietion : MonoBehaviour
 {
     public GameObject[] CU;
     public GameObject[] carga;
+    public string youtube="https://youtube.com/c/EUProduccionesMusicales";
+
+    public void you()
+    {
+        Application.OpenURL(youtube);
+    }
     public int version = 0;
     public int versionAPLICACION = 1;
  
@@ -476,7 +482,8 @@ public class inicietion : MonoBehaviour
 
     public void TIENDA()
     {
-        SceneManager.LoadScene("shop");
+        you();
+
     }
 
     public void CHICHI()
