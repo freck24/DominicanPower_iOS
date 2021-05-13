@@ -70,6 +70,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     private void Awake()
     {
+        appID = "ca-app-pub-9304701110302498~4944191339";
       interID = "ca-app-pub-9304701110302498/3578320535";
        recoID = "ca-app-pub-9304701110302498/8639075529";
 
