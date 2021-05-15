@@ -29,10 +29,13 @@ public class TiendaControl : MonoBehaviour {
 	//
 	public void ButtonComprarNoAds()
 	{
+		Debug.Log("Tratando de comprar No Ads");
 		IAP_Purchase.instance.BuyProductNoAds ();
+        
 	}
 	public void ButtonConsumible()
 	{
+		Debug.Log("Tratando de comprar Monedas");
 		IAP_Purchase.instance.BuyConsumible ();
 	}
 	void Start()

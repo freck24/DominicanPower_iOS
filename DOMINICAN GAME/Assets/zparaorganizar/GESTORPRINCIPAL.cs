@@ -32,14 +32,25 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     public GameObject PLATAFORMADINE;
     public int contadordegallinas=0;
+    //Load interstitial
    private void pedirinter()
     {
+        if(inter!=null)
+            inter.Destroy();
+
         inter = new InterstitialAd(interID);
+        inter.OnAdClosed += HandleInterstitialClosed;
         AdRequest pedir = new AdRequest.Builder().Build();
         inter.LoadAd(pedir);
 
     }
+    void HandleInterstitialClosed(object sender, System.EventArgs args)
+    {
+        pedirinter();
+    }
     private RewardedAd rewardedAd;
+    //Load rewarded ad
+    /*
     public void reco()
     {
 
@@ -47,24 +58,23 @@ public class GESTORPRINCIPAL : MonoBehaviour
         // Load the rewarded ad with the request.
         this.rewardedAd.LoadAd(request);
 
-    }
+    }*/
 
+    //Mostrar interstitial
     public void mostrarinter()
     {
-        inter.Show();
-        inter.Destroy();
-        pedirinter();
+        if (inter.IsLoaded())
+        {
+            inter.Show();
+        }
     }
    public void mostrarreco()
     {
-
+        Debug.Log("Showing rewarded ad");
         if (this.rewardedAd.IsLoaded())
         {
             this.rewardedAd.Show();
-            llamar();
         }
-
-
     }
 
 
@@ -74,10 +84,14 @@ public class GESTORPRINCIPAL : MonoBehaviour
       interID = "ca-app-pub-9304701110302498/3578320535";
        recoID = "ca-app-pub-9304701110302498/8639075529";
 
+        Debug.Log("Preinicializando ads");
 
-
-            MobileAds.Initialize(initStatus => {});
-        llamar();
+        MobileAds.Initialize(initStatus =>
+        {
+            Debug.Log("Ads iniciados "+initStatus);
+            llamar();
+        });
+        
        
     }
 
@@ -93,8 +107,10 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
         // Called when an ad request failed to show.
         this.rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
+        this.rewardedAd.OnAdLoaded += (sender, args) => Debug.Log("Ad loaded");
         // Called when the user should be rewarded for interacting with the ad.
         this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
+        this.rewardedAd.OnAdClosed += HandleRewardedAdClosed;
         // Called when the ad is closed.
         AdRequest request = new AdRequest.Builder().Build();
         // Load the rewarded ad with the request.
@@ -104,10 +120,14 @@ public class GESTORPRINCIPAL : MonoBehaviour
     }
 
 
+    void HandleRewardedAdClosed(object sender, System.EventArgs args)
+    {
+        llamar();
+    }
 
     public void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args)
     {
-        MonoBehaviour.print(
+        Debug.Log(
             "HandleRewardedAdFailedToLoad event received with message: "
                              + args.Message);
     }
@@ -116,7 +136,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
     {
-        MonoBehaviour.print(
+        Debug.Log(
             "HandleRewardedAdFailedToShow event received with message: "
                              + args.Message);
     }
@@ -127,7 +147,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
     {
         string type = args.Type;
         double amount = args.Amount;
-        MonoBehaviour.print(
+        Debug.Log(
             "HandleRewardedAdRewarded event received for "
                         + amount.ToString() + " " + type);
         cont.volverajugaranuncio();
@@ -141,7 +161,6 @@ public class GESTORPRINCIPAL : MonoBehaviour
         tiempopoder = 10+ PlayerPrefs.GetFloat("tiempopoder", 0)*2;
         PlayerPrefs.SetInt("cg", 0);
         pedirinter();
-        reco();
         
         a = GetComponent<AudioSource>();
 

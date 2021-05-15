@@ -172,10 +172,12 @@ public class IAP_Purchase : MonoBehaviour, IStoreListener {
 				m_StoreController.InitiatePurchase (product);//se inica la compra
 
 			} else {
+				Debug.Log("Falló compra");
 				//FALLO
 			}
 
 		} else {
+			Debug.Log("No iniciado");
 			//ERROR-> A fallado algo en la INICIALIZACION
 		}
 	}

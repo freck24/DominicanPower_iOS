@@ -689,7 +689,6 @@ public class controler : MonoBehaviour
 			jn();
 
 			InstanciasNjn();
-			gest.reco();
 		}
 
 			
