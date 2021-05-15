@@ -61,7 +61,7 @@ public float t5=2;
        // a.clip = d2;
      //   a.Play();
         nombre.text = "Tony:";
-        dialog.text = "Sabes que vine a este pais a trabajar pero despues de la pandemia los trabajos estan complejos";
+        dialog.text = "Sabes que vine a este pais a trabajar pero los trabajos estan complejos";
        
         yield return new WaitForSecondsRealtime(t3);
       //  a.clip = d3;
