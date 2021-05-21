@@ -83,6 +83,9 @@ public class GESTORPRINCIPAL : MonoBehaviour
         appID = "ca-app-pub-9304701110302498~4944191339";
       interID = "ca-app-pub-9304701110302498/3578320535";
        recoID = "ca-app-pub-9304701110302498/8639075529";
+        //TEST IDS
+       // interID = "ca-app-pub-3940256099942544/1033173712";
+       // recoID = "ca-app-pub-3940256099942544/5224354917";
 
         Debug.Log("Preinicializando ads");
 
