@@ -13,7 +13,7 @@ public class gestordeinicio : MonoBehaviour
     public int delete=1;
     void Start()
     {
-
+        PlayerPrefs.SetInt("unavezanu", 0);
 
         delete = PlayerPrefs.GetInt("DELETE", 0);
 

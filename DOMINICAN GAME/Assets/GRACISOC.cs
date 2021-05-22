@@ -61,4 +61,37 @@ public class GRACISOC : MonoBehaviour
     {
         
     }
+
+	public GameObject edad;
+	public GameObject anuncio;
+
+
+	public void menor()
+    {
+		PlayerPrefs.SetInt("edad", 1);
+		edad.SetActive(false);
+
+	
+	}public void nomenor()
+    {
+		PlayerPrefs.SetInt("edad", 0);
+		edad.SetActive(false);
+
+	
+	}
+
+
+	public void anuncios()
+    {
+		    PlayerPrefs.SetInt("anu", 1);
+			anuncio.SetActive(false);
+
+	}
+	public void SIanuncios()
+    {
+		    PlayerPrefs.SetInt("anu", 0);
+			anuncio.SetActive(false);
+
+	}
+
 }

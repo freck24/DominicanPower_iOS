@@ -40,8 +40,18 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
         inter = new InterstitialAd(interID);
         inter.OnAdClosed += HandleInterstitialClosed;
-        AdRequest pedir = new AdRequest.Builder().Build();
-        inter.LoadAd(pedir);
+
+        if (PlayerPrefs.GetInt("anu", 0) == 1)
+        {
+            AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "1").Build();
+            inter.LoadAd(pedir);
+        }
+        else
+        {
+            AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "0").Build();
+            inter.LoadAd(pedir);
+
+        }
 
     }
     void HandleInterstitialClosed(object sender, System.EventArgs args)
@@ -78,22 +88,62 @@ public class GESTORPRINCIPAL : MonoBehaviour
     }
 
 
+
+
+    public void configuraciones()
+    {
+        // 1 menor que 13
+        if (PlayerPrefs.GetInt("edad", 0) == 1)
+        {
+            RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
+          .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
+          .build();
+            MobileAds.SetRequestConfiguration(requestConfiguration);
+        } 
+        
+        // 1 no personalizar anuncios
+        if (PlayerPrefs.GetInt("anu", 0) == 1)
+        {
+            AdRequest request = new AdRequest.Builder()
+        .AddExtra("npa", "1")
+        .Build();
+        }
+        else
+        {
+            AdRequest request = new AdRequest.Builder()
+       .AddExtra("npa", "0")
+       .Build();
+        }
+
+
+
+
+
+
+        Debug.Log("Preinicializando ads");
+
+        MobileAds.Initialize(initStatus =>
+        {
+            Debug.Log("Ads iniciados " + initStatus);
+            llamar();
+        });
+    }
+
+
     private void Awake()
     {
         appID = "ca-app-pub-9304701110302498~4944191339";
       interID = "ca-app-pub-9304701110302498/3578320535";
        recoID = "ca-app-pub-9304701110302498/8639075529";
         //TEST IDS
-       // interID = "ca-app-pub-3940256099942544/1033173712";
-       // recoID = "ca-app-pub-3940256099942544/5224354917";
-
-        Debug.Log("Preinicializando ads");
-
-        MobileAds.Initialize(initStatus =>
+        // interID = "ca-app-pub-3940256099942544/1033173712";
+        // recoID = "ca-app-pub-3940256099942544/5224354917";
+        if (PlayerPrefs.GetInt("unavezanu", 0) == 0)
         {
-            Debug.Log("Ads iniciados "+initStatus);
-            llamar();
-        });
+            configuraciones();
+            PlayerPrefs.SetInt("unavezanu", 1);
+        }
+      
         
        
     }
@@ -115,9 +165,21 @@ public class GESTORPRINCIPAL : MonoBehaviour
         this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
         this.rewardedAd.OnAdClosed += HandleRewardedAdClosed;
         // Called when the ad is closed.
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the rewarded ad with the request.
-        this.rewardedAd.LoadAd(request);
+
+        if (PlayerPrefs.GetInt("anu", 0) == 1)
+        {
+
+            AdRequest request = new AdRequest.Builder().AddExtra("rdp", "1").Build();
+            // Load the rewarded ad with the request.
+            this.rewardedAd.LoadAd(request);
+        }
+        else
+        {
+            AdRequest request = new AdRequest.Builder().AddExtra("rdp", "0").Build();
+            // Load the rewarded ad with the request.
+            this.rewardedAd.LoadAd(request);
+        }
+
         //   MobileAds.Initialize(appID);
 
     }
