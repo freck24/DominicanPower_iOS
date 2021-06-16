@@ -138,10 +138,10 @@ public class GESTORPRINCIPAL : MonoBehaviour
         //TEST IDS
         // interID = "ca-app-pub-3940256099942544/1033173712";
         // recoID = "ca-app-pub-3940256099942544/5224354917";
-        if (PlayerPrefs.GetInt("unavezanu", 0) == 0)
+      //  if (PlayerPrefs.GetInt("unavezanu", 0) == 0)
         {
             configuraciones();
-            PlayerPrefs.SetInt("unavezanu", 1);
+           //PlayerPrefs.SetInt("unavezanu", 1);
         }
       
         

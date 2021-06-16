@@ -2558,7 +2558,8 @@ public class controler : MonoBehaviour
 		StartCoroutine(muere());
 		
 	}
-
+	
+	
 	IEnumerator muere()
     {
 		yield return new WaitForSecondsRealtime(1f);
