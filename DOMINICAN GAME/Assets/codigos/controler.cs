@@ -547,7 +547,7 @@ public class controler : MonoBehaviour
 	public void connnn()
     {
 
-		switch(PlayerPrefs.GetInt("controles", 0))
+		switch(PlayerPrefs.GetInt("controles", 3))
         {
 			case 0:
 				break;
@@ -2449,6 +2449,8 @@ public class controler : MonoBehaviour
 			//plataforma.SetActive(true);
 			continuar = true;
 			gestora.pla();
+			canmuere = false;
+			StartCoroutine(puedemorir());
 
 			canva.SetActive(true);
 			h = 0;
@@ -2500,7 +2502,8 @@ public class controler : MonoBehaviour
 			continuar = true;
 			gestora.pla();
 			h = 0;
-
+			canmuere = false;
+			StartCoroutine(puedemorir());
 			canva.SetActive(true);
 		}
 		else
@@ -2647,7 +2650,7 @@ public class controler : MonoBehaviour
     }
 	public IEnumerator puedemorir()
     {
-		yield return new WaitForSecondsRealtime(2);
+		yield return new WaitForSecondsRealtime(5);
 		canmuere = true;
     }
 
