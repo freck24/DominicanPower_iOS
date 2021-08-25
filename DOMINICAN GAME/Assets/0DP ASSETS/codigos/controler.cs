@@ -1944,6 +1944,7 @@ public class controler : MonoBehaviour
 
 		if (power && suel)
 		{
+			transform.localEulerAngles = new Vector3(0, 0, 0);
 			tiempoespera = 0.5f;
 	reflejo.SetActive(true);
 			reflejo2.SetActive(true);
