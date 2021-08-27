@@ -181,6 +181,30 @@ public class IAP_Purchase : MonoBehaviour, IStoreListener {
 			//ERROR-> A fallado algo en la INICIALIZACION
 		}
 	}
+	// Este código es para restaurar las compras en iOS. Funciona exclusivamente en esa plataforma.
+	public void RestorePurchases()
+	{
+		if (IsInit())
+		{
+			if (Application.platform == RuntimePlatform.IPhonePlayer ||
+				Application.platform == RuntimePlatform.OSXPlayer)
+			{
+                //Obtener extensión específica para apple
+				var appleExtension = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+                //Inicia la llamada a la restauración
+				appleExtension.RestoreTransactions((result) =>
+				{
+					Debug.Log("Respuesta de restauración " + result);
+				});
+			}
+			// Otherwise ...
+			else
+			{
+				//Corriendo en otra plataforma
+				Debug.Log("Está corriendo en: " + Application.platform + " No existe Restore");
+			}
+		}
+	}
 
 	//EVENTOs
 	public PurchaseProcessingResult ProcessPurchase(PurchaseEventArgs args)

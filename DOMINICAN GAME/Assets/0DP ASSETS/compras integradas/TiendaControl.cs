@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TiendaControl : MonoBehaviour {
 	public GameObject bt_NoAds;
+	public GameObject buttonRestore;
 	//public GameObject bannerAnuncio;
 	void OnEnable()
 	{
@@ -38,8 +39,20 @@ public class TiendaControl : MonoBehaviour {
 		Debug.Log("Tratando de comprar Monedas");
 		IAP_Purchase.instance.BuyConsumible ();
 	}
+
+    public void RestorePurachases()
+    {
+		IAP_Purchase.instance.RestorePurchases();
+    }
 	void Start()
 	{
+#if UNITY_IOS
+		buttonRestore.SetActive(true);
+#else
+		buttonRestore.SetActive(false);
+		iOsButtonsContainer.SetActive(false);
+		androidButtonsContainer.SetActive(true);
+#endif
 		//es init!
 		if (IAP_Purchase.instance.isInit == 1) {
 			if (IAP_Purchase.instance.hayAds == false) {
