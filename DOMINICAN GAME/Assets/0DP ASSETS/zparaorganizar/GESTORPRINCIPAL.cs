@@ -363,10 +363,10 @@ public class GESTORPRINCIPAL : MonoBehaviour
     public void siguientenivel()
     {      
 
-            if (PlayerPrefs.GetFloat("nivel", 1) % 3==0 && PlayerPrefs.GetInt("anuncios",1)==1)
+            if (PlayerPrefs.GetFloat("nivel", 1) % 2==0 && PlayerPrefs.GetInt("anuncios",1)==1)
             { 
 
-            if(PlayerPrefs.GetFloat("nivel", 1) < 63)
+            if(PlayerPrefs.GetFloat("nivel", 1) < 30)
             {
                 mostrarinter(); //publicidad
             }
