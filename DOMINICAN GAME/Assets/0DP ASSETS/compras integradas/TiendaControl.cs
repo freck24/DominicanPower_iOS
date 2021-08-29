@@ -50,8 +50,8 @@ public class TiendaControl : MonoBehaviour {
 		buttonRestore.SetActive(true);
 #else
 		buttonRestore.SetActive(false);
-		iOsButtonsContainer.SetActive(false);
-		androidButtonsContainer.SetActive(true);
+	//	iOsButtonsContainer.SetActive(false);
+	//	androidButtonsContainer.SetActive(true);
 #endif
 		//es init!
 		if (IAP_Purchase.instance.isInit == 1) {

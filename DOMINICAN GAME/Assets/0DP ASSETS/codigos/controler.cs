@@ -1912,7 +1912,7 @@ public class controler : MonoBehaviour
 	public bool tigrezone = false;
 	void Update()
 	{
-		dirX = CrossPlatformInputManager.GetAxis("Horizontal");
+	/*	dirX = CrossPlatformInputManager.GetAxis("Horizontal");
 	    h = CrossPlatformInputManager.GetAxis("Horizontal");
 		///ANIMACION FLIPPPPP
 		if (h > 0 && !facingRight)//INVENTO
@@ -1922,7 +1922,7 @@ public class controler : MonoBehaviour
 		else if (h < 0 && facingRight )//INVENTOOOOOOOOOOOOO
 		{
 			Flip();
-		}
+		}*/
 		if (tigrezone)
         {
 			textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();
@@ -2097,12 +2097,12 @@ public class controler : MonoBehaviour
 	public GameObject linea;
 	public string numerodenivel;
 
-	void Flip()
+/*	void Flip()
 	{
 			transform.Rotate(0f, 180f, 0f);
 			facingRight = !facingRight;
 		
-	}
+	}*/
 
 	public void nivelactual()
 	{if (PlayerPrefs.GetFloat("jn", 0) == 0) 
@@ -2137,91 +2137,6 @@ public class controler : MonoBehaviour
 	public Transform puntoderetorn;
 public void cerrarfin()
     {
-		/*fin1.SetActive(false);
-		fin2.SetActive(false);
-		fin3.SetActive(false);
-		fin4.SetActive(false);
-		fin5.SetActive(false);
-		fin6.SetActive(false);
-		fin7.SetActive(false);
-		fin8.SetActive(false);
-		fin9.SetActive(false);
-		fin10.SetActive(false);
-		fin11.SetActive(false);
-		fin12.SetActive(false);
-		fin13.SetActive(false);
-		fin14.SetActive(false);
-		fin15.SetActive(false);
-		fin16.SetActive(false);
-		fin17.SetActive(false);
-		fin18.SetActive(false);
-		fin19.SetActive(false);
-		fin20.SetActive(false);
-		fin21.SetActive(false);
-		fin22.SetActive(false);
-		fin23.SetActive(false);
-		fin24.SetActive(false);
-		fin25.SetActive(false);
-		fin26.SetActive(false);
-		fin27.SetActive(false);
-		fin28.SetActive(false);
-		fin29.SetActive(false);
-		fin30.SetActive(false);
-		fin31.SetActive(false);
-		fin32.SetActive(false);
-		fin33.SetActive(false);
-		fin34.SetActive(false);
-		fin35.SetActive(false);
-		fin36.SetActive(false);
-		fin37.SetActive(false);
-		fin38.SetActive(false);
-		fin39.SetActive(false);
-		fin40.SetActive(false);
-		fin41.SetActive(false);
-		fin42.SetActive(false);
-		fin43.SetActive(false);
-		fin44.SetActive(false);
-		fin45.SetActive(false);
-		fin46.SetActive(false);
-		fin47.SetActive(false);
-		fin48.SetActive(false);
-		fin49.SetActive(false);
-		fin50.SetActive(false);
-		fin51.SetActive(false);
-		fin52.SetActive(false);
-		fin53.SetActive(false);
-		fin54.SetActive(false);
-		fin55.SetActive(false);
-		fin56.SetActive(false);
-		fin57.SetActive(false);
-		fin58.SetActive(false);
-		fin59.SetActive(false);
-		fin60.SetActive(false);
-		fin61.SetActive(false);
-		fin62.SetActive(false);
-		fin63.SetActive(false);
-		fin64.SetActive(false);
-		fin65.SetActive(false);
-		fin66.SetActive(false);
-		fin67.SetActive(false);
-		fin68.SetActive(false);
-		fin69.SetActive(false);
-		fin70.SetActive(false);
-		fin71.SetActive(false);
-		fin72.SetActive(false);
-		fin73.SetActive(false);
-		fin74.SetActive(false);
-		fin75.SetActive(false);
-		fin76.SetActive(false);
-		fin77.SetActive(false);
-		fin78.SetActive(false);
-		fin79.SetActive(false);
-		fin80.SetActive(false);
-		fin81.SetActive(false);
-		fin82.SetActive(false);
-		fin83.SetActive(false);
-		fin84.SetActive(false);
-		fin85.SetActive(false);*/
 	}
 	void FixedUpdate()
 	{
@@ -2292,7 +2207,7 @@ public void cerrarfin()
 
 		//MOVIMIENTO FREDERICK--------------MOVIMIENTO FREDERICK-----------MOVIMIENTO FREDERICK-----------------MOVIMIENTO FREDERICK----------------------MOVIMIENTO FREDERICK
 		{
-			//r.AddForce(Vector2.right * speed * h * paus);
+			r.AddForce(Vector2.right * speed * h * paus);
 		}
 
 
@@ -2888,6 +2803,7 @@ public void cerrarfin()
 
 	public void gestorlife()
     {
+		vidas = PlayerPrefs.GetFloat("vidas", 3);
 		if (vidas == 2)
 		{
 			c3.SetActive(false);
@@ -2959,6 +2875,7 @@ public void cerrarfin()
 			if (!inmortal)
 			{
 				vidas -= 1;
+				PlayerPrefs.SetFloat("vidas", vidas);
 				if (vidas > 0)
 				{
 					anim.SetBool("muerte", false);
@@ -3350,6 +3267,7 @@ public void cerrarfin()
 					anim.SetBool("golpe", true);
 					h = 0;
 					vidas -= 1;
+					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
 						anim.SetBool("muerte", false);
@@ -3392,6 +3310,7 @@ public void cerrarfin()
 					anim.SetBool("golpe", true);
 					h = 0;
 					vidas -= 1;
+					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
 						anim.SetBool("muerte", false);
@@ -3700,6 +3619,7 @@ public void cerrarfin()
 				if (PlayerPrefs.GetFloat("dinero", 0) == 0 && PlayerPrefs.GetFloat("mango", 0) == 0 && platano == 0)
 				{
 					vidas -= 1;
+					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
 						anim.SetBool("muerte", false);
@@ -3946,6 +3866,7 @@ public void cerrarfin()
 				if (PlayerPrefs.GetFloat("dinero", 0) == 0 && PlayerPrefs.GetFloat("mango", 0) == 0 && platano == 0)
 				{
 					vidas -= 1;
+					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
 						anim.SetBool("muerte", false);
