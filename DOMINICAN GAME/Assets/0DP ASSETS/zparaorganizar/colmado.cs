@@ -10,6 +10,35 @@ public class colmado : MonoBehaviour
     public float platanov;
 
 
+    public int calidad;
+    public void calidadgrafica()
+    {
+        calidad = PlayerPrefs.GetInt("Q", 5);
+        QualitySettings.SetQualityLevel(calidad, true);
+        switch (calidad)
+        {
+            case 0:
+
+                Screen.SetResolution(270, 480, true);
+                break;
+            case 1:
+                Screen.SetResolution(360, 640, true);
+                break;
+            case 2:
+                Screen.SetResolution(540, 960, true);
+                break;
+            case 3:
+                Screen.SetResolution(540, 960, true);
+                break;
+            case 4:
+                Screen.SetResolution(720, 1280, true);
+                break;
+            case 5:
+                Screen.SetResolution(720, 1280, true);
+                break;
+        }
+    }
+
     public AudioClip regist;
     public AudioClip tunotienes;
     public AudioClip pop;
@@ -44,6 +73,7 @@ public class colmado : MonoBehaviour
     }
     void Start()
     {
+        calidadgrafica();
      //   PlayerPrefs.SetFloat("tiempopoder", 0);
         tp = PlayerPrefs.GetFloat("tiempopoder", 0);
         tpp = Mathf.Pow(10, tp+2)/2;

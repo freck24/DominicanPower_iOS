@@ -33,6 +33,8 @@ public class jugarnumero : MonoBehaviour
             PlayerPrefs.SetInt("n" + numero, PlayerPrefs.GetInt("n" + numero, 0) + 100);
             PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100);
             a.PlayOneShot(dinero);
+
+            PlayerPrefs.SetInt("hoycobre", 0);
         }
         else
         {

@@ -1912,17 +1912,20 @@ public class controler : MonoBehaviour
 	public bool tigrezone = false;
 	void Update()
 	{
-	/*	dirX = CrossPlatformInputManager.GetAxis("Horizontal");
-	    h = CrossPlatformInputManager.GetAxis("Horizontal");
-		///ANIMACION FLIPPPPP
-		if (h > 0 && !facingRight)//INVENTO
-		{
-			Flip();
-		}
-		else if (h < 0 && facingRight )//INVENTOOOOOOOOOOOOO
-		{
-			Flip();
-		}*/
+		/*	dirX = CrossPlatformInputManager.GetAxis("Horizontal");
+			h = CrossPlatformInputManager.GetAxis("Horizontal");
+			///ANIMACION FLIPPPPP
+			if (h > 0 && !facingRight)//INVENTO
+			{
+				Flip();
+			}
+			else if (h < 0 && facingRight )//INVENTOOOOOOOOOOOOO
+			{
+				Flip();
+			}*/
+
+		textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
+
 		if (tigrezone)
         {
 			textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();

@@ -169,11 +169,13 @@ public class gestordebanca : MonoBehaviour
     {
         diferencia = tiempoactual - Convert.ToDateTime(PlayerPrefs.GetString("fecha", tiempoactual.ToString()));
         print(diferencia.Days);
-        if (diferencia.Days > 0)
+        if (diferencia.Days > 0 && PlayerPrefs.GetInt("hoycobre",1)==0)
         {
             COBRAR.SetActive(true);
             numerojugadosCOBRAR();
             borrar();
+
+            PlayerPrefs.SetInt("hoycobre", 1);
         }
         else{
             a.PlayOneShot(faile);
