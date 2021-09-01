@@ -201,7 +201,9 @@ public class controler : MonoBehaviour
 	public bool mangacami = false;
 	public float paus = 1f;
 	public float nivel = 1;
-	public float vidas = 3f;
+
+
+	[Range(1,3)]public float vidas = 3f;
 	public GameObject canvasmensajesdemeneso;
 	public float cplatano = 0;
 
@@ -465,12 +467,18 @@ public class controler : MonoBehaviour
 		contadorpoder = PlayerPrefs.GetFloat("poder", 0);
 		PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
 		vidasi = PlayerPrefs.GetFloat("vidas", 3);
+
+
+
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
+
+
 		boton.SetActive(true);
 
 		if (vidas < 1)
 		{
 			vidas = 1;
+			PlayerPrefs.SetFloat("vidas", 1);
 		}
 
 		h = 0;
@@ -1681,6 +1689,7 @@ public class controler : MonoBehaviour
 			Time.timeScale = 1;
 			StartCoroutine(PL());
 			vidas = 3;
+			PlayerPrefs.SetFloat("vidas", 3);
 			if (vidas > 0)
 			{
 				anim.SetBool("muerte", false);
@@ -1715,6 +1724,7 @@ public class controler : MonoBehaviour
 			}
 			StartCoroutine(PL());
 			vidas = 3;
+			PlayerPrefs.SetFloat("vidas", 3);
 			if (vidas > 0)
 			{
 				anim.SetBool("muerte", false);
@@ -3250,6 +3260,7 @@ public void cerrarfin()
 		if (otr.gameObject.tag == "bomba" && !inmortal)
 		{
 			vidas = 0;
+			PlayerPrefs.SetFloat("vidas", 3);
 			StartCoroutine(muert());
 			muerte = false;
 			anim.SetBool("muerte", true);
