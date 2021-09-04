@@ -4392,7 +4392,7 @@ public void cerrarfin()
 				PlayerPrefs.SetFloat("platanos", platano);
 				if (PlayerPrefs.GetInt("anuncios", 1) == 1)
 				{ gest.mostrarreco(); }
-				SceneManager.LoadScene("inicio");
+				cargarmenu.SetActive(true);
 			}
 
 		}

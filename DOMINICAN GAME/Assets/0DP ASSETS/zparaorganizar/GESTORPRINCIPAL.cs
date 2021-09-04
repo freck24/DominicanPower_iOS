@@ -85,7 +85,9 @@ public class GESTORPRINCIPAL : MonoBehaviour
         {
             this.rewardedAd.Show();
         }
-    }
+    } 
+    
+   
 
 
 
@@ -216,6 +218,8 @@ public class GESTORPRINCIPAL : MonoBehaviour
             "HandleRewardedAdRewarded event received for "
                         + amount.ToString() + " " + type);
         cont.volverajugaranuncio();
+
+
         /*  mostrarr.SetActive(true);
           rbonificado.text = "" + respuestauser;*/
     }
