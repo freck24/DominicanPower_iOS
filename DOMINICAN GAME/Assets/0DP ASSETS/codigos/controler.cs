@@ -529,6 +529,7 @@ public class controler : MonoBehaviour
 
 			jn();
 
+
 			InstanciasNjn();
 		}
 
@@ -4391,7 +4392,7 @@ public void cerrarfin()
 			{ 
 				PlayerPrefs.SetFloat("platanos", platano);
 				if (PlayerPrefs.GetInt("anuncios", 1) == 1)
-				{ gest.mostrarreco(); }
+				{ gest.mostrarinter(); }
 				cargarmenu.SetActive(true);
 			}
 
