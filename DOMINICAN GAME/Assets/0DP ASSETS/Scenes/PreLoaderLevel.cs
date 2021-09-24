@@ -21,10 +21,19 @@ namespace EMGame
         public bool isnivelactualsiguiente = false;
         public bool ISNIVELES = false;
         
-        
-        public void BO()
+        public int AUTOMATICO = 0;
+        public GameObject letra;
+
+        public Vector2 progressBarSizeDelta;
+        public float parentWidth;
+        public string[] datos = new string[15];
+        public int i = 0;
+        public Text datitos;
+
+        public void BO() // void Boton InicioAutomatico
         {
             immediateActivateScene = !immediateActivateScene;
+
             if (immediateActivateScene)
             {
                 PlayerPrefs.SetInt("AUTOMATICO", 1);
@@ -34,38 +43,19 @@ namespace EMGame
                 PlayerPrefs.SetInt("AUTOMATICO", 0);
             }
         }
-
-        
-        public int AUTOMATICO = 0;
-        private void Awake()
-        {
-            
-        }
-
-
-        IEnumerator cargares()
-        {
-            yield return new WaitForSecondsRealtime(0f);
-
-        
-            async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("jn",1));
-
-        }
-
-        public GameObject letra;
+         
         public virtual void Start()
         {
-            if (nomostrable)
-            {
-                letra.SetActive(false);
-            }
+            if (nomostrable) letra.SetActive(false);
+
             StartCoroutine(verificando());
 
             AUTOMATICO = PlayerPrefs.GetInt("AUTOMATICO", 0);
 
 
             if (nomostrable == false)
-                { if (AUTOMATICO == 0)
+                { 
+                if (AUTOMATICO == 0)
                 {
                     A.isOn = false;
                 }
@@ -74,9 +64,12 @@ namespace EMGame
                     A.isOn = true;
                 } 
             }
+
             datoscuriosos();
+
             // obtenemos de la escena anterior el index de la siguiente a cargar
             int nex_level = PlayerPrefs.GetInt("next_level");
+
             // si no tiene valor hubo un error y devuelve a menu principal
             if (!PlayerPrefs.HasKey("next_level"))
             {
@@ -90,17 +83,22 @@ namespace EMGame
             }
             // se inicia la carca asincrona del nivel
 
-            if (isnivelactualsiguiente == false) { async = SceneManager.LoadSceneAsync(scena); } else
+            if (isnivelactualsiguiente == false) 
+            { 
+                async = SceneManager.LoadSceneAsync(scena); 
+            } 
+            else
             {
 
                 if (ISNIVELES == false)
                 {
-
-                    async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("nivel",1));
+                    async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                    //async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("nivel",1));
                 }
                 else
                 {
-                    StartCoroutine(cargares());
+                    async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                    //  async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("jn", 1));
                 }
             }
             
@@ -120,20 +118,11 @@ namespace EMGame
           
         }
 
-
-
-
         public virtual void Update()
         {
-            if (async != null)
-            {
-                progressPercent = async.progress * 100;
-            }
+            if (async != null) progressPercent = async.progress * 100;
 
-            if (textComponent && nocargada)
-            {
-                textComponent.text =  ((int)progressPercent).ToString() + " %";
-            }
+            if (textComponent && nocargada) textComponent.text =  ((int)progressPercent).ToString() + " %";
 
             if (progressBar && nocargada)
             {
@@ -145,11 +134,8 @@ namespace EMGame
                 progressBar.sizeDelta = progressBarSizeDelta;
             }
         }
-        public Vector2 progressBarSizeDelta;
-        public float parentWidth;
-        public string[] datos = new string[15];
-        public int i = 0;
-        public Text datitos;
+
+        
         public void datoscuriosos()
         {
             i = PlayerPrefs.GetInt("datoscuriosos", 0);
@@ -176,7 +162,6 @@ namespace EMGame
         public GameObject continuar;
        IEnumerator verificando()
         {
-           
          while (progressPercent<90)
             {
                 yield return new WaitForSecondsRealtime(0.1f);

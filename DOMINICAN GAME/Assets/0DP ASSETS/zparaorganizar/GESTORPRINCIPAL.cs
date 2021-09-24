@@ -366,20 +366,10 @@ public class GESTORPRINCIPAL : MonoBehaviour
     public GameObject cargarsiguiente;
     public void siguientenivel()
     {      
-
             if (PlayerPrefs.GetFloat("nivel", 1) % 2==0 && PlayerPrefs.GetInt("anuncios",1)==1)
             { 
-
-            if(PlayerPrefs.GetFloat("nivel", 1) < 30)
-            {
-                mostrarinter(); //publicidad
-            }
-            else
-            {
-                mostrarreco();
-            }
-
-                
+            if(PlayerPrefs.GetFloat("nivel", 1) < 30) mostrarinter(); //publicidad
+            else mostrarreco();
             }
 
 

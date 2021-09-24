@@ -1,88 +1,20 @@
 ﻿using System.Collections;
-
 using UnityEngine;
-
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
-using UnityStandardAssets.CrossPlatformInput;
 
 public class controler : MonoBehaviour
 {
+
+	public Vector3 electric;
+
 	public Transform[] bbb;
 	public float dirX;
 	public bool facingRight = true;
 	public Vector3[] t1 =new Vector3[7];
 	public float diferencia;
-	
-	public void asignacion()
-    { 
-	   for(int i=0; i < t1.Length; i++)
-        {
-			t1[i] = bbb[i].position;
-        }
-
-		diferencia = -t1[5].y + t1[6].y;
-    }
-	
-	public void controles2()
-    {
-		bbb[0].position = t1[1];
-		bbb[1].position = t1[0];
-		bbb[3].position = t1[4];
-		bbb[4].position = t1[3];
-		bbb[2].position = t1[6];
-		bbb[6].position = t1[2];
-		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia,t1[2].z);
-		
-    }	
-	
-	public void controles3()
-    {
-		bbb[1].position = t1[2];
-		bbb[2].position = t1[1];
-	}
-	
-	
-	public void controles4()
-    {
-		bbb[2].position = t1[1];
-		bbb[4].position = t1[2];
-		bbb[1].position = t1[4];
-	}
-
-	public void controles5()
-	{
-		bbb[0].position = t1[1];
-		bbb[1].position = t1[6];
-		bbb[3].position = t1[4];
-		bbb[4].position = t1[3];
-		bbb[2].position = t1[0];
-		bbb[6].position = t1[2];
-		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia, t1[2].z);
-	}
-	public void controles6()
-	{
-		bbb[0].position = t1[1];
-		bbb[1].position = t1[3];
-		bbb[3].position = t1[4];
-		bbb[4].position = t1[6];
-		bbb[2].position = t1[0];
-		bbb[6].position = t1[2];
-		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia, t1[2].z);
-
-	}
-
 	public GameObject cargarmenu;
 	public GameObject cargarcolmado;
-
-	public void carm()
-    {
-		cargarmenu.SetActive(true);
-    }
-	public void carcol()
-    {
-		cargarcolmado.SetActive(true);
-    }
 
 	public GameObject CONJURO;
 	public Transform botonbruja;
@@ -91,90 +23,48 @@ public class controler : MonoBehaviour
 	public Color COLORROSA;
 	public Image BRUJAIMAGE;
 	public float tiempoespera = 2;
-	public void corutinabrujeria()
-    {
-		StartCoroutine(brujeri());
-    }
-	IEnumerator brujeri()
-    {
-		botonbruja.localScale = new Vector3(botonbruja.localScale.x, PlayerPrefs.GetFloat("local",0), botonbruja.localScale.z);
-		BRUJAIMAGE.color = COLORROSA;
-		while (botonbruja.localScale.y<3.10)
-        {
-			yield return new WaitForSecondsRealtime(tiempoespera);
-			botonbruja.localScale = new Vector3(botonbruja.localScale.x, botonbruja.localScale.y + 0.05f, botonbruja.localScale.z);
 
-        }
-	
-		puedeembrujar = true;
-		BRUJAIMAGE.color = COLORVEREE;
-		
-
-    }
-	
-
+	public GameObject panelconjuro;
 	public BRUJERIA bruj;
 	public GameObject menobruja;
 
 	public bool brujeriaactiva = false;
 
+	public float vidasi = 3;
+	public Text dias;
 
-	IEnumerator TIEPO()
-    {
-		yield return new WaitForSecondsRealtime(2);
-		Time.timeScale = 1;
-    }
-	public GameObject panelconjuro;
-	public void CONJUROS()
-    {
-		if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas>0)
-        {
-			if (puedeembrujar && brujeriaactiva==false)
-			{ 
-				adelante();
-				h = 0;
-				anim.SetInteger("conjuro", 0);
-				anim.SetBool("magic", true);
-				
-				panelconjuro.SetActive(true);
-				Time.timeScale = 0.3f;
-				CONJURO.SetActive(true);
-				brujeriaactiva = true;
-				bruj.abrir();
-				puedeembrujar = false;
-				
-				PlayerPrefs.SetFloat("local", 0);
-				botonbruja.localScale = new Vector3(botonbruja.localScale.x, 0, botonbruja.localScale.z);
+	public Text cc;
+	public bool ac = false;
 
-			}
-		}
-        else
-        {
-			menobruja.SetActive(false);
-			menobruja.SetActive(true);
-        }
 
-    }
 
-	public void InstanciasN()
-	{
-		if(nivel<86)
-		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
-	}public void InstanciasNjn()
-	{
-		if(PlayerPrefs.GetFloat("jn", 1)<86)
-			Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
-	}
+	public GameObject inmod;
+	public int calidad;
+
+	public bool noaplica = false;
+	public GameObject n86;
+	public camarasigue ccc1;
+	public camarasigue ccc2;
+	public controladorP controladorp;
+
+
+	public GameObject casco;
+	public Color gris;
+	public GameObject presiona;
+	public GameObject plataforma;
+
+	public GameObject ex1;
+	public GameObject ex2;
+	public GameObject ex3;
+	public GameObject ex4;
+	public AudioClip tin;
+	public GameObject chancla;
 
 	#region variables 
 
-	public GameObject[] NIVELES = new GameObject[2];
-	public Transform[] PNIVELES = new Transform[2];
+	 
 
-
-
-
-    public Transform posicioninicial;
+	public Transform posicioninicial;
 	public bool vibraniun = true;
 	public bool bugs = false;
 	public bool f = false;
@@ -203,7 +93,7 @@ public class controler : MonoBehaviour
 	public float nivel = 1;
 
 
-	[Range(1,3)]public float vidas = 3f;
+	[Range(1, 3)] public float vidas = 3f;
 	public GameObject canvasmensajesdemeneso;
 	public float cplatano = 0;
 
@@ -262,7 +152,7 @@ public class controler : MonoBehaviour
 	public GameObject gato;
 	public GESTORPRINCIPAL gest;
 	public gestorauidos gestora;
-	
+
 
 
 	public Generador generarp;
@@ -299,8 +189,8 @@ public class controler : MonoBehaviour
 	public GameObject b4;
 
 
-	
-	
+
+
 	public GameObject fondo;
 	public AudioClip ay;
 
@@ -312,25 +202,174 @@ public class controler : MonoBehaviour
 	public GameObject dia6;
 	public posicionnuevo retorno;
 
-    #endregion
-    public void menu()
+	#endregion
+
+
+	public bool arribabool;
+
+	public AudioClip saltopoder;
+	public GameObject chispa;
+
+	public bool realmente = true;
+	public bool suel = false;
+
+	public Text notas;
+	public float Nnotas = 1;
+
+	public GameObject balita;
+	public Transform casquito;
+	public bool recarga = true;
+
+	public bool arriba = false;
+	public bool un = true;
+	public bool m = true;
+	public AudioClip aah;
+	public bool saltoi = false;
+
+	public void asignacion()
+    { 
+	   for(int i=0; i < t1.Length; i++)
+        {
+			t1[i] = bbb[i].position;
+        }
+
+		diferencia = -t1[5].y + t1[6].y;
+    }
+	public void controles2()
+    {
+		bbb[0].position = t1[1];
+		bbb[1].position = t1[0];
+		bbb[3].position = t1[4];
+		bbb[4].position = t1[3];
+		bbb[2].position = t1[6];
+		bbb[6].position = t1[2];
+		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia,t1[2].z);
+		
+    }	
+	public void controles3()
+    {
+		bbb[1].position = t1[2];
+		bbb[2].position = t1[1];
+	}
+	public void controles4()
+    {
+		bbb[2].position = t1[1];
+		bbb[4].position = t1[2];
+		bbb[1].position = t1[4];
+	}
+	public void controles5()
+	{
+		bbb[0].position = t1[1];
+		bbb[1].position = t1[6];
+		bbb[3].position = t1[4];
+		bbb[4].position = t1[3];
+		bbb[2].position = t1[0];
+		bbb[6].position = t1[2];
+		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia, t1[2].z);
+	}
+	public void controles6()
+	{
+		bbb[0].position = t1[1];
+		bbb[1].position = t1[3];
+		bbb[3].position = t1[4];
+		bbb[4].position = t1[6];
+		bbb[2].position = t1[0];
+		bbb[6].position = t1[2];
+		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia, t1[2].z);
+
+	}
+	public void carm()
+    {
+		cargarmenu.SetActive(true);
+    }
+	public void carcol()
+    {
+		cargarcolmado.SetActive(true);
+    }
+	public void corutinabrujeria()
+    {
+		StartCoroutine(brujeri());
+    }
+	IEnumerator brujeri()
+    {
+	botonbruja.localScale = new Vector3(botonbruja.localScale.x, PlayerPrefs.GetFloat("local",0), botonbruja.localScale.z);
+	BRUJAIMAGE.color = COLORROSA;
+	while (botonbruja.localScale.y<3.10)
+	{
+	yield return new WaitForSecondsRealtime(tiempoespera);
+	botonbruja.localScale = new Vector3(botonbruja.localScale.x, botonbruja.localScale.y + 0.05f, botonbruja.localScale.z);
+	
+        }
+	
+		puedeembrujar = true;
+		BRUJAIMAGE.color = COLORVEREE;
+		
+
+    }
+	IEnumerator TIEPO()
+    {
+		yield return new WaitForSecondsRealtime(2);
+		Time.timeScale = 1;
+    }
+	public void CONJUROS()
+    {
+		if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas>0)
+        {
+			if (puedeembrujar && brujeriaactiva==false)
+			{ 
+				adelante();
+				h = 0;
+				anim.SetInteger("conjuro", 0);
+				anim.SetBool("magic", true);
+				
+				panelconjuro.SetActive(true);
+				Time.timeScale = 0.3f;
+				CONJURO.SetActive(true);
+				brujeriaactiva = true;
+				bruj.abrir();
+				puedeembrujar = false;
+				
+				PlayerPrefs.SetFloat("local", 0);
+				botonbruja.localScale = new Vector3(botonbruja.localScale.x, 0, botonbruja.localScale.z);
+
+			}
+		}
+        else
+        {
+			menobruja.SetActive(false);
+			menobruja.SetActive(true);
+        }
+
+    }
+
+
+	public void InstanciasN()
+	{
+		if (nivel < 86) LoaderSystem.system.CargarNivel();
+//		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
+	}
+	public void InstanciasNjn()
+	{
+	float GetLvl = PlayerPrefs.GetFloat("jn", 1);
+
+	if (GetLvl < 86) LoaderSystem.system.CargarNivel();
+
+		//		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
+	}
+
+
+	public void menu()
 	{
 		SceneManager.LoadScene("inicio");
 	}//	public AudioClip sondiogrito;
-	public float vidasi = 3;
-	public Text dias;
-	//CharacterController player;
-
-	public Text cc;
-	public bool ac = false;
-	  public void vivi()
+	public void vivi()
     {
 		if (vibraniun)
 		{
 			Vibration.Vibrate(15);
 		}
     }
-		public void actcc()
+	public void actcc()
     {
 		ac = !ac;
 		if (!ac)
@@ -342,76 +381,57 @@ public class controler : MonoBehaviour
 			cc.text = "DESACTIVAR CAMINAO";
 		}
     }
-
-
-
-	Vector3 electric;
-
-	public GameObject inmod;
-	public int calidad;
 	public void calidadgrafica()
-    { calidad = PlayerPrefs.GetInt("Q", 5);
-		QualitySettings.SetQualityLevel(calidad, true);
-        switch (calidad)
-        {
-			case 0:
-				
-				Screen.SetResolution(270, 480, true);
-				break;
-			case 1:
-				Screen.SetResolution(360, 640, true);
-				break;
-			case 2:
-				Screen.SetResolution(540, 960, true);
-				break;
-			case 3:
-				Screen.SetResolution(540, 960, true);
-				break;
-			case 4:
-				Screen.SetResolution(720, 1280, true);
-				break;
-			case 5:
-				Screen.SetResolution(720, 1280, true);
-				break;
+    {
+	calidad = PlayerPrefs.GetInt("Q", 5);
+	QualitySettings.SetQualityLevel(calidad, true);
+	switch (calidad)
+	{
+	case 0:
+	Screen.SetResolution(270, 480, true);
+	break;
+	case 1:
+	Screen.SetResolution(360, 640, true);
+	break;
+	case 2:
+	Screen.SetResolution(540, 960, true);
+	break;
+	case 3:
+	Screen.SetResolution(540, 960, true);
+	break;
+	case 4:
+	Screen.SetResolution(720, 1280, true);
+	break;
+	case 5:
+	Screen.SetResolution(720, 1280, true);
+	break;
         }
 	}
-
-
-	public bool noaplica = false;
-
 	public void connnn()
     {
-
-		switch(PlayerPrefs.GetInt("controles", 3))
-        {
-			case 0:
-				break;
-
-			case 1:
-				controles2();
-				break;
-
-			case 2:
-				controles3();
-				break;
-
-			case 3:
-				controles4();
-				break;
-
-			case 4:
-				controles5();
-				break;
-
-			case 5:
-				controles6();
-				break;
+	switch(PlayerPrefs.GetInt("controles", 3))
+	{
+	case 0:
+	break;
+	case 1:
+	controles2();
+	break;
+	case 2:
+	controles3();
+	break;
+	case 3:
+	controles4();
+	break;
+	case 4:
+	controles5();
+	break;
+	case 5:
+	controles6();
+	break;
 		}
 		
 
 	}
-
-
 	void Start()
 	{
 		asignacion();
@@ -499,37 +519,22 @@ public class controler : MonoBehaviour
 		sj = PlayerPrefs.GetFloat("sj", 1);
 		sa = PlayerPrefs.GetFloat("sa", 1);
 		nbani = PlayerPrefs.GetFloat("bani", 1);
+
+		if (PlayerPrefs.GetFloat("gorras", 0) == 1) gorra.SetActive(true);
+		if (PlayerPrefs.GetFloat("gafas", 0) == 1)  gafas.SetActive(true);
+		if (PlayerPrefs.GetFloat("gatos", 0) == 1) gato.SetActive(true);
 		
-		if (PlayerPrefs.GetFloat("gorras", 0) == 1)
-		{
-			gorra.SetActive(true);
-		} if (PlayerPrefs.GetFloat("gafas", 0) == 1) {
-			gafas.SetActive(true);
-		} if (PlayerPrefs.GetFloat("gatos", 0) == 1) {
-			gato.SetActive(true);
-		}
 
 
 
 		if (PlayerPrefs.GetFloat("jn", 0) == 0)
 		{
-
-
-
-
-
 			InstanciasN();
-
 			nivelet();
-
-
 		}
 		else
 		{
-
 			jn();
-
-
 			InstanciasNjn();
 		}
 
@@ -542,21 +547,18 @@ public class controler : MonoBehaviour
 		anim = GetComponent<Animator>();
 		audio = GetComponent<AudioSource>();
 		audio2 = GetComponent<AudioSource>();
+
 		gc = new Vector3(sprite.transform.localScale.x, sprite.transform.localScale.y, sprite.transform.localScale.z);
 	
 		vt = destruir.transform.position;
 		platano = PlayerPrefs.GetFloat("platanos", 0f); // aqui estamos obtenindo la nueva puntuacion
 		provisiones = platano + PlayerPrefs.GetFloat("mango", 0) + PlayerPrefs.GetFloat("pollo", 0) + PlayerPrefs.GetFloat("cate", 0) + PlayerPrefs.GetFloat("coca", 0) + PlayerPrefs.GetFloat("salami", 0) + PlayerPrefs.GetFloat("fruticas", 0);
 		contador.text = provisiones.ToString();
-		if (PlayerPrefs.GetFloat("prime", 0f) == 0)
-		{
-			PlayerPrefs.SetFloat("platano", 0f); // aqui nos preguntamos si es la primera vez que se juega y de ser asi reiniciamos el contador
-		}
-		if (ciclo)
-		{
-			meta.transform.position = new Vector3(meta.transform.position.x + (PlayerPrefs.GetFloat("nivel", 0) - 3) * 15, meta.transform.position.y, meta.transform.position.z);
 
-		}
+
+		if (PlayerPrefs.GetFloat("prime", 0f) == 0) PlayerPrefs.SetFloat("platano", 0f); // aqui nos preguntamos si es la primera vez que se juega y de ser asi reiniciamos el contador
+		if (ciclo) meta.transform.position = new Vector3(meta.transform.position.x + (PlayerPrefs.GetFloat("nivel", 0) - 3) * 15, meta.transform.position.y, meta.transform.position.z);
+
 		unave = true;
 
 
@@ -566,15 +568,10 @@ public class controler : MonoBehaviour
 		anim.SetBool("deten", true);
 	}
 
-	public GameObject n86;
-
+	
 	#region Switchniveles
-
-
 	public void jn()
 	{
-
-
 
 		switch (PlayerPrefs.GetFloat("jn", 1))
 		{
@@ -988,8 +985,7 @@ public class controler : MonoBehaviour
 
 		}
 	}
-		
-		public void nivelet()
+	public void nivelet()
     {
 		switch (PlayerPrefs.GetFloat("nivel", 1))
 		{
@@ -1421,9 +1417,6 @@ public class controler : MonoBehaviour
 
 
     }
-    public camarasigue ccc1;
-	public camarasigue ccc2;
-	public controladorP controladorp;
 	public void tras()
     {
 		generarp.GENERAR();
@@ -1447,7 +1440,6 @@ public class controler : MonoBehaviour
     {
 		audio.PlayOneShot(tin);
     }
-	
 	public void comprarpower()
     {
 		if (PlayerPrefs.GetFloat("dinero", 0) >= 500)
@@ -1465,8 +1457,6 @@ public class controler : MonoBehaviour
 			audio.PlayOneShot(fail);
 		}
 	}
-
-	public GameObject chancla;
 	public void comprarchanclas()
     {
 		if (PlayerPrefs.GetFloat("dinero", 0) >= 2000)
@@ -1482,24 +1472,10 @@ public class controler : MonoBehaviour
 			audio.PlayOneShot(fail);
         }
 	}
-
-	public GameObject casco;
-	public Color gris;
-	public GameObject presiona;
-	public GameObject plataforma;
-
-	public GameObject ex1;
-	public GameObject ex2;
-	public GameObject ex3;
-	public GameObject ex4;
-	public AudioClip tin;
-
 	public IEnumerator colores()
-	{ yield return new WaitForSecondsRealtime(3f);
-		
+	{ 
+	yield return new WaitForSecondsRealtime(3f);
 	}
-
-
 	public IEnumerator retraso()
 	{
 		yield return new WaitForSecondsRealtime(1.5f);
@@ -1666,9 +1642,6 @@ public class controler : MonoBehaviour
 		yield return new WaitForSecondsRealtime(0.02f);
 		h = 0;
 	}
-
-
-
 
 	public IEnumerator moveteleup()
 	{
@@ -1915,6 +1888,7 @@ public class controler : MonoBehaviour
 	public GameObject MENSAJEPOWER2;
 	public GameObject PLATA;
 	public bool power2 = false;
+
 	public void quitarfuerzas()
     {
 		r.velocity = new Vector2(r.velocity.x, 0);
@@ -1923,39 +1897,16 @@ public class controler : MonoBehaviour
 	public bool tigrezone = false;
 	void Update()
 	{
-		/*	dirX = CrossPlatformInputManager.GetAxis("Horizontal");
-			h = CrossPlatformInputManager.GetAxis("Horizontal");
-			///ANIMACION FLIPPPPP
-			if (h > 0 && !facingRight)//INVENTO
-			{
-				Flip();
-			}
-			else if (h < 0 && facingRight )//INVENTOOOOOOOOOOOOO
-			{
-				Flip();
-			}*/
-
 		textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
-		if (tigrezone)
-        {
-			textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();
-        }
+		if (tigrezone) textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();
+        
 		gestorlife();
-		if(celeridad > 0.1 && power2 || celeridad< -0.1 && power2)
-        {
-			samurai3.SetActive(true);
-        } else
-        {
-			samurai3.SetActive(false);
-        }
+
+		if(celeridad > 0.1 && power2 || celeridad< -0.1 && power2) samurai3.SetActive(true);
+        else samurai3.SetActive(false);
+        
     
-
-	
-
-
-
-
 		if (power && suel)
 		{
 			transform.localEulerAngles = new Vector3(0, 0, 0);
@@ -1995,14 +1946,8 @@ public class controler : MonoBehaviour
 		
 
 		celeridad = r.velocity.x;
-		if (celeridad > 0.1 || celeridad < -0.1)
-		{
-			anim.SetBool("deten", false);
-		}
-		else
-		{
-			anim.SetBool("deten", true);
-		}
+		if (celeridad > 0.1 || celeridad < -0.1) anim.SetBool("deten", false);
+		else anim.SetBool("deten", true);
 
 
 
@@ -2023,30 +1968,6 @@ public class controler : MonoBehaviour
 		{
 			anim.SetFloat("h1", -1);
 		}
-
-
-		
-
-
-
-
-
-		//h = 0;
-		/*
-				if (h==0 && h1==0)
-				{
-					anim.SetBool("deten", true);
-
-
-				}
-				else
-				{
-					anim.SetBool("deten", false);
-
-				}*/
-
-		
-
 
 		destruir.transform.position = new Vector3(destruir.transform.position.x, vt.y, vt.z);
 		destruir2.transform.position = new Vector3(destruir2.transform.position.x, vt.y, vt.z);
@@ -2069,13 +1990,7 @@ public class controler : MonoBehaviour
 		{
 			Time.timeScale = 0f;
 		}
-
-
-		if (Input.GetKeyDown(KeyCode.UpArrow) && suel)
-		{
-			saltard();
-		}
-
+ 
 		if (tigre)
 		{
 			serio = false;
@@ -2119,7 +2034,10 @@ public class controler : MonoBehaviour
 	}*/
 
 	public void nivelactual()
-	{if (PlayerPrefs.GetFloat("jn", 0) == 0) 
+	{
+		SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+		/* if (PlayerPrefs.GetFloat("jn", 0) == 0) 
 		{
 			SceneManager.LoadScene((int)PlayerPrefs.GetFloat("nivel", 1)); } else
         {
@@ -2131,6 +2049,9 @@ public class controler : MonoBehaviour
 		vidas = vidasi;
 		//PlayerPrefs.GetFloat("vidas", 3);// revisar
 		notasale();
+
+		*/
+
 	}
 
 
@@ -2155,13 +2076,19 @@ public void cerrarfin()
 	void FixedUpdate()
 	{
 
+		h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+		FlipMyCharacter(h);
+
+	if (Input.GetKeyDown(KeyCode.Space)) saltard();
+	if (Input.GetKeyDown(KeyCode.X)) activapower();
+
 		/*if (m)
 		{
 
 			velocidadsalto();
 		}*/
 		//r.velocity = new Vector2(dirX * 200 *  Time.deltaTime, r.velocity.y);
-        r.velocity = new Vector2(h * 200 *  Time.deltaTime, r.velocity.y);
+		r.velocity = new Vector2(h * 200 *  Time.deltaTime, r.velocity.y);
 
 
 		rota = puntoderetorn.transform.position;
@@ -2207,16 +2134,7 @@ public void cerrarfin()
 			f = false;
 		}
 
-		if (Input.GetKey(KeyCode.LeftArrow) && suel)
-		{
-			atras();
-		}
-		else
-			if (Input.GetKey(KeyCode.RightArrow) && suel)
-		{
-			adelante();
-
-		}
+		
 
 
 		//MOVIMIENTO FREDERICK--------------MOVIMIENTO FREDERICK-----------MOVIMIENTO FREDERICK-----------------MOVIMIENTO FREDERICK----------------------MOVIMIENTO FREDERICK
@@ -2249,7 +2167,7 @@ public void cerrarfin()
 
 		if (salto && vidas>0)
 		{
-			r.velocity = new Vector2(0, 0);
+		//	r.velocity = new Vector2(0, 0);
 
 			//	anim.SetBool("deten", false);
 
@@ -2274,7 +2192,7 @@ public void cerrarfin()
 		if (saltoi)
 		{
 			//anim.SetBool("deten", false);
-			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+		//	r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
 			saltoi = false;
 
 			if (gest.tiemposaya == true)
@@ -2298,10 +2216,7 @@ public void cerrarfin()
 
 	}
 
-	public bool arribabool;
 
-	public AudioClip saltopoder;
-	public GameObject chispa;
 	public void OnTriggerExit2D(Collider2D collision)
 	{
 		if (collision.tag == "salida")
@@ -2326,20 +2241,12 @@ public void cerrarfin()
 
 	public IEnumerator stevejob()
     {
-		
 			yield return new WaitForSecondsRealtime(0.05f);
-			if (realmente)
-			{
-				suel = false;
-
-			}
-		}
+			if (realmente) suel = false;
+			
+	}
 		
-    
-
-	public bool realmente = true;
-	public bool suel = false;
-
+   
 	void OnCollisionExit2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "suelo")
@@ -2353,76 +2260,39 @@ public void cerrarfin()
 
 		}
 
+		if (col.gameObject.tag == "metro") linea.SetActive(false);
 
-		
+	}
 
-		/*	if (col.gameObject.tag == "")
-			{
-				suel = false;
-				anim.SetBool("salto", true);
-				StartCoroutine(espera());
+	public void notasale()
+	{
+	Nnotas = PlayerPrefs.GetFloat("notas", 1);
+	switch (Nnotas)
+	{
+	case 1: notas.text = "En ocasiones se roban las tapas de las alcantarillas";
+	break;
+	case 2: notas.text = "Vete al colmado y vende todas las provisiones o te las robaran";
+	break;
+	case 3: notas.text = "Si mangaste tu caminao cuidate de los polis";
+	break;
+	case 4: notas.text = "Si no tienes nada que robarte te podria ir muy mal";
+	break;
+	case 5: notas.text = "Siempre puede pagar para recuperar tu salud cuando te lastimes";
+	break;
+	case 7: notas.text = "Puede comprar herramientas para obtener mas dinero. Piensalo";
+	break;
+	case 8: notas.text = "Ten cuidado cuando viajes";
+	break;
+	case 9: notas.text = "Puedes jugar sin encaramarte en plataformas pero no podras ganar mucho";
+	break;
+	}
+	Nnotas += 1;
 
-			}*/
-
-
-		if (col.gameObject.tag == "metro")
-		{
-			linea.SetActive(false);
-
-
-		}
-
+	if (Nnotas > 10)Nnotas = 1;
+	PlayerPrefs.SetFloat("notas", Nnotas);
 	}
 
 	
-	public Text notas;
-	public float Nnotas = 1;
-	public void notasale()
-	{
-		Nnotas = PlayerPrefs.GetFloat("notas", 1);
-		switch (Nnotas)
-		{
-			case 1:
-				notas.text = "En ocasiones se roban las tapas de las alcantarillas";
-				break;
-			case 2:
-				notas.text = "Vete al colmado y vende todas las provisiones o te las robaran";
-				break;
-			case 3:
-				notas.text = "Si mangaste tu caminao cuidate de los polis";
-				break;
-			case 4:
-				notas.text = "Si no tienes nada que robarte te podria ir muy mal";
-				break;
-			case 5:
-				notas.text = "Siempre puede pagar para recuperar tu salud cuando te lastimes";
-				break;
-			case 6:
-				notas.text = "Si lo ladrones te ven serio te atracan";
-				break;
-			case 7:
-				notas.text = "Puede comprar herramientas para obtener mas dinero. Piensalo";
-				break;
-			case 8:
-				notas.text = "Ten cuidado cuando viajes";
-				break;
-			case 9:
-				notas.text = "Puedes jugar sin encaramarte en plataformas pero no podras ganar mucho";
-				break;
-		}
-		Nnotas += 1;
-		if (Nnotas > 10)
-		{
-			Nnotas = 1;
-		}
-		PlayerPrefs.SetFloat("notas", Nnotas);
-	}
-
-
-	public GameObject balita;
-	public Transform casquito;
-	public bool recarga = true;
-
 	public IEnumerator re()
     {
 		yield return new WaitForSecondsRealtime(0.2f);
@@ -2440,9 +2310,7 @@ public void cerrarfin()
 		}
 	}
 
-	public bool arriba = false;
-
-	public bool un = true;
+	
 	void OnCollisionStay2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "suelo")
@@ -2463,65 +2331,33 @@ public void cerrarfin()
 
 		
 
-		if (col.gameObject.tag == "desli")
-		{
-			h = 0;
-		}
-		if (col.gameObject.tag == "metro")
-		{
-			linea.SetActive(true);
-
-
-		}
-
-
-
-
-
-
+		if (col.gameObject.tag == "desli") h = 0;
+		if (col.gameObject.tag == "metro") linea.SetActive(true);
 	}
 	public IEnumerator espera()
 	{
 		yield return new WaitForSecondsRealtime(0.5f);
-
 		h1 = 0;
-
 	}
-	public bool m=true;
+	
+
 	public IEnumerator esperam()
 	{
 		yield return new WaitForSecondsRealtime(1f);
-
 		m = true;
-
 	}
 
 
 
 	public void velocidadsalto()
 	{
-		if (!suel && h1 == 1)
-		{
-			h1 = 3;
-		}
-
-		if (!suel && h1 == -1)
-		{
-			h1 = -3;
-		}
-
-
-		if (suel && h1 == -3)
-		{
-			h1 = -1;
-		}
-		if (suel && h1 == 3)
-		{
-			h1 = 1;
-		}
+		if (!suel && h1 == 1) h1 = 3;
+		if (!suel && h1 == -1) h1 = -3;
+		if (suel && h1 == -3) h1 = -1;
+		if (suel && h1 == 3) h1 = 1;
 	}
 
-	public AudioClip aah;
+	
 
 
 	public IEnumerator se()
@@ -2536,18 +2372,22 @@ public void cerrarfin()
 		cabeza.SetActive(false);
 	}
 	public void saltard()
-	{ if (suel == false)
-		{
-			saltaunpocoantes();
-		}
+	{
+		if (!retorno.suelito) return;
+		retorno.suelito = false;
+		salto = true;
+
+
+		if (suel) saltaunpocoantes();
 		
-		if (suel && animacion )
+		if (suel && animacion)
 		{
 			if (rompe)
 			{
 				StartCoroutine(romp());
 				cabeza.SetActive(true);
 			}
+
 			anim.SetBool("golpe", false);
 			anim.SetBool("salto", true);
 			StartCoroutine(se());
@@ -2555,19 +2395,11 @@ public void cerrarfin()
 			//velocidadsalto();
 			//	Handheld.Vibrate();
 			un = true;
-			salto = true;
-
-			
 
 
 			h1 = 7 * guardah;
-
-
-
-
 		}
 	}
-	public bool saltoi = false;
 	public void saltari()
 	{
 	
@@ -2604,11 +2436,8 @@ public void cerrarfin()
 
 	public void caminao()
 	{
-
 		{
-
-
-
+ 
 			tigre = !tigre;
 			anim.SetBool("caminao", tigre);
 
@@ -2680,6 +2509,14 @@ public void cerrarfin()
 
 	public bool atr = true;
 	public bool alan = true;
+
+	public void FlipMyCharacter(float Multiplier)
+    {
+		elec.localScale = new Vector3(electric.x, electric.y, electric.z * Multiplier);
+
+		if(Multiplier == -1) sprite.transform.localEulerAngles = new Vector3(0, -180, 0);
+		if(Multiplier == 1) sprite.transform.localEulerAngles = new Vector3(0, 0, 0);
+	}
 	public void atras()
 	{
 		if (vidas > 0) { 
@@ -2699,10 +2536,6 @@ public void cerrarfin()
 					if (guardah == 1)
 					{
 						sprite.transform.Rotate(0, -180, 0); // arreglar codigo
-					
-
-
-
 					}
 
 					guardah = -1;
@@ -2753,8 +2586,9 @@ public void cerrarfin()
 
 	}
 	public void saldown2()
-	{if(animacion && vidas>0)
-		h = 0;
+	{
+//		if(animacion && vidas>0)
+	//	h = 0;
 	//	h = 0;
 
 	}
