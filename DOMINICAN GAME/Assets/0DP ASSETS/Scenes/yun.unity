@@ -96,7 +96,6 @@ LightmapSettings:
     m_PVRFilteringAtrousPositionSigmaAO: 1
     m_ExportTrainingData: 0
     m_TrainingDataDestination: TrainingData
-    m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
   m_UseShadowmask: 1
 --- !u!196 &4
@@ -181,7 +180,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -445,7 +443,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -501,7 +498,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -768,7 +764,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -1010,7 +1005,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1043,6 +1037,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 729284666}
     m_Modifications:
+    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
+        type: 3}
+      propertyPath: m_Name
+      value: vale
+      objectReference: {fileID: 0}
+    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6179557072628362912, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1111,16 +1115,6 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 6179557072628362975, guid: f103e3e0204fed04c8e4b482d4768896,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
-        type: 3}
-      propertyPath: m_Name
-      value: vale
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1354,7 +1348,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1473,7 +1466,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -1928,7 +1920,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2067,7 +2058,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2357,7 +2347,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -2439,7 +2428,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -2675,6 +2663,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1165171423}
     m_Modifications:
+    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
+        type: 3}
+      propertyPath: m_Name
+      value: vale (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6179557072628362912, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2714,11 +2707,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Color.b
       value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
-        type: 3}
-      propertyPath: m_Name
-      value: vale (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6179557073264587429, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
@@ -2977,7 +2965,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -3304,6 +3291,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f211164a2e7b78c4d9a86a99f50cd25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electric: {x: 0, y: 0, z: 0}
+  bbb: []
+  dirX: 0
+  facingRight: 1
+  t1:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  diferencia: 0
   cargarmenu: {fileID: 0}
   cargarcolmado: {fileID: 0}
   CONJURO: {fileID: 0}
@@ -3313,16 +3313,31 @@ MonoBehaviour:
   COLORROSA: {r: 0, g: 0, b: 0, a: 0}
   BRUJAIMAGE: {fileID: 0}
   tiempoespera: 2
+  panelconjuro: {fileID: 0}
   bruj: {fileID: 0}
   menobruja: {fileID: 0}
   brujeriaactiva: 0
-  panelconjuro: {fileID: 0}
-  NIVELES:
-  - {fileID: 0}
-  - {fileID: 0}
-  PNIVELES:
-  - {fileID: 0}
-  - {fileID: 0}
+  vidasi: 3
+  dias: {fileID: 0}
+  cc: {fileID: 0}
+  ac: 0
+  inmod: {fileID: 0}
+  calidad: 0
+  noaplica: 0
+  n86: {fileID: 0}
+  ccc1: {fileID: 0}
+  ccc2: {fileID: 0}
+  controladorp: {fileID: 0}
+  casco: {fileID: 0}
+  gris: {r: 0, g: 0, b: 0, a: 0}
+  presiona: {fileID: 0}
+  plataforma: {fileID: 0}
+  ex1: {fileID: 0}
+  ex2: {fileID: 0}
+  ex3: {fileID: 0}
+  ex4: {fileID: 0}
+  tin: {fileID: 0}
+  chancla: {fileID: 0}
   posicioninicial: {fileID: 0}
   vibraniun: 1
   bugs: 0
@@ -3391,91 +3406,6 @@ MonoBehaviour:
   gato: {fileID: 0}
   gest: {fileID: 0}
   gestora: {fileID: 0}
-  n1: {fileID: 0}
-  n2: {fileID: 0}
-  n3: {fileID: 0}
-  n4: {fileID: 0}
-  n5: {fileID: 0}
-  n6: {fileID: 0}
-  n7: {fileID: 0}
-  n8: {fileID: 0}
-  n9: {fileID: 0}
-  n10: {fileID: 0}
-  n11: {fileID: 0}
-  n12: {fileID: 0}
-  n13: {fileID: 0}
-  n14: {fileID: 0}
-  n15: {fileID: 0}
-  n16: {fileID: 0}
-  n17: {fileID: 0}
-  n18: {fileID: 0}
-  n19: {fileID: 0}
-  n20: {fileID: 0}
-  n21: {fileID: 0}
-  n22: {fileID: 0}
-  n23: {fileID: 0}
-  n24: {fileID: 0}
-  n25: {fileID: 0}
-  n26: {fileID: 0}
-  n27: {fileID: 0}
-  n28: {fileID: 0}
-  n29: {fileID: 0}
-  n30: {fileID: 0}
-  n31: {fileID: 0}
-  n32: {fileID: 0}
-  n33: {fileID: 0}
-  n34: {fileID: 0}
-  n35: {fileID: 0}
-  n36: {fileID: 0}
-  n37: {fileID: 0}
-  n38: {fileID: 0}
-  n39: {fileID: 0}
-  n40: {fileID: 0}
-  n41: {fileID: 0}
-  n42: {fileID: 0}
-  n43: {fileID: 0}
-  n44: {fileID: 0}
-  n45: {fileID: 0}
-  n46: {fileID: 0}
-  n47: {fileID: 0}
-  n48: {fileID: 0}
-  n49: {fileID: 0}
-  n50: {fileID: 0}
-  n51: {fileID: 0}
-  n52: {fileID: 0}
-  n53: {fileID: 0}
-  n54: {fileID: 0}
-  n55: {fileID: 0}
-  n56: {fileID: 0}
-  n57: {fileID: 0}
-  n58: {fileID: 0}
-  n59: {fileID: 0}
-  n60: {fileID: 0}
-  n61: {fileID: 0}
-  n62: {fileID: 0}
-  n63: {fileID: 0}
-  n64: {fileID: 0}
-  n65: {fileID: 0}
-  n66: {fileID: 0}
-  n67: {fileID: 0}
-  n68: {fileID: 0}
-  n69: {fileID: 0}
-  n70: {fileID: 0}
-  n71: {fileID: 0}
-  n72: {fileID: 0}
-  n73: {fileID: 0}
-  n74: {fileID: 0}
-  n75: {fileID: 0}
-  n76: {fileID: 0}
-  n77: {fileID: 0}
-  n78: {fileID: 0}
-  n79: {fileID: 0}
-  n80: {fileID: 0}
-  n81: {fileID: 0}
-  n82: {fileID: 0}
-  n83: {fileID: 0}
-  n84: {fileID: 0}
-  n85: {fileID: 0}
   generarp: {fileID: 0}
   cabeza: {fileID: 0}
   color1: {r: 0, g: 0, b: 0, a: 0}
@@ -3495,91 +3425,6 @@ MonoBehaviour:
   b2: {fileID: 0}
   b3: {fileID: 0}
   b4: {fileID: 0}
-  fin1: {fileID: 0}
-  fin2: {fileID: 0}
-  fin3: {fileID: 0}
-  fin4: {fileID: 0}
-  fin5: {fileID: 0}
-  fin6: {fileID: 0}
-  fin7: {fileID: 0}
-  fin8: {fileID: 0}
-  fin9: {fileID: 0}
-  fin10: {fileID: 0}
-  fin11: {fileID: 0}
-  fin12: {fileID: 0}
-  fin13: {fileID: 0}
-  fin14: {fileID: 0}
-  fin15: {fileID: 0}
-  fin16: {fileID: 0}
-  fin17: {fileID: 0}
-  fin18: {fileID: 0}
-  fin19: {fileID: 0}
-  fin20: {fileID: 0}
-  fin21: {fileID: 0}
-  fin22: {fileID: 0}
-  fin23: {fileID: 0}
-  fin24: {fileID: 0}
-  fin25: {fileID: 0}
-  fin26: {fileID: 0}
-  fin27: {fileID: 0}
-  fin28: {fileID: 0}
-  fin29: {fileID: 0}
-  fin30: {fileID: 0}
-  fin31: {fileID: 0}
-  fin32: {fileID: 0}
-  fin33: {fileID: 0}
-  fin34: {fileID: 0}
-  fin35: {fileID: 0}
-  fin36: {fileID: 0}
-  fin37: {fileID: 0}
-  fin38: {fileID: 0}
-  fin39: {fileID: 0}
-  fin40: {fileID: 0}
-  fin41: {fileID: 0}
-  fin42: {fileID: 0}
-  fin43: {fileID: 0}
-  fin44: {fileID: 0}
-  fin45: {fileID: 0}
-  fin46: {fileID: 0}
-  fin47: {fileID: 0}
-  fin48: {fileID: 0}
-  fin49: {fileID: 0}
-  fin50: {fileID: 0}
-  fin51: {fileID: 0}
-  fin52: {fileID: 0}
-  fin53: {fileID: 0}
-  fin54: {fileID: 0}
-  fin55: {fileID: 0}
-  fin56: {fileID: 0}
-  fin57: {fileID: 0}
-  fin58: {fileID: 0}
-  fin59: {fileID: 0}
-  fin60: {fileID: 0}
-  fin61: {fileID: 0}
-  fin62: {fileID: 0}
-  fin63: {fileID: 0}
-  fin64: {fileID: 0}
-  fin65: {fileID: 0}
-  fin66: {fileID: 0}
-  fin67: {fileID: 0}
-  fin68: {fileID: 0}
-  fin69: {fileID: 0}
-  fin70: {fileID: 0}
-  fin71: {fileID: 0}
-  fin72: {fileID: 0}
-  fin73: {fileID: 0}
-  fin74: {fileID: 0}
-  fin75: {fileID: 0}
-  fin76: {fileID: 0}
-  fin77: {fileID: 0}
-  fin78: {fileID: 0}
-  fin79: {fileID: 0}
-  fin80: {fileID: 0}
-  fin81: {fileID: 0}
-  fin82: {fileID: 0}
-  fin83: {fileID: 0}
-  fin84: {fileID: 0}
-  fin85: {fileID: 0}
   fondo: {fileID: 0}
   ay: {fileID: 0}
   dia1: {fileID: 0}
@@ -3589,26 +3434,21 @@ MonoBehaviour:
   dia5: {fileID: 0}
   dia6: {fileID: 0}
   retorno: {fileID: 0}
-  vidasi: 3
-  dias: {fileID: 0}
-  cc: {fileID: 0}
-  ac: 0
-  inmod: {fileID: 0}
-  calidad: 0
-  n86: {fileID: 0}
-  ccc1: {fileID: 0}
-  ccc2: {fileID: 0}
-  controladorp: {fileID: 0}
-  chancla: {fileID: 0}
-  casco: {fileID: 0}
-  gris: {r: 0, g: 0, b: 0, a: 0}
-  presiona: {fileID: 0}
-  plataforma: {fileID: 0}
-  ex1: {fileID: 0}
-  ex2: {fileID: 0}
-  ex3: {fileID: 0}
-  ex4: {fileID: 0}
-  tin: {fileID: 0}
+  arribabool: 0
+  saltopoder: {fileID: 0}
+  chispa: {fileID: 0}
+  realmente: 1
+  suel: 0
+  notas: {fileID: 0}
+  Nnotas: 1
+  balita: {fileID: 0}
+  casquito: {fileID: 0}
+  recarga: 1
+  arriba: 0
+  un: 1
+  m: 1
+  aah: {fileID: 0}
+  saltoi: 0
   plataform: {fileID: 0}
   c2: {fileID: 0}
   c3: {fileID: 0}
@@ -3639,21 +3479,6 @@ MonoBehaviour:
   h2: 0
   muerte: 1
   puntoderetorn: {fileID: 0}
-  arribabool: 0
-  saltopoder: {fileID: 0}
-  chispa: {fileID: 0}
-  realmente: 1
-  suel: 0
-  notas: {fileID: 0}
-  Nnotas: 1
-  balita: {fileID: 0}
-  casquito: {fileID: 0}
-  recarga: 1
-  arriba: 0
-  un: 1
-  m: 1
-  aah: {fileID: 0}
-  saltoi: 0
   tuto: 0
   playe: {fileID: 0}
   botones: {fileID: 0}
@@ -3803,7 +3628,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4015,7 +3839,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4207,7 +4030,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4497,7 +4319,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4632,7 +4453,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -4765,7 +4585,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4886,7 +4705,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -4993,7 +4811,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5182,7 +4999,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -5298,7 +5114,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5569,7 +5384,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5699,7 +5513,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.8679245, g: 0.81470275, b: 0.81470275, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5773,7 +5586,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -5874,7 +5686,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6037,7 +5848,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6122,7 +5932,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6238,7 +6047,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -6495,7 +6303,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -6773,11 +6580,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7246284325827916092, guid: 546f8bc46cde09948978f3e437544913,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 6.9000244
-      objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338816, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: m_Name
@@ -6787,6 +6589,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246284325827916092, guid: 546f8bc46cde09948978f3e437544913,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338844, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
@@ -6925,7 +6732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &885574769
 RectTransform:
   m_ObjectHideFlags: 0
@@ -7057,7 +6864,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7140,7 +6946,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.6273585, b: 0.6273585, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -7333,7 +7138,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -7391,9 +7195,8 @@ Light:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 935029664}
   m_Enabled: 1
-  serializedVersion: 10
+  serializedVersion: 9
   m_Type: 1
-  m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Intensity: 1.18
   m_Range: 10
@@ -7465,6 +7268,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 4dd583b791a2902479cde92ea676e57c,
+        type: 3}
+      propertyPath: m_Name
+      value: Goofy Running (1)
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4dd583b791a2902479cde92ea676e57c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7534,11 +7342,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.1139135
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4dd583b791a2902479cde92ea676e57c,
-        type: 3}
-      propertyPath: m_Name
-      value: Goofy Running (1)
       objectReference: {fileID: 0}
     - target: {fileID: -697681669751776419, guid: 4dd583b791a2902479cde92ea676e57c,
         type: 3}
@@ -7669,7 +7472,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12541,7 +12343,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -12673,7 +12474,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -12881,7 +12681,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13153,7 +12952,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -13493,6 +13291,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 542777967}
     m_Modifications:
+    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
+        type: 3}
+      propertyPath: m_Name
+      value: vale (1)
+      objectReference: {fileID: 0}
     - target: {fileID: 6179557072628362912, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -13537,11 +13340,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Text
       value: "JUGAR \nPOR $0"
-      objectReference: {fileID: 0}
-    - target: {fileID: 6179557073264587428, guid: f103e3e0204fed04c8e4b482d4768896,
-        type: 3}
-      propertyPath: m_Name
-      value: vale (1)
       objectReference: {fileID: 0}
     - target: {fileID: 6179557073264587429, guid: f103e3e0204fed04c8e4b482d4768896,
         type: 3}
@@ -13778,7 +13576,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -13994,7 +13791,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14175,7 +13971,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -14302,11 +14097,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 7246284325827916092, guid: 546f8bc46cde09948978f3e437544913,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 6.9000244
-      objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338816, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: m_Name
@@ -14316,6 +14106,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246284325827916092, guid: 546f8bc46cde09948978f3e437544913,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6.9000244
       objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338844, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
@@ -14430,7 +14225,12 @@ PrefabInstance:
     - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: isnivelactualsiguiente
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
+        type: 3}
+      propertyPath: scena
+      value: LEVEL 1 CLONE
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 546f8bc46cde09948978f3e437544913, type: 3}
@@ -14634,7 +14434,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19521,7 +19320,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -19601,7 +19399,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -24480,7 +24277,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -24654,7 +24450,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -24763,7 +24558,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -25039,6 +24833,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f211164a2e7b78c4d9a86a99f50cd25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  electric: {x: 0, y: 0, z: 0}
+  bbb: []
+  dirX: 0
+  facingRight: 1
+  t1:
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  - {x: 0, y: 0, z: 0}
+  diferencia: 0
   cargarmenu: {fileID: 0}
   cargarcolmado: {fileID: 0}
   CONJURO: {fileID: 0}
@@ -25048,16 +24855,31 @@ MonoBehaviour:
   COLORROSA: {r: 0, g: 0, b: 0, a: 0}
   BRUJAIMAGE: {fileID: 0}
   tiempoespera: 2
+  panelconjuro: {fileID: 0}
   bruj: {fileID: 0}
   menobruja: {fileID: 0}
   brujeriaactiva: 0
-  panelconjuro: {fileID: 0}
-  NIVELES:
-  - {fileID: 0}
-  - {fileID: 0}
-  PNIVELES:
-  - {fileID: 0}
-  - {fileID: 0}
+  vidasi: 3
+  dias: {fileID: 0}
+  cc: {fileID: 0}
+  ac: 0
+  inmod: {fileID: 0}
+  calidad: 0
+  noaplica: 0
+  n86: {fileID: 0}
+  ccc1: {fileID: 0}
+  ccc2: {fileID: 0}
+  controladorp: {fileID: 0}
+  casco: {fileID: 0}
+  gris: {r: 0, g: 0, b: 0, a: 0}
+  presiona: {fileID: 0}
+  plataforma: {fileID: 0}
+  ex1: {fileID: 0}
+  ex2: {fileID: 0}
+  ex3: {fileID: 0}
+  ex4: {fileID: 0}
+  tin: {fileID: 0}
+  chancla: {fileID: 0}
   posicioninicial: {fileID: 0}
   vibraniun: 1
   bugs: 0
@@ -25126,91 +24948,6 @@ MonoBehaviour:
   gato: {fileID: 0}
   gest: {fileID: 0}
   gestora: {fileID: 0}
-  n1: {fileID: 0}
-  n2: {fileID: 0}
-  n3: {fileID: 0}
-  n4: {fileID: 0}
-  n5: {fileID: 0}
-  n6: {fileID: 0}
-  n7: {fileID: 0}
-  n8: {fileID: 0}
-  n9: {fileID: 0}
-  n10: {fileID: 0}
-  n11: {fileID: 0}
-  n12: {fileID: 0}
-  n13: {fileID: 0}
-  n14: {fileID: 0}
-  n15: {fileID: 0}
-  n16: {fileID: 0}
-  n17: {fileID: 0}
-  n18: {fileID: 0}
-  n19: {fileID: 0}
-  n20: {fileID: 0}
-  n21: {fileID: 0}
-  n22: {fileID: 0}
-  n23: {fileID: 0}
-  n24: {fileID: 0}
-  n25: {fileID: 0}
-  n26: {fileID: 0}
-  n27: {fileID: 0}
-  n28: {fileID: 0}
-  n29: {fileID: 0}
-  n30: {fileID: 0}
-  n31: {fileID: 0}
-  n32: {fileID: 0}
-  n33: {fileID: 0}
-  n34: {fileID: 0}
-  n35: {fileID: 0}
-  n36: {fileID: 0}
-  n37: {fileID: 0}
-  n38: {fileID: 0}
-  n39: {fileID: 0}
-  n40: {fileID: 0}
-  n41: {fileID: 0}
-  n42: {fileID: 0}
-  n43: {fileID: 0}
-  n44: {fileID: 0}
-  n45: {fileID: 0}
-  n46: {fileID: 0}
-  n47: {fileID: 0}
-  n48: {fileID: 0}
-  n49: {fileID: 0}
-  n50: {fileID: 0}
-  n51: {fileID: 0}
-  n52: {fileID: 0}
-  n53: {fileID: 0}
-  n54: {fileID: 0}
-  n55: {fileID: 0}
-  n56: {fileID: 0}
-  n57: {fileID: 0}
-  n58: {fileID: 0}
-  n59: {fileID: 0}
-  n60: {fileID: 0}
-  n61: {fileID: 0}
-  n62: {fileID: 0}
-  n63: {fileID: 0}
-  n64: {fileID: 0}
-  n65: {fileID: 0}
-  n66: {fileID: 0}
-  n67: {fileID: 0}
-  n68: {fileID: 0}
-  n69: {fileID: 0}
-  n70: {fileID: 0}
-  n71: {fileID: 0}
-  n72: {fileID: 0}
-  n73: {fileID: 0}
-  n74: {fileID: 0}
-  n75: {fileID: 0}
-  n76: {fileID: 0}
-  n77: {fileID: 0}
-  n78: {fileID: 0}
-  n79: {fileID: 0}
-  n80: {fileID: 0}
-  n81: {fileID: 0}
-  n82: {fileID: 0}
-  n83: {fileID: 0}
-  n84: {fileID: 0}
-  n85: {fileID: 0}
   generarp: {fileID: 0}
   cabeza: {fileID: 0}
   color1: {r: 0, g: 0, b: 0, a: 0}
@@ -25230,91 +24967,6 @@ MonoBehaviour:
   b2: {fileID: 0}
   b3: {fileID: 0}
   b4: {fileID: 0}
-  fin1: {fileID: 0}
-  fin2: {fileID: 0}
-  fin3: {fileID: 0}
-  fin4: {fileID: 0}
-  fin5: {fileID: 0}
-  fin6: {fileID: 0}
-  fin7: {fileID: 0}
-  fin8: {fileID: 0}
-  fin9: {fileID: 0}
-  fin10: {fileID: 0}
-  fin11: {fileID: 0}
-  fin12: {fileID: 0}
-  fin13: {fileID: 0}
-  fin14: {fileID: 0}
-  fin15: {fileID: 0}
-  fin16: {fileID: 0}
-  fin17: {fileID: 0}
-  fin18: {fileID: 0}
-  fin19: {fileID: 0}
-  fin20: {fileID: 0}
-  fin21: {fileID: 0}
-  fin22: {fileID: 0}
-  fin23: {fileID: 0}
-  fin24: {fileID: 0}
-  fin25: {fileID: 0}
-  fin26: {fileID: 0}
-  fin27: {fileID: 0}
-  fin28: {fileID: 0}
-  fin29: {fileID: 0}
-  fin30: {fileID: 0}
-  fin31: {fileID: 0}
-  fin32: {fileID: 0}
-  fin33: {fileID: 0}
-  fin34: {fileID: 0}
-  fin35: {fileID: 0}
-  fin36: {fileID: 0}
-  fin37: {fileID: 0}
-  fin38: {fileID: 0}
-  fin39: {fileID: 0}
-  fin40: {fileID: 0}
-  fin41: {fileID: 0}
-  fin42: {fileID: 0}
-  fin43: {fileID: 0}
-  fin44: {fileID: 0}
-  fin45: {fileID: 0}
-  fin46: {fileID: 0}
-  fin47: {fileID: 0}
-  fin48: {fileID: 0}
-  fin49: {fileID: 0}
-  fin50: {fileID: 0}
-  fin51: {fileID: 0}
-  fin52: {fileID: 0}
-  fin53: {fileID: 0}
-  fin54: {fileID: 0}
-  fin55: {fileID: 0}
-  fin56: {fileID: 0}
-  fin57: {fileID: 0}
-  fin58: {fileID: 0}
-  fin59: {fileID: 0}
-  fin60: {fileID: 0}
-  fin61: {fileID: 0}
-  fin62: {fileID: 0}
-  fin63: {fileID: 0}
-  fin64: {fileID: 0}
-  fin65: {fileID: 0}
-  fin66: {fileID: 0}
-  fin67: {fileID: 0}
-  fin68: {fileID: 0}
-  fin69: {fileID: 0}
-  fin70: {fileID: 0}
-  fin71: {fileID: 0}
-  fin72: {fileID: 0}
-  fin73: {fileID: 0}
-  fin74: {fileID: 0}
-  fin75: {fileID: 0}
-  fin76: {fileID: 0}
-  fin77: {fileID: 0}
-  fin78: {fileID: 0}
-  fin79: {fileID: 0}
-  fin80: {fileID: 0}
-  fin81: {fileID: 0}
-  fin82: {fileID: 0}
-  fin83: {fileID: 0}
-  fin84: {fileID: 0}
-  fin85: {fileID: 0}
   fondo: {fileID: 0}
   ay: {fileID: 0}
   dia1: {fileID: 0}
@@ -25324,26 +24976,21 @@ MonoBehaviour:
   dia5: {fileID: 0}
   dia6: {fileID: 0}
   retorno: {fileID: 0}
-  vidasi: 3
-  dias: {fileID: 0}
-  cc: {fileID: 0}
-  ac: 0
-  inmod: {fileID: 0}
-  calidad: 0
-  n86: {fileID: 0}
-  ccc1: {fileID: 0}
-  ccc2: {fileID: 0}
-  controladorp: {fileID: 0}
-  chancla: {fileID: 0}
-  casco: {fileID: 0}
-  gris: {r: 0, g: 0, b: 0, a: 0}
-  presiona: {fileID: 0}
-  plataforma: {fileID: 0}
-  ex1: {fileID: 0}
-  ex2: {fileID: 0}
-  ex3: {fileID: 0}
-  ex4: {fileID: 0}
-  tin: {fileID: 0}
+  arribabool: 0
+  saltopoder: {fileID: 0}
+  chispa: {fileID: 0}
+  realmente: 1
+  suel: 0
+  notas: {fileID: 0}
+  Nnotas: 1
+  balita: {fileID: 0}
+  casquito: {fileID: 0}
+  recarga: 1
+  arriba: 0
+  un: 1
+  m: 1
+  aah: {fileID: 0}
+  saltoi: 0
   plataform: {fileID: 0}
   c2: {fileID: 0}
   c3: {fileID: 0}
@@ -25374,21 +25021,6 @@ MonoBehaviour:
   h2: 0
   muerte: 1
   puntoderetorn: {fileID: 0}
-  arribabool: 0
-  saltopoder: {fileID: 0}
-  chispa: {fileID: 0}
-  realmente: 1
-  suel: 0
-  notas: {fileID: 0}
-  Nnotas: 1
-  balita: {fileID: 0}
-  casquito: {fileID: 0}
-  recarga: 1
-  arriba: 0
-  un: 1
-  m: 1
-  aah: {fileID: 0}
-  saltoi: 0
   tuto: 0
   playe: {fileID: 0}
   botones: {fileID: 0}
@@ -25533,7 +25165,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1487995315
 RectTransform:
   m_ObjectHideFlags: 0
@@ -25569,7 +25201,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.027950764, g: 0, b: 1, a: 0.72156864}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -25661,6 +25292,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 925585122}
     m_Modifications:
+    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+        type: 3}
+      propertyPath: m_Name
+      value: mo;a
+      objectReference: {fileID: 0}
     - target: {fileID: 2916164195234442720, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -25670,16 +25306,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -73
       objectReference: {fileID: 0}
     - target: {fileID: 2916164195450665450, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
@@ -25801,10 +25427,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.21383372
       objectReference: {fileID: 0}
-    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
-      propertyPath: m_Name
-      value: mo;a
+      propertyPath: m_AnchoredPosition.x
+      value: 23
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -73
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6312d710a5ca247bff767dd04cf13d, type: 3}
@@ -25898,7 +25529,6 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26072,7 +25702,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -26154,7 +25783,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26362,7 +25990,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.976174, b: 0, a: 0.7529412}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -26504,7 +26131,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -26721,7 +26347,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -26806,7 +26431,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -27037,7 +26661,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -27282,7 +26905,7 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
+  serializedVersion: 3
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
@@ -27300,7 +26923,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27627,7 +27249,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27720,7 +27341,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -27772,7 +27392,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1898739365
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27840,7 +27460,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 0.94832873, b: 0, a: 0.72156864}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -27970,7 +27589,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -28062,7 +27680,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28289,7 +27906,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28417,7 +28033,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -28610,6 +28225,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 54014292}
     m_Modifications:
+    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+        type: 3}
+      propertyPath: m_Name
+      value: mo;a (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2916164195234442720, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
       propertyPath: m_FontData.m_Alignment
@@ -28619,16 +28244,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_FontData.m_FontSize
       value: 24
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
-        type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -73
       objectReference: {fileID: 0}
     - target: {fileID: 2916164195450665450, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
@@ -28750,15 +28365,15 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.21383373
       objectReference: {fileID: 0}
-    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
-      propertyPath: m_Name
-      value: mo;a (1)
+      propertyPath: m_AnchoredPosition.x
+      value: 23
       objectReference: {fileID: 0}
-    - target: {fileID: 2916164195450665451, guid: 9d6312d710a5ca247bff767dd04cf13d,
+    - target: {fileID: 2916164195234442721, guid: 9d6312d710a5ca247bff767dd04cf13d,
         type: 3}
-      propertyPath: m_IsActive
-      value: 1
+      propertyPath: m_AnchoredPosition.y
+      value: -73
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d6312d710a5ca247bff767dd04cf13d, type: 3}
@@ -28824,7 +28439,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -28939,7 +28553,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 0, g: 0, b: 0, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -29027,7 +28640,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29136,7 +28748,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -29192,6 +28803,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -927199367670048503, guid: 4dd583b791a2902479cde92ea676e57c,
+        type: 3}
+      propertyPath: m_Name
+      value: Goofy Running
+      objectReference: {fileID: 0}
     - target: {fileID: -4216859302048453862, guid: 4dd583b791a2902479cde92ea676e57c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -29261,11 +28877,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.1139135
-      objectReference: {fileID: 0}
-    - target: {fileID: -927199367670048503, guid: 4dd583b791a2902479cde92ea676e57c,
-        type: 3}
-      propertyPath: m_Name
-      value: Goofy Running
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4dd583b791a2902479cde92ea676e57c, type: 3}
@@ -29408,7 +29019,6 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
-  m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -29527,7 +29137,6 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 2
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -34692,7 +34301,6 @@ SkinnedMeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -39695,7 +39303,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -40284,7 +39891,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -40394,7 +40000,6 @@ ParticleSystemRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 0
   m_ReflectionProbeUsage: 0
-  m_RayTracingMode: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:

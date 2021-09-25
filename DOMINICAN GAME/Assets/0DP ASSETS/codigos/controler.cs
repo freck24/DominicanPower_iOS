@@ -1846,7 +1846,7 @@ public class controler : MonoBehaviour
 	IEnumerator saltojugabilidad()
     { int pppp = 0;
 		while (pppp<10) {
-			yield return new WaitForSecondsRealtime(0.02f);
+			yield return new WaitForSecondsRealtime(0.14f);
 			pppp++;
             if (suel == true)
             {
@@ -1864,8 +1864,9 @@ public class controler : MonoBehaviour
 					//velocidadsalto();
 					//	Handheld.Vibrate();
 					un = true;
-					salto = true;
 
+			print("VUELTO SALTO 1");
+					salto = false;
 
 
 
@@ -2165,29 +2166,7 @@ public void cerrarfin()
 		}
 
 
-		if (salto && vidas>0)
-		{
-		//	r.velocity = new Vector2(0, 0);
-
-			//	anim.SetBool("deten", false);
-
-			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
-			salto = false;
-			if (gest.tiemposaya == true)
-			{
-				audio.clip = saltopoder;
-				audio.Play();
-				chispa.SetActive(false);
-				chispa.SetActive(true);
-			}
-			else
-			{
-				audio.clip = saltoauido;
-				audio.Play();
-			}
-
-
-		}
+		
 		
 		if (saltoi)
 		{
@@ -2374,12 +2353,37 @@ public void cerrarfin()
 	public void saltard()
 	{
 		if (!retorno.suelito) return;
-		retorno.suelito = false;
+
+		if(!salto)
+        {
 		salto = true;
 
+			if (vidas > 0)
+			{
+				if (gest.tiemposaya == true)
+				{
+					audio.clip = saltopoder;
+					audio.Play();
+					chispa.SetActive(false);
+					chispa.SetActive(true);
+				}
+				else
+				{
+					audio.clip = saltoauido;
+					audio.Play();
+				}
 
-		if (suel) saltaunpocoantes();
+
+			}
+
+		print("@@@@@@@@@@@@SE HA SALTADO");
+		r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+		}
+
 		
+
+
+
 		if (suel && animacion)
 		{
 			if (rompe)
@@ -2399,6 +2403,9 @@ public void cerrarfin()
 
 			h1 = 7 * guardah;
 		}
+
+		saltaunpocoantes();
+
 	}
 	public void saltari()
 	{
@@ -2417,6 +2424,8 @@ public void cerrarfin()
 		//velocidadsalto();
 			//Handheld.Vibrate();
 			un = true;
+
+			print("VUELTO SALTO 1");
 			salto = true;
 			arriba = true;
 

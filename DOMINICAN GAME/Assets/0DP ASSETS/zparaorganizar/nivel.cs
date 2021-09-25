@@ -6,49 +6,51 @@ using UnityEngine.SceneManagement;
 
 public class nivel : MonoBehaviour
 {
-    public float numeroni;
+  
     public GameObject cargando;
     public GameObject NOHA;
-    public Image boton;
     public Color completo;
     public AudioClip enter;
     public AudioClip fail;
-    private AudioSource a;
+    public AudioSource AudioFx;
+
+    public Transform NivelesContent;
 
     // Start is called before the first frame update
     void Start()
     {
-        a = GetComponent<AudioSource>();
-        if (PlayerPrefs.GetFloat("nivel") > numeroni)
+        foreach (Transform child in NivelesContent)
         {
-            boton.color = completo;
+            int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(child.name, "Lvl:", "]"));
+            if (PlayerPrefs.GetFloat("nivel") > LevelNew) child.GetComponent<Image>().color = completo;
         }
+
     }
-    public void fnumero()
+    public void CheckPlay(GameObject obj)
     {
-        if ( PlayerPrefs.GetFloat("nivel")>numeroni)
+        int LevelNewer = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
+
+        if ( PlayerPrefs.GetFloat("nivel")> LevelNewer)
         {
-            PlayerPrefs.SetFloat("jn", numeroni);
+            // ESTE NIVEL SE VA ABRIR
+            PlayerPrefs.SetFloat("jn", LevelNewer);
             
             cargando.SetActive(true);
             NOHA.SetActive(false);
-       //     SceneManager.LoadScene("nivel1");
-            a.clip = enter;
-            a.Play();
+            AudioFx.PlayOneShot(enter);
+
+            int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
+            GetComponent<inicietion>().Boton_IniciarSaltado(LevelNew);
         }
         else
         {
-            PlayerPrefs.SetFloat("jn", numeroni);
-            a.clip = fail;
-            a.Play();
+            // ESTE NIVEL ESTA BLOQUEADO BEBE
+            PlayerPrefs.SetFloat("jn", LevelNewer);
+            AudioFx.PlayOneShot(fail);
             NOHA.SetActive(false);
             NOHA.SetActive(true);
             cargando.SetActive(false);
         }
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

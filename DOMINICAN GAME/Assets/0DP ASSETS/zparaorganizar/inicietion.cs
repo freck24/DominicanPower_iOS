@@ -29,41 +29,64 @@ public class inicietion : MonoBehaviour
         });
     }
 
-    public void c1()
+    public void Boton_IniciarSaltado( int LevelSaltado)
     {
+        PlayerPrefs.SetInt("NivelSaltado", 1);
+        PlayerPrefs.SetInt("NivelSaltado_ID", LevelSaltado-1);
+
+        print("NivelJugar: " + (LevelSaltado - 1).ToString());
+      carga[0].SetActive(true);
+
+
+    }
+    public void Boton_IniciarAventura()
+    {
+        PlayerPrefs.SetInt("NivelSaltado", 0);
+        PlayerPrefs.SetInt("NivelSaltado_ID", 0);
+
         if (PlayerPrefs.GetFloat("nivel", 1) == 16)
         { if (PlayerPrefs.GetFloat("gana1", 0) == 0)
             {
                 if (PlayerPrefs.GetFloat("dinero", 0) > 99999)
                 {
-                    carga[10].SetActive(true); //m1gana
+                    carga[10].SetActive(true); //m1 gana
                 }
                 else
                 {
-                    carga[11].SetActive(true); //m1pierde
+                    carga[11].SetActive(true); //m1 pierde
                 }
             }
             else
             {
-                carga[12].SetActive(true); //telefono
+                carga[12].SetActive(true); // telefono
             }
 
 
         } else
         {
-            carga[0].SetActive(true);
+            carga[0].SetActive(true); // cargar level 1 clone
         }
 
-    } public void c2()
+    } 
+
+    public void NewCargaID(int id)
+    {
+        carga[id].SetActive(true);
+
+    }
+    public void c2()
     {
         carga[1].SetActive(true);
-    } public void c3()
+    } 
+    public void c3()
     {
         carga[2].SetActive(true);
-    } public void c4()
+    } 
+    public void c4()
     {
         carga[3].SetActive(true);
-    } public void c5()
+    } 
+    public void c5()
     {
         carga[4].SetActive(true);
     } public void c6()
@@ -96,10 +119,7 @@ public class inicietion : MonoBehaviour
     {
         carga[12].SetActive(true);
     }
-    public void c10()
-    {
-        StartCoroutine(esp());
-    }
+   
 
     public GameObject controles;
 
@@ -110,13 +130,7 @@ public class inicietion : MonoBehaviour
     {
         controles.SetActive(false);
     }
-    IEnumerator esp()
-    {
-        yield return new WaitForSecondsRealtime(0.1f);
-        if (PlayerPrefs.GetFloat("jn", 0) < PlayerPrefs.GetFloat("nivel", 1))
-            carga[9].SetActive(true);
-
-    }
+    
 
     public AudioClip pop;
     public AudioClip fail;
