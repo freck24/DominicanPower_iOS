@@ -31,8 +31,10 @@ public class inicietion : MonoBehaviour
 
     public void Boton_IniciarSaltado( int LevelSaltado)
     {
+
+        print("Iniciar Saltado A: " + LevelSaltado); 
         PlayerPrefs.SetInt("NivelSaltado", 1);
-        PlayerPrefs.SetInt("NivelSaltado_ID", LevelSaltado-1);
+        PlayerPrefs.SetFloat("NivelSaltado_ID", LevelSaltado-1);
 
         print("NivelJugar: " + (LevelSaltado - 1).ToString());
       carga[0].SetActive(true);
@@ -41,8 +43,10 @@ public class inicietion : MonoBehaviour
     }
     public void Boton_IniciarAventura()
     {
+        print("Iniciar Saltado");
+
         PlayerPrefs.SetInt("NivelSaltado", 0);
-        PlayerPrefs.SetInt("NivelSaltado_ID", 0);
+        PlayerPrefs.SetFloat("NivelSaltado_ID", 0);
 
         if (PlayerPrefs.GetFloat("nivel", 1) == 16)
         { if (PlayerPrefs.GetFloat("gana1", 0) == 0)

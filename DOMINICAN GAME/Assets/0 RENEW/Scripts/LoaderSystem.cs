@@ -28,6 +28,7 @@ public class LoaderSystem : MonoBehaviour
             if(PlayerPrefs.GetInt("NivelSaltado", 0) == 1)
             {
                 NivelActual = Convert.ToInt32(PlayerPrefs.GetFloat("NivelSaltado_ID", 0f));
+                print("Nivel Saltado");
                 return;
             }
 
