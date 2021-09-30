@@ -485,7 +485,7 @@ public class controler : MonoBehaviour
 
 		couna = true;
 		contadorpoder = PlayerPrefs.GetFloat("poder", 0);
-		PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+		PLATANOPOWER.text = "" + contadorpoder.ToString("f2");
 		vidasi = PlayerPrefs.GetFloat("vidas", 3);
 
 
@@ -2082,6 +2082,16 @@ public void cerrarfin()
 
 	if (Input.GetKeyDown(KeyCode.Space)) saltard();
 	if (Input.GetKeyDown(KeyCode.X)) activapower();
+		if (Input.GetKeyDown(KeyCode.P))
+		{
+			GameObject var = GameObject.FindObjectOfType<eliminatodo>().gameObject;
+
+			Vector3 var2 = var.transform.position;
+			var2.y += 30;
+			var2.z += transform.position.z;
+
+			transform.position = var2;
+		}
 
 		/*if (m)
 		{

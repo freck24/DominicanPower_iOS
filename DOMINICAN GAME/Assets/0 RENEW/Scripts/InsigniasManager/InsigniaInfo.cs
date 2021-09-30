@@ -10,9 +10,21 @@ public class InsigniaInfo : MonoBehaviour
     public List<InsigniaInfoData> Insignias;
     public Transform MostrarInsignias;
 
+
+    [Header("Muestra De Insignia")]
+    public GameObject Show;
+    public Text Nombre;
+    public Text Descripcion;
+    public Image IconRender;
+
+
+
     public void ShowDesc(InsigniaInfoData dx)
     {
-
+        Show.SetActive(true);
+        Nombre.text = dx.Nombre;
+        Descripcion.text = dx.Descripcion;
+        IconRender.sprite = dx.Insignia_Icon;
     }
 
      void Start()
@@ -34,7 +46,9 @@ public class InsigniaInfoData
 {
 
     public string Nombre;
+    public string id_unica;
     public Sprite Insignia_Icon;
+
 
     [Multiline(5)] public string Descripcion;
     public bool Conseguida;

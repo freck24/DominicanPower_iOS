@@ -5,17 +5,12 @@ using UnityEngine;
 
 
 public class Generador : MonoBehaviour {
-	public GameObject ene;
-	public GameObject ene2;
-	public GameObject ene3;
-	public GameObject ene4;
-	public GameObject ene5;
-	public GameObject ene6;
-	public GameObject ene7;
-	public GameObject ene8;
-	public GameObject ene9;
-	
-	public float tiempo = 10f;
+
+    public static Generador gen;
+	public List<GameObject> VehiculosGen;
+
+
+    public float tiempo = 10f;
 	bool ran = false;
 
 	Vector3 g;
@@ -39,6 +34,8 @@ public class Generador : MonoBehaviour {
     
     void Awake()
     {
+
+        gen = this;
         n = Random.Range(0, 9);
 		
         switch (n)
@@ -99,57 +96,17 @@ public class Generador : MonoBehaviour {
 	public void crear()
 	{
 		h = new Vector3(transform.position.x, g.y, g.z);
-
-
 			ale = Random.Range(0, 15);  //9
-		ale = ale - ale % 1;
-		//ale = 1;
-		if (ale == 1)
-		{
-			Instantiate(ene, h, Quaternion.identity);
 
-		}
-		else
-		if (ale == 0)
-		{
-			Instantiate(ene2, h, Quaternion.identity);
+        if (ale < 8)
+            Instantiate(VehiculosGen[Random.Range(0, 7)], transform.position, Quaternion.identity);
+        else
+            Instantiate(VehiculosGen[8], transform.position, Quaternion.identity);
 
-		}
-		else if (ale == 2)
-		{
-			Instantiate(ene3, h, Quaternion.identity);
 
-		}
-		else if (ale == 3)
-		{
-			Instantiate(ene4, h, Quaternion.identity);
 
-		}
-		else if (ale == 4)
-		{
-			Instantiate(ene5, h, Quaternion.identity);
-
-		}
-		else if (ale == 5)
-		{
-			Instantiate(ene6, h, Quaternion.identity);
-
-		}else if (ale == 6)
-		{
-			Instantiate(ene7, h, Quaternion.identity);
-
-		}else if (ale == 7)
-		{
-			Instantiate(ene9, h, Quaternion.identity);
-
-		}else if (ale >7)
-		{
-			Instantiate(ene8, h, Quaternion.identity);
-
-		}
-
-	}
-	public bool tuto = false;
+    }
+    public bool tuto = false;
 
 	public void comenzar()
 	{  if(tuto==false)

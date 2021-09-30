@@ -13,9 +13,12 @@ public class InsigniaSlot : MonoBehaviour
 
     public void Check(InsigniaInfoData datax)
     {
+
     data = datax;
+
+    data.Conseguida = PlayerPrefs.GetInt(data.id_unica, 0) == 1;
     Color color_Logrado = new Color(255, 255, 255);
-    Color color_NoLogrado = new Color(255, 255, 255);
+    Color color_NoLogrado = new Color(92, 92, 92);
 
     IconManage.color = data.Conseguida ? color_NoLogrado : color_Logrado;
     }

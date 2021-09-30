@@ -86,7 +86,7 @@ GameObject:
   - component: {fileID: 6453215913651440264}
   - component: {fileID: 6453215913651440265}
   - component: {fileID: 6453215913651440266}
-  - component: {fileID: 6453215913651440267}
+  - component: {fileID: 5023497493534758871}
   m_Layer: 5
   m_Name: Insignia
   m_TagString: Untagged
@@ -166,11 +166,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   data:
     Nombre: 
+    id_unica: 
     Insignia_Icon: {fileID: 0}
     Descripcion: 
     Conseguida: 0
   IconManage: {fileID: 6453215913511241672}
---- !u!114 &6453215913651440267
+--- !u!114 &5023497493534758871
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -209,7 +210,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 6453215914254754255}
+  m_TargetGraphic: {fileID: 6453215913651440265}
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
