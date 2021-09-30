@@ -59,7 +59,6 @@ public class bomba : MonoBehaviour
             explota.SetActive(true);
 
         }
-
       
         }
     }

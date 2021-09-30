@@ -2077,7 +2077,7 @@ public void cerrarfin()
 	void FixedUpdate()
 	{
 
-		h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+	//	h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
 		FlipMyCharacter(h);
 
 	if (Input.GetKeyDown(KeyCode.Space)) saltard();
