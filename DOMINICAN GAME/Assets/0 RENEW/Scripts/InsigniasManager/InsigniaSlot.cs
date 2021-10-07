@@ -11,16 +11,21 @@ public class InsigniaSlot : MonoBehaviour
 
     public Image IconManage;
 
+    public Color color_Logrado = new Color(255, 255, 255);
+    public Color color_NoLogrado = new Color(92, 92, 92);
+
     public void Check(InsigniaInfoData datax)
     {
 
     data = datax;
 
-    data.Conseguida = PlayerPrefs.GetInt(data.id_unica, 0) == 1;
-    Color color_Logrado = new Color(255, 255, 255);
-    Color color_NoLogrado = new Color(92, 92, 92);
+        data.Conseguida = PlayerPrefs.GetInt(data.id_unica + "_Ganada", 0) == 1;
+   
 
-    IconManage.color = data.Conseguida ? color_NoLogrado : color_Logrado;
+    IconManage.color = data.Conseguida ? color_Logrado : color_NoLogrado;
+        IconManage.sprite = data.Insignia_Icon; 
+
+        print("Insignia:" + data.Conseguida);
     }
  public void Sing_Click()
     {

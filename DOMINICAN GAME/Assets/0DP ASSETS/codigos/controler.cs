@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+	public GESTORPRINCIPAL gest;
+
 
 	public Vector3 electric;
 
@@ -150,7 +152,6 @@ public class controler : MonoBehaviour
 	public GameObject gorra;
 	public GameObject gafas;
 	public GameObject gato;
-	public GESTORPRINCIPAL gest;
 	public gestorauidos gestora;
 
 
@@ -345,12 +346,17 @@ public class controler : MonoBehaviour
 
 	public void InstanciasN()
 	{
+		if (SceneManager.GetActiveScene().name.Contains("INSIGNIA")) return;
 		if (nivel < 86) LoaderSystem.system.CargarNivel();
 //		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
 	}
 	public void InstanciasNjn()
 	{
-	float GetLvl = PlayerPrefs.GetFloat("jn", 1);
+
+		if (SceneManager.GetActiveScene().name.Contains("INSIGNIA")) return;
+
+
+		float GetLvl = PlayerPrefs.GetFloat("jn", 1);
 
 	if (GetLvl < 86) LoaderSystem.system.CargarNivel();
 
@@ -1858,7 +1864,7 @@ public class controler : MonoBehaviour
 						cabeza.SetActive(true);
 					}
 					anim.SetBool("golpe", false);
-					anim.SetBool("salto", true);
+				//		anim.SetBool("salto", true);
 					StartCoroutine(se());
 
 					//velocidadsalto();
@@ -2244,7 +2250,7 @@ public void cerrarfin()
 			realmente = true;
 			StartCoroutine(stevejob());
 			
-			//anim.SetBool("salto", true);
+			 anim.SetBool("salto", true);
 			StartCoroutine(espera());
 
 		}
@@ -2403,7 +2409,7 @@ public void cerrarfin()
 			}
 
 			anim.SetBool("golpe", false);
-			anim.SetBool("salto", true);
+		//	anim.SetBool("salto", true);
 			StartCoroutine(se());
 
 			//velocidadsalto();
@@ -2436,7 +2442,7 @@ public void cerrarfin()
 			un = true;
 
 			print("VUELTO SALTO 1");
-			salto = true;
+		//	salto = true;
 			arriba = true;
 
 

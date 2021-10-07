@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Security.Permissions;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class controladorP : MonoBehaviour {
 	
@@ -70,6 +71,16 @@ public class controladorP : MonoBehaviour {
 				PlayerPrefs.SetInt("correct", PlayerPrefs.GetInt("correct", 0) + 1);
 			}
 
+			if(SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
+            {
+				print("SE GANO UNA INSIGNIA");
+				FindObjectOfType<LoaderLevSign>().CompletarNivel();
+
+
+            }
+
+
+
 			if (PlayerPrefs.GetInt("ff", 0) == 0)
 			{
 				contr.f = true;
@@ -98,6 +109,7 @@ a.PlayOneShot(win);
 
 
 		}
+
 		else
 		{ // aqui pregunta incorrecta
 			PlayerPrefs.SetFloat("niveld", PlayerPrefs.GetFloat("niveld", 0) - 30);

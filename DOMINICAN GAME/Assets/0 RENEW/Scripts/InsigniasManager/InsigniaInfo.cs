@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 
 public class InsigniaInfo : MonoBehaviour
@@ -10,6 +11,7 @@ public class InsigniaInfo : MonoBehaviour
     public List<InsigniaInfoData> Insignias;
     public Transform MostrarInsignias;
 
+    public GameObject ConseguirInsignia;
 
     [Header("Muestra De Insignia")]
     public GameObject Show;
@@ -17,14 +19,23 @@ public class InsigniaInfo : MonoBehaviour
     public Text Descripcion;
     public Image IconRender;
 
-
-
+    InsigniaInfoData ddd;
+    public void LoadLevelInsignia()
+    {
+        PlayerPrefs.SetString("Insignia_Progress", ddd.id_unica);
+        SceneManager.LoadScene("LEVELLOADER INSIGNIA");
+    }
     public void ShowDesc(InsigniaInfoData dx)
     {
+        ddd = dx;
+
         Show.SetActive(true);
         Nombre.text = dx.Nombre;
         Descripcion.text = dx.Descripcion;
         IconRender.sprite = dx.Insignia_Icon;
+
+        ConseguirInsignia.SetActive(!dx.Conseguida);
+
     }
 
      void Start()

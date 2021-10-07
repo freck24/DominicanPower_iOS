@@ -3,10 +3,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Gpregunta : MonoBehaviour {
 
 	[SerializeField] private List<preguntas> mpreguntas = null;
+
+	public string SpecialString;
 
 	public Text letra = null;
 	public GameObject pantallagana;
@@ -28,47 +31,41 @@ public class Gpregunta : MonoBehaviour {
 	{    
 		if(mpreguntas.Count == 0)
 		{
-			// AQUI CODIGO SIGUIENTE NIVEL
-			
-			t = controla.puntos*100;
-			t = t / cantidaddepregunta; ;
-			letra.text = cont + t + po;
+	// AQUI CODIGO SIGUIENTE NIVEL
+	t = controla.puntos*100;
+	t = t / cantidaddepregunta; ;
+	letra.text = cont + t + po;
 
-			if (trivia)
-			{
-				pantallagana.gameObject.SetActive(true);
-			}
+	if (trivia) pantallagana.gameObject.SetActive(true);
 
 
 
 		}
 	
-		if (PlayerPrefs.GetFloat("primera", 0) == 0)  //arreglar
+		if (PlayerPrefs.GetFloat("primera" + SpecialString, 0) == 0)  //arreglar
 		{
 			a = Random.Range(0, mpreguntas.Count);
-			PlayerPrefs.SetInt("preguntas", a);
-			PlayerPrefs.SetFloat("primera", 1);
+			PlayerPrefs.SetInt("preguntas" + SpecialString, a);
+			PlayerPrefs.SetFloat("primera" + SpecialString, 1);
 		}
 		
 	
-		a = PlayerPrefs.GetInt("preguntas", 0) + 1;
-		PlayerPrefs.SetInt("pd", PlayerPrefs.GetInt("pd", 0) + 1);
-		preguntasdisponibles = numerodepreguntas - PlayerPrefs.GetInt("pd", 0);
-		PlayerPrefs.SetInt("preguntasd", preguntasdisponibles);
+		a = PlayerPrefs.GetInt("preguntas" + SpecialString, 0) + 1;
+		PlayerPrefs.SetInt("pd" + SpecialString, PlayerPrefs.GetInt("pd" + SpecialString, 0) + 1);
+		preguntasdisponibles = numerodepreguntas - PlayerPrefs.GetInt("pd" + SpecialString, 0);
+		PlayerPrefs.SetInt("preguntasd" + SpecialString, preguntasdisponibles);
 
 
-		if (!remove)
-			
-			return mpreguntas[a];
+		if (!remove) return mpreguntas[a];
 
 		ash = a;
-		PlayerPrefs.SetInt("preguntas", a);
+		PlayerPrefs.SetInt("preguntas" + SpecialString, a);
 		// si lo daa;as quita esto
 
 		if (a >= numerodepreguntas-1)
 		{
 			a = 0;
-			PlayerPrefs.SetInt("preguntas", a);
+			PlayerPrefs.SetInt("preguntas" + SpecialString, a);
 		}
 	
 			preguntas q = mpreguntas[a];

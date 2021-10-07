@@ -8,6 +8,14 @@ public class perderyyun : MonoBehaviour
     public Text text;
     public float ft;
 
+    public GameObject AdsYunOnline;
+
+
+    public void OpenUrl(string link)
+    {
+        Application.OpenURL(link);
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -15,6 +23,11 @@ public class perderyyun : MonoBehaviour
         ft = PlayerPrefs.GetFloat("precioyun", 2.5f) * 2;
         PlayerPrefs.SetFloat("precioyun", ft);
         text.text = " jugar por $" + ft.ToString("f0");
+
+        if(PlayerPrefs.GetInt("YunAds", 0) == 1)
+        {
+            if (Random.Range(0, 3) == 2) AdsYunOnline.SetActive(true);
+        }
     }
 
     // Update is called once per frame

@@ -1,12 +1,14 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 
 
 public class Generador : MonoBehaviour {
 
     public static Generador gen;
+
 	public List<GameObject> VehiculosGen;
 
 
@@ -73,8 +75,16 @@ public class Generador : MonoBehaviour {
     }
 	void Start()
 	{
+
+        if(SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
+        {
+            Invoke("comenzar", 1.7f);
+            g = transform.position;
+            return;
+        }
+
+
 		GENERAR();
-		
 		g = transform.position;
 
 	
