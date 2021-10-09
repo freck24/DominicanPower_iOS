@@ -7,6 +7,12 @@ public class controler : MonoBehaviour
 {
 	public GESTORPRINCIPAL gest;
 
+	[Header("CHECK NUEVO SUELO")]
+	public bool suelito;
+	public Vector3 ofssetCHE;
+	public float RadioPos;
+	public LayerMask Layer;
+	public float DistanceDown = 0.4f;
 
 	public Vector3 electric;
 
@@ -1864,7 +1870,7 @@ public class controler : MonoBehaviour
 						cabeza.SetActive(true);
 					}
 					anim.SetBool("golpe", false);
-				//		anim.SetBool("salto", true);
+				 
 					StartCoroutine(se());
 
 					//velocidadsalto();
@@ -1902,8 +1908,13 @@ public class controler : MonoBehaviour
 	}
 
 	public bool tigrezone = false;
+
+	 
 	void Update()
 	{
+
+		anim.SetBool("salto", !suelito);
+
 		textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
 		if (tigrezone) textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();
@@ -2084,6 +2095,15 @@ public void cerrarfin()
 	{
 
 		h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+
+		Vector3 nene = transform.position + ofssetCHE;
+		nene.z = 0;
+
+
+		if (!suelito)
+			if (r.velocity.y > -2 && r.velocity.y <= 0) suelito = true;
+
+		if (suelito && r.velocity.y < -20f) suelito = false;
 		FlipMyCharacter(h);
 
 	if (Input.GetKeyDown(KeyCode.Space)) saltard();
@@ -2246,13 +2266,9 @@ public void cerrarfin()
 	{
 		if (col.gameObject.tag == "suelo")
 		{
-			retorno.suelito = false;
 			realmente = true;
 			StartCoroutine(stevejob());
-			
-			 anim.SetBool("salto", true);
 			StartCoroutine(espera());
-
 		}
 
 		if (col.gameObject.tag == "metro") linea.SetActive(false);
@@ -2310,16 +2326,11 @@ public void cerrarfin()
 	{
 		if (col.gameObject.tag == "suelo")
 		{
-			if (!arribabool)
-			{
-				retorno.suelito = true;
-			}
 			//cabeza.SetActive(false);
 			suel = true;
 			realmente = false;
 			h1 = 0;
 			if (arriba) {
-				anim.SetBool("salto", false);
 				arriba = false;
 			}
 		}
@@ -2368,9 +2379,11 @@ public void cerrarfin()
 	}
 	public void saltard()
 	{
-		if (!retorno.suelito) return;
+		if (!suelito) return;
 
-		if(!salto)
+		suelito = false;
+
+		if (!salto)
         {
 		salto = true;
 
@@ -2408,8 +2421,7 @@ public void cerrarfin()
 				cabeza.SetActive(true);
 			}
 
-			anim.SetBool("golpe", false);
-		//	anim.SetBool("salto", true);
+			anim.SetBool("golpe", false); 
 			StartCoroutine(se());
 
 			//velocidadsalto();
@@ -2435,8 +2447,7 @@ public void cerrarfin()
 				cabeza.SetActive(true);
 			}
 
-			anim.SetBool("golpe", false);
-			anim.SetBool("salto", true);
+			anim.SetBool("golpe", false); 
 		//velocidadsalto();
 			//Handheld.Vibrate();
 			un = true;
@@ -3260,7 +3271,7 @@ public void cerrarfin()
 		}
 		if (otr.gameObject.tag == "suelo")
 		{
-			anim.SetBool("salto", false);
+		 
 			polvo.SetActive(false);
 			polvo.SetActive(true);
 		}

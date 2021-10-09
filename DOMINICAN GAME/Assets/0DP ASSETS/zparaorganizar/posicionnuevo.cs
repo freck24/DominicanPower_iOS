@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class posicionnuevo : MonoBehaviour
 {
+
+
+
     Vector3 a;
     public Transform player;
 
@@ -19,6 +22,8 @@ public class posicionnuevo : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         if (suelito && player.transform.position.y >= a.y)
         {
             transform.position = new Vector3(player.transform.position.x, player.transform.position.y, transform.position.z);
