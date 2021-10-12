@@ -2091,6 +2091,18 @@ public class controler : MonoBehaviour
 public void cerrarfin()
     {
 	}
+
+	public void AdminTeleport()
+    {
+		GameObject var = GameObject.FindObjectOfType<eliminatodo>().gameObject;
+
+		Vector3 var2 = var.transform.position;
+		var2.y += 30;
+		var2.z += transform.position.z;
+
+		transform.position = var2;
+	}
+
 	void FixedUpdate()
 	{
 
@@ -2108,17 +2120,7 @@ public void cerrarfin()
 
 	if (Input.GetKeyDown(KeyCode.Space)) saltard();
 	if (Input.GetKeyDown(KeyCode.X)) activapower();
-		if (Input.GetKeyDown(KeyCode.P))
-		{
-			GameObject var = GameObject.FindObjectOfType<eliminatodo>().gameObject;
-
-			Vector3 var2 = var.transform.position;
-			var2.y += 30;
-			var2.z += transform.position.z;
-
-			transform.position = var2;
-		}
-
+		 
 		/*if (m)
 		{
 

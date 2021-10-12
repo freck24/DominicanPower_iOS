@@ -32,7 +32,7 @@ public class LoaderSystem : MonoBehaviour
                 return;
             }
 
-            NivelActual = Convert.ToInt32(PlayerPrefs.GetFloat("nivel", 0f));
+            NivelActual = Convert.ToInt32(PlayerPrefs.GetFloat("nivel", 1f));
 
         }
     }
