@@ -26,16 +26,16 @@ namespace UnityEditor.Purchasing
 			GameObject gO = Selection.activeGameObject;
 
 			// Add IAP Button component to GameObject
-			IAPButton iapButton = null;
+		//	IAPButton iapButton = null;
 			if (gO) {
-				iapButton = gO.AddComponent<IAPButton>();
+			//	iapButton = gO.AddComponent<IAPButton>();
 			}
 
-			if (iapButton != null) {
+	/*		if (iapButton != null) {
 				UnityEditorInternal.ComponentUtility.MoveComponentUp(iapButton);
 				UnityEditorInternal.ComponentUtility.MoveComponentUp(iapButton);
 				UnityEditorInternal.ComponentUtility.MoveComponentUp(iapButton);
-			}
+			}*/
 		}
 	}
 
@@ -58,13 +58,13 @@ namespace UnityEditor.Purchasing
 
             // Add IAP Listener component to GameObject
             if (gO) {
-                gO.AddComponent<IAPListener>();
+            //    gO.AddComponent<IAPListener>();
                 gO.name = "IAP Listener";
             }
         }
     }
 
-
+/*
 	[CustomEditor(typeof(IAPButton))]
 	[CanEditMultipleObjects]
 	public class IAPButtonEditor : Editor
@@ -115,6 +115,6 @@ namespace UnityEditor.Purchasing
 
 			serializedObject.ApplyModifiedProperties();
 		}
-	}
+	}*/
 }
 #endif

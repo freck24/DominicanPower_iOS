@@ -19,9 +19,9 @@ public class inicio : MonoBehaviour
 	void Start()
 	{
 		p = GetComponent<AudioSource>();
-		me.SetActive(false);
+		//me.SetActive(false);
 
-		CM.SetActive(false);
+		//CM.SetActive(false);
 		Time.timeScale = 1f;
 
 		primeravez = PlayerPrefs.GetFloat("prime", 0f);
@@ -50,7 +50,7 @@ public class inicio : MonoBehaviour
 
 
 	
-			SceneManager.LoadScene("nivel1");
+		//	SceneManager.LoadScene("nivel1");
 	
 	}
 
@@ -69,11 +69,11 @@ public class inicio : MonoBehaviour
 		p.Play();
 
 		if (PlayerPrefs.GetFloat("prime", 0f) == 0)
-		{ CM.SetActive(true);
+		{// CM.SetActive(true);
 		}
 		else
 		{
-			SceneManager.LoadScene("nivel1");
+		//	SceneManager.LoadScene("nivel1");
 		}
 
 	}
