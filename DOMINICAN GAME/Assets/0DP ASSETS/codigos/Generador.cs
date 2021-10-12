@@ -96,8 +96,19 @@ public class Generador : MonoBehaviour {
     {
 		cancelargen();
 		nivel = PlayerPrefs.GetFloat("nivel", 1);
-		if (nivel != 1 && nivel != 6 && nivel != 5 && nivel != 1 && nivel != 7 && nivel != 9 && nivel != 13 && nivel != 14 && nivel != 16 && nivel != 17 && nivel != 18 && nivel != 19 && nivel != 21 && nivel != 23 && nivel != 24 && nivel != 31 && nivel != 34 && nivel != 36 && nivel != 37 && nivel != 44 && nivel != 45 && nivel != 46 && nivel != 48 && nivel != 50 && nivel != 51 && nivel != 52 && nivel != 53 && nivel != 58 && nivel != 11)
-			comenzar();
+		
+
+       if (PlayerPrefs.GetInt("NivelSaltado", 0) == 0) {
+            if (nivel != 1 && nivel != 6 && nivel != 5 && nivel != 1 && nivel != 7 && nivel != 9 && nivel != 13 && nivel != 14 && nivel != 16 && nivel != 17 && nivel != 18 && nivel != 19 && nivel != 21 && nivel != 23 && nivel != 24 && nivel != 31 && nivel != 34 && nivel != 36 && nivel != 37 && nivel != 44 && nivel != 45 && nivel != 46 && nivel != 48 && nivel != 50 && nivel != 51 && nivel != 52 && nivel != 53 && nivel != 58 && nivel != 11)
+            { comenzar(); }
+        } 
+        else
+        {
+            nivel = PlayerPrefs.GetFloat("NivelSaltado_ID", 1);
+            if (nivel != 1 && nivel != 6 && nivel != 5 && nivel != 1 && nivel != 7 && nivel != 9 && nivel != 13 && nivel != 14 && nivel != 16 && nivel != 17 && nivel != 18 && nivel != 19 && nivel != 21 && nivel != 23 && nivel != 24 && nivel != 31 && nivel != 34 && nivel != 36 && nivel != 37 && nivel != 44 && nivel != 45 && nivel != 46 && nivel != 48 && nivel != 50 && nivel != 51 && nivel != 52 && nivel != 53 && nivel != 58 && nivel != 11)
+            { comenzar(); }
+
+        }
 
 
 	}

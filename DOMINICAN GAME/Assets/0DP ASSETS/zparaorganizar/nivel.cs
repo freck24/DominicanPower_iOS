@@ -40,7 +40,7 @@ public class nivel : MonoBehaviour
             AudioFx.PlayOneShot(enter);
 
             int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
-            GetComponent<inicietion>().Boton_IniciarSaltado(LevelNew);
+            GetComponent<inicietion>().Boton_IniciarSaltado(LevelNew+1);
         }
         else
         {

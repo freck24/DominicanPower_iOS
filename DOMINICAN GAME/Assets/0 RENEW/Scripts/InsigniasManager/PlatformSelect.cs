@@ -9,7 +9,7 @@ public class PlatformSelect : MonoBehaviour
     public bool statica;
     public bool IsAppleVersion;
 
-
+   
     [Header("Links")]
     public string Link_Android;
     public string Link_Apple;
@@ -18,6 +18,12 @@ public class PlatformSelect : MonoBehaviour
     {
         if (statica) ps = this;
         else psLocal = this;
+    }
+
+
+    public void Abrir_Link()
+    {
+        Application.OpenURL(Get_PlatformLink());
     }
 
     public string Get_PlatformLink()
