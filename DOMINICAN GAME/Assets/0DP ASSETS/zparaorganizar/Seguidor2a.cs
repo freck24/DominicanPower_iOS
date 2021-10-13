@@ -18,8 +18,9 @@ public class Seguidor2a : MonoBehaviour
     IEnumerator perdercoru()
     {
         humito.SetActive(true);
-        yield return new WaitForSecondsRealtime(1f);
         timer.corriendo = false;
+        yield return new WaitForSecondsRealtime(1f);
+        
         perder.SetActive(true);
 
     }
