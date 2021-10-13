@@ -102,7 +102,7 @@ public class controladorplayer2 : MonoBehaviour
                 a.Play();
 
             }
-            Time.timeScale = 0f;
+            timer.corriendo = false;
         }
 
     }

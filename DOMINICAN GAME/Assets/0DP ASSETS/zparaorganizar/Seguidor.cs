@@ -30,12 +30,14 @@ public class Seguidor : MonoBehaviour
     public GameObject humito;
     public player1 P1;
     public player2 P2;
-
+    public TIMER timer;
     IEnumerator perdercoru()
     {
+        timer.corriendo = false;
         humito.SetActive(true);
         yield return new WaitForSecondsRealtime(1f);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+       
         perder.SetActive(true);
 
     }

@@ -31,6 +31,7 @@ public class controladorplayeryun : MonoBehaviour
     public GameObject nobotoncabrar;
     public GameObject continuarjugando;
     public GameObject menus;
+    
     public void continuarr()
     {
         continuarjugando.SetActive(true);
@@ -51,7 +52,8 @@ public class controladorplayeryun : MonoBehaviour
         a = GetComponent<AudioSource>();
        // target = transform.position;
     //    gz = transform.position.y;
-        Time.timeScale = 1f;    }
+     //   Time.timeScale = 1f;    
+    }
 
     public void cambiardejugador()
     {
@@ -133,7 +135,9 @@ public class controladorplayeryun : MonoBehaviour
 
             }
 
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
+            timer.corriendo = false;
+            
             UNA = false;
         }
 

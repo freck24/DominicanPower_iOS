@@ -14,12 +14,12 @@ public class Seguidor2a : MonoBehaviour
     public GameObject perder;
     public enemigomujer en;
     public GameObject humito;
-
+    public TIMER timer;
     IEnumerator perdercoru()
     {
         humito.SetActive(true);
         yield return new WaitForSecondsRealtime(1f);
-        Time.timeScale = 0f;
+        timer.corriendo = false;
         perder.SetActive(true);
 
     }

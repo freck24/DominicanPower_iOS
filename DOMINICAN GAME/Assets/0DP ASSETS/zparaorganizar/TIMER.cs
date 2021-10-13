@@ -7,6 +7,7 @@ public class TIMER : MonoBehaviour
 {
     public Text tiempo;
     public float tiem = 0f;
+    public bool corriendo = true;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,7 +17,11 @@ public class TIMER : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        tiem +=Time.deltaTime;
-        tiempo.text = "" + tiem.ToString("f2");
+        if (corriendo)
+        {
+            tiem += Time.deltaTime;
+            tiempo.text = "" + tiem.ToString("f2");
+        }
+        
     }
 }
