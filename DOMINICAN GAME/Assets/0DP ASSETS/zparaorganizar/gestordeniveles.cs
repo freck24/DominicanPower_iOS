@@ -23,7 +23,7 @@ public class gestordeniveles : MonoBehaviour
 
     void ActivarColorPagina(int Active)
     {
-    for (int i = 0; i < b1.Length - 1; ++i)
+    for (int i = 0; i < b1.Length; ++i)
     b1[i].color = (i == Active) ? color0 : color;
     }
 
@@ -101,7 +101,7 @@ public class gestordeniveles : MonoBehaviour
     {
     cerrar();
     ActivarColorPagina(5);
-    ActivarGrupo(55, 63, true);
+    ActivarGrupo(55, 62, true);
     }
 
     }

@@ -26,13 +26,9 @@ public class perderyyun : MonoBehaviour
 
         if(PlayerPrefs.GetInt("YunAds", 0) == 1)
         {
-            if (Random.Range(0, 3) == 2) AdsYunOnline.SetActive(true);
+            if (Random.Range(0, 3) == 1) AdsYunOnline.SetActive(true);
         }
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 }

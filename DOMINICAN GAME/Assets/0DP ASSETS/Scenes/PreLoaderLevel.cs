@@ -34,14 +34,8 @@ namespace EMGame
         {
             immediateActivateScene = !immediateActivateScene;
 
-            if (immediateActivateScene)
-            {
-                PlayerPrefs.SetInt("AUTOMATICO", 1);
-            }
-            else
-            {
-                PlayerPrefs.SetInt("AUTOMATICO", 0);
-            }
+            if (immediateActivateScene) PlayerPrefs.SetInt("AUTOMATICO", 1);
+            else PlayerPrefs.SetInt("AUTOMATICO", 0);
         }
          
         public virtual void Start()
@@ -54,7 +48,7 @@ namespace EMGame
 
 
             if (nomostrable == false)
-                { 
+            { 
                 if (AUTOMATICO == 0)
                 {
                     A.isOn = false;
@@ -160,6 +154,7 @@ namespace EMGame
 
 
         public GameObject continuar;
+        public Animator Anim;
        IEnumerator verificando()
         {
          while (progressPercent<90)
@@ -170,7 +165,9 @@ namespace EMGame
             progressBarSizeDelta.x = 2230;
             progressBar.sizeDelta = progressBarSizeDelta;
             textComponent.text =  "100%";
-            continuar.SetActive(true);
+            Anim.SetBool("Cargado", true);
+
+
 
         }
 
