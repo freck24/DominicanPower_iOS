@@ -17,11 +17,11 @@ public class controladorP : MonoBehaviour {
 	private Gpregunta gepre = null;
 	private QUIZ quiz = null;
 	public GameObject pregunt;
-	public GameObject activar;
+//public GameObject activar;
 	public GameObject mens;
-	public GameObject menos;
+//	public GameObject menos;
 	public controler contr;
-	public alarma al;
+//	public alarma al;
 	public mov m;
 	public AudioSource a;
 	public AudioClip win;
@@ -33,7 +33,7 @@ public class controladorP : MonoBehaviour {
 	void Start () {
 		gepre = GameObject.FindObjectOfType<Gpregunta>();
 		quiz = GameObject.FindObjectOfType<QUIZ>();
-		menos.SetActive(false);
+	//	menos.SetActive(false);
 		
 
 		ProxPre();
@@ -91,7 +91,7 @@ public class controladorP : MonoBehaviour {
 
 				yield return new WaitForSeconds(wait);
 
-				al.correc = true;
+			//	al.correc = true;
 				contr.continuar = true;
 				puntos += 1f;
 			}
@@ -119,7 +119,7 @@ a.PlayOneShot(win);
 				contr.pe = true;
 				contr.canva.SetActive(true);
 				
-				activar.gameObject.SetActive(true);
+				//activar.gameObject.SetActive(true);
 				mens.gameObject.SetActive(true);
 				contr.boto.SetActive(true);
 
@@ -134,7 +134,7 @@ a.PlayOneShot(win);
 
 			if (PlayerPrefs.GetInt("ff", 0) == 0)
 			{
-				al.correc = true;
+			//	al.correc = true;
 			}
 			
 			puntos -= 1f;

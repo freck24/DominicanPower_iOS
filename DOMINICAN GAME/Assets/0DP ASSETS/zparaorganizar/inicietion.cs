@@ -68,7 +68,15 @@ public class inicietion : MonoBehaviour
 
         } else
         {
-            carga[0].SetActive(true); // cargar level 1 clone
+            if(PlayerPrefs.GetFloat("nivel", 1) != 86)
+            {
+                carga[0].SetActive(true); // cargar level 1 clone
+            }
+            else
+            {
+                c14();
+            }
+    
         }
 
     } 
@@ -122,6 +130,9 @@ public class inicietion : MonoBehaviour
     } public void c13()
     {
         carga[12].SetActive(true);
+    } public void c14()
+    {
+        carga[13].SetActive(true);
     }
    
 
@@ -586,8 +597,8 @@ public class inicietion : MonoBehaviour
 
     void Start()
     {
-        
-        
+
+       // PlayerPrefs.SetFloat("nivel", 85);
         
         
         if (PlayerPrefs.GetInt("anuncios", 1) == 0 || PlayerPrefs.GetInt("VIP", 0) == 1)

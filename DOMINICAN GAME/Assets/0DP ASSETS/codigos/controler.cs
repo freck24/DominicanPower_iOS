@@ -1702,7 +1702,7 @@ public class controler : MonoBehaviour
 
 	public void volverajugar()
 	{
-		if (PlayerPrefs.GetFloat("dinero", 0) > 499)
+		if (PlayerPrefs.GetFloat("dinero", 0) > 4999)
 		{
 			if (preguntas.activeSelf)
 			{
@@ -1731,7 +1731,7 @@ public class controler : MonoBehaviour
 
 			//anim.SetBool("deten", true);
 			Time.timeScale = 1;
-			PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 500);
+			PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 5000);
 			textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
 			transform.position = rota;
@@ -2106,7 +2106,7 @@ public void cerrarfin()
 	void FixedUpdate()
 	{
 
-		h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+		//h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
 
 		Vector3 nene = transform.position + ofssetCHE;
 		nene.z = 0;
