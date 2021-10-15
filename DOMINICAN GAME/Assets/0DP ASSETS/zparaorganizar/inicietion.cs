@@ -598,7 +598,7 @@ public class inicietion : MonoBehaviour
     void Start()
     {
 
-       // PlayerPrefs.SetFloat("nivel", 85);
+       //PlayerPrefs.SetFloat("nivel", 86);
         
         
         if (PlayerPrefs.GetInt("anuncios", 1) == 0 || PlayerPrefs.GetInt("VIP", 0) == 1)

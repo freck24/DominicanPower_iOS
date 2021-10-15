@@ -76,7 +76,7 @@ public class controler : MonoBehaviour
 	public bool vibraniun = true;
 	public bool bugs = false;
 	public bool f = false;
-	private Rigidbody2D r;
+	public Rigidbody2D r;
 	// Use this for initialization
 
 	public GameObject cam1;
@@ -132,7 +132,7 @@ public class controler : MonoBehaviour
 	public float platano = 0f;
 	public float g = 0f;
 	bool tigre = false;
-	Animator anim;
+	public Animator anim;
 	public mov motorita;
 
 
@@ -554,9 +554,9 @@ public class controler : MonoBehaviour
 
 		muerte = true;
 	
-		r = GetComponent<Rigidbody2D>();
+		//r = GetComponent<Rigidbody2D>();
 		serio = true;
-		anim = GetComponent<Animator>();
+		//anim = GetComponent<Animator>();
 		audio = GetComponent<AudioSource>();
 		audio2 = GetComponent<AudioSource>();
 
