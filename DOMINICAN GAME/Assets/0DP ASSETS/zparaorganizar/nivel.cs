@@ -16,13 +16,18 @@ public class nivel : MonoBehaviour
 
     public Transform NivelesContent;
 
+    public List<Transform> NivelesSlot;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        foreach (Transform child in NivelesContent)
+
+        for (int i = 0; i < NivelesSlot.Count; i++)
         {
-            int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(child.name, "Lvl:", "]"));
-            if (PlayerPrefs.GetFloat("nivel") > LevelNew) child.GetComponent<Image>().color = completo;
+            int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(NivelesSlot[i].name, "Lvl:", "]"));
+            if (PlayerPrefs.GetFloat("nivel") > LevelNew) NivelesSlot[i].GetComponent<Image>().color = completo;
+
         }
 
     }

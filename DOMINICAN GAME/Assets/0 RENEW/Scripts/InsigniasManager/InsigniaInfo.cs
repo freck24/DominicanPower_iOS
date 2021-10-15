@@ -40,6 +40,7 @@ public class InsigniaInfo : MonoBehaviour
 
      void Start()
     {
+
         for (int i = 0; i < Insignias.Count; i++)
             CreateSlot(Insignias[i]);
     }

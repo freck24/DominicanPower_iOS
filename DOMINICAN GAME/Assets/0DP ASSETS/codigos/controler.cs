@@ -2112,10 +2112,11 @@ public void cerrarfin()
 		nene.z = 0;
 
 
-		if (!suelito)
-			if (r.velocity.y > -2 && r.velocity.y <= 0) suelito = true;
+		//if (!suelito)
+		//	if (r.velocity.y > -2 && r.velocity.y <= 0) suelito = true;
+	//	if (suelito && r.velocity.y < -20f) suelito = false;
 
-		if (suelito && r.velocity.y < -20f) suelito = false;
+
 		FlipMyCharacter(h);
 
 	if (Input.GetKeyDown(KeyCode.Space)) saltard();
@@ -2268,6 +2269,7 @@ public void cerrarfin()
 	{
 		if (col.gameObject.tag == "suelo")
 		{
+			suelito = false;
 			realmente = true;
 			StartCoroutine(stevejob());
 			StartCoroutine(espera());
@@ -2329,6 +2331,7 @@ public void cerrarfin()
 		if (col.gameObject.tag == "suelo")
 		{
 			//cabeza.SetActive(false);
+			suelito = true;
 			suel = true;
 			realmente = false;
 			h1 = 0;
@@ -4229,6 +4232,8 @@ public void cerrarfin()
 				else
 				{
 					minimenu.SetActive(true);
+
+					if(!SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
 					planeta.inicio();
 				}
 
