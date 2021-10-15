@@ -67,7 +67,7 @@ public class controladorP : MonoBehaviour {
 		{
 			if (PlayerPrefs.GetInt("preguntasd", 200) > 0)
 			{
-				PlayerPrefs.SetFloat("niveld", PlayerPrefs.GetFloat("niveld", 0) + 30); //subir
+				PlayerPrefs.SetFloat("niveld", PlayerPrefs.GetFloat("niveld", 0) + 50); //subir
 				PlayerPrefs.SetInt("correct", PlayerPrefs.GetInt("correct", 0) + 1);
 			}
 
@@ -112,7 +112,7 @@ a.PlayOneShot(win);
 
 		else
 		{ // aqui pregunta incorrecta
-			PlayerPrefs.SetFloat("niveld", PlayerPrefs.GetFloat("niveld", 0) - 30);
+			PlayerPrefs.SetFloat("niveld", PlayerPrefs.GetFloat("niveld", 0) - 50);
 			PlayerPrefs.SetInt("incorrect", PlayerPrefs.GetInt("incorrect", 0) + 1);
 			if (PlayerPrefs.GetInt("ff", 0) == 0)
 			{
