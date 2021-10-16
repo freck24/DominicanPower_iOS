@@ -22,8 +22,13 @@ public void cargares()
 
     public void NewCargaID(int id)
     {
+        transform.SetParent(null);
         ScreenLoader.scena = NombreEscenas[id];
         ScreenLoader.gameObject.SetActive(true);
+
+        if (id == 2) ScreenLoader.isnivelactualsiguiente = true;
+
+        if (id == 3) SceneManager.LoadSceneAsync("LEVEL 1 CLONE");
 
 
         if(DestruirGrupo != null)DestroyImmediate(DestruirGrupo);

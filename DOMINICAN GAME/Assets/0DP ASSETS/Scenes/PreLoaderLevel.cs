@@ -30,6 +30,9 @@ namespace EMGame
         public int i = 0;
         public Text datitos;
 
+        public GameObject continuar;
+        public Animator Anim;
+
         public void BO() // void Boton InicioAutomatico
         {
             immediateActivateScene = !immediateActivateScene;
@@ -37,34 +40,36 @@ namespace EMGame
             if (immediateActivateScene) PlayerPrefs.SetInt("AUTOMATICO", 1);
             else PlayerPrefs.SetInt("AUTOMATICO", 0);
         }
-         
+
+
+        public void cargar()
+        {
+            if (progressPercent >= 90)
+                async.allowSceneActivation = true;
+        }
+
+
+
+        public void cargar2()
+        {
+
+            async.allowSceneActivation = true;
+        }
+
         public virtual void Start()
         {
-            if (nomostrable) letra.SetActive(false);
 
-            StartCoroutine(verificando());
-
+            print("Loading 1 (Enter Sart)");
             AUTOMATICO = PlayerPrefs.GetInt("AUTOMATICO", 0);
-
-
-            if (nomostrable == false)
-            { 
-                if (AUTOMATICO == 0)
-                {
-                    A.isOn = false;
-                }
-                else
-                {
-                    A.isOn = true;
-                } 
-            }
+            print("Loading 2 (Start Entered)");
 
             datoscuriosos();
+            print("Loading 3 (Dato Curioso)");
 
             // obtenemos de la escena anterior el index de la siguiente a cargar
-            int nex_level = PlayerPrefs.GetInt("next_level");
+            int nex_level = PlayerPrefs.GetInt("next_level", 0);
 
-            // si no tiene valor hubo un error y devuelve a menu principal
+            /* si no tiene valor hubo un error y devuelve a menu principal
             if (!PlayerPrefs.HasKey("next_level"))
             {
                 nex_level = 0;
@@ -75,50 +80,52 @@ namespace EMGame
                 PlayerPrefs.DeleteKey("next_level");
                 PlayerPrefs.Save();
             }
-            // se inicia la carca asincrona del nivel
+            // se inicia la carca asincrona del nivel */
+            print("Loading 4 (Pass Dato Curioso)");
+
+
+            print("Loading 5 (Sett Async)");
+
 
             if (isnivelactualsiguiente == false) 
             { 
-                async = SceneManager.LoadSceneAsync(scena); 
-            } 
+            async = SceneManager.LoadSceneAsync(scena);
+            }
             else
             {
-
-                if (ISNIVELES == false)
-                {
-                    async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+              //  async = SceneManager.LoadSceneAsync(scena);
+             async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
                     //async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("nivel",1));
-                }
-                else
-                {
-                    async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-                    //  async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("jn", 1));
-                }
             }
-            
+
             // se establece si se activara la escena inmediatamente
             async.allowSceneActivation = immediateActivateScene;
-        }
-        public void cargar()
-        {
-            if(progressPercent >= 90)
-            async.allowSceneActivation = true;
+
+            print("Loading 6 (Set AutoLoad)");
+
+            if (nomostrable) letra.SetActive(false);
+            if (nomostrable == false)
+            {
+                if (AUTOMATICO == 0) A.isOn = false;
+                else A.isOn = true;
+            }
+
+            print("Loading 1 (ShowData)");
+
+
+            StartCoroutine(verificando());
+
+            print("Loading (Started Verify)");
+
         }
 
-        public void cargar2()
-        {
-            
-            async.allowSceneActivation = true;
-          
-        }
 
-        public virtual void Update()
+        public void AcualizarData()
         {
+
             if (async != null) progressPercent = async.progress * 100;
-
-            if (textComponent && nocargada) textComponent.text =  ((int)progressPercent).ToString() + " %";
-
-            if (progressBar && nocargada)
+            if (nocargada) textComponent.text =  ((int)progressPercent).ToString() + " %";
+            if (nocargada)
             {
                 // aqui cada implementacion puede ser diferente
                float parentWidth = (progressBar.parent as RectTransform).rect.width;
@@ -134,41 +141,30 @@ namespace EMGame
         {
             i = PlayerPrefs.GetInt("datoscuriosos", 0);
 
-
             if (nomostrable == false)
             {
-                if (i < datos.Length - 1)
-                {
-                    PlayerPrefs.SetInt("datoscuriosos", i + 1);
-                }
-                else
-                {
-                    PlayerPrefs.SetInt("datoscuriosos", 0);
-                }
+                if (i < datos.Length - 1) PlayerPrefs.SetInt("datoscuriosos", i + 1);
+                else PlayerPrefs.SetInt("datoscuriosos", 0);
+
                 datitos.text = datos[i];
-
             }
-
 
         }
 
-
-        public GameObject continuar;
-        public Animator Anim;
+       
        IEnumerator verificando()
         {
          while (progressPercent<90)
             {
-                yield return new WaitForSecondsRealtime(0.1f);
+                AcualizarData();
+                yield return new WaitForSecondsRealtime(0.5f); 
             }
+
             nocargada = false;
             progressBarSizeDelta.x = 2230;
             progressBar.sizeDelta = progressBarSizeDelta;
             textComponent.text =  "100%";
             Anim.SetBool("Cargado", true);
-
-
-
         }
 
     }

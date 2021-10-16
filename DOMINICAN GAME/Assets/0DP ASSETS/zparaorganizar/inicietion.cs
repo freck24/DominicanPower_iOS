@@ -91,10 +91,9 @@ public class inicietion : MonoBehaviour
     {
         ScreenLoader.scena = NombreEscenas[id];
 
-         
-        ScreenLoader.gameObject.SetActive(true);
+        Destroy(DestruirGrupo);
 
-        DestroyImmediate(DestruirGrupo);
+        ScreenLoader.gameObject.SetActive(true);
 
 
     }
