@@ -2383,8 +2383,36 @@ public void cerrarfin()
 		yield return new WaitForSecondsRealtime(0.25f);
 		cabeza.SetActive(false);
 	}
+
+
+	
+	IEnumerator saltacuandopuedas()
+    {
+
+		for(int i=0; i<11; i++)
+        {
+			yield return new WaitForSecondsRealtime(0.1f);
+			otrosalto();
+            if (suelito)
+            {
+				i = 11;
+            }
+		}
+		
+    }
+
 	public void saltard()
 	{
+
+		if (!suelito)
+		{
+			print("droga");
+			StartCoroutine(saltacuandopuedas());
+		}
+
+
+
+
 		if (!suelito) return;
 
 		suelito = false;
@@ -2441,6 +2469,61 @@ public void cerrarfin()
 		saltaunpocoantes();
 
 	}
+
+
+
+	public void otrosalto()
+    {
+		if (!salto)
+		{
+			salto = true;
+
+			if (vidas > 0)
+			{
+				if (gest.tiemposaya == true)
+				{
+					audio.clip = saltopoder;
+					audio.Play();
+					chispa.SetActive(false);
+					chispa.SetActive(true);
+				}
+				else
+				{
+					audio.clip = saltoauido;
+					audio.Play();
+				}
+
+
+			}
+
+			print("@@@@@@@@@@@@SE HA SALTADO");
+			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+		}
+
+
+
+
+
+		if (suel && animacion)
+		{
+			if (rompe)
+			{
+				StartCoroutine(romp());
+				cabeza.SetActive(true);
+			}
+
+			anim.SetBool("golpe", false);
+			StartCoroutine(se());
+
+			//velocidadsalto();
+			//	Handheld.Vibrate();
+			un = true;
+
+
+			h1 = 7 * guardah;
+		}
+	}
+
 	public void saltari()
 	{
 	

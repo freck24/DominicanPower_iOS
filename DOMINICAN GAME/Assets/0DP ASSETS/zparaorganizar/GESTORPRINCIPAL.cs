@@ -15,7 +15,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     public PreLoaderLevel ScreenLoader;
 
-    public GameObject Nivel_data;
+  //  public GameObject Nivel_data;
 
     private InterstitialAd inter;
     private RewardBasedVideoAd recompensa;
@@ -238,7 +238,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
     void Start()
     {
 
-        Instantiate(Nivel_data);
+        //Instantiate(Nivel_data);
 
         tiempopoder = 10+ PlayerPrefs.GetFloat("tiempopoder", 0)*2;
         PlayerPrefs.SetInt("cg", 0);
