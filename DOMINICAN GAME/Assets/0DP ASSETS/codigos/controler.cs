@@ -1857,12 +1857,14 @@ public class controler : MonoBehaviour
 		StartCoroutine(saltojugabilidad());
     }
 	IEnumerator saltojugabilidad()
-    { int pppp = 0;
-		while (pppp<10) {
-			yield return new WaitForSecondsRealtime(0.14f);
+    {
+		int pppp = 0;
+		while (pppp < 10)
+		{
+			yield return new WaitForSecondsRealtime(0.05f);
 			pppp++;
-            if (suel == true)
-            {
+			if (suel == true)
+			{
 				if (suel && animacion)
 				{
 					if (rompe)
@@ -1871,15 +1873,14 @@ public class controler : MonoBehaviour
 						cabeza.SetActive(true);
 					}
 					anim.SetBool("golpe", false);
-				 
+					anim.SetBool("salto", true);
 					StartCoroutine(se());
 
 					//velocidadsalto();
 					//	Handheld.Vibrate();
 					un = true;
+					salto = true;
 
-			print("VUELTO SALTO 1");
-					salto = false;
 
 
 
@@ -2120,8 +2121,8 @@ public void cerrarfin()
 
 		FlipMyCharacter(h);
 
-	if (Input.GetKeyDown(KeyCode.Space)) saltard();
-	if (Input.GetKeyDown(KeyCode.X)) activapower();
+	//if (Input.GetKeyDown(KeyCode.Space)) saltard();
+	//if (Input.GetKeyDown(KeyCode.X)) activapower();
 		 
 		/*if (m)
 		{
@@ -2206,8 +2207,30 @@ public void cerrarfin()
 		}
 
 
-		
-		
+		if (salto && vidas > 0)
+		{
+			r.velocity = new Vector2(0, 0);
+
+
+
+			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+			salto = false;
+			if (gest.tiemposaya == true)
+			{
+				audio.clip = saltopoder;
+				audio.Play();
+				chispa.SetActive(false);
+				chispa.SetActive(true);
+			}
+			else
+			{
+				audio.clip = saltoauido;
+				audio.Play();
+			}
+
+
+		}
+
 		if (saltoi)
 		{
 			//anim.SetBool("deten", false);
@@ -2386,172 +2409,49 @@ public void cerrarfin()
 
 
 	
-	IEnumerator saltacuandopuedas()
-    {
 
-		for(int i=0; i<11; i++)
-        {
-			yield return new WaitForSecondsRealtime(0.1f);
-			otrosalto();
-            if (suelito)
-            {
-				i = 11;
-            }
-		}
-		
-    }
 
 	public void saltard()
 	{
-
-		if (!suelito)
+		if (suel == false)
 		{
-			print("droga");
-			StartCoroutine(saltacuandopuedas());
+			saltaunpocoantes();
+			print("nosuelo");
 		}
-
-
-
-
-		if (!suelito) return;
-
-		suelito = false;
-
-		if (!salto)
-        {
-		salto = true;
-
-			if (vidas > 0)
+		print("salto");
+		if (suel && animacion)
+		{
+			if (rompe)
 			{
-				if (gest.tiemposaya == true)
-				{
-					audio.clip = saltopoder;
-					audio.Play();
-					chispa.SetActive(false);
-					chispa.SetActive(true);
-				}
-				else
-				{
-					audio.clip = saltoauido;
-					audio.Play();
-				}
-
-
+				StartCoroutine(romp());
+				cabeza.SetActive(true);
 			}
+			anim.SetBool("golpe", false);
+			anim.SetBool("salto", true);
+			StartCoroutine(se());
 
-		print("@@@@@@@@@@@@SE HA SALTADO");
-		r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+			
+			un = true;
+			salto = true;
+
+
+
+
+			h1 = 7 * guardah;
+
+
+
 		}
 
 		
 
-
-
-		if (suel && animacion)
-		{
-			if (rompe)
-			{
-				StartCoroutine(romp());
-				cabeza.SetActive(true);
-			}
-
-			anim.SetBool("golpe", false); 
-			StartCoroutine(se());
-
-			//velocidadsalto();
-			//	Handheld.Vibrate();
-			un = true;
-
-
-			h1 = 7 * guardah;
-		}
-
-		saltaunpocoantes();
-
 	}
 
 
 
-	public void otrosalto()
-    {
-		if (!salto)
-		{
-			salto = true;
-
-			if (vidas > 0)
-			{
-				if (gest.tiemposaya == true)
-				{
-					audio.clip = saltopoder;
-					audio.Play();
-					chispa.SetActive(false);
-					chispa.SetActive(true);
-				}
-				else
-				{
-					audio.clip = saltoauido;
-					audio.Play();
-				}
-
-
-			}
-
-			print("@@@@@@@@@@@@SE HA SALTADO");
-			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
-		}
-
-
-
-
-
-		if (suel && animacion)
-		{
-			if (rompe)
-			{
-				StartCoroutine(romp());
-				cabeza.SetActive(true);
-			}
-
-			anim.SetBool("golpe", false);
-			StartCoroutine(se());
-
-			//velocidadsalto();
-			//	Handheld.Vibrate();
-			un = true;
-
-
-			h1 = 7 * guardah;
-		}
-	}
-
-	public void saltari()
-	{
 	
-		if (suel && ANIMA )
-		{
 
-			if (rompe)
-			{
-				StartCoroutine(romp());
-				cabeza.SetActive(true);
-			}
-
-			anim.SetBool("golpe", false); 
-		//velocidadsalto();
-			//Handheld.Vibrate();
-			un = true;
-
-			print("VUELTO SALTO 1");
-		//	salto = true;
-			arriba = true;
-
-
-			h1 = 7 * guardah;
-
-		}
-	}
-
-
+	
 
 
 
