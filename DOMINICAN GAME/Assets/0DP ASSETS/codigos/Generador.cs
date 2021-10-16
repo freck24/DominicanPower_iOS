@@ -119,11 +119,17 @@ public class Generador : MonoBehaviour {
 		h = new Vector3(transform.position.x, g.y, g.z);
 			ale = Random.Range(0, 15);  //9
 
-        if (ale < 8)
-            Instantiate(VehiculosGen[Random.Range(0, 7)], transform.position, Quaternion.identity);
-        else
-            Instantiate(VehiculosGen[8], transform.position, Quaternion.identity);
 
+        GameObject varrido = null;
+        GameObject PAPA = GameObject.Find("DESTRUIR");
+        if (ale < 8)
+            varrido= Instantiate(VehiculosGen[Random.Range(0, 7)], transform.position, Quaternion.identity);
+        else
+            varrido = Instantiate(VehiculosGen[8], transform.position, Quaternion.identity);
+
+
+        if (PAPA != null)
+            varrido.transform.SetParent(PAPA.transform);
 
 
     }

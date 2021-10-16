@@ -4,12 +4,18 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Proyecto26;
+using EMGame;
 
 public class inicietion : MonoBehaviour
 {
+    public GameObject DestruirGrupo;
+    public PreLoaderLevel ScreenLoader;
+    public List<string> NombreEscenas; 
+
     public GameObject[] CU;
-    public GameObject[] carga;
     public string youtube="https://youtube.com/c/EUProduccionesMusicales";
+
+    
 
     public void you()
     {
@@ -37,7 +43,7 @@ public class inicietion : MonoBehaviour
         PlayerPrefs.SetFloat("NivelSaltado_ID", LevelSaltado-1);
 
         print("NivelJugar: " + (LevelSaltado - 1).ToString());
-      carga[0].SetActive(true);
+        NewCargaID(0);
 
 
     }
@@ -53,16 +59,16 @@ public class inicietion : MonoBehaviour
             {
                 if (PlayerPrefs.GetFloat("dinero", 0) > 99999)
                 {
-                    carga[10].SetActive(true); //m1 gana
+                    NewCargaID(10); //m1 gana
                 }
                 else
                 {
-                    carga[11].SetActive(true); //m1 pierde
+                    NewCargaID(11); //m1 pierde
                 }
             }
             else
             {
-                carga[12].SetActive(true); // telefono
+                NewCargaID(12); // telefono
             }
 
 
@@ -70,7 +76,7 @@ public class inicietion : MonoBehaviour
         {
             if(PlayerPrefs.GetFloat("nivel", 1) != 86)
             {
-                carga[0].SetActive(true); // cargar level 1 clone
+                NewCargaID(0); // cargar level 1 clone
             }
             else
             {
@@ -83,56 +89,63 @@ public class inicietion : MonoBehaviour
 
     public void NewCargaID(int id)
     {
-        carga[id].SetActive(true);
+        ScreenLoader.scena = NombreEscenas[id];
+
+         
+        ScreenLoader.gameObject.SetActive(true);
+
+        DestroyImmediate(DestruirGrupo);
+
 
     }
+
+
     public void c2()
     {
-        carga[1].SetActive(true);
+        NewCargaID(1);
     } 
     public void c3()
     {
-        carga[2].SetActive(true);
-    } 
+        NewCargaID(2);
+
+    }
     public void c4()
     {
-        carga[3].SetActive(true);
+        NewCargaID(3);
     } 
     public void c5()
     {
-        carga[4].SetActive(true);
-    } public void c6()
+        NewCargaID(4);
+    } 
+    public void c6()
     {
-        carga[5].SetActive(true);
-    } public void c7()
+        NewCargaID(5);
+    } 
+    public void c7()
     {
-        carga[6].SetActive(true);
+        NewCargaID(6);
     }
     public void c8()
     {
-        carga[7].SetActive(true);
+        NewCargaID(7);
     }
-
-
-
-
     public void c9()
     {
-        carga[8].SetActive(true);
+        NewCargaID(8);
     }
 
     public void c11()
     {
-        carga[10].SetActive(true);
+        NewCargaID(10);
     } public void c12()
     {
-        carga[11].SetActive(true);
+        NewCargaID(11);
     } public void c13()
     {
-        carga[12].SetActive(true);
+        NewCargaID(12);
     } public void c14()
     {
-        carga[13].SetActive(true);
+        NewCargaID(13);
     }
    
 
@@ -598,9 +611,10 @@ public class inicietion : MonoBehaviour
     void Start()
     {
 
-       //PlayerPrefs.SetFloat("nivel", 86);
-        
-        
+        //PlayerPrefs.SetFloat("nivel", 86);
+        Check_Liberado();
+
+
         if (PlayerPrefs.GetInt("anuncios", 1) == 0 || PlayerPrefs.GetInt("VIP", 0) == 1)
         {
             A.SetActive(true);
@@ -620,7 +634,6 @@ public class inicietion : MonoBehaviour
 
         if (PlayerPrefs.GetInt("vibrar", 1) == 1)
         {
-
             VIBRARR.text = "VIBRAR: SI";
         }
         else
@@ -811,61 +824,32 @@ public class inicietion : MonoBehaviour
 
 
     // Update is called once per frame
-    void Update()
+    void Check_Liberado()
     {
 
-        if (PlayerPrefs.GetFloat("nivel", 0) > 7)
-        {
-            blockcu.SetActive(false);
-        }
+        if (PlayerPrefs.GetFloat("nivel", 0) > 7) blockcu.SetActive(false);
 
 
 
-        if (PlayerPrefs.GetFloat("nivel", 0) > 1)
-        {
-            yunr.SetActive(false);
-        }
-        else
-        {
-            yunr.SetActive(true);
-        }
+        if (PlayerPrefs.GetFloat("nivel", 0) > 1) yunr.SetActive(false);
+        else yunr.SetActive(true);
 
 
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 4)
-        {
-
-            trucanor.SetActive(false);
-        }
-        else
-        {
-            trucanor.SetActive(true);
-        }
+        if (PlayerPrefs.GetFloat("nivel", 0) > 4) trucanor.SetActive(false);
+        else trucanor.SetActive(true);
 
 
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 6)
-        {
-            par.SetActive(false);
-        }
-        else
-        {
-            par.SetActive(true);
-        }
+        if (PlayerPrefs.GetFloat("nivel", 0) > 6) par.SetActive(false);
+        else par.SetActive(true);
 
 
 
 
         if (PlayerPrefs.GetFloat("nivel", 0) > 1)
         {
-
-
             cont.SetActive(true);
             emp.SetActive(false);
-
         }
-
-
         else
         {
             cont.SetActive(false);

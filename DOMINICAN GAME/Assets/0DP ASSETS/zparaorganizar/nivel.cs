@@ -23,7 +23,7 @@ public class nivel : MonoBehaviour
     void Start()
     {
 
-        for (int i = 0; i < NivelesSlot.Count; i++)
+        for (int i = 0; i < NivelesSlot.Count-1; i++)
         {
             int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(NivelesSlot[i].name, "Lvl:", "]"));
             if (PlayerPrefs.GetFloat("nivel") > LevelNew) NivelesSlot[i].GetComponent<Image>().color = completo;

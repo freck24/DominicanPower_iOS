@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using GoogleMobileAds.Api;
+using EMGame;
 
 
 
@@ -11,6 +12,11 @@ using GoogleMobileAds.Api;
 
 public class GESTORPRINCIPAL : MonoBehaviour
 {
+
+    public PreLoaderLevel ScreenLoader;
+
+    public GameObject Nivel_data;
+
     private InterstitialAd inter;
     private RewardBasedVideoAd recompensa;
     [SerializeField] private string appID = "";
@@ -32,8 +38,12 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     public GameObject PLATAFORMADINE;
     public int contadordegallinas=0;
+
+
+
+
     //Load interstitial
-   private void pedirinter()
+    private void pedirinter()
     {
         if(inter!=null)
             inter.Destroy();
@@ -227,6 +237,9 @@ public class GESTORPRINCIPAL : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+
+        Instantiate(Nivel_data);
+
         tiempopoder = 10+ PlayerPrefs.GetFloat("tiempopoder", 0)*2;
         PlayerPrefs.SetInt("cg", 0);
         pedirinter();
@@ -242,6 +255,8 @@ public class GESTORPRINCIPAL : MonoBehaviour
             //PLATAFORMADINE.SetActive(true);
         }
 
+
+        ScreenLoader = FindObjectOfType<PreLoaderLevel>();
     }
 
 
@@ -365,15 +380,19 @@ public class GESTORPRINCIPAL : MonoBehaviour
     public GameObject[] nivelll;
     public GameObject cargarsiguiente;
     public void siguientenivel()
-    {      
-            if (PlayerPrefs.GetFloat("nivel", 1) % 2==0 && PlayerPrefs.GetInt("anuncios",1)==1)
+    {
+
+        ScreenLoader.isnivelactualsiguiente = true;
+        ScreenLoader.scena = "LEVEL 1 CLONE";
+
+        if (PlayerPrefs.GetFloat("nivel", 1) % 2==0 && PlayerPrefs.GetInt("anuncios",1)==1)
             { 
             if(PlayerPrefs.GetFloat("nivel", 1) < 30) mostrarinter(); //publicidad
             else mostrarreco();
             }
 
 
-        cargarsiguiente.SetActive(true);
+        ScreenLoader.gameObject.SetActive(true);
 
 
      //   cont.tras();

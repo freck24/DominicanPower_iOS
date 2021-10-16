@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+    public GameObject DestruirEsto;
 	public GESTORPRINCIPAL gest;
 
 	[Header("CHECK NUEVO SUELO")]
@@ -4239,7 +4240,6 @@ public void cerrarfin()
 
 
 
-
 				canva.SetActive(false);
 
 				PlayerPrefs.SetFloat("platanos", platano);
@@ -4274,6 +4274,10 @@ public void cerrarfin()
 			}
 
 		}
+
+
+		Destroy(DestruirEsto, 0);
+
 	}
 
 }
