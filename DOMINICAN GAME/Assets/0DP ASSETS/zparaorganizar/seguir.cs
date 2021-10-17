@@ -14,8 +14,9 @@ public class seguir : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //    if (Time.frameCount % 5 == 0)
         // transform.position = playe.transform.position;
-       // s();
+        // s();
     }
 
     public void s()

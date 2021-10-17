@@ -2793,6 +2793,8 @@ public class controler : MonoBehaviour
 
 	public void gestorlife()
 	{
+		seguirp.s();
+
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
 		if (vidas == 2)
 		{
@@ -2917,11 +2919,10 @@ public class controler : MonoBehaviour
 				PLATA.SetActive(false);
 				PLATA.SetActive(true);
 
-				seguirp.s();
 			}
 			StartCoroutine(movetele());
 			Time.timeScale = 1;
-			Time.timeScale = 1;
+			
 			paus = 1;
 			continuar = true;
 			anim.SetBool("deten", true);
@@ -2937,6 +2938,7 @@ public class controler : MonoBehaviour
 			perdermensaje.SetActive(true);
 			text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 			gestora.sto();
+
 
 			notasale();
 		}
