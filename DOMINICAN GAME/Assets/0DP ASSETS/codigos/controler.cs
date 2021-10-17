@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
-    public GameObject DestruirEsto;
+	public GameObject DestruirEsto;
 	public GESTORPRINCIPAL gest;
 
 	[Header("CHECK NUEVO SUELO")]
@@ -20,7 +20,7 @@ public class controler : MonoBehaviour
 	public Transform[] bbb;
 	public float dirX;
 	public bool facingRight = true;
-	public Vector3[] t1 =new Vector3[7];
+	public Vector3[] t1 = new Vector3[7];
 	public float diferencia;
 	public GameObject cargarmenu;
 	public GameObject cargarcolmado;
@@ -71,7 +71,7 @@ public class controler : MonoBehaviour
 
 	#region variables 
 
-	 
+
 
 	public Transform posicioninicial;
 	public bool vibraniun = true;
@@ -235,32 +235,32 @@ public class controler : MonoBehaviour
 	public bool saltoi = false;
 
 	public void asignacion()
-    { 
-	   for(int i=0; i < t1.Length; i++)
-        {
+	{
+		for (int i = 0; i < t1.Length; i++)
+		{
 			t1[i] = bbb[i].position;
-        }
+		}
 
 		diferencia = -t1[5].y + t1[6].y;
-    }
+	}
 	public void controles2()
-    {
+	{
 		bbb[0].position = t1[1];
 		bbb[1].position = t1[0];
 		bbb[3].position = t1[4];
 		bbb[4].position = t1[3];
 		bbb[2].position = t1[6];
 		bbb[6].position = t1[2];
-		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia,t1[2].z);
-		
-    }	
+		bbb[5].position = new Vector3(t1[2].x, t1[2].y - diferencia, t1[2].z);
+
+	}
 	public void controles3()
-    {
+	{
 		bbb[1].position = t1[2];
 		bbb[2].position = t1[1];
 	}
 	public void controles4()
-    {
+	{
 		bbb[2].position = t1[1];
 		bbb[4].position = t1[2];
 		bbb[1].position = t1[4];
@@ -287,75 +287,75 @@ public class controler : MonoBehaviour
 
 	}
 	public void carm()
-    {
-		cargarmenu.SetActive(true);
-    }
-	public void carcol()
-    {
-		cargarcolmado.SetActive(true);
-    }
-	public void corutinabrujeria()
-    {
-		StartCoroutine(brujeri());
-    }
-	IEnumerator brujeri()
-    {
-	botonbruja.localScale = new Vector3(botonbruja.localScale.x, PlayerPrefs.GetFloat("local",0), botonbruja.localScale.z);
-	BRUJAIMAGE.color = COLORROSA;
-	while (botonbruja.localScale.y<3.10)
 	{
-	yield return new WaitForSecondsRealtime(tiempoespera);
-	botonbruja.localScale = new Vector3(botonbruja.localScale.x, botonbruja.localScale.y + 0.05f, botonbruja.localScale.z);
-	
-        }
-	
+		cargarmenu.SetActive(true);
+	}
+	public void carcol()
+	{
+		cargarcolmado.SetActive(true);
+	}
+	public void corutinabrujeria()
+	{
+		StartCoroutine(brujeri());
+	}
+	IEnumerator brujeri()
+	{
+		botonbruja.localScale = new Vector3(botonbruja.localScale.x, PlayerPrefs.GetFloat("local", 0), botonbruja.localScale.z);
+		BRUJAIMAGE.color = COLORROSA;
+		while (botonbruja.localScale.y < 3.10)
+		{
+			yield return new WaitForSecondsRealtime(tiempoespera);
+			botonbruja.localScale = new Vector3(botonbruja.localScale.x, botonbruja.localScale.y + 0.05f, botonbruja.localScale.z);
+
+		}
+
 		puedeembrujar = true;
 		BRUJAIMAGE.color = COLORVEREE;
-		
 
-    }
+
+	}
 	IEnumerator TIEPO()
-    {
+	{
 		yield return new WaitForSecondsRealtime(2);
 		Time.timeScale = 1;
-    }
+	}
 	public void CONJUROS()
-    {
-		if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas>0)
-        {
-			if (puedeembrujar && brujeriaactiva==false)
-			{ 
+	{
+		if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas > 0)
+		{
+			if (puedeembrujar && brujeriaactiva == false)
+			{
 				adelante();
 				h = 0;
 				anim.SetInteger("conjuro", 0);
 				anim.SetBool("magic", true);
-				
+
 				panelconjuro.SetActive(true);
 				Time.timeScale = 0.3f;
 				CONJURO.SetActive(true);
 				brujeriaactiva = true;
 				bruj.abrir();
 				puedeembrujar = false;
-				
+
 				PlayerPrefs.SetFloat("local", 0);
 				botonbruja.localScale = new Vector3(botonbruja.localScale.x, 0, botonbruja.localScale.z);
 
 			}
 		}
-        else
-        {
+		else
+		{
 			menobruja.SetActive(false);
 			menobruja.SetActive(true);
-        }
+		}
 
-    }
+	}
 
 
 	public void InstanciasN()
 	{
 		if (SceneManager.GetActiveScene().name.Contains("INSIGNIA")) return;
 		if (nivel < 86) LoaderSystem.system.CargarNivel();
-//		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
+		//		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
 	}
 	public void InstanciasNjn()
 	{
@@ -365,7 +365,7 @@ public class controler : MonoBehaviour
 
 		float GetLvl = PlayerPrefs.GetFloat("jn", 1);
 
-	if (GetLvl < 86) LoaderSystem.system.CargarNivel();
+		if (GetLvl < 86) LoaderSystem.system.CargarNivel();
 
 		//		Instantiate(NIVELES[0], PNIVELES[0].position, Quaternion.identity);
 	}
@@ -376,118 +376,118 @@ public class controler : MonoBehaviour
 		SceneManager.LoadScene("inicio");
 	}//	public AudioClip sondiogrito;
 	public void vivi()
-    {
+	{
 		if (vibraniun)
 		{
 			Vibration.Vibrate(15);
 		}
-    }
+	}
 	public void actcc()
-    {
+	{
 		ac = !ac;
 		if (!ac)
 		{
 			cc.text = "ACTIVAR CAMINAO";
-        }
-        else
-        {
+		}
+		else
+		{
 			cc.text = "DESACTIVAR CAMINAO";
 		}
-    }
+	}
 	public void calidadgrafica()
-    {
-	calidad = PlayerPrefs.GetInt("Q", 5);
-	QualitySettings.SetQualityLevel(calidad, true);
-	switch (calidad)
 	{
-	case 0:
-	Screen.SetResolution(270, 480, true);
-	break;
-	case 1:
-	Screen.SetResolution(360, 640, true);
-	break;
-	case 2:
-	Screen.SetResolution(540, 960, true);
-	break;
-	case 3:
-	Screen.SetResolution(540, 960, true);
-	break;
-	case 4:
-	Screen.SetResolution(720, 1280, true);
-	break;
-	case 5:
-	Screen.SetResolution(720, 1280, true);
-	break;
-        }
+		calidad = PlayerPrefs.GetInt("Q", 5);
+		QualitySettings.SetQualityLevel(calidad, true);
+		switch (calidad)
+		{
+			case 0:
+				Screen.SetResolution(270, 480, true);
+				break;
+			case 1:
+				Screen.SetResolution(360, 640, true);
+				break;
+			case 2:
+				Screen.SetResolution(540, 960, true);
+				break;
+			case 3:
+				Screen.SetResolution(540, 960, true);
+				break;
+			case 4:
+				Screen.SetResolution(720, 1280, true);
+				break;
+			case 5:
+				Screen.SetResolution(720, 1280, true);
+				break;
+		}
 	}
 	public void connnn()
-    {
-	switch(PlayerPrefs.GetInt("controles", 3))
 	{
-	case 0:
-	break;
-	case 1:
-	controles2();
-	break;
-	case 2:
-	controles3();
-	break;
-	case 3:
-	controles4();
-	break;
-	case 4:
-	controles5();
-	break;
-	case 5:
-	controles6();
-	break;
+		switch (PlayerPrefs.GetInt("controles", 3))
+		{
+			case 0:
+				break;
+			case 1:
+				controles2();
+				break;
+			case 2:
+				controles3();
+				break;
+			case 3:
+				controles4();
+				break;
+			case 4:
+				controles5();
+				break;
+			case 5:
+				controles6();
+				break;
 		}
-		
+
 
 	}
 	void Start()
 	{
 		asignacion();
 		//PlayerPrefs.SetInt("controles", 5);
-		if(noaplica==false)
+		if (noaplica == false)
 			connnn();
 
 
-		
+
 		calidadgrafica();
 
 		//PlayerPrefs.SetInt("brujeria", 1); // quitar
-	//	PlayerPrefs.SetFloat("nivel", 86);
+		//	PlayerPrefs.SetFloat("nivel", 86);
 
 
-        if (PlayerPrefs.GetInt("brujeria", 0) == 1)
-        {
+		if (PlayerPrefs.GetInt("brujeria", 0) == 1)
+		{
 			StartCoroutine(brujeri());
 		}
-		
+
 		PlayerPrefs.SetInt("ff", 0); // investuigar que es esi
-		
+
 		if (PlayerPrefs.GetInt("vibrar", 1) == 0)
-        {
+		{
 			vibraniun = false;
-        }
-	
+		}
+
 		textodinero.text = "" + PlayerPrefs.GetFloat("dinero", 0).ToString();
 
 		if (PlayerPrefs.GetFloat("inmortal", 0) > 0)
-        {
+		{
 			inmod.SetActive(true);
 			inmortal = true;
 			PlayerPrefs.SetFloat("inmortal", PlayerPrefs.GetFloat("inmortal", 0) - 1);
-        }
-        else
-        {
+		}
+		else
+		{
 			inmod.SetActive(false);
 			inmortal = false;
-        }
-		 
+		}
+
 		electric = new Vector3(elec.transform.localScale.x, elec.transform.localScale.y, elec.transform.localScale.z);
-			
+
 		color1 = d.color;
 		color2 = iz.color;
 		color3 = a.color;
@@ -515,14 +515,14 @@ public class controler : MonoBehaviour
 		}
 
 		h = 0;
-	
+
 		confirma = true;
-		
+
 		nivel = PlayerPrefs.GetFloat("nivel", 1);
 
 
-        if (nivel % 3 == 0)
-        {
+		if (nivel % 3 == 0)
+		{
 			cam2.SetActive(true);
 			cam1.SetActive(false);
 		}
@@ -534,9 +534,9 @@ public class controler : MonoBehaviour
 		nbani = PlayerPrefs.GetFloat("bani", 1);
 
 		if (PlayerPrefs.GetFloat("gorras", 0) == 1) gorra.SetActive(true);
-		if (PlayerPrefs.GetFloat("gafas", 0) == 1)  gafas.SetActive(true);
+		if (PlayerPrefs.GetFloat("gafas", 0) == 1) gafas.SetActive(true);
 		if (PlayerPrefs.GetFloat("gatos", 0) == 1) gato.SetActive(true);
-		
+
 
 
 
@@ -551,10 +551,10 @@ public class controler : MonoBehaviour
 			InstanciasNjn();
 		}
 
-			
+
 
 		muerte = true;
-	
+
 		//r = GetComponent<Rigidbody2D>();
 		serio = true;
 		//anim = GetComponent<Animator>();
@@ -562,7 +562,7 @@ public class controler : MonoBehaviour
 		audio2 = GetComponent<AudioSource>();
 
 		gc = new Vector3(sprite.transform.localScale.x, sprite.transform.localScale.y, sprite.transform.localScale.z);
-	
+
 		vt = destruir.transform.position;
 		platano = PlayerPrefs.GetFloat("platanos", 0f); // aqui estamos obtenindo la nueva puntuacion
 		provisiones = platano + PlayerPrefs.GetFloat("mango", 0) + PlayerPrefs.GetFloat("pollo", 0) + PlayerPrefs.GetFloat("cate", 0) + PlayerPrefs.GetFloat("coca", 0) + PlayerPrefs.GetFloat("salami", 0) + PlayerPrefs.GetFloat("fruticas", 0);
@@ -579,9 +579,11 @@ public class controler : MonoBehaviour
 
 
 		anim.SetBool("deten", true);
+		Time.timeScale = 1;
+
 	}
 
-	
+
 	#region Switchniveles
 	public void jn()
 	{
@@ -999,7 +1001,7 @@ public class controler : MonoBehaviour
 		}
 	}
 	public void nivelet()
-    {
+	{
 		switch (PlayerPrefs.GetFloat("nivel", 1))
 		{
 			case 1:
@@ -1009,43 +1011,43 @@ public class controler : MonoBehaviour
 				a4.SetActive(false);
 				niveles.text = "CAPOTILLO";
 
-			//	n1.SetActive(true);
+				//	n1.SetActive(true);
 
 				break;
 			case 2:
 				niveles.text = "LOS MINA";
-			//	n5.SetActive(true);
+				//	n5.SetActive(true);
 				break;
 			case 3:
 				niveles.text = "LOS GUANDULES";
-			//	n3.SetActive(true);
+				//	n3.SetActive(true);
 				break;
 			case 4:
 				niveles.text = "SABANA PERDIDA";
-			//	n4.SetActive(true);
+				//	n4.SetActive(true);
 				break;
 			case 14:
 
 
 				niveles.text = "GUALEY";
-			//	n2.SetActive(true);
+				//	n2.SetActive(true);
 				break;
 
 			case 8:
 				niveles.text = "LOS JARDINES";
-			//	n9.SetActive(true);
+				//	n9.SetActive(true);
 				break;
 
 			case 10:
 				niveles.text = "ZONA COLONIAL";
-			//	n11.SetActive(true);
+				//	n11.SetActive(true);
 
 
 				break;
 
 			case 11:
 				niveles.text = "RIO OZAMA";
-			//	n12.SetActive(true);
+				//	n12.SetActive(true);
 				generarp.cancelargen();
 				fondo.SetActive(false);
 
@@ -1054,43 +1056,43 @@ public class controler : MonoBehaviour
 
 			case 5:
 				niveles.text = "UASD";
-			//	n15.SetActive(true);
+				//	n15.SetActive(true);
 				generarp.cancelargen();
 
 
 				break;
 			case 15:
 				niveles.text = "UASD";
-			//	n15.SetActive(true);
+				//	n15.SetActive(true);
 				generarp.cancelargen();
 
 
 				break;
-		
 
-			
+
+
 
 
 
 			case 9:
 				niveles.text = "Parque Los Haitices";
-			//	n10.SetActive(true);
+				//	n10.SetActive(true);
 				generarp.cancelargen();
 
 				break;
 
-	
-	
+
+
 			case 12:
 				niveles.text = "Entrada a bani";
-			//	n13.SetActive(true);
+				//	n13.SetActive(true);
 				fondo.SetActive(true);
 
 
 				break;
 			case 13:
 				niveles.text = "Dunas de bani";
-			//	n14.SetActive(true);
+				//	n14.SetActive(true);
 
 
 				break;
@@ -1102,8 +1104,8 @@ public class controler : MonoBehaviour
 
 			case 7:
 				niveles.text = "PLAYA SAN RAFAEL";
-			//	n7.SetActive(true);
-			
+				//	n7.SetActive(true);
+
 				cam1.SetActive(true);
 				cam2.SetActive(false);
 
@@ -1111,32 +1113,32 @@ public class controler : MonoBehaviour
 
 			case 6:
 				niveles.text = "CENTRO DE SAN JUAN";
-			//	n6.SetActive(true);
+				//	n6.SetActive(true);
 				cam2.SetActive(true);
 				cam1.SetActive(false);
-				
+
 				break;
 
 			case 16:
 				niveles.text = "Playa Salina";
-			//	n16.SetActive(true);
+				//	n16.SetActive(true);
 				break;
 
 			case 17:
 				niveles.text = "BOSQUE";
-			//	n17.SetActive(true);
+				//	n17.SetActive(true);
 				break;
 			case 18:
 				niveles.text = "LOS HAITICES"; //implementsa
-			//	n18.SetActive(true);
+											   //	n18.SetActive(true);
 				break;
 			case 19:
 				niveles.text = "EL PICO DUAERTE";
-			//	n19.SetActive(true);
+				//	n19.SetActive(true);
 				break;
 			case 20:
 				niveles.text = "SAN JUAN";
-			//	n20.SetActive(true);
+				//	n20.SetActive(true);
 				cam2.SetActive(true);
 				cam1.SetActive(false);
 				break;
@@ -1146,191 +1148,191 @@ public class controler : MonoBehaviour
 
 			case 21:
 				niveles.text = "Teleferico";
-			//	n21.SetActive(true);
+				//	n21.SetActive(true);
 				break;
 			case 22:
 				niveles.text = "LA BARQUITA";
-			//	n22.SetActive(true);
+				//	n22.SetActive(true);
 				break;
 			case 23:
 				niveles.text = "RIO OZAMA";
-			//	n23.SetActive(true);
+				//	n23.SetActive(true);
 				fondo.SetActive(false);
 				break;
 			case 24:
 				niveles.text = "GUACHUPITA";
-			//	n24.SetActive(true);
+				//	n24.SetActive(true);
 				fondo.SetActive(true);
 				break;
 			case 25:
 				niveles.text = "LA CIENAGA"; //implementsa
-			//	n25.SetActive(true);
+											 //	n25.SetActive(true);
 				break;
 			case 26:
 				niveles.text = "VILLA MELLA";
-			//	n26.SetActive(true);
+				//	n26.SetActive(true);
 				break;
 			case 27:
 				niveles.text = "EL CACHON";
-			//	n27.SetActive(true);
+				//	n27.SetActive(true);
 				break;
 			case 28:
 				niveles.text = "LOS FRAILES";
-			//	n28.SetActive(true);
+				//	n28.SetActive(true);
 				break;
 			case 29:
 				niveles.text = "LOS JIRASOLES";
-			//	n29.SetActive(true);
+				//	n29.SetActive(true);
 				break;
 			case 30:
 				niveles.text = "GUARICANO";
-			//	n30.SetActive(true);
+				//	n30.SetActive(true);
 				break;
 			case 31:
 				niveles.text = "PANTOJA";
-			//	n31.SetActive(true);
+				//	n31.SetActive(true);
 				break;
 			case 32:
 				niveles.text = "LOS TRES BRAZOS";
-			//	n32.SetActive(true);
+				//	n32.SetActive(true);
 				break;
 			case 33:
 				niveles.text = "ALMA ROSA";
-			//	n33.SetActive(true);
+				//	n33.SetActive(true);
 				break;
 			case 34:
 				niveles.text = "NEYBA";
-			//	n34.SetActive(true);
+				//	n34.SetActive(true);
 				break;
 			case 35:
 				niveles.text = "VILLA FARO";
-			//	n35.SetActive(true);
+				//	n35.SetActive(true);
 				break;
 			case 36:
 				niveles.text = "CONSTANZA";
-			//	n36.SetActive(true);
+				//	n36.SetActive(true);
 				break;
 			case 37:
 				niveles.text = "CONSTANZA 2";
-			//	n37.SetActive(true);
+				//	n37.SetActive(true);
 				break;
 			case 38:
 				niveles.text = "VILLAS AGRICOLAS";
-			//	n38.SetActive(true);
+				//	n38.SetActive(true);
 				break;
 			case 39:
 				niveles.text = "INVIVIENDA";
-			//	n39.SetActive(true);
+				//	n39.SetActive(true);
 				break;
 			case 40:
 				niveles.text = "HAINAMOSA";
-			//	n40.SetActive(true);
+				//	n40.SetActive(true);
 				break;
 			case 41:
 				niveles.text = "SAN ISIDRO";
-			//	n41.SetActive(true);
+				//	n41.SetActive(true);
 				cam2.SetActive(true);
 				cam1.SetActive(false);
 				break;
 			case 42:
 				niveles.text = "VILLA MELLA 2";
-			//	n42.SetActive(true);
+				//	n42.SetActive(true);
 				break;
 			case 43:
 				niveles.text = "VILLA MELLA 3";
-			//	n43.SetActive(true);
+				//	n43.SetActive(true);
 				cam2.SetActive(true);
 				cam1.SetActive(false);
 
 				break;
 			case 44:
 				niveles.text = "CONSTANZA 3";
-			//	n44.SetActive(true);
+				//	n44.SetActive(true);
 				break;
 			case 45:
 				niveles.text = "BAYAHIBE";
-			//	n45.SetActive(true);
+				//	n45.SetActive(true);
 				break;
 			case 46:
 				niveles.text = "LOS ALCARRISOS";
-			//	n46.SetActive(true);
+				//	n46.SetActive(true);
 				break;
 			case 47:
 				niveles.text = "SAN ISIDRO 2";
-			//	n47.SetActive(true);
+				//	n47.SetActive(true);
 				break;
 			case 48:
 				niveles.text = "CONSTANZA 4";
-			//	n48.SetActive(true);
+				//	n48.SetActive(true);
 
 				break;
 			case 49:
 				niveles.text = "BANI 2";
-			//	n49.SetActive(true);
+				//	n49.SetActive(true);
 				break;
 			case 50:
 				niveles.text = "UASD 3";
-			//	n50.SetActive(true);
+				//	n50.SetActive(true);
 				break;
 
 			case 51:
 				niveles.text = "BAYAHIBE 2";
-			//	n51.SetActive(true);
+				//	n51.SetActive(true);
 				break;
 			case 52:
 				niveles.text = "CONSTANZA 5";
-			//	n52.SetActive(true);
+				//	n52.SetActive(true);
 
 				break;
 			case 53:
 				niveles.text = "LOS MINA 2";
-			//	n53.SetActive(true);
+				//	n53.SetActive(true);
 				break;
 			case 54:
 				niveles.text = "LOS PRADOS";
-			//	n54.SetActive(true);
+				//	n54.SetActive(true);
 				break;
 			case 55:
 				niveles.text = "SALCEDO";
-			//	n55.SetActive(true);
+				//	n55.SetActive(true);
 				break;
 			case 56:
 				niveles.text = "LOS MAMEYES";
-			//	n56.SetActive(true);
+				//	n56.SetActive(true);
 				break;
 			case 57:
 				niveles.text = "APEC";
-			//	n57.SetActive(true);
+				//	n57.SetActive(true);
 				break;
 			case 58:
 				niveles.text = "BARAHONA 2";
-			//	n58.SetActive(true);
+				//	n58.SetActive(true);
 				break;
 			case 59:
 				niveles.text = "UTESA";
-			//	n59.SetActive(true);
+				//	n59.SetActive(true);
 				break;
 			case 60:
 				niveles.text = "MOCA";
-			//	n60.SetActive(true);
+				//	n60.SetActive(true);
 				break;
 			case 61:
 				niveles.text = "LA ESCUELITA";
-			//	n61.SetActive(true);
+				//	n61.SetActive(true);
 				break;
 			case 62:
 				niveles.text = "INTEC";
-			//	n62.SetActive(true);
+				//	n62.SetActive(true);
 				break;
 
 
 			case 63:
 				niveles.text = "LA ALTAGRACIA";
-			//	n63.SetActive(true);
+				//	n63.SetActive(true);
 				break;
 			case 64:
 				niveles.text = "SAN CRISTOBAL";
-			//	n64.SetActive(true);
+				//	n64.SetActive(true);
 				break;
 			case 65:
 				niveles.text = "MONSENORNOEL";
@@ -1338,39 +1340,39 @@ public class controler : MonoBehaviour
 				break;
 			case 66:
 				niveles.text = "AZUA";
-			//	n66.SetActive(true);
+				//	n66.SetActive(true);
 				break;
 			case 67:
 				niveles.text = "SAN JOSE DE OCOA";
-			//	n67.SetActive(true);
+				//	n67.SetActive(true);
 				break;
 			case 68:
 				niveles.text = "PERDERNALES";
-			//	n68.SetActive(true);
+				//	n68.SetActive(true);
 				break;
 			case 69:
 				niveles.text = "INDEPENDECIA";
-			//	n69.SetActive(true);
+				//	n69.SetActive(true);
 				break;
 			case 70:
 				niveles.text = "VALVERDE";
-			//	n70.SetActive(true);
+				//	n70.SetActive(true);
 				break;
 			case 71:
 				niveles.text = "DAJABON";
-			//	n71.SetActive(true);
+				//	n71.SetActive(true);
 				break;
 			case 72:
 				niveles.text = "MONTE CRISTI";
-			//	n72.SetActive(true);
+				//	n72.SetActive(true);
 				break;
 			case 73:
 				niveles.text = "PUERTO PLATA";
-			///	n73.SetActive(true);
+				///	n73.SetActive(true);
 				break;
 			case 74:
 				niveles.text = "ELIAS PINA";
-			//	n74.SetActive(true);
+				//	n74.SetActive(true);
 				break;
 			case 75:
 				niveles.text = "SANTIAGO RODRIGUEZ";
@@ -1378,7 +1380,7 @@ public class controler : MonoBehaviour
 				break;
 			case 76:
 				niveles.text = "SANCHEZ RAMIREZ";
-			//	n76.SetActive(true);
+				//	n76.SetActive(true);
 				break;
 			case 77:
 				niveles.text = "PROVINCIA DUARTE";
@@ -1386,11 +1388,11 @@ public class controler : MonoBehaviour
 				break;
 			case 78:
 				niveles.text = "MARIA TRINIDAD SANCHEZ";
-			//	n78.SetActive(true);
+				//	n78.SetActive(true);
 				break;
 			case 79:
 				niveles.text = "SAN PEDRO";
-			//	n79.SetActive(true);
+				//	n79.SetActive(true);
 				break;
 			case 80:
 				niveles.text = "MONTE PLATA";
@@ -1398,7 +1400,7 @@ public class controler : MonoBehaviour
 				break;
 			case 81:
 				niveles.text = "HATO MAYOR";
-			//	n81.SetActive(true);
+				//	n81.SetActive(true);
 				break;
 			case 82:
 				niveles.text = "EL SEIBO";
@@ -1408,15 +1410,15 @@ public class controler : MonoBehaviour
 			//findelmundo
 			case 83:
 				niveles.text = "EL QUINTO DIABLO";
-			//	n83.SetActive(true);
+				//	n83.SetActive(true);
 				break;
 			case 84:
 				niveles.text = "EL QUINTO DIABLO 2";
-			//	n84.SetActive(true);
+				//	n84.SetActive(true);
 				break;
 			case 85:
 				niveles.text = "EL QUINTO DIABLO FINAL";
-			//	n85.SetActive(true);
+				//	n85.SetActive(true);
 				break;
 			case 86:
 				PlayerPrefs.SetInt("ff", 1);
@@ -1426,12 +1428,12 @@ public class controler : MonoBehaviour
 		}
 
 
-        #endregion
+		#endregion
 
 
-    }
+	}
 	public void tras()
-    {
+	{
 		generarp.GENERAR();
 		//	continuar = false;
 		cerrarfin();
@@ -1446,20 +1448,20 @@ public class controler : MonoBehaviour
 		a4.SetActive(true);
 		controladorp.ProxPre();
 		norepetir = true;
-		
-		
-    }
+
+
+	}
 	public void pop()
-    {
+	{
 		audio.PlayOneShot(tin);
-    }
+	}
 	public void comprarpower()
-    {
+	{
 		if (PlayerPrefs.GetFloat("dinero", 0) >= 500)
 		{
 			pop();
-		contadorpoder += 1;
-		PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+			contadorpoder += 1;
+			PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
 			PlayerPrefs.SetFloat("poder", contadorpoder);
 			PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 500);
 			textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
@@ -1471,7 +1473,7 @@ public class controler : MonoBehaviour
 		}
 	}
 	public void comprarchanclas()
-    {
+	{
 		if (PlayerPrefs.GetFloat("dinero", 0) >= 2000)
 		{
 			pop();
@@ -1480,14 +1482,14 @@ public class controler : MonoBehaviour
 			textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
 		}
-        else
-        {
+		else
+		{
 			audio.PlayOneShot(fail);
-        }
+		}
 	}
 	public IEnumerator colores()
-	{ 
-	yield return new WaitForSecondsRealtime(3f);
+	{
+		yield return new WaitForSecondsRealtime(3f);
 	}
 	public IEnumerator retraso()
 	{
@@ -1498,8 +1500,8 @@ public class controler : MonoBehaviour
 
 
 
-    #region nivelesantiguos
-    public void nive()
+	#region nivelesantiguos
+	public void nive()
 	{
 		switch (PlayerPrefs.GetFloat("sd", 1))
 		{
@@ -1608,7 +1610,8 @@ public class controler : MonoBehaviour
 				break;
 
 		}
-	} public void barahona()
+	}
+	public void barahona()
 	{
 		//tran();
 		switch (PlayerPrefs.GetFloat("ba", 1))
@@ -1645,10 +1648,10 @@ public class controler : MonoBehaviour
 		}
 	}
 
-    #endregion
+	#endregion
 
 
-    public Transform plataform;
+	public Transform plataform;
 
 	public IEnumerator movetele()
 	{
@@ -1687,7 +1690,7 @@ public class controler : MonoBehaviour
 
 			StartCoroutine(movetele());
 			transform.position = rota;
-			
+
 			Time.timeScale = 1;
 			paus = 1;
 
@@ -1762,7 +1765,7 @@ public class controler : MonoBehaviour
 	public GameObject c3;
 	public GameObject c1;
 	public GameObject PPOWE;
-//	public GameObject camaravibra;
+	//	public GameObject camaravibra;
 	public Transform camaravi;
 
 	public float celeridad;
@@ -1779,7 +1782,7 @@ public class controler : MonoBehaviour
 	public float contadorpoder = 0;
 
 
-		public IEnumerator LACALLEBOTAFUEGO()
+	public IEnumerator LACALLEBOTAFUEGO()
 	{
 		while (!animacion)
 		{
@@ -1795,19 +1798,19 @@ public class controler : MonoBehaviour
 
 	}
 
-	
-	
+
+
 	public seguir seguirp;
 
 	public void suicidio()
-    {
+	{
 		StartCoroutine(muere());
-		
+
 	}
-	
-	
+
+
 	IEnumerator muere()
-    {
+	{
 		yield return new WaitForSecondsRealtime(1f);
 		vidas = 0;
 		anim.SetBool("muerte", true);
@@ -1816,8 +1819,8 @@ public class controler : MonoBehaviour
 		StartCoroutine(muert());
 	}
 	public void corrutinatonta()
-    {
-		
+	{
+
 		StartCoroutine(PL2());
 	}
 
@@ -1834,10 +1837,10 @@ public class controler : MonoBehaviour
 
 		seguirp.s();
 	}
-		public IEnumerator PL()
-    {
-	
-		
+	public IEnumerator PL()
+	{
+
+
 		yield return new WaitForSecondsRealtime(0.01f);
 		PLATA.SetActive(false);
 		PLATA.SetActive(true);
@@ -1850,18 +1853,18 @@ public class controler : MonoBehaviour
 	}
 
 	public bool inmortal = false;
-	public bool canmuere=true;
+	public bool canmuere = true;
 
 	public void saltaunpocoantes()
-    {
+	{
 		StartCoroutine(saltojugabilidad());
-    }
+	}
 	IEnumerator saltojugabilidad()
-    {
+	{
 		int pppp = 0;
 		while (pppp < 10)
 		{
-			yield return new WaitForSecondsRealtime(0.05f);
+			yield return new WaitForSecondsRealtime(0.14f);
 			pppp++;
 			if (suel == true)
 			{
@@ -1873,14 +1876,15 @@ public class controler : MonoBehaviour
 						cabeza.SetActive(true);
 					}
 					anim.SetBool("golpe", false);
-					anim.SetBool("salto", true);
+
 					StartCoroutine(se());
 
 					//velocidadsalto();
 					//	Handheld.Vibrate();
 					un = true;
-					salto = true;
 
+					print("VUELTO SALTO 1");
+					salto = false;
 
 
 
@@ -1888,16 +1892,16 @@ public class controler : MonoBehaviour
 
 					pppp = 10;
 				}
-            }
+			}
 		}
 
 
-    }
+	}
 	public IEnumerator puedemorir()
-    {
+	{
 		yield return new WaitForSecondsRealtime(5);
 		canmuere = true;
-    }
+	}
 
 	public GameObject hack;
 	public GameObject MENSAJEPOWER2;
@@ -1905,13 +1909,13 @@ public class controler : MonoBehaviour
 	public bool power2 = false;
 
 	public void quitarfuerzas()
-    {
+	{
 		r.velocity = new Vector2(r.velocity.x, 0);
 	}
 
 	public bool tigrezone = false;
 
-	 
+
 	void Update()
 	{
 
@@ -1919,19 +1923,19 @@ public class controler : MonoBehaviour
 
 		textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
-		if (tigrezone) textodinero.text = "" +PlayerPrefs.GetFloat("dinero", 0).ToString();
-        
+		if (tigrezone) textodinero.text = "" + PlayerPrefs.GetFloat("dinero", 0).ToString();
+
 		gestorlife();
 
-		if(celeridad > 0.1 && power2 || celeridad< -0.1 && power2) samurai3.SetActive(true);
-        else samurai3.SetActive(false);
-        
-    
+		if (celeridad > 0.1 && power2 || celeridad < -0.1 && power2) samurai3.SetActive(true);
+		else samurai3.SetActive(false);
+
+
 		if (power && suel)
 		{
 			transform.localEulerAngles = new Vector3(0, 0, 0);
 			tiempoespera = 0.5f;
-	reflejo.SetActive(true);
+			reflejo.SetActive(true);
 			reflejo2.SetActive(true);
 			reflejo3.SetActive(true);
 
@@ -1950,8 +1954,8 @@ public class controler : MonoBehaviour
 			gest.s = true;
 			sayayin.SetActive(true);
 			StartCoroutine(saya());
-			anim.SetBool("poder",true);
-			anim.SetBool("nosalte",false);
+			anim.SetBool("poder", true);
+			anim.SetBool("nosalte", false);
 			animacion = false;
 			h = 0;
 			h1 = 0;
@@ -1963,7 +1967,7 @@ public class controler : MonoBehaviour
 		}
 
 
-		
+
 
 		celeridad = r.velocity.x;
 		if (celeridad > 0.1 || celeridad < -0.1) anim.SetBool("deten", false);
@@ -2008,9 +2012,9 @@ public class controler : MonoBehaviour
 
 		if (tiem)
 		{
-			Time.timeScale = 0f;
+			//Time.timeScale = 0f;
 		}
- 
+
 		if (tigre)
 		{
 			serio = false;
@@ -2046,12 +2050,12 @@ public class controler : MonoBehaviour
 	public GameObject linea;
 	public string numerodenivel;
 
-/*	void Flip()
-	{
-			transform.Rotate(0f, 180f, 0f);
-			facingRight = !facingRight;
-		
-	}*/
+	/*	void Flip()
+		{
+				transform.Rotate(0f, 180f, 0f);
+				facingRight = !facingRight;
+
+		}*/
 
 	public void nivelactual()
 	{
@@ -2090,12 +2094,12 @@ public class controler : MonoBehaviour
 	//public GameObject fin10;
 
 	public Transform puntoderetorn;
-public void cerrarfin()
-    {
+	public void cerrarfin()
+	{
 	}
 
 	public void AdminTeleport()
-    {
+	{
 		GameObject var = GameObject.FindObjectOfType<eliminatodo>().gameObject;
 
 		Vector3 var2 = var.transform.position;
@@ -2107,8 +2111,9 @@ public void cerrarfin()
 
 	void FixedUpdate()
 	{
-
-		//h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+#if UNITY_EDITOR_WIN && UNITY_EDITOR
+		h = Mathf.Clamp(Input.GetAxis("Horizontal") * 10, -1, 1);
+#endif
 
 		Vector3 nene = transform.position + ofssetCHE;
 		nene.z = 0;
@@ -2116,21 +2121,21 @@ public void cerrarfin()
 
 		//if (!suelito)
 		//	if (r.velocity.y > -2 && r.velocity.y <= 0) suelito = true;
-	//	if (suelito && r.velocity.y < -20f) suelito = false;
+		//	if (suelito && r.velocity.y < -20f) suelito = false;
 
 
 		FlipMyCharacter(h);
 
-	//if (Input.GetKeyDown(KeyCode.Space)) saltard();
-	//if (Input.GetKeyDown(KeyCode.X)) activapower();
-		 
+		if (Input.GetKeyDown(KeyCode.Space)) saltard();
+		if (Input.GetKeyDown(KeyCode.X)) activapower();
+
 		/*if (m)
 		{
 
 			velocidadsalto();
 		}*/
 		//r.velocity = new Vector2(dirX * 200 *  Time.deltaTime, r.velocity.y);
-		r.velocity = new Vector2(h * 200 *  Time.deltaTime, r.velocity.y);
+		r.velocity = new Vector2(h * 200 * Time.deltaTime, r.velocity.y);
 
 
 		rota = puntoderetorn.transform.position;
@@ -2166,17 +2171,17 @@ public void cerrarfin()
 				h1 = 1;
 				
 			}*/
-			
-			
+
+
 			//	generarp.comenzar();
 		}
 		if (f)
 		{
-			
+
 			f = false;
 		}
 
-		
+
 
 
 		//MOVIMIENTO FREDERICK--------------MOVIMIENTO FREDERICK-----------MOVIMIENTO FREDERICK-----------------MOVIMIENTO FREDERICK----------------------MOVIMIENTO FREDERICK
@@ -2199,7 +2204,8 @@ public void cerrarfin()
 		if (r.velocity.x < -maxspeed && h == -1)
 		{
 			r.velocity = new Vector2(maxspeed * paus * h, r.velocity.y);
-		} else
+		}
+		else
 
 		if (r.velocity.x < velmin && h == 1)
 		{
@@ -2207,34 +2213,12 @@ public void cerrarfin()
 		}
 
 
-		if (salto && vidas > 0)
-		{
-			r.velocity = new Vector2(0, 0);
 
-
-
-			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
-			salto = false;
-			if (gest.tiemposaya == true)
-			{
-				audio.clip = saltopoder;
-				audio.Play();
-				chispa.SetActive(false);
-				chispa.SetActive(true);
-			}
-			else
-			{
-				audio.clip = saltoauido;
-				audio.Play();
-			}
-
-
-		}
 
 		if (saltoi)
 		{
 			//anim.SetBool("deten", false);
-		//	r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+			//	r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
 			saltoi = false;
 
 			if (gest.tiemposaya == true)
@@ -2252,8 +2236,8 @@ public void cerrarfin()
 
 		}
 
-		
-		 
+
+
 
 
 	}
@@ -2275,20 +2259,20 @@ public void cerrarfin()
 			transform.parent = null;
 			arribabool = false;
 		}
-		
+
 
 
 
 	}
 
 	public IEnumerator stevejob()
-    {
-			yield return new WaitForSecondsRealtime(0.05f);
-			if (realmente) suel = false;
-			
+	{
+		yield return new WaitForSecondsRealtime(0.05f);
+		if (realmente) suel = false;
+
 	}
-		
-   
+
+
 	void OnCollisionExit2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "suelo")
@@ -2305,41 +2289,49 @@ public void cerrarfin()
 
 	public void notasale()
 	{
-	Nnotas = PlayerPrefs.GetFloat("notas", 1);
-	switch (Nnotas)
-	{
-	case 1: notas.text = "En ocasiones se roban las tapas de las alcantarillas";
-	break;
-	case 2: notas.text = "Vete al colmado y vende todas las provisiones o te las robaran";
-	break;
-	case 3: notas.text = "Si mangaste tu caminao cuidate de los polis";
-	break;
-	case 4: notas.text = "Si no tienes nada que robarte te podria ir muy mal";
-	break;
-	case 5: notas.text = "Siempre puede pagar para recuperar tu salud cuando te lastimes";
-	break;
-	case 7: notas.text = "Puede comprar herramientas para obtener mas dinero. Piensalo";
-	break;
-	case 8: notas.text = "Ten cuidado cuando viajes";
-	break;
-	case 9: notas.text = "Puedes jugar sin encaramarte en plataformas pero no podras ganar mucho";
-	break;
-	}
-	Nnotas += 1;
+		Nnotas = PlayerPrefs.GetFloat("notas", 1);
+		switch (Nnotas)
+		{
+			case 1:
+				notas.text = "En ocasiones se roban las tapas de las alcantarillas";
+				break;
+			case 2:
+				notas.text = "Vete al colmado y vende todas las provisiones o te las robaran";
+				break;
+			case 3:
+				notas.text = "Si mangaste tu caminao cuidate de los polis";
+				break;
+			case 4:
+				notas.text = "Si no tienes nada que robarte te podria ir muy mal";
+				break;
+			case 5:
+				notas.text = "Siempre puede pagar para recuperar tu salud cuando te lastimes";
+				break;
+			case 7:
+				notas.text = "Puede comprar herramientas para obtener mas dinero. Piensalo";
+				break;
+			case 8:
+				notas.text = "Ten cuidado cuando viajes";
+				break;
+			case 9:
+				notas.text = "Puedes jugar sin encaramarte en plataformas pero no podras ganar mucho";
+				break;
+		}
+		Nnotas += 1;
 
-	if (Nnotas > 10)Nnotas = 1;
-	PlayerPrefs.SetFloat("notas", Nnotas);
+		if (Nnotas > 10) Nnotas = 1;
+		PlayerPrefs.SetFloat("notas", Nnotas);
 	}
 
-	
+
 	public IEnumerator re()
-    {
+	{
 		yield return new WaitForSecondsRealtime(0.2f);
 		recarga = true;
-    }
+	}
 	public void disparador()
-    {
-		if (recarga && guardah>0)
+	{
+		if (recarga && guardah > 0)
 		{
 
 			Instantiate(balita, casquito.transform.position, Quaternion.identity);
@@ -2349,7 +2341,7 @@ public void cerrarfin()
 		}
 	}
 
-	
+
 	void OnCollisionStay2D(Collision2D col)
 	{
 		if (col.gameObject.tag == "suelo")
@@ -2359,12 +2351,13 @@ public void cerrarfin()
 			suel = true;
 			realmente = false;
 			h1 = 0;
-			if (arriba) {
+			if (arriba)
+			{
 				arriba = false;
 			}
 		}
 
-		
+
 
 		if (col.gameObject.tag == "desli") h = 0;
 		if (col.gameObject.tag == "metro") linea.SetActive(true);
@@ -2374,7 +2367,7 @@ public void cerrarfin()
 		yield return new WaitForSecondsRealtime(0.5f);
 		h1 = 0;
 	}
-	
+
 
 	public IEnumerator esperam()
 	{
@@ -2392,7 +2385,7 @@ public void cerrarfin()
 		if (suel && h1 == 3) h1 = 1;
 	}
 
-	
+
 
 
 	public IEnumerator se()
@@ -2408,17 +2401,68 @@ public void cerrarfin()
 	}
 
 
-	
 
+	IEnumerator saltacuandopuedas()
+	{
+
+		for (int i = 0; i < 11; i++)
+		{
+			yield return new WaitForSecondsRealtime(0.1f);
+			otrosalto();
+			if (suelito)
+			{
+				i = 11;
+			}
+		}
+
+	}
 
 	public void saltard()
 	{
-		if (suel == false)
+
+		if (!suelito)
 		{
-			saltaunpocoantes();
-			print("nosuelo");
+			print("droga");
+			StartCoroutine(saltacuandopuedas());
 		}
-		print("salto");
+
+
+
+
+		if (!suelito) return;
+
+		suelito = false;
+
+		if (!salto)
+		{
+			salto = true;
+
+			if (vidas > 0)
+			{
+				if (gest.tiemposaya == true)
+				{
+					audio.clip = saltopoder;
+					audio.Play();
+					chispa.SetActive(false);
+					chispa.SetActive(true);
+				}
+				else
+				{
+					audio.clip = saltoauido;
+					audio.Play();
+				}
+
+
+			}
+
+			print("@@@@@@@@@@@@SE HA SALTADO");
+			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+		}
+
+
+
+
+
 		if (suel && animacion)
 		{
 			if (rompe)
@@ -2426,32 +2470,104 @@ public void cerrarfin()
 				StartCoroutine(romp());
 				cabeza.SetActive(true);
 			}
+
 			anim.SetBool("golpe", false);
-			anim.SetBool("salto", true);
 			StartCoroutine(se());
 
-			
+			//velocidadsalto();
+			//	Handheld.Vibrate();
 			un = true;
-			salto = true;
-
-
 
 
 			h1 = 7 * guardah;
-
-
-
 		}
 
-		
+		saltaunpocoantes();
 
 	}
 
 
 
-	
+	public void otrosalto()
+	{
+		if (!salto)
+		{
+			salto = true;
 
-	
+			if (vidas > 0)
+			{
+				if (gest.tiemposaya == true)
+				{
+					audio.clip = saltopoder;
+					audio.Play();
+					chispa.SetActive(false);
+					chispa.SetActive(true);
+				}
+				else
+				{
+					audio.clip = saltoauido;
+					audio.Play();
+				}
+
+
+			}
+
+			print("@@@@@@@@@@@@SE HA SALTADO");
+			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+		}
+
+
+
+
+
+		if (suel && animacion)
+		{
+			if (rompe)
+			{
+				StartCoroutine(romp());
+				cabeza.SetActive(true);
+			}
+
+			anim.SetBool("golpe", false);
+			StartCoroutine(se());
+
+			//velocidadsalto();
+			//	Handheld.Vibrate();
+			un = true;
+
+
+			h1 = 7 * guardah;
+		}
+	}
+
+	public void saltari()
+	{
+
+		if (suel && ANIMA)
+		{
+
+			if (rompe)
+			{
+				StartCoroutine(romp());
+				cabeza.SetActive(true);
+			}
+
+			anim.SetBool("golpe", false);
+			//velocidadsalto();
+			//Handheld.Vibrate();
+			un = true;
+
+			print("VUELTO SALTO 1");
+			//	salto = true;
+			arriba = true;
+
+
+			h1 = 7 * guardah;
+
+		}
+	}
+
+
 
 
 
@@ -2462,7 +2578,7 @@ public void cerrarfin()
 	public void caminao()
 	{
 		{
- 
+
 			tigre = !tigre;
 			anim.SetBool("caminao", tigre);
 
@@ -2470,7 +2586,7 @@ public void cerrarfin()
 			{
 				m2.SetActive(true);
 				camara.cam = true;
-			
+
 				//audio.Stop();
 			}
 			else
@@ -2519,7 +2635,7 @@ public void cerrarfin()
 					if (guardah == -1)
 					{
 						sprite.transform.Rotate(0, -180, 0); // arreglar codigo
-						
+
 
 					}
 
@@ -2536,21 +2652,22 @@ public void cerrarfin()
 	public bool alan = true;
 
 	public void FlipMyCharacter(float Multiplier)
-    {
+	{
 		elec.localScale = new Vector3(electric.x, electric.y, electric.z * Multiplier);
 
-		if(Multiplier == -1) sprite.transform.localEulerAngles = new Vector3(0, -180, 0);
-		if(Multiplier == 1) sprite.transform.localEulerAngles = new Vector3(0, 0, 0);
+		if (Multiplier == -1) sprite.transform.localEulerAngles = new Vector3(0, -180, 0);
+		if (Multiplier == 1) sprite.transform.localEulerAngles = new Vector3(0, 0, 0);
 	}
 	public void atras()
 	{
-		if (vidas > 0) { 
-		anim.SetBool("golpe", false);
-		atr = true;
-		alan = false;
+		if (vidas > 0)
+		{
+			anim.SetBool("golpe", false);
+			atr = true;
+			alan = false;
 			elec.localScale = new Vector3(electric.x, electric.y, -electric.z);
 			if (animacion)
-		{
+			{
 				//velocidadsalto();
 				//	if (suel)
 
@@ -2572,7 +2689,7 @@ public void cerrarfin()
 	public float guardah = 1;
 	public void atrasdown()
 	{
-		if (atr && animacion&& vidas>0 )
+		if (atr && animacion && vidas > 0)
 		{
 			h = 0;
 			//h1 = 0;
@@ -2587,7 +2704,7 @@ public void cerrarfin()
 	}
 	public void alantedown()
 	{
-		if (alan && animacion&& vidas >0)
+		if (alan && animacion && vidas > 0)
 		{
 			h = 0;
 			//h1 = 0;
@@ -2603,18 +2720,18 @@ public void cerrarfin()
 
 	public void saldown()
 	{
-		if (animacion && vidas<0)
+		if (animacion && vidas < 0)
 		{
 			h1 = 0;
 		}
-	//h = 0;
+		//h = 0;
 
 	}
 	public void saldown2()
 	{
-//		if(animacion && vidas>0)
-	//	h = 0;
-	//	h = 0;
+		//		if(animacion && vidas>0)
+		//	h = 0;
+		//	h = 0;
 
 	}
 
@@ -2667,7 +2784,7 @@ public void cerrarfin()
 	public Transform meta;
 	public Text pla;
 	public Text man;
-	public Text din; 
+	public Text din;
 	public GameObject ptext;
 	public GameObject mtext;
 	public GameObject dtext;
@@ -2675,7 +2792,7 @@ public void cerrarfin()
 
 
 	public void gestorlife()
-    {
+	{
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
 		if (vidas == 2)
 		{
@@ -2719,18 +2836,19 @@ public void cerrarfin()
 	}
 
 	public IEnumerator trasnport()
-	{ gestorlife();
+	{
+		gestorlife();
 		//yield return new WaitForSecondsRealtime(0.5f);
 
 		if (vidas > 0)
 		{
-			
+
 
 			r.velocity = new Vector2(0, 0);
-			
+
 			m = false;
-			StartCoroutine(esperam()); 
-			
+			StartCoroutine(esperam());
+
 			//	volverajugar();
 
 			//	r.velocity = new Vector3(0, 0, 0);
@@ -2753,7 +2871,7 @@ public void cerrarfin()
 				{
 					anim.SetBool("muerte", false);
 					muerte = true;
-				//	print("prueba");
+					//	print("prueba");
 
 				}
 				else
@@ -2811,7 +2929,7 @@ public void cerrarfin()
 		}
 		else
 
-		{ 
+		{
 			audio.clip = aah; // sondio de game over
 			audio.Play();
 			yield return new WaitForSecondsRealtime(2f);
@@ -2878,27 +2996,27 @@ public void cerrarfin()
 
 	public bool power = false;
 	public Text PLATANOPOWER;
-	
 
-	
+
+
 	public void activapower()
 	{
-		if (contadorpoder>0 && vidas>0)
+		if (contadorpoder > 0 && vidas > 0)
 		{
 			power = true;
 			contadorpoder -= 1;
 			PlayerPrefs.SetFloat("poder", contadorpoder);
 			contadorpoder = PlayerPrefs.GetFloat("poder", 0);
 
-            
-			
-			
+
+
+
 			rompe = true;
-		// ESTABA AQUI -=1
-			
+			// ESTABA AQUI -=1
+
 			PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
 
-		} 
+		}
 	}
 	public bool couna = true;
 	public IEnumerator coquitos()
@@ -2908,7 +3026,8 @@ public void cerrarfin()
 	}
 
 
-	public IEnumerator muert() {
+	public IEnumerator muert()
+	{
 
 		audio.clip = muerteaudio;
 		audio.Play();
@@ -2917,7 +3036,7 @@ public void cerrarfin()
 		text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 		gestora.sto();
 	}
-	
+
 
 	public GameObject samurai1;
 	public GameObject samurai2;
@@ -2925,7 +3044,7 @@ public void cerrarfin()
 	public Transform elec;
 	public float t = 1;
 	public IEnumerator chanclas()
-    {
+	{
 		t += 7;
 		samurai1.SetActive(true);
 		samurai2.SetActive(true);
@@ -2955,12 +3074,12 @@ public void cerrarfin()
 	public GameObject JUICI;
 
 	public Transform c123arribal;
-		public GameObject cccc;
+	public GameObject cccc;
 
 	public GameObject botoncasco;
 	public AudioClip libro;
 	public IEnumerator casc()
-    {
+	{
 		yield return new WaitForSecondsRealtime(15);
 		casco.SetActive(false);
 		botoncasco.SetActive(false);
@@ -3110,7 +3229,7 @@ public void cerrarfin()
 			{
 				Handheld.Vibrate();
 			}
-			Time.timeScale = 0;
+			//Time.timeScale = 0;
 			paus = 0;
 
 
@@ -3171,7 +3290,8 @@ public void cerrarfin()
 		if (otr.gameObject.tag == "electry" && inmortal == false)
 		{
 
-			if (canmuere) {
+			if (canmuere)
+			{
 				canmuere = false;
 				JUICI.SetActive(false);
 				JUICI.SetActive(true);
@@ -3260,7 +3380,7 @@ public void cerrarfin()
 		}
 		if (otr.gameObject.tag == "suelo")
 		{
-		 
+
 			polvo.SetActive(false);
 			polvo.SetActive(true);
 		}
@@ -3305,13 +3425,15 @@ public void cerrarfin()
 
 
 
-				if (tuto == false) {
+				if (tuto == false)
+				{
 					sj += 1f;
 					nivel += 1f;
 					PlayerPrefs.SetFloat("nivel", nivel);
 					PlayerPrefs.SetFloat("dia", PlayerPrefs.GetFloat("dia", 1) + 2);
 
-					PlayerPrefs.SetFloat("sj", sj); }
+					PlayerPrefs.SetFloat("sj", sj);
+				}
 				PlayerPrefs.SetFloat("gd", PlayerPrefs.GetFloat("dinero", 0));
 				PlayerPrefs.SetFloat("gp", PlayerPrefs.GetFloat("poder", 0));
 				PlayerPrefs.SetFloat("gpl", PlayerPrefs.GetFloat("platano", 0));
@@ -3326,7 +3448,8 @@ public void cerrarfin()
 
 			}
 
-		} if (otr.gameObject.tag == "ba")
+		}
+		if (otr.gameObject.tag == "ba")
 		{
 			if (PlayerPrefs.GetFloat("jn", 0) == 0)
 			{
@@ -3343,12 +3466,14 @@ public void cerrarfin()
 
 
 
-				if (tuto == false) {
+				if (tuto == false)
+				{
 					ba += 1f;
 					nivel += 1f;
 					PlayerPrefs.SetFloat("nivel", nivel);
 					PlayerPrefs.SetFloat("dia", PlayerPrefs.GetFloat("dia", 1) + 1);
-					PlayerPrefs.SetFloat("ba", ba); }
+					PlayerPrefs.SetFloat("ba", ba);
+				}
 
 				PlayerPrefs.SetFloat("gd", PlayerPrefs.GetFloat("dinero", 0));
 				PlayerPrefs.SetFloat("gp", PlayerPrefs.GetFloat("poder", 0));
@@ -3533,14 +3658,15 @@ public void cerrarfin()
 						audio2.Stop();
 
 						notasale();
-						Time.timeScale = 0f;
+						//Time.timeScale = 0f;
 					}
 				}
 
 
 
 
-				switch (cuenta) {
+				switch (cuenta)
+				{
 
 					case 1:
 
@@ -3563,7 +3689,8 @@ public void cerrarfin()
 
 
 
-						} else
+						}
+						else
 						{
 
 							man.text = "-" + PlayerPrefs.GetFloat("mango", 0).ToString("f0");
@@ -3728,10 +3855,12 @@ public void cerrarfin()
 				}
 
 				if (cuenta == 3 && PlayerPrefs.GetFloat("dinero", 0) == 0)
-				{ if (PlayerPrefs.GetFloat("mango", 0) > 0)
+				{
+					if (PlayerPrefs.GetFloat("mango", 0) > 0)
 					{
 						cuenta = 1;
-					} else if (platano > 0)
+					}
+					else if (platano > 0)
 					{
 						cuenta = 2;
 					}
@@ -3778,7 +3907,7 @@ public void cerrarfin()
 						audio.clip = aah;
 						audio.Play();
 						notasale();
-						Time.timeScale = 0f;
+						//Time.timeScale = 0f;
 					}
 				}
 
@@ -3966,8 +4095,8 @@ public void cerrarfin()
 			h = 0;
 			StartCoroutine(v1());
 		}
-			
-		
+
+
 		if (otr.gameObject.tag == "d3" && u[3])
 		{
 			u[3] = false;
@@ -3981,14 +4110,14 @@ public void cerrarfin()
 			p.color = color4;
 			c.color = gris;
 			a2.SetActive(true);
-			
+
 			StartCoroutine(v3());
 			audio2.PlayOneShot(d3);
 		}
 
 
 
-			if (otr.gameObject.tag == "d4" && u[4])
+		if (otr.gameObject.tag == "d4" && u[4])
 		{
 			u[4] = false;
 			audio2.PlayOneShot(d4);
@@ -3997,10 +4126,10 @@ public void cerrarfin()
 			{
 				contadorpoder = 1;
 			}
-		
+
 			StartCoroutine(v1());
 		}
-			if (otr.gameObject.tag == "d5" && u[5])
+		if (otr.gameObject.tag == "d5" && u[5])
 		{
 			u[5] = false;
 			audio2.PlayOneShot(d5); paneles.SetActive(true);
@@ -4013,56 +4142,56 @@ public void cerrarfin()
 
 
 
-			if (otr.gameObject.tag == "poli" && confirma)
-			{ 
+		if (otr.gameObject.tag == "poli" && confirma)
+		{
 
 
+			{
+
+				h = 0;
+				ATRAPADO.SetActive(true);
+
+				paus = 0f;
+				gco = transform.position;
+				if (unave)
 				{
-
-					h = 0;
-					ATRAPADO.SetActive(true);
-
-					paus = 0f;
-					gco = transform.position;
-					if (unave)
-					{
-						StartCoroutine(iniciarpregunta());
+					StartCoroutine(iniciarpregunta());
 					gestora.sto();
-						unave = false;
-					}
-					anim.SetBool("deten", true);
-
-
-					destruir.gameObject.SetActive(true);
-					destruir2.gameObject.SetActive(true);
-
-					ali.correc = false;
-					boto.SetActive(false);
-					confirma = false;
-
+					unave = false;
 				}
+				anim.SetBool("deten", true);
 
 
+				destruir.gameObject.SetActive(true);
+				destruir2.gameObject.SetActive(true);
+
+				ali.correc = false;
+				boto.SetActive(false);
+				confirma = false;
 
 			}
 
 
+
 		}
+
+
+	}
 
 	public SONIDOALERTA soni;
-		public void subecuenta()
+	public void subecuenta()
+	{
+		if (cuenta > 3)
 		{
-			if (cuenta > 3)
-			{
-				cuenta = 1;
-			}
-			cuenta += 1;
+			cuenta = 1;
 		}
-		public IEnumerator con()
-		{
-			yield return new WaitForSecondsRealtime(1f);
-			confirma = true;
-		}
+		cuenta += 1;
+	}
+	public IEnumerator con()
+	{
+		yield return new WaitForSecondsRealtime(1f);
+		confirma = true;
+	}
 
 	public IEnumerator v1()
 	{
@@ -4087,7 +4216,7 @@ public void cerrarfin()
 	}
 	public IEnumerator v2()
 	{
-	
+
 		yield return new WaitForSecondsRealtime(2f);
 		dia1.SetActive(false);
 	}
@@ -4114,7 +4243,7 @@ public void cerrarfin()
 
 		yield return new WaitForSecondsRealtime(1f);
 		dia5.SetActive(false);
-		
+
 
 
 		yield return new WaitForSecondsRealtime(20);
@@ -4157,7 +4286,7 @@ public void cerrarfin()
 
 	}
 
-    public bool confirma = true;
+	public bool confirma = true;
 	public GameObject paneles;
 	public GameObject a1;
 	public GameObject a2;
@@ -4170,13 +4299,13 @@ public void cerrarfin()
 	public Image bo4;
 	public Image bo5;
 
-	
+
 	public void iniciarpld()
-    {
+	{
 		StartCoroutine(pld());
-    }
+	}
 	IEnumerator pld()
-    {
+	{
 		PlayerPrefs.SetFloat("local", botonbruja.localScale.y);
 		yield return new WaitForSecondsRealtime(1f);
 		if (norepetir)
@@ -4208,17 +4337,17 @@ public void cerrarfin()
 				else if (PlayerPrefs.GetFloat("nivel", 0) == 85)
 				{
 					SceneManager.LoadScene("final");
-                }
-                else if(PlayerPrefs.GetFloat("nivel", 0) == 20)
-                {
+				}
+				else if (PlayerPrefs.GetFloat("nivel", 0) == 20)
+				{
 					cargarmenu.SetActive(true);
-                }
+				}
 				else
 				{
 					minimenu.SetActive(true);
 
-					if(!SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
-					planeta.inicio();
+					if (!SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
+						planeta.inicio();
 				}
 
 
@@ -4249,7 +4378,7 @@ public void cerrarfin()
 
 			}
 			else
-			{ 
+			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				if (PlayerPrefs.GetInt("anuncios", 1) == 1)
 				{ gest.mostrarinter(); }

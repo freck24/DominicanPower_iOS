@@ -29,7 +29,7 @@ public class ACTIVAR : MonoBehaviour
             POLI.SetActive(true);
             PlayerPrefs.SetFloat("prime", 1f);
             In.primeravez = PlayerPrefs.GetFloat("prime", 1f);
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
         }
-        }
+    }
 }

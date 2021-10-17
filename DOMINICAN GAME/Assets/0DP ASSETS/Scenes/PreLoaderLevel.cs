@@ -99,7 +99,7 @@ namespace EMGame
             }
 
             // se establece si se activara la escena inmediatamente
-            async.allowSceneActivation = immediateActivateScene;
+            async.allowSceneActivation = AUTOMATICO==1;
 
             print("Loading 6 (Set AutoLoad)");
 
@@ -165,6 +165,7 @@ namespace EMGame
             progressBar.sizeDelta = progressBarSizeDelta;
             textComponent.text =  "100%";
             Anim.SetBool("Cargado", true);
+            Time.timeScale = 1;
         }
 
     }

@@ -23,10 +23,14 @@ public void cargares()
     public void NewCargaID(int id)
     {
         transform.SetParent(null);
+
+        if(id < 3)
         ScreenLoader.scena = NombreEscenas[id];
+
         ScreenLoader.gameObject.SetActive(true);
 
         if (id == 2) ScreenLoader.isnivelactualsiguiente = true;
+        if (id == 3) ScreenLoader.isnivelactualsiguiente = true;
 
         if (id == 3) SceneManager.LoadSceneAsync("LEVEL 1 CLONE");
 

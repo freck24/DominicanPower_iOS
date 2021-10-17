@@ -78,7 +78,7 @@ SpriteRenderer:
   m_Size: {x: 8.04, y: 6.99}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!1 &1142288863808049877
@@ -469,7 +469,7 @@ SpriteRenderer:
   m_Size: {x: 3.5, y: 3.5}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!114 &3467088329681997582
@@ -799,7 +799,7 @@ Animator:
   m_Enabled: 0
   m_Avatar: {fileID: 0}
   m_Controller: {fileID: 9100000, guid: f2760dc6d7fe9b34db6bdfa6d16a8c49, type: 2}
-  m_CullingMode: 0
+  m_CullingMode: 2
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
@@ -838,7 +838,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 15.65647, y: 14.120001}
+    oldSize: {x: 15.884793, y: 14.12}
     newSize: {x: 15.65, y: 14.12141}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1060,6 +1060,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 0.1769058
+      objectReference: {fileID: 0}
+    - target: {fileID: 3858846256417569408, guid: 5093f18a8354d604cb900459f34a4033,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 5081112400206053771, guid: 5093f18a8354d604cb900459f34a4033,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7322326475955184402, guid: 5093f18a8354d604cb900459f34a4033,
+        type: 3}
+      propertyPath: m_CullingMode
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5093f18a8354d604cb900459f34a4033, type: 3}
