@@ -314,6 +314,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c35fcc93e300c04aaed207c5b334dab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  DestruirGrupo: {fileID: 0}
+  ScreenLoader: {fileID: 0}
+  NombreEscenas: []
   cargarEscena: 2
 --- !u!1 &1883406454289804783
 GameObject:
@@ -34685,6 +34688,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f211164a2e7b78c4d9a86a99f50cd25c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Resucite: {fileID: 0}
+  DestruirEsto: {fileID: 0}
   gest: {fileID: 0}
   suelito: 0
   ofssetCHE: {x: 0, y: 0, z: 0}
@@ -38278,18 +38283,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3018546194004919063}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1998267129836705765}
-        m_MethodName: saldown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1883406454876958438
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -38329,25 +38323,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
-  - eventID: 0
-    callback:
-      m_PersistentCalls:
-        m_Calls:
-        - m_Target: {fileID: 1998267129836705765}
-          m_MethodName: saltard
-          m_Mode: 1
-          m_Arguments:
-            m_ObjectArgument: {fileID: 0}
-            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-            m_IntArgument: 0
-            m_FloatArgument: 0
-            m_StringArgument: 
-            m_BoolArgument: 0
-          m_CallState: 2
-  - eventID: 3
-    callback:
-      m_PersistentCalls:
-        m_Calls: []
 --- !u!1 &2915433489127284903
 GameObject:
   m_ObjectHideFlags: 0

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+
+	public ResucitePlatform Resucite;
 	public GameObject DestruirEsto;
 	public GESTORPRINCIPAL gest;
 
@@ -1437,7 +1439,9 @@ public class controler : MonoBehaviour
 		generarp.GENERAR();
 		//	continuar = false;
 		cerrarfin();
-		gameObject.transform.position = posicioninicial.transform.position;
+		  gameObject.transform.position = posicioninicial.transform.position;
+		print("BugFixing 5");
+
 		f = false;
 		h = 0;
 		ccc1.start();
@@ -1690,6 +1694,8 @@ public class controler : MonoBehaviour
 
 			StartCoroutine(movetele());
 			transform.position = rota;
+			print("BugFixing 4");
+
 
 			Time.timeScale = 1;
 			paus = 1;
@@ -1706,20 +1712,20 @@ public class controler : MonoBehaviour
 
 	public void volverajugar()
 	{
-		if (PlayerPrefs.GetFloat("dinero", 0) > 4999)
+		if (PlayerPrefs.GetFloat("dinero", 0) > 4999) // 4999
 		{
-			if (preguntas.activeSelf)
-			{
-				controladorp.ProxPre();
-			}
+			if (preguntas.activeSelf) controladorp.ProxPre();
+
+
 			StartCoroutine(PL());
 			vidas = 3;
 			PlayerPrefs.SetFloat("vidas", 3);
+
 			if (vidas > 0)
 			{
 				anim.SetBool("muerte", false);
 				muerte = true;
-				//	print("prueba");
+			 print("prueba");
 
 			}
 			canva.SetActive(true);
@@ -1739,6 +1745,8 @@ public class controler : MonoBehaviour
 			textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
 			transform.position = rota;
+			print("BugFixing 3");
+
 			perdermensaje.SetActive(false);
 			Time.timeScale = 1;
 			paus = 1;
@@ -1757,6 +1765,11 @@ public class controler : MonoBehaviour
 			audio.clip = fail;
 			audio.Play();
 		}
+
+		transform.position = Resucite.PlayerRespawn.position;
+		Resucite.GenPlat();
+		Time.timeScale = 1;
+
 
 	}
 
@@ -1832,20 +1845,20 @@ public class controler : MonoBehaviour
 
 
 		yield return new WaitForSecondsRealtime(0.1f);
-		PLATA.SetActive(false);
-		PLATA.SetActive(true);
-
-		seguirp.s();
+		//CDNOVA //CDNOVA PLATA.SetActive(false);
+		Resucite.GenPlat();
+		transform.position = Resucite.PlayerRespawn.position;
+		//CDNOVA seguirp.s();
 	}
 	public IEnumerator PL()
 	{
 
 
 		yield return new WaitForSecondsRealtime(0.01f);
-		PLATA.SetActive(false);
-		PLATA.SetActive(true);
+		//CDNOVA PLATA.SetActive(false);
+		//CDNOVA PLATA.SetActive(true);
 
-		seguirp.s();
+		//CDNOVA seguirp.s();
 
 		yield return new WaitForSecondsRealtime(1f);
 		boto.SetActive(true);
@@ -2036,7 +2049,9 @@ public class controler : MonoBehaviour
 
 		if (paus == 0)
 		{
-			transform.position = new Vector3(gco.x, transform.position.y, gco.z);
+		//	transform.position = new Vector3(gco.x, transform.position.y, gco.z);
+			print("BugFixing 2");
+
 		}
 
 
@@ -2104,9 +2119,10 @@ public class controler : MonoBehaviour
 
 		Vector3 var2 = var.transform.position;
 		var2.y += 30;
-		var2.z += transform.position.z;
+		var2.z = 0;
 
 		transform.position = var2;
+
 	}
 
 	void FixedUpdate()
@@ -2137,7 +2153,7 @@ public class controler : MonoBehaviour
 		//r.velocity = new Vector2(dirX * 200 *  Time.deltaTime, r.velocity.y);
 		r.velocity = new Vector2(h * 200 * Time.deltaTime, r.velocity.y);
 
-
+		if(vidas > 0)
 		rota = puntoderetorn.transform.position;
 		/*if (PlayerPrefs.GetFloat("nivel", 1) == 6 || PlayerPrefs.GetFloat("nivel", 1) == 7 || PlayerPrefs.GetFloat("nivel", 1) == 9)
 		{
@@ -2793,7 +2809,7 @@ public class controler : MonoBehaviour
 
 	public void gestorlife()
 	{
-		seguirp.s();
+		//CDNOVA seguirp.s();
 
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
 		if (vidas == 2)
@@ -2844,8 +2860,6 @@ public class controler : MonoBehaviour
 
 		if (vidas > 0)
 		{
-
-
 			r.velocity = new Vector2(0, 0);
 
 			m = false;
@@ -2886,6 +2900,8 @@ public class controler : MonoBehaviour
 					}
 
 				}
+				vidas = 0;
+
 				if (vidas > 0)
 				{
 					anim.SetBool("muerte", false);
@@ -2912,12 +2928,14 @@ public class controler : MonoBehaviour
 			//	yield return new WaitForSecondsRealtime(1f); 
 			h = 0;
 			h1 = 0;
+
+			/*
 			if (vidas > 0)
 			{
 				yield return new WaitForSecondsRealtime(2);
-				transform.position = rota;
-				PLATA.SetActive(false);
-				PLATA.SetActive(true);
+			 transform.position = Resucite.PlayerRespawn.position;
+			   Resucite.Plataforma.GenPlat();
+				print("BugFixing 1");
 
 			}
 			StartCoroutine(movetele());
@@ -2926,12 +2944,13 @@ public class controler : MonoBehaviour
 			paus = 1;
 			continuar = true;
 			anim.SetBool("deten", true);
-
+			*/
 		}
 		else
 
 		{
 			audio.clip = aah; // sondio de game over
+			vidas = 0;
 			audio.Play();
 			yield return new WaitForSecondsRealtime(2f);
 
@@ -3226,12 +3245,13 @@ public class controler : MonoBehaviour
 		{
 			//rota = spri.transform.position;
 			h = 0;
-
 			if (vibraniun)
 			{
 				Handheld.Vibrate();
 			}
-			//Time.timeScale = 0;
+
+			vidas = 0;
+			Time.timeScale = 0;
 			paus = 0;
 
 
@@ -4229,7 +4249,6 @@ public class controler : MonoBehaviour
 	public IEnumerator v3()
 	{
 
-
 		yield return new WaitForSecondsRealtime(3f);
 		d.color = color1;
 		iz.color = color2;
@@ -4247,17 +4266,8 @@ public class controler : MonoBehaviour
 		dia5.SetActive(false);
 
 
-
 		yield return new WaitForSecondsRealtime(20);
-		/*if (transform.position.x < pared.transform.position.x)
-		{
-			paredg.SetActive(false);
-		}
-		yield return new WaitForSecondsRealtime(20);
-		if (transform.position.x < pared.transform.position.x)
-		{
-			paredg.SetActive(false);
-		}*/
+		
 
 	}
 

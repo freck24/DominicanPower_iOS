@@ -23,7 +23,7 @@ public class InsigniaInfo : MonoBehaviour
     public void LoadLevelInsignia()
     {
         PlayerPrefs.SetString("Insignia_Progress", ddd.id_unica);
-        SceneManager.LoadScene("LEVELLOADER INSIGNIA");
+      //  SceneManager.LoadScene("LEVELLOADER INSIGNIA");
     }
     public void ShowDesc(InsigniaInfoData dx)
     {

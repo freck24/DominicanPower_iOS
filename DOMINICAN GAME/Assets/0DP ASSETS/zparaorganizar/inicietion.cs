@@ -609,6 +609,7 @@ public class inicietion : MonoBehaviour
 
     void Start()
     {
+        Time.timeScale = 1;
 
         //PlayerPrefs.SetFloat("nivel", 86);
         Check_Liberado();

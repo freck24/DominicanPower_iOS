@@ -16989,9 +16989,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d5b8a12c3cfc8349aa791da877e263a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  txtScore: {fileID: 1996220272}
-  score: 0
-  panelError: {fileID: 1847814091}
 --- !u!4 &447064749
 Transform:
   m_ObjectHideFlags: 0
@@ -27106,7 +27103,7 @@ PrefabInstance:
     - target: {fileID: 7246284326108338845, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: m_SortingOrder
-      value: 10
+      value: 4498
       objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
@@ -30982,6 +30979,7 @@ MonoBehaviour:
   - m1lose
   - telefono
   - nivel86
+  - LEVELLOADER INSIGNIA
   CU:
   - {fileID: 859067068}
   - {fileID: 1963979466}
@@ -47647,6 +47645,34 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 201963375}
     m_Modifications:
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
+      value: 
+      objectReference: {fileID: 853440115}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
+      value: NewCargaID
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 1005213321, guid: d5d74ffefe19cab4da10527e20a68792, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_IntArgument
+      value: 14
+      objectReference: {fileID: 0}
     - target: {fileID: 9037345846238630085, guid: d5d74ffefe19cab4da10527e20a68792,
         type: 3}
       propertyPath: m_Name
@@ -56209,10 +56235,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c8d6b2cafe21c42a6632f3962280f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_error: 0
-  isInit: 0
-  hayAds: 0
-  isChecked: 0
 --- !u!4 &1437867606
 Transform:
   m_ObjectHideFlags: 0
@@ -73000,8 +73022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 49452e8a80c6382459b078c142751daf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bt_NoAds: {fileID: 777389130}
-  buttonRestore: {fileID: 492412241}
 --- !u!4 &1880720422
 Transform:
   m_ObjectHideFlags: 0

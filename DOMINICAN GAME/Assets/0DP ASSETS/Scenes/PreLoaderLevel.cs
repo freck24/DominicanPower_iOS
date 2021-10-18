@@ -142,8 +142,16 @@ namespace EMGame
 
             if (!nomostrable)
             {
-                if (AUTOMATICO == 0) A.isOn = false;
-                else A.isOn = true;
+                if (AUTOMATICO == 0)
+                {
+                    A.isOn = false;
+                    PlayerPrefs.SetInt("AUTOMATICO", 0);
+                }
+                else
+                {
+                    A.isOn = true;
+                    PlayerPrefs.SetInt("AUTOMATICO", 1);
+                }
             }
 
 
@@ -198,6 +206,9 @@ namespace EMGame
                 yield return new WaitForSecondsRealtime(0.5f); 
             }
 
+         if(AUTOMATICO == 1)
+                cargar2();
+
             nocargada = false;
             progressBarSizeDelta.x = 2230;
             progressBar.sizeDelta = progressBarSizeDelta;
@@ -205,7 +216,6 @@ namespace EMGame
             Anim.SetBool("Cargado", true);
             Time.timeScale = 1;
 
-            cargar2();
         }
 
     }
