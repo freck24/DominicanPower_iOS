@@ -30,8 +30,9 @@ public void cargares()
         ScreenLoader.gameObject.SetActive(true);
 
         if (id == 2) ScreenLoader.isnivelactualsiguiente = true;
-        if (id == 3) ScreenLoader.isnivelactualsiguiente = true;
 
+        if (id == 3) ScreenLoader.CargaAutomatica = true;
+        if (id == 3) ScreenLoader.isnivelactualsiguiente = true;
         if (id == 3) SceneManager.LoadSceneAsync("LEVEL 1 CLONE");
 
 

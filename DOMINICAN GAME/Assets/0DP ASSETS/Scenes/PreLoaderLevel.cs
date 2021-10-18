@@ -7,6 +7,12 @@ namespace EMGame
 {
     public class PreLoaderLevel : MonoBehaviour
     {
+
+        public GameObject BotonIr;
+        public GameObject GrupoEntrando;
+
+        public bool CargaAutomatica;
+
         public bool nomostrable = false;
         public bool nocargada = true;
         public RectTransform progressBar;
@@ -42,10 +48,24 @@ namespace EMGame
         }
 
 
+    public void CheckLoad()
+    {
+    if(async.isDone)
+    {
+    GrupoEntrando.SetActive(true);
+    BotonIr.SetActive(false);
+    }
+
+    }
+
+
         public void cargar()
         {
             if (progressPercent >= 90)
                 async.allowSceneActivation = true;
+
+            GrupoEntrando.SetActive(true);
+            BotonIr.SetActive(false);
         }
 
 
@@ -54,13 +74,22 @@ namespace EMGame
         {
 
             async.allowSceneActivation = true;
+
+            GrupoEntrando.SetActive(true);
+            BotonIr.SetActive(false);
         }
 
         public virtual void Start()
         {
 
             print("Loading 1 (Enter Sart)");
+
+            if(CargaAutomatica)
+                AUTOMATICO = 1;
+             else  
             AUTOMATICO = PlayerPrefs.GetInt("AUTOMATICO", 0);
+           
+            
             print("Loading 2 (Start Entered)");
 
             datoscuriosos();
@@ -82,8 +111,6 @@ namespace EMGame
             }
             // se inicia la carca asincrona del nivel */
             print("Loading 4 (Pass Dato Curioso)");
-
-
             print("Loading 5 (Sett Async)");
 
 
@@ -99,16 +126,27 @@ namespace EMGame
             }
 
             // se establece si se activara la escena inmediatamente
-            async.allowSceneActivation = AUTOMATICO==1;
+            async.allowSceneActivation = AUTOMATICO == 1;
 
             print("Loading 6 (Set AutoLoad)");
 
-            if (nomostrable) letra.SetActive(false);
-            if (nomostrable == false)
+            if (nomostrable)
+            {
+                async.allowSceneActivation = true;
+
+                letra.SetActive(false);
+                StartCoroutine(verificando());
+                return;
+
+            }
+
+            if (!nomostrable)
             {
                 if (AUTOMATICO == 0) A.isOn = false;
                 else A.isOn = true;
             }
+
+
 
             print("Loading 1 (ShowData)");
 
@@ -166,6 +204,8 @@ namespace EMGame
             textComponent.text =  "100%";
             Anim.SetBool("Cargado", true);
             Time.timeScale = 1;
+
+            cargar2();
         }
 
     }
