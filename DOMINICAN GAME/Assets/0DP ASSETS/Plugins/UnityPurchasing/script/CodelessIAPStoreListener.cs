@@ -18,37 +18,37 @@ namespace UnityEngine.Purchasing
 
         protected IStoreController controller;
         protected IExtensionProvider extensions;
-        protected ProductCatalog catalog;
+        // protected ProductCatalog catalog;
 
         // Allows outside sources to know whether the full initialization has taken place.
         public static bool initializationComplete;
 
         [RuntimeInitializeOnLoadMethod]
         static void InitializeCodelessPurchasingOnLoad() {
-            ProductCatalog catalog = ProductCatalog.LoadDefaultCatalog();
-            if (catalog.enableCodelessAutoInitialization && !catalog.IsEmpty() && instance == null)
-            {
-                CreateCodelessIAPStoreListenerInstance();
-            }
+        //    ProductCatalog catalog = ProductCatalog.LoadDefaultCatalog();
+           // if (catalog.enableCodelessAutoInitialization && !catalog.IsEmpty() && instance == null)
+//{
+          //      CreateCodelessIAPStoreListenerInstance();
+          //  }
         }
 
         private static void InitializePurchasing()
         {
-            StandardPurchasingModule module = StandardPurchasingModule.Instance();
-            module.useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
+        //    StandardPurchasingModule module = StandardPurchasingModule.Instance();
+        //    module.useFakeStoreUIMode = FakeStoreUIMode.StandardUser;
 
-            ConfigurationBuilder builder = ConfigurationBuilder.Instance(module);
+         //   ConfigurationBuilder builder = ConfigurationBuilder.Instance(module);
 
-            IAPConfigurationHelper.PopulateConfigurationBuilder(ref builder, instance.catalog);
+         //   IAPConfigurationHelper.PopulateConfigurationBuilder(ref builder, instance.catalog);
 
-            UnityPurchasing.Initialize(instance, builder);
+        //  UnityPurchasing.Initialize(instance, builder);
 
             unityPurchasingInitialized = true;
         }
 
         private CodelessIAPStoreListener()
         {
-            catalog = ProductCatalog.LoadDefaultCatalog();
+        //    catalog = ProductCatalog.LoadDefaultCatalog();
         }
 
         public static CodelessIAPStoreListener Instance
@@ -88,13 +88,7 @@ namespace UnityEngine.Purchasing
 
         public bool HasProductInCatalog(string productID)
         {
-            foreach (var product in catalog.allProducts)
-            {
-                if (product.id == productID)
-                {
-                    return true;
-                }
-            }
+           
             return false;
         }
 
