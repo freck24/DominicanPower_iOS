@@ -74,7 +74,10 @@ namespace UnityEngine.Purchasing
             }
             else if (buttonType == ButtonType.Restore)
             {
-                
+                if (button)
+                {
+                    button.onClick.AddListener(Restore);
+                }
             }
         }
 
@@ -107,6 +110,43 @@ namespace UnityEngine.Purchasing
             }
         }
 
+        void Restore()
+        {
+            if (buttonType == ButtonType.Restore)
+            {
+                if (Application.platform == RuntimePlatform.WSAPlayerX86 ||
+                    Application.platform == RuntimePlatform.WSAPlayerX64 ||
+                    Application.platform == RuntimePlatform.WSAPlayerARM)
+                {
+                    CodelessIAPStoreListener.Instance.ExtensionProvider.GetExtension<IMicrosoftExtensions>()
+                        .RestoreTransactions();
+                }
+                else if (Application.platform == RuntimePlatform.IPhonePlayer ||
+                         Application.platform == RuntimePlatform.OSXPlayer ||
+                         Application.platform == RuntimePlatform.tvOS)
+                {
+                    CodelessIAPStoreListener.Instance.ExtensionProvider.GetExtension<IAppleExtensions>()
+                        .RestoreTransactions(OnTransactionsRestored);
+                }
+                else if (Application.platform == RuntimePlatform.Android &&
+                         StandardPurchasingModule.Instance().appStore == AppStore.SamsungApps)
+                {
+                    CodelessIAPStoreListener.Instance.ExtensionProvider.GetExtension<ISamsungAppsExtensions>()
+                        .RestoreTransactions(OnTransactionsRestored);
+                }
+                else if (Application.platform == RuntimePlatform.Android &&
+                    StandardPurchasingModule.Instance().appStore == AppStore.GooglePlay)
+                {
+                    CodelessIAPStoreListener.Instance.ExtensionProvider.GetExtension<IGooglePlayStoreExtensions>()
+                        .RestoreTransactions(OnTransactionsRestored);
+                }
+                else
+                {
+                    Debug.LogWarning(Application.platform.ToString() +
+                                     " is not a supported platform for the Codeless IAP restore button");
+                }
+            }
+        }
 
         void OnTransactionsRestored(bool success)
         {

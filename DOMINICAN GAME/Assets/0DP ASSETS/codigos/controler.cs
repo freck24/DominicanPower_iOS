@@ -1877,7 +1877,7 @@ public class controler : MonoBehaviour
 		int pppp = 0;
 		while (pppp < 10)
 		{
-			yield return new WaitForSecondsRealtime(0.14f);
+			yield return new WaitForSecondsRealtime(0.02f);
 			pppp++;
 			if (suel == true)
 			{
@@ -1889,15 +1889,14 @@ public class controler : MonoBehaviour
 						cabeza.SetActive(true);
 					}
 					anim.SetBool("golpe", false);
-
+					anim.SetBool("salto", true);
 					StartCoroutine(se());
 
 					//velocidadsalto();
 					//	Handheld.Vibrate();
 					un = true;
+					salto = true;
 
-					print("VUELTO SALTO 1");
-					salto = false;
 
 
 
@@ -1907,7 +1906,6 @@ public class controler : MonoBehaviour
 				}
 			}
 		}
-
 
 	}
 	public IEnumerator puedemorir()
@@ -2229,7 +2227,29 @@ public class controler : MonoBehaviour
 		}
 
 
+		if (salto && vidas > 0)
+		{
+			r.velocity = new Vector2(0, 0);
 
+
+
+			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+			salto = false;
+			if (gest.tiemposaya == true)
+			{
+				audio.clip = saltopoder;
+				audio.Play();
+				chispa.SetActive(false);
+				chispa.SetActive(true);
+			}
+			else
+			{
+				audio.clip = saltoauido;
+				audio.Play();
+			}
+
+
+		}
 
 		if (saltoi)
 		{
@@ -2418,61 +2438,38 @@ public class controler : MonoBehaviour
 
 
 
-	IEnumerator saltacuandopuedas()
-	{
 
-		for (int i = 0; i < 11; i++)
-		{
-			yield return new WaitForSecondsRealtime(0.1f);
-			otrosalto();
-			if (suelito)
-			{
-				i = 11;
-			}
-		}
-
-	}
 
 	public void saltard()
 	{
 
-		if (!suelito)
+		if (suel == false)
 		{
-			print("droga");
-			StartCoroutine(saltacuandopuedas());
+			saltaunpocoantes();
 		}
-
-
-
-
-		if (!suelito) return;
-
-		suelito = false;
-
-		if (!salto)
+		print("salto");
+		if (suel && animacion)
 		{
+			if (rompe)
+			{
+				StartCoroutine(romp());
+				cabeza.SetActive(true);
+			}
+			anim.SetBool("golpe", false);
+			anim.SetBool("salto", true);
+			StartCoroutine(se());
+
+			//velocidadsalto();
+			//	Handheld.Vibrate();
+			un = true;
 			salto = true;
 
-			if (vidas > 0)
-			{
-				if (gest.tiemposaya == true)
-				{
-					audio.clip = saltopoder;
-					audio.Play();
-					chispa.SetActive(false);
-					chispa.SetActive(true);
-				}
-				else
-				{
-					audio.clip = saltoauido;
-					audio.Play();
-				}
 
 
-			}
 
-			print("@@@@@@@@@@@@SE HA SALTADO");
-			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
+			h1 = 7 * guardah;
+
+
 		}
 
 
@@ -2498,7 +2495,7 @@ public class controler : MonoBehaviour
 			h1 = 7 * guardah;
 		}
 
-		saltaunpocoantes();
+		//saltaunpocoantes();
 
 	}
 
@@ -2528,7 +2525,7 @@ public class controler : MonoBehaviour
 
 			}
 
-			print("@@@@@@@@@@@@SE HA SALTADO");
+			print("@@@@@@@@@@@@SE HA SALTADO2");
 			r.AddForce(Vector2.up * fuerza, ForceMode2D.Impulse);
 		}
 

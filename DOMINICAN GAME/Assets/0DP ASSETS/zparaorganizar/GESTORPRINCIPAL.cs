@@ -18,7 +18,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
   //  public GameObject Nivel_data;
 
     private InterstitialAd inter;
-    private RewardBasedVideoAd recompensa;
+   // private RewardBasedVideoAd recompensa;
     [SerializeField] private string appID = "";
     [SerializeField] private string interID = "";
     [SerializeField] private string recoID = "";
@@ -167,7 +167,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
         // Called when an ad request has successfully loaded.
 
         // Called when an ad request failed to load.
-        this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+     //   this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
         // Called when an ad is shown.
 
         // Called when an ad request failed to show.
