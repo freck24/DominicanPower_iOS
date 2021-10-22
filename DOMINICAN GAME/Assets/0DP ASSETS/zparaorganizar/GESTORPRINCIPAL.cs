@@ -332,7 +332,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
         if (tu)
         {
-            Time.timeScale = 1;
+            Time.timeScale = 0;
         }
         else
         {

@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
-
+	public bool transportin;
 	public ResucitePlatform Resucite;
 	public GameObject DestruirEsto;
 	public GESTORPRINCIPAL gest;
@@ -2024,6 +2024,8 @@ public class controler : MonoBehaviour
 		if (tiem)
 		{
 			//Time.timeScale = 0f;
+			print("Time Change DISABLED");
+
 		}
 
 		if (tigre)
@@ -2850,8 +2852,11 @@ public class controler : MonoBehaviour
 
 	}
 
+	public void ReturnTr() => transportin = false;
 	public IEnumerator trasnport()
 	{
+		transportin = true;
+		Invoke("ReturnTr", 1f);
 		gestorlife();
 		//yield return new WaitForSecondsRealtime(0.5f);
 
@@ -2879,6 +2884,8 @@ public class controler : MonoBehaviour
 			if (!inmortal)
 			{
 				vidas -= 1;
+				print("Corazon Roto (Caid)");
+
 				PlayerPrefs.SetFloat("vidas", vidas);
 				if (vidas > 0)
 				{
@@ -2897,7 +2904,6 @@ public class controler : MonoBehaviour
 					}
 
 				}
-				vidas = 0;
 
 				if (vidas > 0)
 				{
@@ -2926,12 +2932,12 @@ public class controler : MonoBehaviour
 			h = 0;
 			h1 = 0;
 
-			/*
+			 
 			if (vidas > 0)
 			{
 				yield return new WaitForSecondsRealtime(2);
 			 transform.position = Resucite.PlayerRespawn.position;
-			   Resucite.Plataforma.GenPlat();
+			   Resucite.GenPlat();
 				print("BugFixing 1");
 
 			}
@@ -2941,13 +2947,12 @@ public class controler : MonoBehaviour
 			paus = 1;
 			continuar = true;
 			anim.SetBool("deten", true);
-			*/
+			 
 		}
 		else
 
 		{
 			audio.clip = aah; // sondio de game over
-			vidas = 0;
 			audio.Play();
 			yield return new WaitForSecondsRealtime(2f);
 
@@ -3247,11 +3252,11 @@ public class controler : MonoBehaviour
 				Handheld.Vibrate();
 			}
 
-			vidas = 0;
-			Time.timeScale = 0;
+			print("Time Change");
 			paus = 0;
 
 
+			if(!transportin)
 			StartCoroutine(trasnport());
 		}
 
@@ -3279,6 +3284,8 @@ public class controler : MonoBehaviour
 					anim.SetBool("golpe", true);
 					h = 0;
 					vidas -= 1;
+
+					print("Corazon Roto 1");
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
@@ -3323,6 +3330,8 @@ public class controler : MonoBehaviour
 					anim.SetBool("golpe", true);
 					h = 0;
 					vidas -= 1;
+					print("Corazon Roto 2");
+
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
@@ -3637,6 +3646,8 @@ public class controler : MonoBehaviour
 				if (PlayerPrefs.GetFloat("dinero", 0) == 0 && PlayerPrefs.GetFloat("mango", 0) == 0 && platano == 0)
 				{
 					vidas -= 1;
+					print("Corazon Roto 3 (punala)");
+
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
@@ -3677,7 +3688,7 @@ public class controler : MonoBehaviour
 						audio2.Stop();
 
 						notasale();
-						//Time.timeScale = 0f;
+						 
 					}
 				}
 
@@ -3888,6 +3899,8 @@ public class controler : MonoBehaviour
 				if (PlayerPrefs.GetFloat("dinero", 0) == 0 && PlayerPrefs.GetFloat("mango", 0) == 0 && platano == 0)
 				{
 					vidas -= 1;
+					print("Corazon Roto 5 (punala 2)");
+
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
