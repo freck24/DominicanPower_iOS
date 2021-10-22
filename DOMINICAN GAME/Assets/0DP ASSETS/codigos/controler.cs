@@ -1929,8 +1929,11 @@ public class controler : MonoBehaviour
 
 	void Update()
 	{
-
-		anim.SetBool("salto", !suelito);
+     
+       
+			//anim.SetBool("salto", !suelito);
+		
+		
 
 		textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
@@ -2305,8 +2308,14 @@ public class controler : MonoBehaviour
 
 	public IEnumerator stevejob()
 	{
+
 		yield return new WaitForSecondsRealtime(0.05f);
-		if (realmente) suel = false;
+		if (realmente)
+		{
+			suel = false;
+
+		}
+
 
 	}
 
@@ -2315,9 +2324,11 @@ public class controler : MonoBehaviour
 	{
 		if (col.gameObject.tag == "suelo")
 		{
-			suelito = false;
+
+			retorno.suelito = false;
 			realmente = true;
 			StartCoroutine(stevejob());
+
 			StartCoroutine(espera());
 		}
 
@@ -2384,16 +2395,22 @@ public class controler : MonoBehaviour
 	{
 		if (col.gameObject.tag == "suelo")
 		{
-			//cabeza.SetActive(false);
-			suelito = true;
-			suel = true;
-			realmente = false;
-			h1 = 0;
-			if (arriba)
-			{
-				arriba = false;
+
+		
+				if (!arribabool)
+				{
+					retorno.suelito = true;
+				}
+				//cabeza.SetActive(false);
+				suel = true;
+				realmente = false;
+				h1 = 0;
+				if (arriba)
+				{
+					anim.SetBool("salto", false);
+					arriba = false;
+				}
 			}
-		}
 
 
 
@@ -2828,6 +2845,7 @@ public class controler : MonoBehaviour
 			c1.SetActive(false);
 			c2.SetActive(false);
 			c3.SetActive(false);
+			perdermensaje.SetActive(true);
 		}
 
 		if (vidas == 3)

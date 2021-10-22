@@ -18,7 +18,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
   //  public GameObject Nivel_data;
 
     private InterstitialAd inter;
-   // private RewardBasedVideoAd recompensa;
+    private RewardBasedVideoAd recompensa;
     [SerializeField] private string appID = "";
     [SerializeField] private string interID = "";
     [SerializeField] private string recoID = "";
@@ -150,10 +150,10 @@ public class GESTORPRINCIPAL : MonoBehaviour
         //TEST IDS
         // interID = "ca-app-pub-3940256099942544/1033173712";
         // recoID = "ca-app-pub-3940256099942544/5224354917";
-      //  if (PlayerPrefs.GetInt("unavezanu", 0) == 0)
+      
         {
             configuraciones();
-           //PlayerPrefs.SetInt("unavezanu", 1);
+           
         }
       
         
@@ -167,7 +167,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
         // Called when an ad request has successfully loaded.
 
         // Called when an ad request failed to load.
-     //   this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+       this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
         // Called when an ad is shown.
 
         // Called when an ad request failed to show.
@@ -395,17 +395,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
         ScreenLoader.gameObject.SetActive(true);
 
 
-     //   cont.tras();
-
-      //   cont.nivelet();
-       
-       // cont.InstanciasN();
-
-     //   cont.boto.SetActive(true);
-        
-      //  camaraplaneta.SetActive(false);
-      //  camaraplaneta2.SetActive(false);
-      //  camaraplaneta3.SetActive(false);
+     
 
 
         
