@@ -78,17 +78,15 @@ public class Generador : MonoBehaviour {
 
         if(SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
         {
-            Invoke("comenzar", 1.7f);
+            Invoke("comenzar", 4.7f);
             g = transform.position;
             return;
         }
 
 
-		GENERAR();
-		g = transform.position;
+        Invoke("GENERAR", 4.7f);
 
-	
-		
+		g = transform.position;
 	}
 
 
@@ -109,6 +107,8 @@ public class Generador : MonoBehaviour {
             { comenzar(); }
 
         }
+
+        print("se inicio la generacion de vehiculos.");
 
 
 	}

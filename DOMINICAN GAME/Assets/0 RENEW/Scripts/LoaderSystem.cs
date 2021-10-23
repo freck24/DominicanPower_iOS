@@ -52,6 +52,7 @@ public class LoaderSystem : MonoBehaviour
         EspereObj.SetBool("termino", true);
         Instantiate(req.asset, ContentLevel);
 
+        Player.GetComponent<controler>().CallThemBug();
         Player.GetComponent<Rigidbody2D>().simulated = true;
 
         yield return null;

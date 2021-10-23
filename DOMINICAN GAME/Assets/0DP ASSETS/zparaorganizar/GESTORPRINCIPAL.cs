@@ -12,7 +12,7 @@ using EMGame;
 
 public class GESTORPRINCIPAL : MonoBehaviour
 {
-
+    public static bool AnunciosInicializados = false;
     public PreLoaderLevel ScreenLoader;
 
   //  public GameObject Nivel_data;
@@ -134,11 +134,18 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
         Debug.Log("Preinicializando ads");
 
+        if(!AnunciosInicializados)
+        {
+
         MobileAds.Initialize(initStatus =>
         {
             Debug.Log("Ads iniciados " + initStatus);
             llamar();
         });
+
+            AnunciosInicializados = true;
+        }
+
     }
 
 
@@ -192,7 +199,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
             this.rewardedAd.LoadAd(request);
         }
 
-        //   MobileAds.Initialize(appID);
+        MobileAds.Initialize(appID);
 
     }
 

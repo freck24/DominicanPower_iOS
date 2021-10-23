@@ -500,11 +500,9 @@ public class controler : MonoBehaviour
 
 		couna = true;
 		contadorpoder = PlayerPrefs.GetFloat("poder", 0);
-		PLATANOPOWER.text = "" + contadorpoder.ToString("f2");
+		PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+
 		vidasi = PlayerPrefs.GetFloat("vidas", 3);
-
-
-
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
 
 
@@ -1675,15 +1673,18 @@ public class controler : MonoBehaviour
 	public void volverajugaranuncio()
 	{
 		{
+			vidas = 3;
+			PlayerPrefs.SetFloat("vidas", 3);
+
 			perdermensaje.SetActive(false);
+			print("se DESACTIVO canvas perder ");
+
 			if (preguntas.activeSelf)
 			{
 				controladorp.ProxPre();
 			}
 			Time.timeScale = 1;
 			StartCoroutine(PL());
-			vidas = 3;
-			PlayerPrefs.SetFloat("vidas", 3);
 			if (vidas > 0)
 			{
 				anim.SetBool("muerte", false);
@@ -1716,6 +1717,11 @@ public class controler : MonoBehaviour
 		{
 			if (preguntas.activeSelf) controladorp.ProxPre();
 
+			Resucite.GenPlat();
+			transform.position = Resucite.PlayerRespawn.position;
+			GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+			print("player posicionado");
+			Time.timeScale = 1;
 
 			StartCoroutine(PL());
 			vidas = 3;
@@ -1728,6 +1734,9 @@ public class controler : MonoBehaviour
 			 print("prueba");
 
 			}
+
+			
+
 			canva.SetActive(true);
 			boton.SetActive(true);
 
@@ -1748,6 +1757,8 @@ public class controler : MonoBehaviour
 			print("BugFixing 3");
 
 			perdermensaje.SetActive(false);
+			print("se DESACTIVO canvas perder 1");
+
 			Time.timeScale = 1;
 			paus = 1;
 			h = 0;
@@ -1766,9 +1777,7 @@ public class controler : MonoBehaviour
 			audio.Play();
 		}
 
-		transform.position = Resucite.PlayerRespawn.position;
-		Resucite.GenPlat();
-		Time.timeScale = 1;
+		
 
 
 	}
@@ -1939,6 +1948,7 @@ public class controler : MonoBehaviour
 
 		if (tigrezone) textodinero.text = "" + PlayerPrefs.GetFloat("dinero", 0).ToString();
 
+		if(!perdermensaje.activeSelf)
 		gestorlife();
 
 		if (celeridad > 0.1 && power2 || celeridad < -0.1 && power2) samurai3.SetActive(true);
@@ -2828,32 +2838,34 @@ public class controler : MonoBehaviour
 		//CDNOVA seguirp.s();
 
 		vidas = PlayerPrefs.GetFloat("vidas", 3);
-		if (vidas == 2)
-		{
-			c3.SetActive(false);
-			c1.SetActive(true);
-			c2.SetActive(true);
-		}
-		if (vidas == 1)
-		{
-			c1.SetActive(true);
-			c2.SetActive(false);
-			c3.SetActive(false);
-		}
-		if (vidas < 1)
-		{
-			c1.SetActive(false);
-			c2.SetActive(false);
-			c3.SetActive(false);
-			perdermensaje.SetActive(true);
-		}
 
 		if (vidas == 3)
 		{
 			c3.SetActive(true);
-			c1.SetActive(true);
 			c2.SetActive(true);
+			c1.SetActive(true);
 		}
+		if (vidas == 2)
+		{
+			c3.SetActive(false);
+			c2.SetActive(true);
+			c1.SetActive(true);
+		}
+		if (vidas == 1)
+		{
+			c3.SetActive(false);
+			c2.SetActive(false);
+			c1.SetActive(true);
+		}
+		if (vidas == 0)
+		{
+			c3.SetActive(false);
+			c2.SetActive(false);
+			c1.SetActive(false);
+		//	perdermensaje.SetActive(true);
+		//	print("se activo canvas perder");
+		}
+		
 		PlayerPrefs.SetFloat("vidas", vidas);
 	}
 
@@ -2919,6 +2931,7 @@ public class controler : MonoBehaviour
 						StartCoroutine(muert());
 						muerte = false;
 						anim.SetBool("muerte", true);
+
 					}
 
 				}
@@ -2975,6 +2988,8 @@ public class controler : MonoBehaviour
 			yield return new WaitForSecondsRealtime(2f);
 
 			perdermensaje.SetActive(true);
+			print("se activo canvas perder 2");
+
 			text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 			gestora.sto();
 
@@ -3073,9 +3088,19 @@ public class controler : MonoBehaviour
 		audio.clip = muerteaudio;
 		audio.Play();
 		yield return new WaitForSecondsRealtime(2.5f);
-		perdermensaje.SetActive(true);
+
+		if (vidas <= 0)
+        {
+			perdermensaje.SetActive(true);
+			print("se activo canvas perder 3");
+		}
+		
+		Time.timeScale = 1;
+
 		text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 		gestora.sto();
+
+
 	}
 
 
@@ -3128,6 +3153,16 @@ public class controler : MonoBehaviour
 		Instantiate(cccc, c123arribal.transform.position, Quaternion.identity);
 		unacasc = true;
 
+
+	}
+
+	public void CallThemBug() => StartCoroutine(TemporalInvulmerable());
+	public IEnumerator TemporalInvulmerable()
+    {
+		bool temporalInmortal = inmortal;
+		inmortal = true;
+		yield return new WaitForSecondsRealtime(1.9f);
+		inmortal = temporalInmortal;
 
 	}
 
@@ -3701,6 +3736,8 @@ public class controler : MonoBehaviour
 					else
 					{
 						perdermensaje.SetActive(true);
+						print("se activo canvas perder 4");
+
 						text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 						audio.Stop();
 						audio2.Stop();
@@ -3952,6 +3989,8 @@ public class controler : MonoBehaviour
 					else
 					{
 						perdermensaje.SetActive(true);
+						print("se activo canvas perder 5");
+
 						text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
 						audio.Stop();
 						audio.clip = aah;
