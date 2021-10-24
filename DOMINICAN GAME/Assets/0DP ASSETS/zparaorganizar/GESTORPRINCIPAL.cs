@@ -134,17 +134,13 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
         Debug.Log("Preinicializando ads");
 
-        if(!AnunciosInicializados)
-        {
-
+       
         MobileAds.Initialize(initStatus =>
         {
             Debug.Log("Ads iniciados " + initStatus);
             llamar();
         });
 
-            AnunciosInicializados = true;
-        }
 
     }
 
