@@ -49,9 +49,9 @@ public class IniciadorAds : MonoBehaviour
         statico = this;
 
 #if UNITY_ANDROID
-        ID_anuncioBonificado = "ca-app-pub-3940256099942544/5224354917";
+        ID_anuncioBonificado = "ca-app-pub-9304701110302498/7017766198";
 #elif UNITY_IPHONE
-        ID_anuncioBonificado = "ca-app-pub-3940256099942544/1712485313";
+        ID_anuncioBonificado = "ca-app-pub-9304701110302498/8639075529";
 #else
         ID_anuncioBonificado = "ca-app-pub-3940256099942544/5224354917";
 #endif
