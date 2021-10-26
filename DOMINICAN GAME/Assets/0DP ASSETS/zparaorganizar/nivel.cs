@@ -18,6 +18,14 @@ public class nivel : MonoBehaviour
 
     public List<Transform> NivelesSlot;
 
+    public void TestAd()
+    {
+        // IniciadorAds.statico.Cargar_RevivirAnuncio();
+         IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
+
+        
+
+    }
 
     // Start is called before the first frame update
     void Start()

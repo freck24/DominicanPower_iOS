@@ -1715,6 +1715,7 @@ public class controler : MonoBehaviour
 	{
 		if (PlayerPrefs.GetFloat("dinero", 0) > 4999) // 4999
 		{
+			CallThemBug();
 			if (preguntas.activeSelf) controladorp.ProxPre();
 
 			Resucite.GenPlat();
@@ -3161,7 +3162,7 @@ public class controler : MonoBehaviour
     {
 		bool temporalInmortal = inmortal;
 		inmortal = true;
-		yield return new WaitForSecondsRealtime(1.9f);
+		yield return new WaitForSecondsRealtime(2.9f);
 		inmortal = temporalInmortal;
 
 	}

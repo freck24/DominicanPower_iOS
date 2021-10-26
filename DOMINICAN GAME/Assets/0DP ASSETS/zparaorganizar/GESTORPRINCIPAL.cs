@@ -90,14 +90,23 @@ public class GESTORPRINCIPAL : MonoBehaviour
     }
    public void mostrarreco()
     {
+        Debug.Log("Se Llamo Para Mostrar Anuncio");
+      //  IniciadorAds.statico.Cargar_RevivirAnuncio();
+        IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
+
+    }
+
+    public void mostrarreco_BACKUP()
+    {
         Debug.Log("Showing rewarded ad");
         if (this.rewardedAd.IsLoaded())
         {
             this.rewardedAd.Show();
         }
-    } 
-    
-   
+    }
+
+
+
 
 
 
@@ -132,14 +141,14 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
 
 
-        Debug.Log("Preinicializando ads");
+      //  Debug.Log("Preinicializando ads");
 
        
-        MobileAds.Initialize(initStatus =>
-        {
-            Debug.Log("Ads iniciados " + initStatus);
-            llamar();
-        });
+     //   MobileAds.Initialize(initStatus =>
+   //     {
+    //        Debug.Log("Ads iniciados " + initStatus);
+    //        llamar();
+    //    });
 
 
     }
@@ -170,7 +179,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
         // Called when an ad request has successfully loaded.
 
         // Called when an ad request failed to load.
-       this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+      // this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
         // Called when an ad is shown.
 
         // Called when an ad request failed to show.
@@ -195,7 +204,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
             this.rewardedAd.LoadAd(request);
         }
 
-        MobileAds.Initialize(appID);
+      //  MobileAds.Initialize(appID);
 
     }
 

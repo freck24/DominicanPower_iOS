@@ -37,6 +37,12 @@ public void cargares()
 
 
         if(DestruirGrupo != null)DestroyImmediate(DestruirGrupo);
+
+        if (FindObjectOfType<controler>() != null)
+        {
+            Destroy(FindObjectOfType<controler>());
+            IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
+        }
     }
 
 }
