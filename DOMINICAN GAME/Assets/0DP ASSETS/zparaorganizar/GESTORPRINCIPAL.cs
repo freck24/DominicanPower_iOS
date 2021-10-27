@@ -80,193 +80,31 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
     }*/
 
-    //Mostrar interstitial
     public void mostrarinter()
     {
-        if (inter.IsLoaded())
-        {
-            inter.Show();
-        }
+    Debug.Log("Se Llamo Para Mostrar Anuncio Intersticial");
+        scriptEjemploVR.instance.Mostrar_Intersticial();
     }
    public void mostrarreco()
     {
-        Debug.Log("Se Llamo Para Mostrar Anuncio");
-      //  IniciadorAds.statico.Cargar_RevivirAnuncio();
-        IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
-
+    Debug.Log("Se Llamo Para Mostrar Anuncio Video");
+        scriptEjemploVR.instance.Mostrar_Video();
     }
 
-    public void mostrarreco_BACKUP()
-    {
-        Debug.Log("Showing rewarded ad");
-        if (this.rewardedAd.IsLoaded())
-        {
-            this.rewardedAd.Show();
-        }
-    }
-
-
-
-
-
-
-
-    public void configuraciones()
-    {
-        // 1 menor que 13
-        if (PlayerPrefs.GetInt("edad", 0) == 1)
-        {
-            RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
-          .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
-          .build();
-            MobileAds.SetRequestConfiguration(requestConfiguration);
-        } 
-        
-        // 1 no personalizar anuncios
-        if (PlayerPrefs.GetInt("anu", 0) == 1)
-        {
-            AdRequest request = new AdRequest.Builder()
-        .AddExtra("npa", "1")
-        .Build();
-        }
-        else
-        {
-            AdRequest request = new AdRequest.Builder()
-       .AddExtra("npa", "0")
-       .Build();
-        }
-
-
-
-
-
-
-      //  Debug.Log("Preinicializando ads");
-
-       
-     //   MobileAds.Initialize(initStatus =>
-   //     {
-    //        Debug.Log("Ads iniciados " + initStatus);
-    //        llamar();
-    //    });
-
-
-    }
-
-
-    private void Awake()
-    {
-        appID = "ca-app-pub-9304701110302498~4944191339";
-      interID = "ca-app-pub-9304701110302498/3578320535";
-       recoID = "ca-app-pub-9304701110302498/8639075529";
-        //TEST IDS
-        // interID = "ca-app-pub-3940256099942544/1033173712";
-        // recoID = "ca-app-pub-3940256099942544/5224354917";
-      
-        {
-            configuraciones();
-           
-        }
-      
-        
-       
-    }
-
-    public void llamar()
-    {
-        this.rewardedAd = new RewardedAd(recoID);
-
-        // Called when an ad request has successfully loaded.
-
-        // Called when an ad request failed to load.
-      // this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
-        // Called when an ad is shown.
-
-        // Called when an ad request failed to show.
-        this.rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
-        this.rewardedAd.OnAdLoaded += (sender, args) => Debug.Log("Ad loaded");
-        // Called when the user should be rewarded for interacting with the ad.
-        this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
-        this.rewardedAd.OnAdClosed += HandleRewardedAdClosed;
-        // Called when the ad is closed.
-
-        if (PlayerPrefs.GetInt("anu", 0) == 1)
-        {
-
-            AdRequest request = new AdRequest.Builder().AddExtra("rdp", "1").Build();
-            // Load the rewarded ad with the request.
-            this.rewardedAd.LoadAd(request);
-        }
-        else
-        {
-            AdRequest request = new AdRequest.Builder().AddExtra("rdp", "0").Build();
-            // Load the rewarded ad with the request.
-            this.rewardedAd.LoadAd(request);
-        }
-
-      //  MobileAds.Initialize(appID);
-
-    }
-
-
-    void HandleRewardedAdClosed(object sender, System.EventArgs args)
-    {
-        llamar();
-    }
-
-    public void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args)
-    {
-        Debug.Log(
-            "HandleRewardedAdFailedToLoad event received with message: "
-                             + args.Message);
-    }
-
-
-
-    public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
-    {
-        Debug.Log(
-            "HandleRewardedAdFailedToShow event received with message: "
-                             + args.Message);
-    }
-
-
-
-    public void HandleUserEarnedReward(object sender, Reward args)
-    {
-        string type = args.Type;
-        double amount = args.Amount;
-        Debug.Log(
-            "HandleRewardedAdRewarded event received for "
-                        + amount.ToString() + " " + type);
-        cont.volverajugaranuncio();
-
-
-        /*  mostrarr.SetActive(true);
-          rbonificado.text = "" + respuestauser;*/
-    }
-    
-    // Start is called before the first frame update
     void Start()
     {
 
-        //Instantiate(Nivel_data);
-
         tiempopoder = 10+ PlayerPrefs.GetFloat("tiempopoder", 0)*2;
         PlayerPrefs.SetInt("cg", 0);
-        pedirinter();
         
         a = GetComponent<AudioSource>();
 
         niv = PlayerPrefs.GetFloat("sj", 1);
-
         nivel = PlayerPrefs.GetFloat("sd", 1);
-
         if(PlayerPrefs.GetFloat("nivel",1)==5 || PlayerPrefs.GetFloat("nivel", 1) == 8)
         {
             //PLATAFORMADINE.SetActive(true);
         }
-
 
         ScreenLoader = FindObjectOfType<PreLoaderLevel>();
     }

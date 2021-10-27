@@ -29,7 +29,7 @@ public class IniciadorAds : MonoBehaviour
 
     
 
-    public void Start()
+    public void xStart()
     {
 
         if (statico != null)
@@ -162,7 +162,7 @@ public class IniciadorAds : MonoBehaviour
     {
         sou.PlayOneShot(clip6);
         print("HandleRewardedAdClosed event meeeeww");
-        Start();
+      
 
         // Load the rewarded ad with the request.
         if (FindObjectOfType<controler>() != null) FindObjectOfType<controler>().volverajugaranuncio();
@@ -177,8 +177,7 @@ public class IniciadorAds : MonoBehaviour
         MobileAdsEventExecutor.ExecuteInUpdate(() =>
         {
         sou.PlayOneShot(clip7);
-            Start();
-
+        
         });
     }
 

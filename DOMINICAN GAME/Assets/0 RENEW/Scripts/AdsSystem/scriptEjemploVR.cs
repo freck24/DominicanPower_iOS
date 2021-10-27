@@ -5,23 +5,21 @@ using GoogleMobileAds.Api;
 using System;
 
 public class scriptEjemploVR : MonoBehaviour
-
 {
-
-
-    public string rewaredunidID = "ca-app-pub-3940256099942544/5224354917";
-    private RewardedAd rewaredAD;
-    int moneda;
+    public ID_anuncios_reales Ids;
     public static scriptEjemploVR instance;
 
 
+    private RewardedAd rewaredAD;
+    private InterstitialAd interstitial;
+
 
     private void Awake()
-
     {
         if (instance == null)
         {
             instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
         else
         {
@@ -32,56 +30,103 @@ public class scriptEjemploVR : MonoBehaviour
     }
 
 
-
-
-
-    public void OnEnable()
+    public void Start()
     {
-        rewaredAD = new RewardedAd(rewaredunidID);
-        AdRequest adRECu = new AdRequest.Builder().Build();
-        rewaredAD.LoadAd(adRECu);
+        // 1 menor que 13
+        if (PlayerPrefs.GetInt("edad", 0) == 1)
+        {
+            RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
+          .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
+          .build();
+            MobileAds.SetRequestConfiguration(requestConfiguration);
+        }
 
-        rewaredAD.OnUserEarnedReward += HandleUserEarnedReward;
-        rewaredAD.OnAdClosed += HandleRewardedAdClosed;
-
+        RequestInterstitial();
+        RequestVideoReward();
     }
 
 
 
+    
+
+
+    public void Mostrar_Video()
+    {
+    if (rewaredAD.IsLoaded()) rewaredAD.Show();
+    else RequestVideoReward();
+    }
+
+    public void Mostrar_Intersticial()
+    {
+    if (interstitial.IsLoaded()) interstitial.Show();
+    else RequestInterstitial();
+    }
+
+    private void RequestVideoReward()
+    {
+        rewaredAD = new RewardedAd(Ids.ID_VideoReward);
+        rewaredAD.OnAdLoaded += HandleRewardedAdLoaded;
+        rewaredAD.OnUserEarnedReward += HandleUserEarnedReward; 
+        rewaredAD.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+        rewaredAD.OnAdClosed += HandleRewardedAdClosed;
+
+        AdRequest adRECu = new AdRequest.Builder().AddExtra("npa", PlayerPrefs.GetInt("anu", 0).ToString()).Build();
+        rewaredAD.LoadAd(adRECu);
+    }
+
+    private void RequestInterstitial()
+{
+    interstitial = new InterstitialAd(Ids.ID_Intersticial);
+    interstitial.OnAdLoaded += HandleOnAdLoaded;
+    interstitial.OnAdClosed += HandleOnAdClosed;
+    interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+
+    AdRequest request = new AdRequest.Builder().AddExtra("npa", PlayerPrefs.GetInt("anu", 0).ToString()).Build();
+    interstitial.LoadAd(request);
+}
+
+
+    public void HandleRewardedAdLoaded(object sender, EventArgs args) => print("SE CARGO ANUNCIO VIDEO BONIFICADO");
+    public void HandleOnAdLoaded(object sender, EventArgs args) => print("SE CARGO ANUNCIO INTERSTICIAL");
+
+
+    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        print("ANUNCIO INTERSTICIAL FALLO LA CARGA");
+        RequestInterstitial();
+    }
+    public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    {
+        print("ANUNCIO video FALLO LA CARGA");
+        RequestVideoReward();
+    }
+
+    public void HandleOnAdClosed(object sender, EventArgs args)
+    {
+        print("SE CERRO EL ANUNCIO INTERSTICIAL");
+        interstitial.Destroy();
+        RequestInterstitial();
+
+    }
     private void HandleRewardedAdClosed(object sender, EventArgs e)
     {
-        Debug.Log("ejecutar algo cuando se cierra el anuncio");
-        cerraAd();
+        print("SE CERRO EL VIDEO BONIFICADO");
+        rewaredAD.Destroy();
+        RequestVideoReward();
     }
 
 
 
     private void HandleUserEarnedReward(object sender, Reward e)
     {
-        Debug.Log("se a reclamado la recompensa" + moneda);
+        Debug.Log("SE TERMINO DE VER EL VIDEO BONIFICADO");
+
         if (FindObjectOfType<controler>() != null) FindObjectOfType<controler>().volverajugaranuncio();
     }
 
 
-
-
-
-    public void ShowREWAD()
-    {
-        if (rewaredAD.IsLoaded())
-            rewaredAD.Show();
-    }
-
-
-
-    public void cerraAd()
-
-    {
-        Debug.Log("se cerro felicitaciones");
-        OnEnable();
-    }
-
 }
 
 
-//termino el codigo
+
+

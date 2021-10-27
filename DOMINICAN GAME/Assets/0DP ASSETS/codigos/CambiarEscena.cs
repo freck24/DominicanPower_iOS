@@ -41,7 +41,7 @@ public void cargares()
         if (FindObjectOfType<controler>() != null)
         {
             Destroy(FindObjectOfType<controler>());
-            IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
+            scriptEjemploVR.instance.Mostrar_Intersticial();
         }
     }
 

@@ -28,6 +28,12 @@ public class PlatformSelect : MonoBehaviour
 
     public string Get_PlatformLink()
     {
+    #if UNITY_ANDROID
+    PlatformSelect.ps.IsAppleVersion = false;
+    #elif UNITY_IOS
+    PlatformSelect.ps.IsAppleVersion = true;
+    #endif
+
         return (PlatformSelect.ps.IsAppleVersion) ? Link_Apple : Link_Android;
     }
 

@@ -20,11 +20,11 @@ public class nivel : MonoBehaviour
 
     public void TestAd()
     {
-        // IniciadorAds.statico.Cargar_RevivirAnuncio();
-         IniciadorAds.statico.GetComponent<scriptEjemploVR>().ShowREWAD();
-
-        
-
+    scriptEjemploVR.instance.Mostrar_Video();
+    }
+    public void TestAd2()
+    {
+    scriptEjemploVR.instance.Mostrar_Intersticial();
     }
 
     // Start is called before the first frame update
