@@ -148,6 +148,11 @@ public class inicietion : MonoBehaviour
     }
    
 
+    public void SetMinigame(int valorsito)
+    {
+        PlayerPrefs.SetInt("PlayingGame", valorsito);
+    }
+
     public GameObject controles;
 
     public void abrircontroles()

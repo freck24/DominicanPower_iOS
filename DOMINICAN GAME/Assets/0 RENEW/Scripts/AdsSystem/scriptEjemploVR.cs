@@ -6,6 +6,12 @@ using System;
 
 public class scriptEjemploVR : MonoBehaviour
 {
+
+    [Header("Anuncio Por Llamadas 1")]
+    public int Llamada_Actual;
+    public int Llamada_Maxima;
+
+    [Space(5)]
     public ID_anuncios_reales Ids;
     public static scriptEjemploVR instance;
 
@@ -13,6 +19,18 @@ public class scriptEjemploVR : MonoBehaviour
     private RewardedAd rewaredAD;
     private InterstitialAd interstitial;
 
+
+    public void AdsByCall_Intersticial()
+    {
+    Llamada_Actual++;
+
+
+    if (Llamada_Actual >= Llamada_Maxima)
+    {
+            Mostrar_Intersticial();
+            Llamada_Actual = 0;
+    }
+    }
 
     private void Awake()
     {
@@ -95,7 +113,7 @@ public class scriptEjemploVR : MonoBehaviour
         print("ANUNCIO INTERSTICIAL FALLO LA CARGA");
         RequestInterstitial();
     }
-    public void HandleRewardedAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    public void HandleRewardedAdFailedToLoad(object sender, EventArgs args)
     {
         print("ANUNCIO video FALLO LA CARGA");
         RequestVideoReward();
@@ -111,7 +129,6 @@ public class scriptEjemploVR : MonoBehaviour
     private void HandleRewardedAdClosed(object sender, EventArgs e)
     {
         print("SE CERRO EL VIDEO BONIFICADO");
-        rewaredAD.Destroy();
         RequestVideoReward();
     }
 
