@@ -9,8 +9,12 @@ public class DisableContinue : MonoBehaviour
 
     void Start()
     {
-        if (PlayerPrefs.GetInt("PlayingGame", 0) == 1) ToDisable.SetActive(false);
+        if (PlayerPrefs.GetInt("PlayingGame", 0) == 1)
+        {
+        scriptEjemploVR.instance.AdsByCall_Intersticial();
+        ToDisable.SetActive(false);
+        }
     }
 
-    
+
 }

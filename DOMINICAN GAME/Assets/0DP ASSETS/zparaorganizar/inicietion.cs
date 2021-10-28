@@ -154,7 +154,10 @@ public class inicietion : MonoBehaviour
     }
 
     public GameObject controles;
-
+     public void AAA_sendAdCount()
+    {
+        scriptEjemploVR.instance.AdsByCall_Intersticial();
+    }
     public void abrircontroles()
     {
         controles.SetActive(true);
@@ -779,6 +782,7 @@ public class inicietion : MonoBehaviour
                  mision1.SetActive(false);
              }*/
         StartCoroutine(VER());
+        scriptEjemploVR.instance.AdsByCall_Video();
 
     }
 
