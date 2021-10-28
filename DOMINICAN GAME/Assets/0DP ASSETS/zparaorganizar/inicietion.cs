@@ -156,7 +156,7 @@ public class inicietion : MonoBehaviour
     public GameObject controles;
      public void AAA_sendAdCount()
     {
-        scriptEjemploVR.instance.AdsByCall_Intersticial();
+        if(PlayerPrefs.GetInt("anuncios", 1) == 1) scriptEjemploVR.instance.AdsByCall_Intersticial();
     }
     public void abrircontroles()
     {
@@ -782,7 +782,7 @@ public class inicietion : MonoBehaviour
                  mision1.SetActive(false);
              }*/
         StartCoroutine(VER());
-        scriptEjemploVR.instance.AdsByCall_Video();
+       
 
     }
 
