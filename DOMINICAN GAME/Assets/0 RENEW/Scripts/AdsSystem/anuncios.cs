@@ -82,7 +82,7 @@ public class anuncios : MonoBehaviour
         // Called when an ad request has successfully loaded.
 
         // Called when an ad request failed to load.
-        this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+     //   this.rewardedAd.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
         // Called when an ad is shown.
 
         // Called when an ad request failed to show.

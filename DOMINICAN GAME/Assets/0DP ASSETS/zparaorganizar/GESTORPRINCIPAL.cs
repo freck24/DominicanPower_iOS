@@ -235,11 +235,25 @@ public class GESTORPRINCIPAL : MonoBehaviour
         ScreenLoader.isnivelactualsiguiente = true;
         ScreenLoader.scena = "LEVEL 1 CLONE";
 
-        if (PlayerPrefs.GetFloat("nivel", 1) % 2==0 && PlayerPrefs.GetInt("anuncios",1)==1)
-            { 
-            if(PlayerPrefs.GetFloat("nivel", 1) < 30) mostrarinter(); //publicidad
-            else mostrarreco();
+
+
+        if(PlayerPrefs.GetInt("anuncios", 1) == 1)
+        {
+            if (PlayerPrefs.GetFloat("nivel", 1) > 15)
+            {
+                mostrarreco();
+                
             }
+            else
+            {
+               if( PlayerPrefs.GetFloat("nivel", 1)%2 == 0)
+                {
+                    mostrarinter();
+                }
+               
+            }
+        }
+        
 
 
         ScreenLoader.gameObject.SetActive(true);
