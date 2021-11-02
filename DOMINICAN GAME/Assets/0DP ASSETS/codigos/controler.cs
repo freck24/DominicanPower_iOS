@@ -594,7 +594,7 @@ public class controler : MonoBehaviour
 				generarp.cancelargen();
 				StartCoroutine(colores());
 				StartCoroutine(retraso());
-				a4.SetActive(false);
+				//a4.SetActive(false);
 				niveles.text = "CAPOTILLO";
 
 				//	n1.SetActive(true);
@@ -1008,7 +1008,7 @@ public class controler : MonoBehaviour
 				generarp.cancelargen();
 				StartCoroutine(colores());
 				StartCoroutine(retraso());
-				a4.SetActive(false);
+			//	a4.SetActive(false);
 				niveles.text = "CAPOTILLO";
 
 				//	n1.SetActive(true);
