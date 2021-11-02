@@ -66,7 +66,7 @@ public class TiendaControl : MonoBehaviour {
 				PlayerPrefs.SetInt("anuncios", 1);
 			}
 		} else {
-			bt_NoAds.SetActive (false);//ya que la tienda no esta disponible
+			//bt_NoAds.SetActive (false);//ya que la tienda no esta disponible
 		//	bannerAnuncio.SetActive (true);
 		}
 	}
