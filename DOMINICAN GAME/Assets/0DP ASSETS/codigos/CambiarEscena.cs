@@ -23,7 +23,12 @@ public void cargares()
     public void NewCargaID(int id)
     {
 
-        if(id == 0 && PlayerPrefs.GetInt("anuncios", 1) == 1)
+        if (id == 2 || id == 3)
+        {
+            FindObjectOfType<GESTORPRINCIPAL>().siguientenivel();
+        }
+
+        if (id == 0 && PlayerPrefs.GetInt("anuncios", 1) == 1)
         {
             int ran = Random.Range(0, 2);
            if(ran == 0) scriptEjemploVR.instance.Mostrar_Intersticial();
