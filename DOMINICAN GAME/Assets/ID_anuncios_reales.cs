@@ -35,7 +35,7 @@ public class ID_anuncios_reales : MonoBehaviour
     {
         ID_App = MyPlataforma(Id_Android_APP, Id_iOS_APP);
 
-        ID_VideoReward = MyPlataforma(Id_Android_Bonificado, Id_TEST_Bonificado);
+        ID_VideoReward = MyPlataforma(Id_Android_Bonificado, Id_Ios_Bonificado);
         ID_Intersticial = MyPlataforma(Id_Android_Interticial, Id_Ios_Interticial);
 
         if(testing)
