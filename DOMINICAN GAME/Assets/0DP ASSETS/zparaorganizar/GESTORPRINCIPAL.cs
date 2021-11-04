@@ -231,11 +231,11 @@ public class GESTORPRINCIPAL : MonoBehaviour
     public GameObject cargarsiguiente;
     public void siguientenivel()
     {
-        if(PlayerPrefs.GetString("nombre", "") == "freck24") //PARA QUE LE APAREZCAN ANUNCIOS AL DESARROLLADOR
+    /*    if(PlayerPrefs.GetString("nombre", "") == "freck24") //PARA QUE LE APAREZCAN ANUNCIOS AL DESARROLLADOR
         {
             PlayerPrefs.SetInt("anuncios", 1);
             print("LE ESTA APRECIENDO ANUNCIOS DEV");
-        }
+        }*/
    //     ScreenLoader.isnivelactualsiguiente = true;
       //  ScreenLoader.scena = "LEVEL 1 CLONE";
 
@@ -253,7 +253,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
                if( PlayerPrefs.GetFloat("nivel", 1)%2 == 0)
                 {
                     mostrarinter();
-                    print("SIRVENLOSANUNCIOS");
+                   
                 }
                
             }
