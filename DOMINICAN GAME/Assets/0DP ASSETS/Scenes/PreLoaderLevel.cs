@@ -15,13 +15,13 @@ namespace EMGame
 
         public bool nomostrable = false;
         public bool nocargada = true;
-        public RectTransform progressBar;
         public string scena;
         public Text textComponent;
         public bool immediateActivateScene = false;
 
         protected AsyncOperation async;
         protected float progressPercent;
+        public Image FillCarga;
         public Toggle A;
 
         public bool isnivelactualsiguiente = false;
@@ -30,8 +30,6 @@ namespace EMGame
         public int AUTOMATICO = 0;
         public GameObject letra;
 
-        public Vector2 progressBarSizeDelta;
-        public float parentWidth;
         public string[] datos = new string[15];
         public int i = 0;
         public Text datitos;
@@ -61,11 +59,11 @@ namespace EMGame
 
         public void cargar()
         {
-            if (progressPercent >= 90)
-                async.allowSceneActivation = true;
+        if (progressPercent >= 90)
+        async.allowSceneActivation = true;
 
-            GrupoEntrando.SetActive(true);
-            BotonIr.SetActive(false);
+        GrupoEntrando.SetActive(true);
+        BotonIr.SetActive(false);
         }
 
 
@@ -73,10 +71,10 @@ namespace EMGame
         public void cargar2()
         {
 
-            async.allowSceneActivation = true;
+        async.allowSceneActivation = true;
 
-            GrupoEntrando.SetActive(true);
-            BotonIr.SetActive(false);
+        GrupoEntrando.SetActive(true);
+        BotonIr.SetActive(false);
         }
 
         public virtual void Start()
@@ -120,9 +118,7 @@ namespace EMGame
             }
             else
             {
-              //  async = SceneManager.LoadSceneAsync(scena);
-             async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
-                    //async = SceneManager.LoadSceneAsync((int)PlayerPrefs.GetFloat("nivel",1));
+            async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
             }
 
             // se establece si se activara la escena inmediatamente
@@ -166,21 +162,17 @@ namespace EMGame
         }
 
 
-        public void AcualizarData()
-        {
+    public void AcualizarData()
+    {
+    if (async != null) progressPercent = async.progress;
 
-            if (async != null) progressPercent = async.progress * 100;
-            if (nocargada) textComponent.text =  ((int)progressPercent).ToString() + " %";
-            if (nocargada)
-            {
-                // aqui cada implementacion puede ser diferente
-               float parentWidth = (progressBar.parent as RectTransform).rect.width;
-                progressBarSizeDelta = progressBar.sizeDelta;
-                // ValueFromPercent calcula el valor de un porcentaje en base a su maximo valor x = (maxFactor / 100) * porentaje
-                progressBarSizeDelta.x = (parentWidth + progressPercent*parentWidth/45);
-                progressBar.sizeDelta = progressBarSizeDelta;
-            }
-        }
+    if (nocargada)
+    {
+    textComponent.text = ((int)progressPercent * 100).ToString() + "%";
+    FillCarga.fillAmount = progressPercent;
+    }
+
+    }
 
         
         public void datoscuriosos()
@@ -210,8 +202,6 @@ namespace EMGame
                 cargar2();
 
             nocargada = false;
-            progressBarSizeDelta.x = 2230;
-            progressBar.sizeDelta = progressBarSizeDelta;
             textComponent.text =  "100%";
             Anim.SetBool("Cargado", true);
             Time.timeScale = 1;

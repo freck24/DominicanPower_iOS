@@ -12,7 +12,7 @@
 
         void Awake()
         {
-            UpdateAspect();
+          //  UpdateAspect();
         }
 
    

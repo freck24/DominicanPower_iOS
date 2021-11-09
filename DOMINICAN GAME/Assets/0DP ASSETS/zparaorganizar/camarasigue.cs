@@ -41,7 +41,7 @@ public class camarasigue : MonoBehaviour
 
     }
         a = transform.position;
-        diastanciamax += player.transform.position.y - 2f;
+      //  diastanciamax += player.transform.position.y - 2f;
         s = true;
 
     }

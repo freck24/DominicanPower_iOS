@@ -48,7 +48,7 @@ public float t5=2;
 
         yield return new WaitForSecondsRealtime(3f);
         dialog.text = "En este pais se baila Merengue";
-        yield return new WaitForSecondsRealtime(4f);
+        yield return new WaitForSecondsRealtime(4.7f);
         nombre.text = "Tony:";
         dialog.text = "¿Que quieres?";
         yield return new WaitForSecondsRealtime(2);
@@ -88,12 +88,10 @@ public float t5=2;
         dialog.text = "Tienes 30 dias y 100,000 pesos que conseguir ";
 
 
-        yield return new WaitForSecondsRealtime(5f);
-        a.clip = cat;
-        a.Play();
-        yield return new WaitForSecondsRealtime(t5-2f);
-       a.clip = d7;
-        a.Play();
+        yield return new WaitForSecondsRealtime(3f);
+        a.PlayOneShot(cat);
+        yield return new WaitForSecondsRealtime(1f);
+        a.PlayOneShot(d7);
        
         yield return new WaitForSecondsRealtime(2);
     //  SceneManager.LoadScene("inicio");

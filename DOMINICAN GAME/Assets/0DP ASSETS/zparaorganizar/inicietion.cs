@@ -359,7 +359,7 @@ public class inicietion : MonoBehaviour
         POP();
         cred.SetActive(false);
     }
-    public void config()
+    public void config() //completo
     {
         POP();
         conf.SetActive(true);
@@ -394,7 +394,7 @@ public class inicietion : MonoBehaviour
     public GameObject con1;
     public GameObject con2;
 
-    public void compa()
+    public void compa() //completado
     {
         POP();
         compartir.SetActive(true);
@@ -577,7 +577,7 @@ public class inicietion : MonoBehaviour
     }
 
     public GameObject animacion;
-    public void trancicion()
+    public void trancicion()//nocompletado
     {
         animacion.SetActive(false);
         animacion.SetActive(true);

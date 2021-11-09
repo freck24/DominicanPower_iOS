@@ -82,12 +82,12 @@ public class IAP_Purchase : MonoBehaviour, IStoreListener {
 		}
 		//INICIALIZAMOS
 		//1r creamos el builder.
-		var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
+		//	var builder = ConfigurationBuilder.Instance(StandardPurchasingModule.Instance());
 		//AHora tenemos que anadir los productor que tengamos
-		builder.AddProduct(productoNoAnuncio, ProductType.NonConsumable);
-		builder.AddProduct(productoConsumible, ProductType.Consumable);
+		//	builder.AddProduct(productoNoAnuncio, ProductType.NonConsumable);
+		//	builder.AddProduct(productoConsumible, ProductType.Consumable);
 		//ahora sincronizamos
-		UnityPurchasing.Initialize(this, builder);
+		//	UnityPurchasing.Initialize(this, builder);
 
 	}
 
@@ -189,13 +189,14 @@ public class IAP_Purchase : MonoBehaviour, IStoreListener {
 			if (Application.platform == RuntimePlatform.IPhonePlayer ||
 				Application.platform == RuntimePlatform.OSXPlayer)
 			{
-                //Obtener extensión específica para apple
-				var appleExtension = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
-                //Inicia la llamada a la restauración
-				appleExtension.RestoreTransactions((result) =>
-				{
-					Debug.Log("Respuesta de restauración " + result);
-				});
+				Debug.Log("se desacrtivop");
+				//Obtener extensión específica para apple
+				//	var appleExtension = m_StoreExtensionProvider.GetExtension<IAppleExtensions>();
+				//Inicia la llamada a la restauración
+				//	appleExtension.RestoreTransactions((result) =>
+				//	{
+				//	Debug.Log("Respuesta de restauración " + result);
+				//	});
 			}
 			// Otherwise ...
 			else
