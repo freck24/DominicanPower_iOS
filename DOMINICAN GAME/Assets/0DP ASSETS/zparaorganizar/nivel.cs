@@ -47,9 +47,9 @@ public class nivel : MonoBehaviour
         {
             // ESTE NIVEL SE VA ABRIR
             PlayerPrefs.SetFloat("jn", LevelNewer);
-            
-            cargando.SetActive(true);
-            NOHA.SetActive(false);
+
+            if (cargando != null) cargando.SetActive(true);
+            if (NOHA != null) NOHA.SetActive(false);
             AudioFx.PlayOneShot(enter);
 
             int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
@@ -60,9 +60,9 @@ public class nivel : MonoBehaviour
             // ESTE NIVEL ESTA BLOQUEADO BEBE
             PlayerPrefs.SetFloat("jn", LevelNewer);
             AudioFx.PlayOneShot(fail);
-            NOHA.SetActive(false);
-            NOHA.SetActive(true);
-            cargando.SetActive(false);
+            if(NOHA != null) NOHA.SetActive(false);
+            if (NOHA != null) NOHA.SetActive(true);
+            if (cargando != null) cargando.SetActive(false);
         }
     }
    

@@ -8,15 +8,9 @@ public class quitarautomatico : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        if (PlayerPrefs.GetString("nombre", "") != "freck24")
-         yo.SetActive(false);
-        
-      
+    if (PlayerPrefs.GetString("nombre", "") != "freck24" && PlayerPrefs.GetString("nombre", "") != "EliezerYTT")
+    yo.SetActive(false);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

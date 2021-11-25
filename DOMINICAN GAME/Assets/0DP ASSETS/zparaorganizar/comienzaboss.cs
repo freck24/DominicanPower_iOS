@@ -28,7 +28,6 @@ public class comienzaboss : MonoBehaviour
             g.sonidomagnate();
             una = false;
             b.dale();
-            c.s = false;
             pared.SetActive(true);
             canvas.SetActive(true);
         }

@@ -64,7 +64,6 @@ public class boss : MonoBehaviour
         {
             anim.SetBool("muere", true);
             StartCoroutine(mue());
-            c.s = true;
             g.sonidomagnatefin();
         }
     }

@@ -8,6 +8,9 @@ using EMGame;
 
 public class inicietion : MonoBehaviour
 {
+    public GameObject AdVar;
+    public float NivelMod;
+
     public GameObject DestruirGrupo;
     public PreLoaderLevel ScreenLoader;
     public List<string> NombreEscenas; 
@@ -15,7 +18,21 @@ public class inicietion : MonoBehaviour
     public GameObject[] CU;
     public string youtube="https://youtube.com/c/EUProduccionesMusicales";
 
-    
+
+    public void AbrirLink(string Url)
+    {
+        Application.OpenURL(Url);
+        PromoManager.ActualUrl = Url;
+
+        Invoke("InstanciarAdRed", 4f);
+    }
+
+    public void SetTempValue(string Url) => PromoManager.FollowingTemp = Url;
+
+    public void InstanciarAdRed()
+    {
+        Instantiate(AdVar);
+    }
 
     public void you()
     {
@@ -128,11 +145,7 @@ public class inicietion : MonoBehaviour
     {
         NewCargaID(7);
     }
-    public void c9()
-    {
-        NewCargaID(8);
-    }
-
+    
     public void c11()
     {
         NewCargaID(10);
@@ -490,7 +503,6 @@ public class inicietion : MonoBehaviour
     }
     public void ccompletarcubos()
     {
-        minijueos();
         anio();
         mensajecubos.SetActive(false);
     }
@@ -544,7 +556,7 @@ public class inicietion : MonoBehaviour
     }
     public void RAYITA()
     {
-        SceneManager.LoadScene("rayita");
+    SceneManager.LoadScene("rayita");
     }
 
 
@@ -618,6 +630,8 @@ public class inicietion : MonoBehaviour
     void Start()
     {
         Time.timeScale = 1;
+        // PlayerPrefs.SetFloat("dinero", 1231200);
+        // PlayerPrefs.SetFloat("nivel", NivelMod);
 
         //PlayerPrefs.SetFloat("nivel", 86);
         Check_Liberado();
@@ -677,7 +691,7 @@ public class inicietion : MonoBehaviour
 
 
         if (PlayerPrefs.GetFloat("nivel", 0) > 16) {
-            blocka.SetActive(false);
+            if(blocka != null) blocka.SetActive(false);
         }
         //  PlayerPrefs.SetFloat("dinero", 100005);
 
@@ -754,15 +768,17 @@ public class inicietion : MonoBehaviour
             moto.SetActive(true);
             carro.SetActive(false);
 
-        } else
+        } 
+        else
     if (PlayerPrefs.GetFloat("carro", 0) == 1)
         {
             carro.SetActive(true);
             moto.SetActive(false);
         }
-        DIA.text = "DÍA " + PlayerPrefs.GetFloat("dia", 1);
+
+       if(DIA != null) DIA.text = "DÍA " + PlayerPrefs.GetFloat("dia", 1);
         a = GetComponent<AudioSource>();
-        panel.SetActive(false);
+        if(panel != null)panel.SetActive(false);
 
 
         if (PlayerPrefs.GetFloat("p1", 0) == 0) {
@@ -836,20 +852,18 @@ public class inicietion : MonoBehaviour
     void Check_Liberado()
     {
 
-        if (PlayerPrefs.GetFloat("nivel", 0) > 7) blockcu.SetActive(false);
+        if (PlayerPrefs.GetFloat("nivel", 0) > 7 && blockcu != null) blockcu.SetActive(false);
+
+        if (PlayerPrefs.GetFloat("nivel", 0) > 1 && yunr != null) yunr.SetActive(false);
+        else if (yunr != null) yunr.SetActive(true);
 
 
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 1) yunr.SetActive(false);
-        else yunr.SetActive(true);
-
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 4) trucanor.SetActive(false);
-        else trucanor.SetActive(true);
+        if (PlayerPrefs.GetFloat("nivel", 0) > 4 && trucanor != null) trucanor.SetActive(false);
+        else if (trucanor != null)trucanor.SetActive(true);
 
 
-        if (PlayerPrefs.GetFloat("nivel", 0) > 6) par.SetActive(false);
-        else par.SetActive(true);
+     //   if (PlayerPrefs.GetFloat("nivel", 0) > 6) par.SetActive(false);
+     //   else par.SetActive(true);
 
 
 
@@ -881,21 +895,7 @@ public class inicietion : MonoBehaviour
         SceneManager.LoadScene("deli");
     }
 
-    public void minijueos()
-    {
-        a.clip = pop;
-        a.Play();
-        panel.SetActive(false);
-        panel.SetActive(true);
-
-    }
-    public void cminijueosc()
-    {
-        a.clip = pop;
-        a.Play();
-        panel.SetActive(false);
-
-    }
+ 
 
 
     public void yun()

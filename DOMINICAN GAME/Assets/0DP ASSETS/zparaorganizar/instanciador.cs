@@ -5,8 +5,10 @@ using UnityEngine.UI;
 
 public class instanciador : MonoBehaviour
 {
-	public Transform p2;
 	public Transform p3;
+	public float MinY;
+	public float MaxY;
+
 	public GameObject ene;
 	public GameObject ene2;
 	public GameObject ene3;
@@ -46,54 +48,31 @@ public class instanciador : MonoBehaviour
 
 		ale2 = Random.Range(0, 4);
 		ale2 = ale2 - ale2 % 1;
-		if (ale2 == 1)
-		{
-			transform.position = p2.transform.position;
-		} else if (ale2 == 2)
-        {
-			transform.position = p3.transform.position;
-		} else
-        {
-			transform.position = g;
-		}
 
-		h = new Vector3(transform.position.x, transform.position.y, g.z);
+		Vector3 Posit = p3.transform.position;
+		Posit.y = Random.Range(MinY, MaxY);
+		Posit.z = g.z;
+
+		transform.position = Posit;
+
+	//	h = new Vector3(transform.position.x, transform.position.y, g.z);
 		ale = Random.Range(0, 5);
 		ale = ale - ale % 1;
-		if (ale == 1)
-		{
-			Instantiate(ene, h, Quaternion.identity);
-
-		}
-		else
-		if (ale == 0)
-		{
-			Instantiate(ene2, h, Quaternion.identity);
-
-		}
-		else if (ale == 2)
-		{
-			Instantiate(ene3, h, Quaternion.identity);
-
-		}
-		if (ale > 2)
-		{
-			Instantiate(ene4, h, Quaternion.identity);
-
-		}
+		if (ale == 1) Instantiate(ene, Posit, Quaternion.identity);
+		if (ale == 0) Instantiate(ene2, Posit, Quaternion.identity);
+		if (ale == 2) Instantiate(ene3, Posit, Quaternion.identity);
+		if (ale > 2) Instantiate(ene4, Posit, Quaternion.identity);
 
 	}
 
 	public void comenzar()
 	{
-		
-			InvokeRepeating("crear", 0f, tiempo);
-
+	InvokeRepeating("crear", 0f, tiempo);
 	}
 
 	public void cancelargen()
 	{
-		CancelInvoke("crear");
+	CancelInvoke("crear");
 	}
 
 
