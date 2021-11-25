@@ -10,6 +10,6 @@ public class CodeBG : MonoBehaviour
     public float TimeMoveY;
     void Update()
     {
-        Mat.mainTextureOffset += new Vector2(TimeMoveX, TimeMoveY * Time.deltaTime);
+        Mat.mainTextureOffset += new Vector2(TimeMoveX * Time.deltaTime, TimeMoveY * Time.deltaTime);
     }
 }
