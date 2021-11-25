@@ -15,7 +15,7 @@ E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
 -logFile
 Logs/AssetImportWorker1.log
 -srvPort
-54209
+52180
 Successfully changed project path to: E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
 E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 125.73 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 154.48 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.0f1 (4bf1ec4b23c9)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.0f1/Editor/Data/Resources/UnitySubsystems
@@ -63,52 +63,309 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.0f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56900
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56988
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.009529 seconds.
+Registered in 0.009468 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 95.71 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 145.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.386 seconds
+- Completed reload, in  1.320 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1386ms)
-		BeginReloadAssembly (79ms)
+	ReloadAssembly (1321ms)
+		BeginReloadAssembly (68ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (512ms)
-			LoadAssemblies (76ms)
+		EndReloadAssembly (504ms)
+			LoadAssemblies (65ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (124ms)
+			SetupTypeCache (106ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (32ms)
-			SetupLoadedEditorAssemblies (293ms)
+			RebuildScriptCaches (26ms)
+			SetupLoadedEditorAssemblies (318ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (7ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (96ms)
+				RefreshPlugins (145ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (132ms)
-				ProcessInitializeOnLoadMethodAttributes (57ms)
+				ProcessInitializeOnLoadAttributes (119ms)
+				ProcessInitializeOnLoadMethodAttributes (44ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.010468 seconds.
+Registered in 0.007262 seconds.
 Begin MonoManager ReloadAssembly
 OnLevelWasLoaded was found on scriptEjemploVR
 This message has been deprecated and will be removed in a later version of Unity.
 Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
 Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.17 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 2.01 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unable to write to 'ProjectSettings\GvhProjectSettings.xml' (System.IO.IOException: Sharing violation on path E:\new domincanpower\DominicanPower_iOS\DOMINICAN GAME\ProjectSettings\GvhProjectSettings.xml
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean useAsync) [0x00000] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,bool)
+  at System.Xml.XmlWriterSettings.CreateWriter (System.String outputFileName) [0x00051] in <b97a394bd81d491ca8dce58aaa578910>:0 
+  at System.Xml.XmlWriter.Create (System.String outputFileName, System.Xml.XmlWriterSettings settings) [0x0000a] in <b97a394bd81d491ca8dce58aaa578910>:0 
+  at Google.ProjectSettings.Save () [0x00095] in Z:\tmp\tmp.cirhDnLU30\third_party\unity\unity_jar_resolver\source\VersionHandlerImpl\src\ProjectSettings.cs:826 , Project settings were not saved!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+Google.Logger:Log (string,Google.LogLevel) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/Logger.cs:136)
+Google.ProjectSettings:Save () (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:842)
+Google.ProjectSettings:SetBool (string,bool,Google.SettingsLocation) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:484)
+Google.ProjectSettings:SetBool (string,bool) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:496)
+Google.IOSResolver:set_VerboseLoggingEnabled (bool) (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:986)
+Google.IOSResolver:.cctor () (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:689)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs Line: 842)
+
+Package Manager log level set to [2]
+Mono: successfully reloaded assembly
+- Completed reload, in  1.033 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1034ms)
+		BeginReloadAssembly (177ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (5ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (17ms)
+		EndReloadAssembly (746ms)
+			LoadAssemblies (87ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (149ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (57ms)
+			SetupLoadedEditorAssemblies (378ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (228ms)
+				ProcessInitializeOnLoadMethodAttributes (71ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.09 seconds
+Refreshing native plugins compatible for Editor in 2.07 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2543 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 132 unused Assets / (1.6 MB). Loaded Objects now: 2979.
+Memory consumption went from 154.2 MB to 152.6 MB.
+Total: 6.350200 ms (FindLiveObjects: 0.296600 ms CreateObjectMapping: 0.075300 ms MarkObjects: 5.441100 ms  DeleteObjects: 0.536200 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 205201.477989 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/New Material.mat
+  artifactKey: Guid(283e0d64f2b0dea40bf28e6c0699a5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/New Material.mat using Guid(283e0d64f2b0dea40bf28e6c0699a5e6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1780864f4c7519107e62972de5ddee83') in 0.136403 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA.prefab
+  artifactKey: Guid(3e9021e1ef1079341a30062337983164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA.prefab using Guid(3e9021e1ef1079341a30062337983164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b4d0bb0534928a1a2ac1b802c2fc4e93') in 0.057243 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/colirido.mat
+  artifactKey: Guid(f3805fe9095d75b44947adb46c363c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/colirido.mat using Guid(f3805fe9095d75b44947adb46c363c72) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6964c1748b79c64a63114e5a878f1019') in 0.015272 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab
+  artifactKey: Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab using Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c04653f2f4051752a8431c1ced3fa8ec') in 0.562413 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007399 seconds.
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.61 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.937 seconds
+Domain Reload Profiling:
+	ReloadAssembly (938ms)
+		BeginReloadAssembly (119ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (717ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (152ms)
+			ReleaseScriptCaches (1ms)
+			RebuildScriptCaches (52ms)
+			SetupLoadedEditorAssemblies (349ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (14ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (58ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (64ms)
+				AfterProcessingInitializeOnLoad (10ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (5ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2453 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (1.6 MB). Loaded Objects now: 3021.
+Memory consumption went from 150.2 MB to 148.6 MB.
+Total: 5.470700 ms (FindLiveObjects: 0.243100 ms CreateObjectMapping: 0.083100 ms MarkObjects: 4.731200 ms  DeleteObjects: 0.412000 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010793 seconds.
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.14 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unable to write to 'ProjectSettings\GvhProjectSettings.xml' (System.IO.IOException: Sharing violation on path E:\new domincanpower\DominicanPower_iOS\DOMINICAN GAME\ProjectSettings\GvhProjectSettings.xml
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean useAsync) [0x00000] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
+  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,bool)
+  at System.Xml.XmlWriterSettings.CreateWriter (System.String outputFileName) [0x00051] in <b97a394bd81d491ca8dce58aaa578910>:0 
+  at System.Xml.XmlWriter.Create (System.String outputFileName, System.Xml.XmlWriterSettings settings) [0x0000a] in <b97a394bd81d491ca8dce58aaa578910>:0 
+  at Google.ProjectSettings.Save () [0x00095] in Z:\tmp\tmp.cirhDnLU30\third_party\unity\unity_jar_resolver\source\VersionHandlerImpl\src\ProjectSettings.cs:826 , Project settings were not saved!
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
+UnityEngine.Logger:Log (UnityEngine.LogType,object)
+UnityEngine.Debug:LogError (object)
+Google.Logger:Log (string,Google.LogLevel) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/Logger.cs:136)
+Google.ProjectSettings:Save () (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:842)
+Google.ProjectSettings:SetBool (string,bool,Google.SettingsLocation) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:484)
+Google.ProjectSettings:SetBool (string,bool) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:496)
+Google.IOSResolver:set_VerboseLoggingEnabled (bool) (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:986)
+Google.IOSResolver:.cctor () (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:689)
+System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
+UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
+
+(Filename: Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs Line: 842)
+
+Mono: successfully reloaded assembly
+- Completed reload, in  0.932 seconds
+Domain Reload Profiling:
+	ReloadAssembly (933ms)
+		BeginReloadAssembly (111ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (28ms)
+		EndReloadAssembly (719ms)
+			LoadAssemblies (66ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (142ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (68ms)
+			SetupLoadedEditorAssemblies (340ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (56ms)
+				ProcessInitializeOnLoadAttributes (198ms)
+				ProcessInitializeOnLoadMethodAttributes (65ms)
+				AfterProcessingInitializeOnLoad (7ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.12 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2452 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (1.6 MB). Loaded Objects now: 3023.
+Memory consumption went from 150.2 MB to 148.6 MB.
+Total: 5.466300 ms (FindLiveObjects: 0.236400 ms CreateObjectMapping: 0.083400 ms MarkObjects: 4.702000 ms  DeleteObjects: 0.443300 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.007533 seconds.
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.06 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 System.IO.IOException: Sharing violation on path E:\new domincanpower\DominicanPower_iOS\DOMINICAN GAME\ProjectSettings\GvhProjectSettings.xml
   at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b5f9a2f7db343a4ab54846ed680277b>:0 
@@ -131,45 +388,41 @@ UnityEngine.Logger:Log (UnityEngine.LogType,object)
 UnityEngine.Debug:LogError (object)
 UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
 
-Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.296 seconds
+- Completed reload, in  0.933 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1297ms)
-		BeginReloadAssembly (193ms)
+	ReloadAssembly (934ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (7ms)
+			DisableScriptedObjects (4ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (22ms)
-		EndReloadAssembly (971ms)
-			LoadAssemblies (80ms)
+			CreateAndSetChildDomain (25ms)
+		EndReloadAssembly (707ms)
+			LoadAssemblies (74ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (187ms)
-			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (72ms)
-			SetupLoadedEditorAssemblies (498ms)
+			SetupTypeCache (142ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (326ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (17ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (75ms)
-				ProcessInitializeOnLoadAttributes (290ms)
-				ProcessInitializeOnLoadMethodAttributes (101ms)
-				AfterProcessingInitializeOnLoad (11ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (62ms)
+				ProcessInitializeOnLoadAttributes (178ms)
+				ProcessInitializeOnLoadMethodAttributes (65ms)
+				AfterProcessingInitializeOnLoad (8ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (5ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
-========================================================================
-Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.10 seconds
-Refreshing native plugins compatible for Editor in 2.24 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 1.98 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2534 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 193 unused Assets / (1.7 MB). Loaded Objects now: 2897.
-Memory consumption went from 134.7 MB to 133.0 MB.
-Total: 6.758400 ms (FindLiveObjects: 0.323200 ms CreateObjectMapping: 0.082700 ms MarkObjects: 5.662900 ms  DeleteObjects: 0.687700 ms)
+Unloading 2452 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (1.6 MB). Loaded Objects now: 3025.
+Memory consumption went from 150.3 MB to 148.7 MB.
+Total: 5.444400 ms (FindLiveObjects: 0.243300 ms CreateObjectMapping: 0.082800 ms MarkObjects: 4.716800 ms  DeleteObjects: 0.400600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -183,22 +436,348 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 88685.604926 seconds.
-  path: Assets/0DP ASSETS/POLYGON city pack/Meshes,textures/props_FBX/televersion antenna.png
-  artifactKey: Guid(d1bfdbe0907c94f4db4bd148d8c98f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/POLYGON city pack/Meshes,textures/props_FBX/televersion antenna.png using Guid(d1bfdbe0907c94f4db4bd148d8c98f37) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '5b7d73cdc8f29f9d3b3546abd6a980aa') in 0.105970 seconds 
+  Time since last request: 639.702215 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab
+  artifactKey: Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab using Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1a46244bcde219245a2dccd8ad442013') in 0.108477 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010485 seconds.
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.88 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.963 seconds
+Domain Reload Profiling:
+	ReloadAssembly (964ms)
+		BeginReloadAssembly (110ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (3ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (743ms)
+			LoadAssemblies (64ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (153ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (79ms)
+			SetupLoadedEditorAssemblies (346ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (59ms)
+				ProcessInitializeOnLoadAttributes (201ms)
+				ProcessInitializeOnLoadMethodAttributes (63ms)
+				AfterProcessingInitializeOnLoad (8ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (4ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2452 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (1.6 MB). Loaded Objects now: 3027.
+Memory consumption went from 150.3 MB to 148.7 MB.
+Total: 5.601100 ms (FindLiveObjects: 0.226600 ms CreateObjectMapping: 0.075300 ms MarkObjects: 4.820000 ms  DeleteObjects: 0.477900 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 0.000024 seconds.
-  path: Assets/0DP ASSETS/noimpo/SampleScenes/Prefabs/LevelResetUI.prefab
-  artifactKey: Guid(d2aaa8a2832d77144aa84d5d309ae2b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/noimpo/SampleScenes/Prefabs/LevelResetUI.prefab using Guid(d2aaa8a2832d77144aa84d5d309ae2b3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd3c22207343077f68bb03d53e5c4d470') in 0.020402 seconds 
+  Time since last request: 955.305402 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab
+  artifactKey: Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/SONATA/SONATA 1.prefab using Guid(1390939eb8acf2b43a663be57a5730b9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '91c1e41c4a23d0eb9c1d3fea2d529948') in 0.101805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 33.127186 seconds.
+  path: Assets/Buttons/Square/512x512/Green/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(44a6e1fc606a0ef4abe7ab16693aabf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Green/General/LightningBolt_Flash_Electricity_Energy.png using Guid(44a6e1fc606a0ef4abe7ab16693aabf3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '71a21289cd36cca5e325649d75b7112c') in 0.044190 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Buttons/Round/512x512/Yellow/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(fd111b47787cc6d428886d0996e551d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Yellow/General/LightningBolt_Flash_Electricity_Energy.png using Guid(fd111b47787cc6d428886d0996e551d8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0f841817969e58d37a151e5a6b0507d8') in 0.022431 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Buttons/Round/512x512/Purple/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(9a19c84adcd803845b27a8da156dbbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Purple/General/LightningBolt_Flash_Electricity_Energy.png using Guid(9a19c84adcd803845b27a8da156dbbee) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '34a9ea76251cc59e793ac94fb550a77f') in 0.024977 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Buttons/Round/512x512/Black/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(423ef579175110a4cbdcb33c31a99be9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Black/Sports/RugbyBall_AmericanFootball.png using Guid(423ef579175110a4cbdcb33c31a99be9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0ad31bff5b21cca66c9ef07e51309089') in 0.119234 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Buttons/Square/512x512/Yellow/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(91728a0b8e388ac40909d29488e7cb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Yellow/Sports/RugbyBall_AmericanFootball.png using Guid(91728a0b8e388ac40909d29488e7cb6c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '61f1f1e1990039927e8cb32cabf9f92e') in 0.086083 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Buttons/Round/512x512/Red/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(00fc214c61c966a498f0e3c254de64f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Red/Sports/RugbyBall_AmericanFootball.png using Guid(00fc214c61c966a498f0e3c254de64f9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e35cd668a5ec32138cbcc2590fa4294') in 0.113108 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Buttons/Round/512x512/Red/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(a952fee44360150418e5467b4ad39c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Red/General/LightningBolt_Flash_Electricity_Energy.png using Guid(a952fee44360150418e5467b4ad39c55) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a11abe4c706ddaaa324e85ae68134387') in 0.028043 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Buttons/Square/512x512/Red/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(5a2dd0250297834419d2dc1d9c3fe537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Red/General/LightningBolt_Flash_Electricity_Energy.png using Guid(5a2dd0250297834419d2dc1d9c3fe537) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '11795b3d4a26ac9eb832402eae96cc9c') in 0.023540 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000027 seconds.
+  path: Assets/Buttons/Round/512x512/Blue/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(c6813c1344ee12b4087d7f5868b2a276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Blue/General/LightningBolt_Flash_Electricity_Energy.png using Guid(c6813c1344ee12b4087d7f5868b2a276) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '846c738f981a3cc945f699eacab4a08b') in 0.028719 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Buttons/Square/512x512/Pink/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(8f4a004a4beff394db0696367728e2a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Pink/General/LightningBolt_Flash_Electricity_Energy.png using Guid(8f4a004a4beff394db0696367728e2a5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a384cb821a0e5c144cb8c3d1809a2d32') in 0.028210 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000017 seconds.
+  path: Assets/Buttons/Round/512x512/Black/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(001bce3f1d2cd1644ad2c9de84b14fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Black/General/LightningBolt_Flash_Electricity_Energy.png using Guid(001bce3f1d2cd1644ad2c9de84b14fa2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b624539758a0ac46c92ae675c01a4887') in 0.026631 seconds 
 ========================================================================
 Received Import Request.
   Time since last request: 0.000023 seconds.
-  path: Assets/0DP ASSETS/imagenes/old4/lever_02_02.png
-  artifactKey: Guid(d56cef074dd823a4eaf763b883e8a0bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/imagenes/old4/lever_02_02.png using Guid(d56cef074dd823a4eaf763b883e8a0bf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f73d8032eba4e15986aba8177ac32dc3') in 0.070147 seconds 
+  path: Assets/Buttons/Square/512x512/Orange/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(4d184b22f6824d44b8a2528d7868e8a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Orange/General/LightningBolt_Flash_Electricity_Energy.png using Guid(4d184b22f6824d44b8a2528d7868e8a3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '03d008a29842701e85eb45ed8dcd84fb') in 0.024945 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Buttons/Square/512x512/Blue/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(e9621fec7e3e5b3419e59106ac98b88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Blue/General/LightningBolt_Flash_Electricity_Energy.png using Guid(e9621fec7e3e5b3419e59106ac98b88c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2b41e0a69b8deabcb41a8f7203d85519') in 0.022978 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Buttons/Square/512x512/Purple/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(d74efb84f2c0def409a038346077a9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Purple/General/LightningBolt_Flash_Electricity_Energy.png using Guid(d74efb84f2c0def409a038346077a9c0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cb986b47f0c5f672eb7ede26b0580f9c') in 0.025643 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Buttons/Square/512x512/Purple/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(937115df29b77a5498a772489350ccc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Purple/Sports/RugbyBall_AmericanFootball.png using Guid(937115df29b77a5498a772489350ccc2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd25271ca58e206269c306533f3421850') in 0.073949 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Buttons/Round/512x512/Purple/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(480c621b51f40fb4aa68b74f01349640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Purple/Sports/RugbyBall_AmericanFootball.png using Guid(480c621b51f40fb4aa68b74f01349640) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6eb3ab64cceade9ea31a1a9e74974456') in 0.049038 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Buttons/Square/512x512/NeonGreen/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(7a6a382ad1fd6f044a967dfce50316af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/NeonGreen/General/LightningBolt_Flash_Electricity_Energy.png using Guid(7a6a382ad1fd6f044a967dfce50316af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dee78b9c70f15a8b926d5879b027600') in 0.029872 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Buttons/Round/512x512/Pink/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(d5fe71285b6db3b49ae8b7a87cdb618d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Pink/General/LightningBolt_Flash_Electricity_Energy.png using Guid(d5fe71285b6db3b49ae8b7a87cdb618d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b09d53b7c19e865edd8e2f3713b6e0e3') in 0.024280 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Buttons/Square/512x512/Gray/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(fd5de9028264f294cb62d09c69fdd7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Gray/General/LightningBolt_Flash_Electricity_Energy.png using Guid(fd5de9028264f294cb62d09c69fdd7d7) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c1c7a6ea460fcb34c6e98a447fe0172d') in 0.025686 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Buttons/Round/512x512/Gray/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(a740de9ba8935c04283b4b387434bb79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Gray/General/LightningBolt_Flash_Electricity_Energy.png using Guid(a740de9ba8935c04283b4b387434bb79) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a9079e6b21b8f7df11212791ef8f2798') in 0.025260 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/Buttons/Icons/PNG/General/LightningBolt_Flash_Electricity_Energy(Icon).png
+  artifactKey: Guid(dc93dbddf35fe454bbf998f4ced9e0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Icons/PNG/General/LightningBolt_Flash_Electricity_Energy(Icon).png using Guid(dc93dbddf35fe454bbf998f4ced9e0d9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c5a6928b7907ad3dc1ef0e0f93e6538c') in 0.018677 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000024 seconds.
+  path: Assets/Buttons/Round/512x512/Brown/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(1210d11734e3ee34bb460c1c6d085fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Brown/Sports/RugbyBall_AmericanFootball.png using Guid(1210d11734e3ee34bb460c1c6d085fe5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ee5d2842a2dc41ad57340c3ec568bcf8') in 0.032690 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Buttons/Round/512x512/Yellow/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(8f984746fd429c94eacd29c8355e7e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Yellow/Sports/RugbyBall_AmericanFootball.png using Guid(8f984746fd429c94eacd29c8355e7e78) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a99a0d78be68f892899b003d2191b23') in 0.035939 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000018 seconds.
+  path: Assets/Buttons/Square/512x512/Orange/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(d58532ccac442fc4d870c3a9abecbc7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Orange/Sports/RugbyBall_AmericanFootball.png using Guid(d58532ccac442fc4d870c3a9abecbc7d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e50c68a5839ec5bb426334ac75c43ad') in 0.027762 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Buttons/Square/512x512/Red/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(800b52cd927799047ad70ca8a317e494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Red/Sports/RugbyBall_AmericanFootball.png using Guid(800b52cd927799047ad70ca8a317e494) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1c816d57e07f0ee81b674305f618c84b') in 0.029805 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000022 seconds.
+  path: Assets/Buttons/Square/512x512/NeonGreen/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(b9817ea3c9e2b8a45a5430ace6eab88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/NeonGreen/Sports/RugbyBall_AmericanFootball.png using Guid(b9817ea3c9e2b8a45a5430ace6eab88d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd211ce2f06d8eaf61936d7a2cc5e213') in 0.035362 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Buttons/Square/512x512/Yellow/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(f0e70555b80da0d4e80d69c3886bc3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Yellow/General/LightningBolt_Flash_Electricity_Energy.png using Guid(f0e70555b80da0d4e80d69c3886bc3a8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2feeb519a204f817a61bbb117332719e') in 0.024026 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Buttons/Round/512x512/Aquamarine/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(2478f05be8d147a45a65bd075cca9864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Aquamarine/Sports/RugbyBall_AmericanFootball.png using Guid(2478f05be8d147a45a65bd075cca9864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6413d81567e6955efc447b95d10ac781') in 0.062707 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/Buttons/Round/512x512/Aquamarine/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(523c72c6fe6f55b4c85c92125239f95d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Aquamarine/General/LightningBolt_Flash_Electricity_Energy.png using Guid(523c72c6fe6f55b4c85c92125239f95d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44e606306680565ac91b1e182f231ba2') in 0.027010 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000019 seconds.
+  path: Assets/Buttons/Round/512x512/Orange/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(c75eecfe00921c74da8bf67d96510837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Orange/General/LightningBolt_Flash_Electricity_Energy.png using Guid(c75eecfe00921c74da8bf67d96510837) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b64679a1881d712e913e8e024705c8a') in 0.026417 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000021 seconds.
+  path: Assets/Buttons/Round/512x512/NeonGreen/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(37bd5e4d309757d4e9716e26bca41cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/NeonGreen/General/LightningBolt_Flash_Electricity_Energy.png using Guid(37bd5e4d309757d4e9716e26bca41cda) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4df5a3ffde5ec322ea05e37713262d30') in 0.024182 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/Buttons/Square/512x512/Brown/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(216655b1fcf63844390e139f91d0e029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Brown/General/LightningBolt_Flash_Electricity_Energy.png using Guid(216655b1fcf63844390e139f91d0e029) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b6a6862b643436c5fb4049a507461c79') in 0.026732 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000016 seconds.
+  path: Assets/Buttons/Square/512x512/Black/General/LightningBolt_Flash_Electricity_Energy.png
+  artifactKey: Guid(cde13aabe950531489e7a50990dc013b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Square/512x512/Black/General/LightningBolt_Flash_Electricity_Energy.png using Guid(cde13aabe950531489e7a50990dc013b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '44d55f29782e01a3d263bfcb71e18f55') in 0.024563 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/Buttons/Round/512x512/Blue/Sports/RugbyBall_AmericanFootball.png
+  artifactKey: Guid(c1d5c068470ad85428072d33c86fc173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Buttons/Round/512x512/Blue/Sports/RugbyBall_AmericanFootball.png using Guid(c1d5c068470ad85428072d33c86fc173) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '337474a566e3c1c14246a6d128a012a2') in 0.041353 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.760022 seconds.
+  path: Assets/0PLANDETRABAJO/GBC
+  artifactKey: Guid(1ae04ce9cb5e8134083fc2cec3aeb868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0PLANDETRABAJO/GBC using Guid(1ae04ce9cb5e8134083fc2cec3aeb868) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8463270c5f77d5d9346d5665849ebdbf') in 0.006225 seconds 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.010756 seconds.
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Begin MonoManager ReloadAssembly
+OnLevelWasLoaded was found on scriptEjemploVR
+This message has been deprecated and will be removed in a later version of Unity.
+Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 2.05 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  1.064 seconds
+Domain Reload Profiling:
+	ReloadAssembly (1065ms)
+		BeginReloadAssembly (106ms)
+			ExecutionOrderSort (0ms)
+			DisableScriptedObjects (4ms)
+			BackupInstance (0ms)
+			ReleaseScriptingObjects (0ms)
+			CreateAndSetChildDomain (26ms)
+		EndReloadAssembly (851ms)
+			LoadAssemblies (67ms)
+			RebuildTransferFunctionScriptingTraits (0ms)
+			SetupTypeCache (162ms)
+			ReleaseScriptCaches (2ms)
+			RebuildScriptCaches (64ms)
+			SetupLoadedEditorAssemblies (431ms)
+				LogAssemblyErrors (0ms)
+				InitializePlatformSupportModulesInManaged (11ms)
+				SetLoadedEditorAssemblies (0ms)
+				RefreshPlugins (2ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (250ms)
+				ProcessInitializeOnLoadMethodAttributes (99ms)
+				AfterProcessingInitializeOnLoad (11ms)
+				EditorAssembliesLoaded (0ms)
+			ExecutionOrderSort2 (0ms)
+			AwakeInstancesAfterBackupRestoration (18ms)
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 2.17 ms, found 3 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2486 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 127 unused Assets / (1.6 MB). Loaded Objects now: 3545.
+Memory consumption went from 174.0 MB to 172.3 MB.
+Total: 5.628800 ms (FindLiveObjects: 0.325600 ms CreateObjectMapping: 0.077000 ms MarkObjects: 4.801300 ms  DeleteObjects: 0.423700 ms)
+
+AssetImportParameters requested are different than current active one (requested -> active):
+  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
+  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
+  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
+  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
+  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
+  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
+  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
+  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
 AssetImportWorker is now disconnected from the server
 Process exiting
