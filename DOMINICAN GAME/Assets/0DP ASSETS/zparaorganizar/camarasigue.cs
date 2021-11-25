@@ -6,6 +6,7 @@ public class camarasigue : MonoBehaviour
 {
     public Transform player;
     public float BaseY;
+    public float PosicionXminima;
     public Vector3 offsetCamera;
 
     public float diastanciamax=2;
@@ -61,6 +62,7 @@ public class camarasigue : MonoBehaviour
         if(!sube) posView.y = BaseY + offsetCamera.y;
         posView.z = player.position.z + offsetCamera.z;
 
+        if (posView.x < PosicionXminima) posView.x = PosicionXminima;
         transform.position = Vector3.Lerp(transform.position, posView, velocidad);
     }
 }
