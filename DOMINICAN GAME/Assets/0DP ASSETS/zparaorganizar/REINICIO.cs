@@ -63,7 +63,7 @@ public class REINICIO : MonoBehaviour
             p = !p;
         }
 
-        emp.SetActive(true);
+      //  emp.SetActive(true);
         cont.SetActive(false);
 
 

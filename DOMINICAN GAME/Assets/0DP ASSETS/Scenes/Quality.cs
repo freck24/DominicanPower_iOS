@@ -58,22 +58,22 @@ public class Quality : MonoBehaviour
         {
             case 0:
 
-                Screen.SetResolution(270, 480, true);
+                Screen.SetResolution(480, 270, true);
                 break;
             case 1:
-                Screen.SetResolution(360, 640, true);
+                Screen.SetResolution(640, 360, true);
                 break;
             case 2:
-                Screen.SetResolution(540, 960, true);
+                Screen.SetResolution(960, 540, true);
                 break;
             case 3:
-                Screen.SetResolution(540, 960, true);
+                Screen.SetResolution(960, 540, true);
                 break;
             case 4:
-                Screen.SetResolution(720, 1280, true);
+                Screen.SetResolution(1280, 720, true);
                 break;
             case 5:
-                Screen.SetResolution(720, 1280, true);
+                Screen.SetResolution(1280, 720, true);
                 break;
         }
         qualityText.text = qualitysNames;
