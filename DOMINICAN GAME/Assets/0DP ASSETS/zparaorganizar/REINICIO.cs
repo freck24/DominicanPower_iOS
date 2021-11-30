@@ -24,9 +24,9 @@ public class REINICIO : MonoBehaviour
     }
     public GameObject mensa;
     public GameObject mensa2;
-    public GameObject emp;
-    public GameObject cont;
-    public GameObject yun;
+   // public GameObject emp;
+   // public GameObject cont;
+   // public GameObject yun;
     public bool p = false;
     public int aa;
 
@@ -64,7 +64,7 @@ public class REINICIO : MonoBehaviour
         }
 
       //  emp.SetActive(true);
-        cont.SetActive(false);
+      //  cont.SetActive(false);
 
 
         /* PlayerPrefs.SetFloat("prime", 0f);
@@ -83,7 +83,7 @@ public class REINICIO : MonoBehaviour
         SceneManager.LoadScene("gracias");
 
         mensa.SetActive(true);
-        yun.SetActive(true);
+      //  yun.SetActive(true);
 
     }
 }
