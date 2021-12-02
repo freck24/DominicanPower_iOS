@@ -4,6 +4,23 @@ using UnityEngine;
 
 public class PlayerRunner : MonoBehaviour
 {
+    public static PlayerRunner runner;
+    public Transform Camera;
+    public float offsetZ;
+
+    [Header("Audio")]
+    public AudioSource Player;
+    public AudioClip Perder;            //
+    public AudioClip CalibrarFx;            //
+    public AudioClip RecogerDinero;         //
+    public AudioClip PerderCalibrarChoque;  //
+    public AudioClip PerderCalibrarTiempo;
+    public AudioClip Empezar;
+
+    [Header("RunDistance")]
+    public float MetersRunning;
+    public float MetersRecord;
+    public float VelMulti;
 
     public List<float> RunningBoostTimes;
 
@@ -16,7 +33,8 @@ public class PlayerRunner : MonoBehaviour
 
     [Header("Deslizamiento")]
     [Range(1, 3)] public int MotoCarril = 2;
-    public List<float> OffsetsPos;
+    public List<Transform> OffsetsPos;
+    public float velMove = 0.5f;
     public bool EnEspera;
 
     [Header("Movimiento")]
@@ -53,6 +71,8 @@ public class PlayerRunner : MonoBehaviour
 
                 Calibrar--;
                 PlayerPrefs.SetInt("runnerboost", Calibrar);
+                PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.CalibrarFx);
+
                 RunnerMapGenerator.rmg.CalibrinTime = RunningBoostTimes[PlayerPrefs.GetInt("rinnerboostlvl", 0)];
                 RunnerMapGenerator.rmg.Calibrin_rararara = RunnerMapGenerator.rmg.CalibrinTime;
 
@@ -75,8 +95,13 @@ public class PlayerRunner : MonoBehaviour
 
     void MovimientoAvanzar()
     {
-        rb.velocity = new Vector3(0f, rb.velocity.y, Velocidad * Time.fixedDeltaTime);
+        rb.velocity = new Vector3(0f, rb.velocity.y, Velocidad * VelMulti * Time.fixedDeltaTime);
+        Camera.position = new Vector3(Camera.position.x, Camera.position.y, transform.position.z + offsetZ);
+
+        MetersRunning += Time.deltaTime * VelMulti;
     }
+
+   
 
     private void OnTriggerEnter(Collider other)
     {
@@ -89,7 +114,17 @@ public class PlayerRunner : MonoBehaviour
         if (other.tag == "abajo")
         {
             Destroy(other.GetComponent<Collider>());
+            if(!Boosting)
+            PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.Perder);
+            else
+            PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.PerderCalibrarChoque);
             TakeChoque();
+        }
+
+        if (other.tag == "walk")
+        {
+            other.GetComponent<Coin3D>().ObtenerMonedas();
+            Destroy(other.GetComponent<Collider>());
         }
 
     }
@@ -98,13 +133,19 @@ public class PlayerRunner : MonoBehaviour
     {
     pr = this;
     Calibrar = PlayerPrefs.GetInt("runnerboost", 0);
-    
+    MetersRecord = PlayerPrefs.GetFloat("MetersRecord", 0);
+
     }
 
     void Update()
     {
         MovimientoAvanzar();
         CalibrarCheck();
+
+        Vector3 posis = transform.position;
+        posis.x = OffsetsPos[MotoCarril].position.x;
+        transform.position = Vector3.Lerp(transform.position, posis, velMove * Time.deltaTime);
+
     }
 
     public void MovePlayer(int Move)
@@ -121,8 +162,10 @@ public class PlayerRunner : MonoBehaviour
 
         anim.SetInteger("Carril", MotoCarril);
 
-        BoxCollider bx = GetComponent<BoxCollider>();
-        bx.center = new Vector3(OffsetsPos[MotoCarril], bx.center.y, bx.center.z);
+      //  BoxCollider bx = GetComponent<BoxCollider>();
+        //   bx.center = new Vector3(OffsetsPos[MotoCarril], bx.center.y, bx.center.z);
+
+        
     }
 
 

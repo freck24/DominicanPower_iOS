@@ -1,0 +1,72 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5770266802781819736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5770266802781819739}
+  - component: {fileID: 5770266802781819738}
+  - component: {fileID: 5770266802781819737}
+  m_Layer: 0
+  m_Name: Dinero
+  m_TagString: walk
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5770266802781819739
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770266802781819736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.00999999, y: 0.669, z: 3.17}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &5770266802781819738
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770266802781819736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97d5054e9d6580e468e9649d01ca75ac, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DineroValor: 0
+  Valor: 0
+  anim: {fileID: 0}
+  Dineros:
+  - {fileID: 13852739554094845, guid: cb220c3baa209ef48a7a2b107c6838b3, type: 3}
+  - {fileID: 3675575869084162756, guid: 310241ecac702fa4d8f5cde820960cb7, type: 3}
+  - {fileID: 8422487779870359289, guid: eb7671ce1663e33439ecec2d0cc4e6a6, type: 3}
+  - {fileID: 2958217668240111508, guid: b0f798295b5473646a6bb07bde1fc9eb, type: 3}
+  - {fileID: 5493601652207256354, guid: 28129340d09529a4cbfd082e0bbfdd05, type: 3}
+  - {fileID: 5007260375069888325, guid: 24073a078d1e5c647a7579508a5fde68, type: 3}
+  - {fileID: 7291955747717822026, guid: 1b6e698ea178b3843a435c75a71146c8, type: 3}
+  - {fileID: 5251994440105324163, guid: 754961eebf38f7140847ca471c43f0c5, type: 3}
+  - {fileID: 4741022577079032575, guid: 8dc8735ffa31eba45932a53ce786afeb, type: 3}
+--- !u!65 &5770266802781819737
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5770266802781819736}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.7181735, y: 0.33124733, z: 0.20522988}
+  m_Center: {x: 0.002493143, y: 0.0055948496, z: 0.07765001}

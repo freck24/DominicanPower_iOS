@@ -12,6 +12,8 @@ public class ShareImageCanvas : MonoBehaviour
     public Image buttonShare;
     public string mensaje;
 
+    public PlatformSelect selectLink;
+
     //function called from a button
     public void ButtonShare()
     {
@@ -35,9 +37,6 @@ public class ShareImageCanvas : MonoBehaviour
     public GameObject imagen;
     public IEnumerator ShareScreenshot()
     {
-
-
-
         {
             yield return new WaitForEndOfFrame();
 
@@ -51,8 +50,9 @@ public class ShareImageCanvas : MonoBehaviour
             // To avoid memory leaks
             Destroy(ss);
 
+            string Link = selectLink.Get_PlatformLink();
             new NativeShare().AddFile(filePath)
-                .SetSubject("Descargalo ").SetText("https://play.google.com/store/apps/details?id=prueba1.SDS").Share();
+                .SetSubject("Descargalo ").SetText(Link).Share();
             // .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
             //  .Share();
 

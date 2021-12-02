@@ -23,12 +23,41 @@ public class RunnerMapGenerator : MonoBehaviour
     public bool Playing;
 
     [Header("Canvas")]
+    public GameObject StartCanvas;
     public Text ShowDinero;
     public Text ShowCalibrin;
     public Image Filling_CalibrinTime;
     public float CalibrinTime;
     public float Calibrin_rararara;
     public Animator AnmCanvas;
+
+    public void StartGame()
+    {
+        StartCanvas.SetActive(false);
+        StartCoroutine(IniciarJuego());
+    }
+
+    IEnumerator IniciarJuego()
+    {
+        MotoSound.ms.Change(MotoSound.ms.ArrancarMoto, false, 2);
+
+        yield return new WaitForSeconds(0.5f);
+
+        while(PlayerRunner.pr.VelMulti <= 2)
+        {
+            PlayerRunner.pr.VelMulti += Time.deltaTime;
+            yield return new WaitForSeconds(0.018f);
+        }
+
+        while (MotoSound.ms.sou.isPlaying)
+        {
+            yield return new WaitForSeconds(0.01f);
+        }
+
+        yield return new WaitForSeconds(0.5f);
+        MotoSound.ms.Change(MotoSound.ms.Cambio1, true, 11);
+
+    }
 
     public float Remap(float value, float from1, float to1, float from2, float to2)
     {
