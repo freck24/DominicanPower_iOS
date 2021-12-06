@@ -7,6 +7,9 @@ public class GESTIONDEDESPLEGABLE : MonoBehaviour
     // Start is called before the first frame update
     public Animator anim;
     public GameObject botonsubuir;
+    public AudioSource a;
+    public AudioClip sas;
+    public AudioClip sasd;
     void Start()
     {
         
@@ -22,11 +25,13 @@ public class GESTIONDEDESPLEGABLE : MonoBehaviour
     {
         anim.SetBool("SUBE", true);
         botonsubuir.SetActive(false);
+        a.PlayOneShot(sas);
     }
     public void subefALSE()
     {
         anim.SetBool("SUBE", false);
-      
+        a.PlayOneShot(sasd);
+
     }
        public void activar()
     {
