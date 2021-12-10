@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerRunner : MonoBehaviour
 {
@@ -19,7 +20,6 @@ public class PlayerRunner : MonoBehaviour
 
     [Header("RunDistance")]
     public float MetersRunning;
-    public float MetersRecord;
     public float VelMulti;
 
     public List<float> RunningBoostTimes;
@@ -48,6 +48,18 @@ public class PlayerRunner : MonoBehaviour
     public bool Clic2;
     public float TiempoEntreClic;
 
+    
+
+    public void ComprarCalibrada(int Valor)
+    {
+
+        if (PlayerPrefs.GetFloat("dinero", 0) < Valor) return;
+        Calibrar++;
+        PlayerPrefs.SetInt("runnerboost", Calibrar);
+
+        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
+        PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - Valor);
+    }
 
     void CalibrarCheck()
     {
@@ -83,7 +95,6 @@ public class PlayerRunner : MonoBehaviour
         }
 
     }
-
     IEnumerator QuitarBool(string value, float enTiempo)
     {
         yield return new WaitForSeconds(enTiempo);
@@ -99,7 +110,12 @@ public class PlayerRunner : MonoBehaviour
         Camera.position = new Vector3(Camera.position.x, Camera.position.y, transform.position.z + offsetZ);
 
         MetersRunning += Time.deltaTime * VelMulti;
+        RunnerMapGenerator.rmg.DistanciaPartida = MetersRunning;
     }
+
+    public void AutoAumentar() => InvokeRepeating("AumentarVelocidad", 10f, 2f);
+
+    public void AumentarVelocidad() => VelMulti += 0.1f;
 
    
 
@@ -118,6 +134,7 @@ public class PlayerRunner : MonoBehaviour
             PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.Perder);
             else
             PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.PerderCalibrarChoque);
+
             TakeChoque();
         }
 
@@ -133,7 +150,6 @@ public class PlayerRunner : MonoBehaviour
     {
     pr = this;
     Calibrar = PlayerPrefs.GetInt("runnerboost", 0);
-    MetersRecord = PlayerPrefs.GetFloat("MetersRecord", 0);
 
     }
 
@@ -168,7 +184,11 @@ public class PlayerRunner : MonoBehaviour
         
     }
 
-
+    public void Restart()
+    {
+        Time.timeScale = 1;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
     public void TakeChoque()
     {
@@ -178,6 +198,9 @@ public class PlayerRunner : MonoBehaviour
         anim.SetBool("Calibrando", false);
             return;
         }
+
+        RunnerMapGenerator.rmg.PerdioPlayer();
+        MotoSound.ms.sou.Stop();
 
         anim.SetTrigger("Choque_" + Random.Range(1,4));
 

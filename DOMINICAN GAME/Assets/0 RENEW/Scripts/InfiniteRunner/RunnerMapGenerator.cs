@@ -1,11 +1,17 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine; 
 using UnityEngine.UI;
 
 public class RunnerMapGenerator : MonoBehaviour
 {
+
+    
+
     public static RunnerMapGenerator rmg;
+
+    
 
     public Transform NextPoint;
     public int StartGenerateRoad;
@@ -24,6 +30,7 @@ public class RunnerMapGenerator : MonoBehaviour
 
     [Header("Canvas")]
     public GameObject StartCanvas;
+    public GameObject GameOverCanvas;
     public Text ShowDinero;
     public Text ShowCalibrin;
     public Image Filling_CalibrinTime;
@@ -31,19 +38,58 @@ public class RunnerMapGenerator : MonoBehaviour
     public float Calibrin_rararara;
     public Animator AnmCanvas;
 
+    [Header("record")]
+    public string RecordKey = "RecordMoto";
+    public float DistanciaPartida;
+    public float DistanciaRecord;
+    public Text DistanciaPartidaTx;
+    public Text DistanciaRecordTx;
+
+    public GameObject Explosion;
+    public void PerdioPlayer()
+    {
+        Instantiate(Explosion, PlayerRunner.pr.transform.position, Quaternion.identity);
+        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.Perder);
+        PlayerRunner.pr.velMove = 0;
+        PlayerRunner.pr.VelMulti = 0;
+        PlayerRunner.pr.Velocidad = 0;
+        Time.timeScale = 1;
+        PlayerPrefs.SetInt(RecordKey, Convert.ToInt32(DistanciaPartida));
+        GameOverCanvas.SetActive(true);
+        Invoke("DestruirPlayer", 1.4f);
+    }
+
+    public void DestruirPlayer()
+    {
+        PlayerRunner.pr.gameObject.SetActive(false);
+    }
+
+    void Start()
+    {
+        rmg = this;
+        for (int i = 0; i < StartGenerateRoad; i++) GenerarSiguienteTile();
+
+        DistanciaRecord = PlayerPrefs.GetInt(RecordKey, 0);
+        DistanciaRecordTx.text = DistanciaRecord + "m";
+    }
+
     public void StartGame()
     {
         StartCanvas.SetActive(false);
         StartCoroutine(IniciarJuego());
+
     }
 
+   
+   
     IEnumerator IniciarJuego()
     {
         MotoSound.ms.Change(MotoSound.ms.ArrancarMoto, false, 2);
 
+        PlayerRunner.pr.AutoAumentar();
         yield return new WaitForSeconds(0.5f);
 
-        while(PlayerRunner.pr.VelMulti <= 2)
+        while(PlayerRunner.pr.VelMulti <= 1.89)
         {
             PlayerRunner.pr.VelMulti += Time.deltaTime;
             yield return new WaitForSeconds(0.018f);
@@ -54,7 +100,6 @@ public class RunnerMapGenerator : MonoBehaviour
             yield return new WaitForSeconds(0.01f);
         }
 
-        yield return new WaitForSeconds(0.5f);
         MotoSound.ms.Change(MotoSound.ms.Cambio1, true, 11);
 
     }
@@ -63,7 +108,6 @@ public class RunnerMapGenerator : MonoBehaviour
     {
         return (value - from1) / (to1 - from1) * (to2 - from2) + from2;
     }
-
 
     void ManagePlay()
     {
@@ -88,8 +132,13 @@ public class RunnerMapGenerator : MonoBehaviour
         }
     }
 
+    
+
     void Update()
     {
+        DistanciaPartidaTx.text = Convert.ToInt32(DistanciaPartida) + "m";
+        if(DistanciaPartida > DistanciaRecord)
+        DistanciaRecordTx.text = Convert.ToInt32(DistanciaPartida) + "m";
         RestarCalibrandoTime();
 
         AnmCanvas.SetBool("New Bool", PlayerRunner.pr.Boosting);
@@ -104,13 +153,9 @@ public class RunnerMapGenerator : MonoBehaviour
 
     public void GenerarSiguienteTile()
     {
-      RunnerTile tile = Instantiate(RoadTiles[Random.Range(0, RoadTiles.Count)], NextPoint.position, Quaternion.identity).GetComponent<RunnerTile>();
+      RunnerTile tile = Instantiate(RoadTiles[UnityEngine.Random.Range(0, RoadTiles.Count)], NextPoint.position, Quaternion.identity).GetComponent<RunnerTile>();
         NextPoint = tile.GenNext_Pos;
     }
 
-    void Start()
-    {
-        rmg = this;
-        for (int i = 0; i < StartGenerateRoad; i++) GenerarSiguienteTile();
-    }
+    
 }

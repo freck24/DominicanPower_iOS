@@ -37,7 +37,7 @@ public class Coin3D : MonoBehaviour
 
     public void ObtenerMonedas()
     {
-        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
+    PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
     PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + Valor);
     Destroy(gameObject);
     }
