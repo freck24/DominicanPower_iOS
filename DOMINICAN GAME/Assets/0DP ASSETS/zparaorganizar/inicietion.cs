@@ -8,6 +8,8 @@ using EMGame;
 
 public class inicietion : MonoBehaviour
 {
+    public GameObject moto;
+
     public GameObject AdVar;
     public float NivelMod;
 
@@ -184,13 +186,12 @@ public class inicietion : MonoBehaviour
     public AudioClip fail;
     public AudioClip sa;
     public AudioClip comprar;
-    private AudioSource a;
+    public AudioSource a;
     public GameObject yunr;
     public GameObject trucanor;
     public GameObject par;
     public GameObject mision1;
     public GameObject camaraintro;
-    public GameObject moto;
     public GameObject carro;
     public GameObject m30;
     public GameObject conf;
@@ -853,18 +854,6 @@ public class inicietion : MonoBehaviour
     {
 
         if (PlayerPrefs.GetFloat("nivel", 0) > 7 && blockcu != null) blockcu.SetActive(false);
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 1 && yunr != null) yunr.SetActive(false);
-        else if (yunr != null) yunr.SetActive(true);
-
-
-        if (PlayerPrefs.GetFloat("nivel", 0) > 4 && trucanor != null) trucanor.SetActive(false);
-        else if (trucanor != null)trucanor.SetActive(true);
-
-
-     //   if (PlayerPrefs.GetFloat("nivel", 0) > 6) par.SetActive(false);
-     //   else par.SetActive(true);
-
 
 
 

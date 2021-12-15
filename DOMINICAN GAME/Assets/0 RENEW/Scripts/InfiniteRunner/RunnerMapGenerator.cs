@@ -54,7 +54,10 @@ public class RunnerMapGenerator : MonoBehaviour
         PlayerRunner.pr.VelMulti = 0;
         PlayerRunner.pr.Velocidad = 0;
         Time.timeScale = 1;
+
+        if (DistanciaPartida > DistanciaRecord)
         PlayerPrefs.SetInt(RecordKey, Convert.ToInt32(DistanciaPartida));
+
         GameOverCanvas.SetActive(true);
         Invoke("DestruirPlayer", 1.4f);
     }
@@ -62,6 +65,8 @@ public class RunnerMapGenerator : MonoBehaviour
     public void DestruirPlayer()
     {
         PlayerRunner.pr.gameObject.SetActive(false);
+
+   
     }
 
     void Start()
@@ -137,6 +142,7 @@ public class RunnerMapGenerator : MonoBehaviour
     void Update()
     {
         DistanciaPartidaTx.text = Convert.ToInt32(DistanciaPartida) + "m";
+
         if(DistanciaPartida > DistanciaRecord)
         DistanciaRecordTx.text = Convert.ToInt32(DistanciaPartida) + "m";
         RestarCalibrandoTime();

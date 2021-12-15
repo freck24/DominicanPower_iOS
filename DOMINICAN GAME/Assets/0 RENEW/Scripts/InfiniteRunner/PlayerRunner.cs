@@ -63,7 +63,7 @@ public class PlayerRunner : MonoBehaviour
 
     void CalibrarCheck()
     {
-        if (Boosting || Calibrar < 1) return;
+        if (Boosting || Calibrar < 1 || MetersRunning < 7) return;
 
         if (Input.GetMouseButtonDown(0))
         {
