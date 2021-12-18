@@ -12,13 +12,11 @@ public class RunnerTile : MonoBehaviour
 
     public Transform GenNext_Pos;
     public List<Transform> Gens_Cono;
-    public List<Transform> Gens_Coin;
 
     public void Start()
     {
 
         GenerarObstaculos();
-        if(Random.Range(0,4) == 3)        GenerarMonedas();
     }
 
     public void GenerarObstaculos()
@@ -41,16 +39,6 @@ public class RunnerTile : MonoBehaviour
         }
     }
 
-    public void GenerarMonedas()
-    {
-        int objGenerar = Random.Range(0, 5);
-
-        Vector3 offset = new Vector3(0, 3.5f, 0);
-        var Obj = RunnerMapGenerator.rmg.CoinsPatron[Random.Range(0, RunnerMapGenerator.rmg.CoinsPatron.Count)];
-        if (objGenerar == 0) Instantiate(Obj, Gens_Coin[0].position += offset, Quaternion.identity).transform.SetParent(Gens_Cono[0]);
-        if (objGenerar == 1) Instantiate(Obj, Gens_Coin[1].position += offset, Quaternion.identity).transform.SetParent(Gens_Cono[1]);
-        if (objGenerar == 2) Instantiate(Obj, Gens_Coin[2].position += offset, Quaternion.identity).transform.SetParent(Gens_Cono[2]);
-    }
 
 
     void GenerarConos(int CheckCount, GameObject Obj)

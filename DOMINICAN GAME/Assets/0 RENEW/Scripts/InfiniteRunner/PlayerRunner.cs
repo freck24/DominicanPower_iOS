@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class PlayerRunner : MonoBehaviour
 {
+    public bool sendedTap;
     public static PlayerRunner runner;
     public Transform Camera;
     public float offsetZ;
@@ -63,10 +64,11 @@ public class PlayerRunner : MonoBehaviour
 
     void CalibrarCheck()
     {
-        if (Boosting || Calibrar < 1 || MetersRunning < 7) return;
+        if (Boosting || Calibrar < 1 || MetersRunning < 3) return;
 
-        if (Input.GetMouseButtonDown(0))
+        if (sendedTap)
         {
+            sendedTap = false;
             if (!Clic1)
             {
                 Clic1 = true;

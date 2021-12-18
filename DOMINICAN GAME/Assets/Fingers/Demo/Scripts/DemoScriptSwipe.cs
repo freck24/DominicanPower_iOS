@@ -49,6 +49,7 @@ namespace DigitalRubyShared
             if (gesture.State == GestureRecognizerState.Ended)
             {
                 Debug.Log("Tap");
+                PlayerRunner.pr.sendedTap = true;
             }
         }
 

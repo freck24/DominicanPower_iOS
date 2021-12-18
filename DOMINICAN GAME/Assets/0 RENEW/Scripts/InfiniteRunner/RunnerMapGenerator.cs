@@ -89,6 +89,7 @@ public class RunnerMapGenerator : MonoBehaviour
    
     IEnumerator IniciarJuego()
     {
+        CoinGenerator.cg.CheckRound();
         MotoSound.ms.Change(MotoSound.ms.ArrancarMoto, false, 2);
 
         PlayerRunner.pr.AutoAumentar();
@@ -106,7 +107,6 @@ public class RunnerMapGenerator : MonoBehaviour
         }
 
         MotoSound.ms.Change(MotoSound.ms.Cambio1, true, 11);
-
     }
 
     public float Remap(float value, float from1, float to1, float from2, float to2)
