@@ -13,6 +13,19 @@ public class RunnerTile : MonoBehaviour
     public Transform GenNext_Pos;
     public List<Transform> Gens_Cono;
 
+
+    public void TilePasado()
+    {
+        StartCoroutine(Corrutinin());
+    }
+
+    IEnumerator Corrutinin()
+    {
+        yield return new WaitForSeconds(3f);
+     FindObjectOfType<TileDestroyer>().addTile(gameObject);
+
+    }
+
     public void Start()
     {
 
@@ -26,7 +39,7 @@ public class RunnerTile : MonoBehaviour
         if (objGenerar == 0) Instantiate(RunnerMapGenerator.rmg.Cono, Gens_Cono[2].position, Quaternion.identity).transform.SetParent(Gens_Cono[2]);
 
 
-        if (objGenerar == 1) GenerarConos(3, RunnerMapGenerator.rmg.Cono); // chequear 3 posiciones Cono
+        if (objGenerar == 1) GenerarConos(2, RunnerMapGenerator.rmg.Cono); // chequear 3 posiciones Cono
         if (objGenerar == 2) GenerarConos(1, RunnerMapGenerator.rmg.Cono); // chequear 1 posiciones Cono
 
         if (objGenerar == 3) GenerarConos(3, RunnerMapGenerator.rmg.Hoyo); // chequear 3 posiciones Hoyo

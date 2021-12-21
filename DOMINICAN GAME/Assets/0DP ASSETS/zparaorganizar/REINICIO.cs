@@ -20,7 +20,7 @@ public class REINICIO : MonoBehaviour
     void Update()
     {
        // aa = PlayerPrefs.GetInt("preguntas", 0);
-        texmo.text = "$" + PlayerPrefs.GetFloat("dinero", 0f).ToString("f0");
+      //  texmo.text = "$" + PlayerPrefs.GetFloat("dinero", 0f).ToString("f0");
     }
     public GameObject mensa;
     public GameObject mensa2;

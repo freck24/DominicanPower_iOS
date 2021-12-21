@@ -21,21 +21,30 @@ public class Coin3D : MonoBehaviour
     public Dinero DineroValor;
 
     public int Valor;
+    public float TimeDestroy;
     public Animator anim;
 
     [Header("Objetos Dinero")]
     public List<GameObject> Dineros;
 
-    private void Start()
+    IEnumerator Corrutinin()
     {
-        string DineroValorX = DineroValor.ToString().Replace("_", "");
-        print(DineroValorX);
+        yield return new WaitForSeconds(TimeDestroy);
+        FindObjectOfType<TileDestroyer>().addTile(gameObject);
 
-    Instantiate(Dineros[(int)DineroValor], transform);
-        Valor = System.Convert.ToInt32(DineroValorX.ToString());
     }
 
-    public void ObtenerMonedas()
+    private void Start()
+    {
+    string DineroValorX = DineroValor.ToString().Replace("_", "");
+        
+    Instantiate(Dineros[(int)DineroValor], transform);
+    Valor = System.Convert.ToInt32(DineroValorX.ToString());
+    StartCoroutine(Corrutinin());
+
+}
+
+public void ObtenerMonedas()
     {
     PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
     PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + Valor);

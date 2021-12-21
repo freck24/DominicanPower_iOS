@@ -668,13 +668,13 @@ public class inicietion : MonoBehaviour
         if (PlayerPrefs.GetInt("sonido", 1) == 1)
         {
 
-            SONIDO.text = "SONIDO: SI";
+          //  SONIDO.text = "SONIDO: SI";
 
         }
         else
         {
 
-            SONIDO.text = "SONIDO: NO";
+        //    SONIDO.text = "SONIDO: NO";
             ESCUCHADOR.enabled = false;
         }
 

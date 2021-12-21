@@ -126,6 +126,7 @@ public class PlayerRunner : MonoBehaviour
         if (other.tag == "arriba")
         {
             Destroy(other.GetComponent<Collider>());
+            other.transform.parent.GetComponent<RunnerTile>().TilePasado();
             RunnerMapGenerator.rmg.GenerarSiguienteTile();
         }
 
