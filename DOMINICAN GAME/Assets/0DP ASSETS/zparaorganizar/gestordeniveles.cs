@@ -6,9 +6,10 @@ using UnityEngine.UI;
 public class gestordeniveles : MonoBehaviour
 {
     public Image[] b1 =  new Image[7];
-    public Color color;
-    public Color color0;
-  
+
+    public Sprite Selected;
+    public Sprite Noselected;
+
     public GameObject FINALNIVEL;
     private AudioSource a;
     public AudioClip pop;
@@ -24,7 +25,7 @@ public class gestordeniveles : MonoBehaviour
     void ActivarColorPagina(int Active)
     {
     for (int i = 0; i < b1.Length; ++i)
-    b1[i].color = (i == Active) ? color0 : color;
+    b1[i].sprite = (i == Active) ? Selected : Noselected;
     }
 
     public void cerrar()

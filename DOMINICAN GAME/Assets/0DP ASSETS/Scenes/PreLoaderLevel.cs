@@ -2,177 +2,64 @@
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using System.Collections;
+using Lovatto.SceneLoader;
 
-namespace EMGame
-{
     public class PreLoaderLevel : MonoBehaviour
     {
+        public static PreLoaderLevel preload;
 
-        public GameObject BotonIr;
-        public GameObject GrupoEntrando;
-
-        public bool CargaAutomatica;
-
-        public bool nomostrable = false;
-        public bool nocargada = true;
+        public bl_ButtonSceneLoad miClickLoad;
         public string scena;
-        public Text textComponent;
-        public bool immediateActivateScene = false;
+        public GameObject letra;
 
-        protected AsyncOperation async;
-        protected float progressPercent;
-        public Image FillCarga;
-        public Toggle A;
-
+        public bool nomostrable;
         public bool isnivelactualsiguiente = false;
-        public bool ISNIVELES = false;
         
         public int AUTOMATICO = 0;
-        public GameObject letra;
 
         public string[] datos = new string[15];
         public int i = 0;
         public Text datitos;
 
-        public GameObject continuar;
-        public Animator Anim;
-
-        public void BO() // void Boton InicioAutomatico
-        {
-            immediateActivateScene = !immediateActivateScene;
-
-            if (immediateActivateScene) PlayerPrefs.SetInt("AUTOMATICO", 1);
-            else PlayerPrefs.SetInt("AUTOMATICO", 0);
-        }
-
-
-    public void CheckLoad()
+    private void Start()
     {
-    if(async.isDone)
-    {
-    GrupoEntrando.SetActive(true);
-    BotonIr.SetActive(false);
+        preload = this;
     }
 
-    }
-
-
-        public void cargar()
+    public void CargaLvl(string Lvl)
         {
-        if (progressPercent >= 90)
-        async.allowSceneActivation = true;
-
-        GrupoEntrando.SetActive(true);
-        BotonIr.SetActive(false);
-        }
+        if (Lvl.Length > 2) scena = Lvl;
 
 
-
-        public void cargar2()
-        {
-
-        async.allowSceneActivation = true;
-
-        GrupoEntrando.SetActive(true);
-        BotonIr.SetActive(false);
-        }
-
-        public virtual void Start()
-        {
-
-            print("Loading 1 (Enter Sart)");
-
-            if(CargaAutomatica)
-                AUTOMATICO = 1;
-             else  
-            AUTOMATICO = PlayerPrefs.GetInt("AUTOMATICO", 0);
-           
-            
-            print("Loading 2 (Start Entered)");
-
+        if(scena == "inicio") scena = "inicio 1";
             datoscuriosos();
-            print("Loading 3 (Dato Curioso)");
 
             // obtenemos de la escena anterior el index de la siguiente a cargar
             int nex_level = PlayerPrefs.GetInt("next_level", 0);
 
-            /* si no tiene valor hubo un error y devuelve a menu principal
-            if (!PlayerPrefs.HasKey("next_level"))
-            {
-                nex_level = 0;
-            }
-            else
-            {
-                // se resetea el dato persistente para evitar errores
-                PlayerPrefs.DeleteKey("next_level");
-                PlayerPrefs.Save();
-            }
-            // se inicia la carca asincrona del nivel */
-            print("Loading 4 (Pass Dato Curioso)");
-            print("Loading 5 (Sett Async)");
-
 
             if (isnivelactualsiguiente == false) 
-            { 
-            async = SceneManager.LoadSceneAsync(scena);
+            {
+                miClickLoad.sceneName = scena;
+                miClickLoad.LoadScene();
+
             }
             else
             {
-            async = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().name);
+                miClickLoad.sceneName = SceneManager.GetActiveScene().name;
+                miClickLoad.LoadScene();
             }
 
-            // se establece si se activara la escena inmediatamente
-            async.allowSceneActivation = AUTOMATICO == 1;
 
-            print("Loading 6 (Set AutoLoad)");
 
             if (nomostrable)
             {
-                async.allowSceneActivation = true;
-
                 letra.SetActive(false);
-                StartCoroutine(verificando());
                 return;
-
             }
-
-            if (!nomostrable)
-            {
-                if (AUTOMATICO == 0)
-                {
-                    A.isOn = false;
-                    PlayerPrefs.SetInt("AUTOMATICO", 0);
-                }
-                else
-                {
-                    A.isOn = true;
-                    PlayerPrefs.SetInt("AUTOMATICO", 1);
-                }
-            }
-
-
-
-            print("Loading 1 (ShowData)");
-
-
-            StartCoroutine(verificando());
-
-            print("Loading (Started Verify)");
 
         }
 
-
-    public void AcualizarData()
-    {
-    if (async != null) progressPercent = async.progress;
-
-    if (nocargada)
-    {
-    textComponent.text = ((int)progressPercent * 100).ToString() + "%";
-    FillCarga.fillAmount = progressPercent;
-    }
-
-    }
 
         
         public void datoscuriosos()
@@ -183,40 +70,12 @@ namespace EMGame
             {
                 if (i < datos.Length - 1) PlayerPrefs.SetInt("datoscuriosos", i + 1);
                 else PlayerPrefs.SetInt("datoscuriosos", 0);
-
                 datitos.text = datos[i];
             }
 
         }
 
-       
-       IEnumerator verificando()
-        {
-         while (progressPercent<90)
-            {
-                AcualizarData();
-                yield return new WaitForSecondsRealtime(0.5f); 
-            }
-
-         if(AUTOMATICO == 1)
-                cargar2();
-
-            nocargada = false;
-            textComponent.text =  "100%";
-            Anim.SetBool("Cargado", true);
-            Time.timeScale = 1;
-
-        }
+      
 
     }
 
-
-    
-   
-
-
-
-
-
-
-}

@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+	public Sprite CaminaoOn;
+	public Sprite CaminaoOff;
 	public bool transportin;
 	public ResucitePlatform Resucite;
 	public GameObject DestruirEsto;
@@ -450,6 +452,8 @@ public class controler : MonoBehaviour
 	}
 	void Start()
 	{
+		AudioListener.volume = PlayerPrefs.GetInt("GameVolume", 1);
+
 		asignacion();
 		//PlayerPrefs.SetInt("controles", 5);
 		if (noaplica == false)
@@ -2049,7 +2053,7 @@ public class controler : MonoBehaviour
 			mangacami = true;
 			cam.gameObject.SetActive(mangacami);
 			walk.gameObject.SetActive(serio);
-			i.color = CO;
+			i.sprite = CaminaoOn;
 
 		}
 		if (!tigre)
@@ -2058,7 +2062,7 @@ public class controler : MonoBehaviour
 			serio = true;
 			cam.gameObject.SetActive(mangacami);
 			walk.gameObject.SetActive(serio);
-			i.color = CO2;
+			i.sprite = CaminaoOff;
 
 		}
 

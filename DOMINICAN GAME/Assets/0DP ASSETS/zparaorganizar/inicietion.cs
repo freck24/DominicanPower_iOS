@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Proyecto26;
-using EMGame;
 
 public class inicietion : MonoBehaviour
 {
@@ -111,10 +110,7 @@ public class inicietion : MonoBehaviour
         ScreenLoader.scena = NombreEscenas[id];
 
         Destroy(DestruirGrupo);
-
-        ScreenLoader.gameObject.SetActive(true);
-
-
+        PreLoaderLevel.preload.CargaLvl(NombreEscenas[id]);
     }
 
 

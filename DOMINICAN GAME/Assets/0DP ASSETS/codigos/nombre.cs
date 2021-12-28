@@ -10,17 +10,17 @@ public class nombre : MonoBehaviour
     public Font fuente;
     public string nombr = "";
     public GameObject stupido;
-    public Text n;
-    public GameObject inicio;
+    public Text n; 
     // Start is called before the first frame update
     void Start()
     {
         p1 = PlayerPrefs.GetFloat("p1", 0);
         if (p1 == 1)
         {
-            inicio.SetActive(true);
+            PreLoaderLevel.preload.CargaLvl("inicio");
+
         }
-       
+
 
 
     }
@@ -51,7 +51,7 @@ public class nombre : MonoBehaviour
       
 
     }
-    public GameObject intro;
+    
 
     public GameObject pantalla;
     public float p1;
@@ -72,7 +72,8 @@ public class nombre : MonoBehaviour
             {
                 pantalla.SetActive(true);
                 PlayerPrefs.SetString("nombre", nombr);
-                intro.SetActive(true);
+                PreLoaderLevel.preload.CargaLvl("introa");
+
             }
         }
         

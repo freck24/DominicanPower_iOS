@@ -22,6 +22,12 @@ public class SETACTIVE : MonoBehaviour
 
     }
 
+    public void CargaNivel()
+    {
+        PreLoaderLevel.preload.CargaLvl("");
+
+    }
+
 
     public void DEActivar()
     {

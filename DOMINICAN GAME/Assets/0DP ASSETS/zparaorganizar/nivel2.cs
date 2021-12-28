@@ -14,7 +14,6 @@ public class nivel2 : MonoBehaviour
     public GameObject cu2;
     public Text texto;
 
-    public GameObject PANTALLACARGA;
     // Start is called before the first frame update
     void Start()
     {
@@ -46,7 +45,8 @@ public class nivel2 : MonoBehaviour
       
         B2.SetActive(false);
         yield return new WaitForSecondsRealtime(3);
-        PANTALLACARGA.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("");
+
     }
 
     public IEnumerator llamadad()
@@ -73,7 +73,7 @@ public class nivel2 : MonoBehaviour
 
     public void saltar()
     {
-        PANTALLACARGA.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("");
     }
 
 }

@@ -9,16 +9,14 @@ using UnityEngine.UI;
 
 public class movimientoaleatorio : MonoBehaviour
 {
-
-    public GameObject men;
-    public GameObject  juga;
+ 
     public void jugs()
     {
-        juga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("LEVEL 1 CLONE");
     }
         public void menu()
     {
-        men.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
 
     }
     public Text G1;

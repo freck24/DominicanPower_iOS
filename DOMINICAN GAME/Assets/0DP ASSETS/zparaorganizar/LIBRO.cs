@@ -45,12 +45,11 @@ public class LIBRO : MonoBehaviour
     }
 
 
-
-    public GameObject menus;
+ 
     
     public void menuss()
     {
-        menus.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
     }
 
 

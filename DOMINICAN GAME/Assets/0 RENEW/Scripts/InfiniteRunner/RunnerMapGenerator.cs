@@ -62,6 +62,11 @@ public class RunnerMapGenerator : MonoBehaviour
         Invoke("DestruirPlayer", 1.4f);
     }
 
+
+    public void CargarMenu()
+    {
+        PreLoaderLevel.preload.CargaLvl("inicio");
+    }
     public void DestruirPlayer()
     {
         PlayerRunner.pr.gameObject.SetActive(false);

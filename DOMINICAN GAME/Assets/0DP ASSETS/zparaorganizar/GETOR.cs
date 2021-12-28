@@ -9,14 +9,14 @@ using UnityEngine.UI;
 
 public class GETOR : MonoBehaviour
 {
-    public GameObject CARGAR;
+  
    
     public void NIVELREPETIR()
     {
-        CARGAR.SetActive(true);
-     //   StartCoroutine(CARGANDO());
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+         
     }
-   // public GameObject josty;
+    // public GameObject josty;
     public GameObject b1;
     public GameObject b2;
     public GameObject b3;
@@ -386,7 +386,8 @@ public class GETOR : MonoBehaviour
     public void MENU()
     {
 
-        SceneManager.LoadScene("inicio");
+               PreLoaderLevel.preload.CargaLvl("inicio");
+
         PlayerPrefs.SetFloat("ppa", 1);
     }
     public void PANU()

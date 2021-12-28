@@ -10,22 +10,17 @@ public class gestorcama : MonoBehaviour
     {
         a = GetComponent<AudioSource>();
     }
-    public GameObject menu;
-    public GameObject jugar;
+ 
 
     public void me()
     {
-        menu.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
     }
     public void j()
     {
-        jugar.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("LEVEL 1 CLONE");
     }
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    
 
     public void parar()
     {

@@ -10,6 +10,7 @@ public class gestordeinicio : MonoBehaviour
 
     public string nomb;
 
+    public GameObject po;
     public int delete=1;
     void Start()
     {
@@ -27,14 +28,7 @@ public class gestordeinicio : MonoBehaviour
         StartCoroutine(elige());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    public GameObject scenanombre;
-    public GameObject inicio;
 
 
     public void tato()
@@ -43,7 +37,6 @@ public class gestordeinicio : MonoBehaviour
         StartCoroutine(ti());
 
     }
-    public GameObject po;
 
     public IEnumerator ti()
     {
@@ -52,13 +45,14 @@ public class gestordeinicio : MonoBehaviour
             po.SetActive(true);
         }
         yield return new WaitForSecondsRealtime(0.5f);
+
         if (nomb == "tonypendejo")
         {
-            scenanombre.SetActive(true);
+            PreLoaderLevel.preload.CargaLvl("GRAFICOS");
         }
         else
         {
-            inicio.SetActive(true);
+            PreLoaderLevel.preload.CargaLvl("inicio");
         }
     }
 
@@ -74,13 +68,13 @@ public class gestordeinicio : MonoBehaviour
             yield return new WaitForSecondsRealtime(1f);
             i--;
         }
-        if( nomb == "tonypendejo")
+        if (nomb == "tonypendejo")
         {
-            scenanombre.SetActive(true);
+            PreLoaderLevel.preload.CargaLvl("GRAFICOS");
         }
         else
         {
-            inicio.SetActive(true);
+            PreLoaderLevel.preload.CargaLvl("inicio");
         }
 
     }

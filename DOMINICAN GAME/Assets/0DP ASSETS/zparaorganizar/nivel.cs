@@ -9,7 +9,7 @@ public class nivel : MonoBehaviour
   
     public GameObject cargando;
     public GameObject NOHA;
-    public Color completo;
+    public Sprite completo;
     public AudioClip enter;
     public AudioClip fail;
     public AudioSource AudioFx;
@@ -34,14 +34,13 @@ public class nivel : MonoBehaviour
         for (int i = 0; i < NivelesSlot.Count-1; i++)
         {
             int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(NivelesSlot[i].name, "Lvl:", "]"));
-            if (PlayerPrefs.GetFloat("nivel") > LevelNew) NivelesSlot[i].GetComponent<Image>().color = completo;
+            if (PlayerPrefs.GetFloat("nivel") > LevelNew) NivelesSlot[i].GetComponent<Image>().sprite = completo;
 
         }
 
     }
-    public void CheckPlay(GameObject obj)
+    public void CheckPlay(int LevelNewer)
     {
-        int LevelNewer = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
 
         if ( PlayerPrefs.GetFloat("nivel")> LevelNewer)
         {
@@ -52,8 +51,7 @@ public class nivel : MonoBehaviour
             if (NOHA != null) NOHA.SetActive(false);
             AudioFx.PlayOneShot(enter);
 
-            int LevelNew = System.Convert.ToInt32(GetDataOfString.GetData(obj.name, "Lvl:", "]"));
-            GetComponent<inicietion>().Boton_IniciarSaltado(LevelNew+1);
+            GetComponent<inicietion>().Boton_IniciarSaltado(LevelNewer + 1);
         }
         else
         {

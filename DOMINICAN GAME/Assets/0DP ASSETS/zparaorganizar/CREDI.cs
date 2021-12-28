@@ -23,15 +23,14 @@ public class CREDI : MonoBehaviour
 
     public void MENU()
     {
-        menu.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
     }
 
     public void juga9()
     {
-        jugar.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("nivel86");
     }
-    public GameObject jugar;
-    public GameObject menu;
+     
     IEnumerator cr()
     {
         yield return new WaitForSecondsRealtime(3f);

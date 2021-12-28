@@ -28,17 +28,16 @@ public class controladorplayeryun : MonoBehaviour
     public AudioClip fail;
     private AudioSource a;
     public GameObject botoncabrar;
-    public GameObject nobotoncabrar;
-    public GameObject continuarjugando;
-    public GameObject menus;
+    public GameObject nobotoncabrar;  
     
     public void continuarr()
     {
-        continuarjugando.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("LEVEL 1 CLONE"); 
     }
     public void menuss()
     {
-        menus.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
     // Start is called before the first frame update

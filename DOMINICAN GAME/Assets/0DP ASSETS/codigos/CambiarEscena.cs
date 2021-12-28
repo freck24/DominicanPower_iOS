@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.EventSystems;
-using EMGame;
 
 public class CambiarEscena : MonoBehaviour{
 
@@ -40,11 +39,11 @@ public void cargares()
         if(id < 3)
         ScreenLoader.scena = NombreEscenas[id];
 
-        ScreenLoader.gameObject.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl(NombreEscenas[id]);
+
 
         if (id == 2) ScreenLoader.isnivelactualsiguiente = true;
 
-        if (id == 3) ScreenLoader.CargaAutomatica = true;
         if (id == 3) ScreenLoader.isnivelactualsiguiente = true;
         if (id == 3) SceneManager.LoadSceneAsync("LEVEL 1 CLONE");
 

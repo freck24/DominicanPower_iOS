@@ -20,14 +20,16 @@ public class CONTUNUAR : MonoBehaviour
 
     public void saltar()
     {
-        pantalladecarga.SetActive(true);
+       
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
-
-    public GameObject pantalladecarga;
+     
     public IEnumerator DALE()
     {
         yield return new WaitForSecondsRealtime(15);
-        pantalladecarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 }

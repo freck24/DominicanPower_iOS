@@ -9,11 +9,7 @@ public class MANGEJODESCENA : MonoBehaviour
     public GameObject repegratis;
 
     public Text text = null;
-    // Start is called before the first frame update
-    void Start()
-    {
-       
-    }
+   
 
     // Update is called once per frame
     void Update()
@@ -33,7 +29,7 @@ public class MANGEJODESCENA : MonoBehaviour
     {
         if (PlayerPrefs.GetFloat("dinero", 0) > 74 && PlayerPrefs.GetFloat("ptrucano", 0) == 1)
         {
-            SceneManager.LoadScene("trucano");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
             PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0f) - 25f);
         }
@@ -41,7 +37,7 @@ public class MANGEJODESCENA : MonoBehaviour
 
         if (PlayerPrefs.GetFloat("ptrucano", 0) == 0)
         {
-            SceneManager.LoadScene("trucano");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 
         }
 
@@ -50,18 +46,23 @@ public class MANGEJODESCENA : MonoBehaviour
     
     public void REPETIRgratos()
     {
-        SceneManager.LoadScene("trucano");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
 
-}
-       public void REPETI2()
+    public void REPETI2()
     {
-        SceneManager.LoadScene("trucano 1");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+     
 
-        PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0f) - 25f);
+
+    PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0f) - 25f);
     } public void menu()
     {
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
         PlayerPrefs.SetFloat("ptrucano", 1);
 
     }
+
+    
 }

@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 
 public class planeta : MonoBehaviour
 {
+
+    [Header("Contador Minijuego")]
+    public bool ActivedCounter;
+    public float TiempoContando = 2.3f;
+    public Text Tiempo;
+    public GameObject mensajeminijuego;
+
     public AudioClip provin;
     public AudioSource a;
     public GameObject SD;
@@ -261,21 +268,20 @@ public class planeta : MonoBehaviour
         }
     }
 
+ 
 
-    void Start()
-    {
-       
-
-    }
-
-    // Update is called once per frame
     void Update()
     {
+        if(ActivedCounter)
+        {
+            TiempoContando -= Time.deltaTime;
 
+            if (TiempoContando >= 1) Tiempo.text = "CARGANDO MINIJUEGO EN: " + System.Convert.ToInt32(TiempoContando) + " SEGUNDOS";
+            else Tiempo.text = "CARGANDO MINIJUEGO";
+        }
     }
 
 
-    public GameObject mensajeminijuego;
     public IEnumerator plan()
     {
         niv = PlayerPrefs.GetFloat("nivel", 1);
@@ -374,31 +380,36 @@ public class planeta : MonoBehaviour
                 if (niv == 2)
                 {
                     mensajeminijuego.SetActive(true);
-                    yield return new WaitForSeconds(2f);
+                    ActivedCounter = true;
+                    yield return new WaitForSeconds(4f);
                     SceneManager.LoadScene("yun");
 
                 }
                 else if (niv == 7)
                 {
                     mensajeminijuego.SetActive(true);
-                    yield return new WaitForSeconds(2f);
+                    ActivedCounter = true;
+                    yield return new WaitForSeconds(4f);
                     SceneManager.LoadScene("pa");
                 }
                 else if (niv == 70)
                 {
                     mensajeminijuego.SetActive(true);
-                    yield return new WaitForSeconds(2f);
+                    ActivedCounter = true;
+                    yield return new WaitForSeconds(4f);
                     SceneManager.LoadScene("trucano");
                 }  else if (niv == 17)
                 {
                     mensajeminijuego.SetActive(true);
-                    yield return new WaitForSeconds(2f);
+                    ActivedCounter = true;
+                    yield return new WaitForSeconds(4f);
                     SceneManager.LoadScene("avion");
                 }
             else if(niv == 35)
                 {
                     mensajeminijuego.SetActive(true);
-                    yield return new WaitForSeconds(2f);
+                    ActivedCounter = true;
+                    yield return new WaitForSeconds(4f);
                     SceneManager.LoadScene("rayita");
                 }
                 else

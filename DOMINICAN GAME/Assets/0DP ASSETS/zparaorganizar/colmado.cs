@@ -326,7 +326,8 @@ public class colmado : MonoBehaviour
     public GameObject cambiarscena;
     public void menu()
     {
-        cambiarscena.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
+     
     }
 
     public void comprarg()

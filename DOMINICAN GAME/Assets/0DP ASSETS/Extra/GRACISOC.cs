@@ -37,10 +37,11 @@ public class GRACISOC : MonoBehaviour
 				break;
 		}
 
-		ESCENA.SetActive(true);
+
+		PreLoaderLevel.preload.CargaLvl("");
+ 
 	}
 
-	public GameObject ESCENA;
 	public void GUAYAHIELO()
     {
 		PlayerPrefs.SetInt("Q", 3);

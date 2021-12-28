@@ -98,10 +98,10 @@ public float t5=2;
 
     }
 
-
-    public GameObject pantalladecarga;
+     
     public void SALTAR()
     {
-        pantalladecarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("");
+
     }
 }

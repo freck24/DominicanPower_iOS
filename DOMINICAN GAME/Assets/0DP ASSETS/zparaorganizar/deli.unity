@@ -656,12 +656,6 @@ Transform:
   m_Father: {fileID: 1111929987}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &254654247 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7246284326108338816, guid: 546f8bc46cde09948978f3e437544913,
-    type: 3}
-  m_PrefabInstance: {fileID: 891982520}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &329044867
 GameObject:
   m_ObjectHideFlags: 0
@@ -2340,7 +2334,7 @@ PrefabInstance:
     - target: {fileID: 7246284326108338816, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338844, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
@@ -2460,7 +2454,7 @@ PrefabInstance:
     - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: scena
-      value: LEVEL 1 CLONE
+      value: inicio 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 546f8bc46cde09948978f3e437544913, type: 3}
@@ -3836,7 +3830,6 @@ MonoBehaviour:
   tl: {fileID: 431200238}
   cu2: {fileID: 780881404}
   texto: {fileID: 2054557401}
-  PANTALLACARGA: {fileID: 254654247}
   SONIDITO: {fileID: 530105399}
 --- !u!81 &1332463806
 AudioListener:
@@ -4305,7 +4298,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19593fb58d738674da316b9a1b7d0970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pantalladecarga: {fileID: 254654247}
 --- !u!1 &1504285983
 GameObject:
   m_ObjectHideFlags: 0

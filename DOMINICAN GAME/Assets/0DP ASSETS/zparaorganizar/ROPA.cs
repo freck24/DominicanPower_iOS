@@ -14,7 +14,6 @@ public class ROPA : MonoBehaviour
     public Text t;
     public Text inmo;
     public Text MENSAinmo;
-    public GameObject pantallacarga;
     public GameObject torbellino;
     public GameObject MENSAJEIN;
     public GameObject imagenimortalidad;
@@ -133,7 +132,8 @@ public class ROPA : MonoBehaviour
     public void MENU()
 
     {
-        pantallacarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
 }

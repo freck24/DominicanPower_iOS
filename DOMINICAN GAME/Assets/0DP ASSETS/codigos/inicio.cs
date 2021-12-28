@@ -35,13 +35,12 @@ public class inicio : MonoBehaviour
 		
 	}
 	public float nivel;
-	public string f; 
 	public void Comenzar ()
 	{
 		p.clip = pop;
 		p.Play();
 
-		SceneManager.LoadScene(f);
+		PreLoaderLevel.preload.CargaLvl("inicio");
 	}
 	public void Continuar()
 	{

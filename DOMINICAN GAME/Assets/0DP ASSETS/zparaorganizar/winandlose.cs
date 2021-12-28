@@ -32,7 +32,6 @@ public class winandlose : MonoBehaviour
         }
         
     }
-    public GameObject pantalladecarga;
 
 
     public void moto()
@@ -41,7 +40,8 @@ public class winandlose : MonoBehaviour
        
         PlayerPrefs.SetFloat("dia", 31);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100000);
-        pantalladecarga.SetActive(true);
+
+        PreLoaderLevel.preload.CargaLvl("");
     }  public void carro()
     {
         PlayerPrefs.SetFloat("carro", 1);
@@ -56,7 +56,7 @@ public class winandlose : MonoBehaviour
      //   SceneManager.LoadScene("inicio");
         PlayerPrefs.SetFloat("dia", 31);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100000);
-        pantalladecarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("");
 
     }
     public void reiniciar()
@@ -66,7 +66,7 @@ public class winandlose : MonoBehaviour
         PlayerPrefs.SetFloat("primera", 1);
         PlayerPrefs.SetInt("preguntas", aa);
         //  SceneManager.LoadScene("inicio");
-        pantalladecarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("");
     }
 
 
@@ -168,7 +168,8 @@ public class winandlose : MonoBehaviour
 
     public void menu()
     {
-        pantalladecarga.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
 
