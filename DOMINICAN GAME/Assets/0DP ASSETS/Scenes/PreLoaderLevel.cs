@@ -24,6 +24,8 @@ using Lovatto.SceneLoader;
     private void Start()
     {
         preload = this;
+        datoscuriosos();
+
     }
 
     public void CargaLvl(string Lvl)
@@ -54,8 +56,8 @@ using Lovatto.SceneLoader;
 
             if (nomostrable)
             {
-                letra.SetActive(false);
-                return;
+               // letra.SetActive(false);
+             //   return;
             }
 
         }
@@ -64,14 +66,16 @@ using Lovatto.SceneLoader;
         
         public void datoscuriosos()
         {
+
+        print("llamado dato curioso");
             i = PlayerPrefs.GetInt("datoscuriosos", 0);
 
-            if (nomostrable == false)
-            {
+          //  if (nomostrable == false)
+          //  {
                 if (i < datos.Length - 1) PlayerPrefs.SetInt("datoscuriosos", i + 1);
                 else PlayerPrefs.SetInt("datoscuriosos", 0);
                 datitos.text = datos[i];
-            }
+           // }
 
         }
 
