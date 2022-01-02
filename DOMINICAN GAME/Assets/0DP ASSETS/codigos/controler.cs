@@ -377,7 +377,8 @@ public class controler : MonoBehaviour
 
 	public void menu()
 	{
-		SceneManager.LoadScene("inicio");
+		PreLoaderLevel.preload.CargaLvl("inicio");
+
 	}//	public AudioClip sondiogrito;
 	public void vivi()
 	{
@@ -3504,7 +3505,8 @@ public class controler : MonoBehaviour
 				else
 				{
 					PlayerPrefs.SetFloat("platanos", platano);
-					SceneManager.LoadScene("inicio");
+					PreLoaderLevel.preload.CargaLvl("inicio");
+
 				}
 				StartCoroutine(paras());
 
@@ -3531,7 +3533,8 @@ public class controler : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 
 			}
 
@@ -3572,7 +3575,8 @@ public class controler : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 
 			}
 		}
@@ -3614,7 +3618,8 @@ public class controler : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 			}
 		}
 
@@ -3654,7 +3659,8 @@ public class controler : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 			}
 		}
 

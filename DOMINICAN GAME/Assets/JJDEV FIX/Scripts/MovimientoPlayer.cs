@@ -320,7 +320,8 @@ public class MovimientoPlayer : MonoBehaviour
 	
 	public void menu()
 	{
-		SceneManager.LoadScene("inicio");
+		PreLoaderLevel.preload.CargaLvl("inicio");
+
 	}//	public AudioClip sondiogrito;
 	public float vidasi = 3;
 	public Text dias;
@@ -3235,7 +3236,8 @@ public class MovimientoPlayer : MonoBehaviour
 				else
 				{
 					PlayerPrefs.SetFloat("platanos", platano);
-					SceneManager.LoadScene("inicio");
+					PreLoaderLevel.preload.CargaLvl("inicio");
+
 				}
 				StartCoroutine(paras());
 
@@ -3262,7 +3264,8 @@ public class MovimientoPlayer : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 
 			}
 
@@ -3303,7 +3306,8 @@ public class MovimientoPlayer : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 
 			}
 		}
@@ -3345,7 +3349,8 @@ public class MovimientoPlayer : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 			}
 		}
 
@@ -3385,7 +3390,8 @@ public class MovimientoPlayer : MonoBehaviour
 			{
 				PlayerPrefs.SetFloat("platanos", platano);
 				gest.mostrarreco();
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 			}
 		}
 
@@ -4197,7 +4203,8 @@ public class MovimientoPlayer : MonoBehaviour
 				PlayerPrefs.SetFloat("platanos", platano);
 				if (PlayerPrefs.GetInt("anuncios", 1) == 1)
 				{ gest.mostrarreco(); }
-				SceneManager.LoadScene("inicio");
+				PreLoaderLevel.preload.CargaLvl("inicio");
+
 			}
 
 		}

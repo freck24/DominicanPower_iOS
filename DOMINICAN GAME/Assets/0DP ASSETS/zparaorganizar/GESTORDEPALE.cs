@@ -19,7 +19,7 @@ public class GESTORDEPALE : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
         a = GetComponent<AudioSource>();
         StartCoroutine(pale());
     }
@@ -27,13 +27,13 @@ public class GESTORDEPALE : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 
     public IEnumerator pale()
     {
-       a.clip = ruidosonido;
-       a.Play();
+        a.clip = ruidosonido;
+        a.Play();
         yield return new WaitForSecondsRealtime(1);
         ruido.SetActive(false);
         bolas.SetActive(true);
@@ -42,7 +42,7 @@ public class GESTORDEPALE : MonoBehaviour
         yield return new WaitForSecondsRealtime(2);
         a.clip = audiobolos;
         a.Play();
-        
+
         yield return new WaitForSecondsRealtime(2.5f);
         a.clip = audiobolos;
         a.Play();
@@ -56,19 +56,20 @@ public class GESTORDEPALE : MonoBehaviour
         {
             t.text = "Gane 150,000 pesos, pagaré los 100 que debo y compraré una moto";
             PlayerPrefs.SetFloat("moto", 1);
-         //   PlayerPrefs.SetFloat("dinero", 0 );
+            //   PlayerPrefs.SetFloat("dinero", 0 );
         }
         else
         {
             t.text = "Me pelé";
-          //  PlayerPrefs.SetFloat("dinero", 0);
+            //  PlayerPrefs.SetFloat("dinero", 0);
 
         }
         PlayerPrefs.SetFloat("dia", 31);
-            yield return new WaitForSecondsRealtime(4);
+        yield return new WaitForSecondsRealtime(4);
 
-        SceneManager.LoadScene("inicio");
-        
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
+
 
     }
 }

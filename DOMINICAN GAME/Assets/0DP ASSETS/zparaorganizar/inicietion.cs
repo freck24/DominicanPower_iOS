@@ -7,6 +7,8 @@ using Proyecto26;
 
 public class inicietion : MonoBehaviour
 {
+    public string LinkPolitica;
+
     public GameObject moto;
 
     public GameObject AdVar;
@@ -1050,8 +1052,7 @@ public class inicietion : MonoBehaviour
 
     public void POLITICA()
     {
-        PP.SetActive(false);
-        PP.SetActive(true);
+        Application.OpenURL(LinkPolitica);
     }
     public void Ccapitulo()
     {

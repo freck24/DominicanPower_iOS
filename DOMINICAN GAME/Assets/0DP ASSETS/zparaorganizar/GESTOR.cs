@@ -71,7 +71,8 @@ public class GESTOR : MonoBehaviour
 
     public void MENU()
     {
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
     public Text t1;

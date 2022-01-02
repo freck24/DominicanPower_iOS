@@ -131,6 +131,7 @@ public class playeravion : MonoBehaviour
 
     public void menu()
     {
-    SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 }

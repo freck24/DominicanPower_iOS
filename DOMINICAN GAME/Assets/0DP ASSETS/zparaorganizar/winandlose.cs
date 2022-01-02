@@ -46,7 +46,8 @@ public class winandlose : MonoBehaviour
     {
         PlayerPrefs.SetFloat("carro", 1);
 
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
         PlayerPrefs.SetFloat("dia", 31);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100000);
     }
@@ -66,7 +67,7 @@ public class winandlose : MonoBehaviour
         PlayerPrefs.SetFloat("primera", 1);
         PlayerPrefs.SetInt("preguntas", aa);
         //  SceneManager.LoadScene("inicio");
-        PreLoaderLevel.preload.CargaLvl("");
+        PreLoaderLevel.preload.CargaLvl("inicio");
     }
 
 

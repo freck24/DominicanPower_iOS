@@ -101,7 +101,7 @@ public float t5=2;
      
     public void SALTAR()
     {
-        PreLoaderLevel.preload.CargaLvl("");
+        PreLoaderLevel.preload.CargaLvl("inicio");
 
     }
 }

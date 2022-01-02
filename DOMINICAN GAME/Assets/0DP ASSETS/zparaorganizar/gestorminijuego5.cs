@@ -45,7 +45,8 @@ public class gestorminijuego5 : MonoBehaviour
     }
     public void MENU()
     {
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
     // Update is called once per frame
     void Update()

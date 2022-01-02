@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class REINICIO : MonoBehaviour
 {
-    public GameObject seguro;
    public Text texmo = null;
     public AudioClip pop;
     private AudioSource a;
@@ -31,19 +30,6 @@ public class REINICIO : MonoBehaviour
     public int aa;
 
 
-    public void segu()
-    {
-        seguro.SetActive(true);
-    }
-    public void nosegu()
-    {
-        seguro.SetActive(false);
-    }
-
-
-
-
-
 
 
     public void reinicio()
@@ -51,6 +37,9 @@ public class REINICIO : MonoBehaviour
     {
         a.clip = pop;
         a.Play();
+
+
+        /*
         if (PlayerPrefs.GetFloat("prime", 0f) == 0 && p == false) { 
             mensa2.SetActive(false);
             mensa2.SetActive(true);
@@ -62,6 +51,7 @@ public class REINICIO : MonoBehaviour
             mensa2.SetActive(true);
             p = !p;
         }
+        */
 
       //  emp.SetActive(true);
       //  cont.SetActive(false);
@@ -80,9 +70,10 @@ public class REINICIO : MonoBehaviour
         PlayerPrefs.SetFloat("primera", 1);
         PlayerPrefs.SetInt("preguntas", aa);
 
-        SceneManager.LoadScene("gracias");
 
-        mensa.SetActive(true);
+        PreLoaderLevel.preload.CargaLvl("gracias");
+
+     //   mensa.SetActive(true);
       //  yun.SetActive(true);
 
     }

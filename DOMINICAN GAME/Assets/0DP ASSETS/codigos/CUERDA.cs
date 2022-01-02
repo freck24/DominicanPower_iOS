@@ -91,7 +91,8 @@ public class CUERDA : MonoBehaviour
 
     public void menuREIN()
     {
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
 }

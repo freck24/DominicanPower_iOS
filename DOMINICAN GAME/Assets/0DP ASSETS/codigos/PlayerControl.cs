@@ -151,10 +151,11 @@ public class PlayerControl : MonoBehaviour
 
     public void cambiare()
     {
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
     }
 
- public IEnumerator velocit()
+    public IEnumerator velocit()
     {
        
         v = Random.Range(-10, 10);

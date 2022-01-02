@@ -146,7 +146,8 @@ public class controladorplayeryun : MonoBehaviour
     public void menu()
     {
 
-        SceneManager.LoadScene("inicio");
+        PreLoaderLevel.preload.CargaLvl("inicio");
+
 
         PlayerPrefs.SetFloat("pyun", 1);
       //  PlayerPrefs.SetFloat("tiempoyun", 100f);
