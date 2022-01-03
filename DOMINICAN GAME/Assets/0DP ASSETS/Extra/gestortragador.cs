@@ -81,7 +81,8 @@ public class gestortragador : MonoBehaviour
     {
         
             JUGAR.SetActive(false);
-            ANIM.SetBool("PARAR", true);
+            PARAR.SetActive(true);
+        ANIM.SetBool("PARAR", true);
         if(PlayerPrefs.GetInt("anuncios", 1) == 1) scriptEjemploVR.instance.AdsByCall_Intersticial();
         
     }

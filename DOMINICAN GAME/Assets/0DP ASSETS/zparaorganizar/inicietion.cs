@@ -764,7 +764,7 @@ public class inicietion : MonoBehaviour
 
         if (PlayerPrefs.GetFloat("moto", 0) == 1)
         {
-            moto.SetActive(true);
+        //    moto.SetActive(true);
             carro.SetActive(false);
 
         } 
@@ -772,7 +772,7 @@ public class inicietion : MonoBehaviour
     if (PlayerPrefs.GetFloat("carro", 0) == 1)
         {
             carro.SetActive(true);
-            moto.SetActive(false);
+         //   moto.SetActive(false);
         }
 
        if(DIA != null) DIA.text = "DÍA " + PlayerPrefs.GetFloat("dia", 1);

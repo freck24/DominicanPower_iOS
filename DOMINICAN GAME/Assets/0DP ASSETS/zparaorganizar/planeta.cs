@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using EliezerYT.UIAdjust;
 
 public class planeta : MonoBehaviour
 {
@@ -268,7 +269,11 @@ public class planeta : MonoBehaviour
         }
     }
 
- 
+    private void Start()
+    {
+        UIA_Manager uia = FindObjectOfType<UIA_Manager>();
+        uia.GroupOriginal.SetActive(false);
+    }
 
     void Update()
     {

@@ -60,7 +60,7 @@ namespace EliezerYT.UIAdjust
                 UI_ItemsEditor.Add(_item2);
 
                 All_Load();
-                All_Load2();
+              //  All_Load2();
             }
 
 

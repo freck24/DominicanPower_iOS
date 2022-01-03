@@ -36,6 +36,18 @@ namespace EliezerYT.UIAdjust
 
         public void Load()
         {
+            bool _Save = false;
+
+            if (PlayerPrefs.HasKey("UIA_" + KeyName + "PosX")) _Save = true;
+            if (PlayerPrefs.HasKey("UIA_" + KeyName + "PosY")) _Save = true;
+            if (PlayerPrefs.HasKey("UIA_" + KeyName + "Scale")) _Save = true;
+
+            if(_Save)
+            {
+             //   Save();
+            //    return;
+            }
+
             Vector2 _Pos = Vector2.zero;
             Vector2 _Scale = Vector2.zero;
 
@@ -48,12 +60,18 @@ namespace EliezerYT.UIAdjust
 
             transform.localPosition = _Pos;
             transform.localScale = _Scale;
+
+            if (_Scale.x > 9) Reset();
+            if (_Scale.x < 9) Reset();
+
+            Save();
         }
 
         public void Reset()
         {
             transform.localPosition = Default_Pos;
             transform.localScale = Default_Scale;
+
         }
 
         #endregion
