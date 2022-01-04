@@ -446,7 +446,7 @@ public class inicietion : MonoBehaviour
     public void valor()
     {
         POP();
-        Application.OpenURL(game);
+     //   Application.OpenURL(game);
         PlayerPrefs.SetFloat("v", 1);
         valoracion.SetActive(false);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + 5000);

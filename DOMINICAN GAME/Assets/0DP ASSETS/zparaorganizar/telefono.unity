@@ -688,8 +688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 8800395521741364778, guid: 88cc5e2eed3989f4ca5821f9f2fd0009,
-    type: 3}
+  m_Sprite: {fileID: 21300000, guid: ae74a3ed7d3510c4bb7caa9cfaf26463, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1576,6 +1575,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5220991260171478237, guid: 546f8bc46cde09948978f3e437544913,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 5.4000244
+      objectReference: {fileID: 0}
     - target: {fileID: 7246284325827916092, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1704,7 +1708,7 @@ PrefabInstance:
     - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
       propertyPath: scena
-      value: inicio
+      value: LEVEL 1 CLONE
       objectReference: {fileID: 0}
     - target: {fileID: 7246284326108338847, guid: 546f8bc46cde09948978f3e437544913,
         type: 3}
@@ -1847,8 +1851,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -18.199951, y: 444.3}
-  m_SizeDelta: {x: 131.17847, y: 46.878906}
+  m_AnchoredPosition: {x: -11, y: 444.3}
+  m_SizeDelta: {x: 197.15195, y: 46.878906}
   m_Pivot: {x: 1, y: 0}
 --- !u!114 &912484374
 MonoBehaviour:
@@ -1923,7 +1927,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 1c23c7345b303ff43b23f6170d6ec0de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fbc71182e9cb5ab42aafc7b22274698d, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2209,7 +2213,7 @@ Light:
   m_Type: 1
   m_Shape: 0
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 1
+  m_Intensity: 0.92
   m_Range: 10
   m_SpotAngle: 30
   m_InnerSpotAngle: 21.80208

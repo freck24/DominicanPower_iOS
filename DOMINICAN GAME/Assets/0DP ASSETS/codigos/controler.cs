@@ -5,6 +5,13 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+
+	[Header("DOMINICAN POWER FX")]
+	public bool PowerDisponible = true;
+	public GameObject PowerOn;
+	public GameObject PowerLoop;
+	public GameObject PowerOff;
+
 	public Sprite CaminaoOn;
 	public Sprite CaminaoOff;
 	public bool transportin;
@@ -2876,6 +2883,7 @@ public class controler : MonoBehaviour
 		PlayerPrefs.SetFloat("vidas", vidas);
 	}
 
+	public void GenSangre() => CameraPlay.BloodHit(1f);
 
 	public IEnumerator muereespera()
 	{
@@ -2922,7 +2930,7 @@ public class controler : MonoBehaviour
 			{
 				vidas -= 1;
 				print("Corazon Roto (Caid)");
-
+				CameraPlay.Glitch3(1.3f);
 				PlayerPrefs.SetFloat("vidas", vidas);
 				if (vidas > 0)
 				{
@@ -3064,17 +3072,23 @@ public class controler : MonoBehaviour
 
 	public void activapower()
 	{
-		if (contadorpoder > 0 && vidas > 0)
+
+		
+		if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
 		{
+			PowerDisponible = false;
+			PowerOn.SetActive(true);
+			PowerLoop.SetActive(true);
+			CameraPlay.Zoom(CameraPlay.PosScreenX(transform.position), CameraPlay.PosScreenY(transform.position), 2.35f, 4f);
+			CameraPlay.Pinch(CameraPlay.PosScreenX(transform.position), 10f, 1.2f);
+			CameraPlay.Pitch(1.8f, 1.3f);
+			CameraPlay.Glitch3(1.6f);
+			CameraPlay.EarthQuakeShake(2.5f, 7.1f, 1.4f);
+
 			power = true;
 			contadorpoder -= 1;
 			PlayerPrefs.SetFloat("poder", contadorpoder);
 			contadorpoder = PlayerPrefs.GetFloat("poder", 0);
-
-
-
-
-			rompe = true;
 			// ESTABA AQUI -=1
 
 			PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
@@ -3346,6 +3360,8 @@ public class controler : MonoBehaviour
 					vidas -= 1;
 
 					print("Corazon Roto 1");
+					GenSangre();  
+
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
 					{
@@ -3391,6 +3407,11 @@ public class controler : MonoBehaviour
 					h = 0;
 					vidas -= 1;
 					print("Corazon Roto 2");
+					
+					GenSangre();
+					CameraPlay.Shockwave();
+					CameraPlay.Shockwave();
+					CameraPlay.DropWater();
 
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
@@ -3712,6 +3733,7 @@ public class controler : MonoBehaviour
 				{
 					vidas -= 1;
 					print("Corazon Roto 3 (punala)");
+					GenSangre();  
 
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)
@@ -3967,6 +3989,7 @@ public class controler : MonoBehaviour
 				{
 					vidas -= 1;
 					print("Corazon Roto 5 (punala 2)");
+					GenSangre();  
 
 					PlayerPrefs.SetFloat("vidas", vidas);
 					if (vidas > 0)

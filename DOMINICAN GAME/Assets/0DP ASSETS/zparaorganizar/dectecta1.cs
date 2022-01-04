@@ -24,6 +24,9 @@ public class dectecta1 : MonoBehaviour
         if(collision.tag == "cabezap")
         {
             Instantiate(ene, blocktransfor.transform.position, Quaternion.identity);
+            CameraPlay.DropWater(CameraPlay.PosScreenX(transform.position), CameraPlay.PosScreenY(transform.position), 0.52f, 0.2f);
+            CameraPlay.EarthQuakeShake(0.5f, 2.1f, 1.4f);
+
             Destroy(block);
 
         }

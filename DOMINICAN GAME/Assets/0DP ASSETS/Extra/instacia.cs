@@ -23,7 +23,7 @@ public class instacia : MonoBehaviour
         {
             if (collision.tag == nombretag)
             {
-
+                CameraPlay.Shockwave(CameraPlay.PosScreenX(transform.position), CameraPlay.PosScreenY(transform.position), 0.52f, 0.2f);
                 Instantiate(ene, transform.position, Quaternion.identity);
                 Destroy(gameObject);
             }

@@ -6,6 +6,8 @@ using UnityEngine.Events;
 [RequireComponent(typeof(AudioSource))]
 public class bl_SceneLoader : MonoBehaviour
 {
+
+    public bool IsLoading;
     #region Public members
     [Header("Settings")]
     public SceneSkipType SkipType = SceneSkipType.Button;
@@ -161,7 +163,10 @@ public class bl_SceneLoader : MonoBehaviour
     /// <param name="level">The scene name</param>
     public void LoadLevel(string level)
     {
+        if (IsLoading) return;
         print("toload; " + level);
+
+        IsLoading = true;
         //get the scene info from the SceneLoaderManager
         CurrentLoadLevel = Manager.GetSceneInfo(level);
         if (CurrentLoadLevel == null)

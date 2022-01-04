@@ -11,6 +11,17 @@ using GoogleMobileAds.Api;
 
 public class GESTORPRINCIPAL : MonoBehaviour
 {
+
+    [Header("Tiempo DPower")]
+    public Animator TiempoPower;
+    public AudioClip say;
+    public AudioClip brilla;
+    public bool s = false;
+    public bool bril = false;
+    public bool tiemposaya = false;
+    public bool una = false;
+    public float tiem = 0;
+
     public static bool AnunciosInicializados = false;
     public PreLoaderLevel ScreenLoader;
 
@@ -109,13 +120,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
     }
 
 
-    public AudioClip say;
-    public AudioClip brilla;
-    public bool s = false;
-    public bool bril = false;
-    public bool tiemposaya = false;
-    public bool una = false;
-    public float tiem = 0;
+    
     public AudioClip baja;
     public Text TIEMPOTEXT;
 
@@ -144,15 +149,21 @@ public class GESTORPRINCIPAL : MonoBehaviour
             a.Play();
             tiem = 0;
             tiemposaya = true;
+            cont.PowerOn.SetActive(true);
             s = false;
-            
         }
+
+
+        TiempoPower.SetBool("InPower",tiemposaya);
+
+
         if (tiemposaya)
         {
             tiem += Time.deltaTime;
             una = true;
             TIEMPOTEXT.text = (-tiem + tiempopoder).ToString("f2");
         }
+
         if (tiem > tiempopoder && una)
         {
             TIEMPOTEXT.text = "";
@@ -160,12 +171,15 @@ public class GESTORPRINCIPAL : MonoBehaviour
             cont.reflejo2.SetActive(false);
             cont.reflejo3.SetActive(false);
             tiemposaya = false;
+            cont.PowerLoop.SetActive(false);
+            cont.PowerDisponible = true;
             cont.fuerza = 85;
             cont.rompe = false;
             a.clip = baja;
             a.Play();
             una = false;
             cont.tiempoespera = 2;
+            cont.PowerOff.SetActive(true);
         }
 
     }
