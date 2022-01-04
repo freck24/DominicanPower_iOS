@@ -49,7 +49,9 @@ using Lovatto.SceneLoader;
             else
             {
                 miClickLoad.sceneName = SceneManager.GetActiveScene().name;
-                miClickLoad.LoadScene();
+            miClickLoad.sceneName = scena;
+
+            miClickLoad.LoadScene();
             }
 
 

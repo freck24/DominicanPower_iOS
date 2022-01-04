@@ -281,7 +281,7 @@ public class planeta : MonoBehaviour
         {
             TiempoContando -= Time.deltaTime;
 
-            if (TiempoContando >= 1) Tiempo.text = "CARGANDO MINIJUEGO EN: " + System.Convert.ToInt32(TiempoContando) + " SEGUNDOS";
+            if (TiempoContando >= 0.1f) Tiempo.text = "CARGANDO MINIJUEGO EN: " + System.Convert.ToInt32(TiempoContando) + " SEGUNDOS";
             else Tiempo.text = "CARGANDO MINIJUEGO";
         }
     }

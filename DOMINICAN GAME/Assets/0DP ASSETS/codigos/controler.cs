@@ -2166,11 +2166,12 @@ public class controler : MonoBehaviour
 		//	if (r.velocity.y > -2 && r.velocity.y <= 0) suelito = true;
 		//	if (suelito && r.velocity.y < -20f) suelito = false;
 
+		if (Input.GetKeyDown(KeyCode.Space)) saltard();
+		if (Input.GetKeyDown(KeyCode.X)) activapower();
 
 		FlipMyCharacter(h);
 
-		if (Input.GetKeyDown(KeyCode.Space)) saltard();
-		if (Input.GetKeyDown(KeyCode.X)) activapower();
+		
 
 		/*if (m)
 		{
@@ -2490,6 +2491,7 @@ public class controler : MonoBehaviour
 		{
 			saltaunpocoantes();
 		}
+
 		print("salto");
 		if (suel && animacion)
 		{
@@ -2506,9 +2508,6 @@ public class controler : MonoBehaviour
 			//	Handheld.Vibrate();
 			un = true;
 			salto = true;
-
-
-
 
 			h1 = 7 * guardah;
 
@@ -3084,7 +3083,7 @@ public class controler : MonoBehaviour
 			CameraPlay.Pitch(1.8f, 1.3f);
 			CameraPlay.Glitch3(1.6f);
 			CameraPlay.EarthQuakeShake(2.5f, 7.1f, 1.4f);
-
+			cabeza.SetActive(true);
 			power = true;
 			contadorpoder -= 1;
 			PlayerPrefs.SetFloat("poder", contadorpoder);

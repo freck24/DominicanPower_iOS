@@ -61,14 +61,16 @@ namespace EliezerYT.UIAdjust
             transform.localPosition = _Pos;
             transform.localScale = _Scale;
 
+            print("escala: " + _Scale.x);
             if (_Scale.x > 9) Reset();
-            if (_Scale.x < 9) Reset();
+            if (_Scale.x < -9) Reset();
 
-            Save();
+            // Save();
         }
 
         public void Reset()
         {
+            print("UIA RESETED");
             transform.localPosition = Default_Pos;
             transform.localScale = Default_Scale;
 

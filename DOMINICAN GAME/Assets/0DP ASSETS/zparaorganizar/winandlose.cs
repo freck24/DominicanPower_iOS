@@ -37,11 +37,10 @@ public class winandlose : MonoBehaviour
     public void moto()
     {
         PlayerPrefs.SetFloat("moto", 1);
-       
         PlayerPrefs.SetFloat("dia", 31);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100000);
 
-        PreLoaderLevel.preload.CargaLvl("");
+        PreLoaderLevel.preload.CargaLvl("InfiniteRunner");
     }  public void carro()
     {
         PlayerPrefs.SetFloat("carro", 1);
@@ -53,12 +52,7 @@ public class winandlose : MonoBehaviour
     }
     public void saltar()
     {
-        PlayerPrefs.SetFloat("moto", 1);
-     //   SceneManager.LoadScene("inicio");
-        PlayerPrefs.SetFloat("dia", 31);
-        PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100000);
-        PreLoaderLevel.preload.CargaLvl("");
-
+        moto();
     }
     public void reiniciar()
     {

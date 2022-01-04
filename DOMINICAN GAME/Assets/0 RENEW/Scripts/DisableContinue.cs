@@ -7,7 +7,7 @@ public class DisableContinue : MonoBehaviour
     public GameObject ToDisable;
    
 
-    void Start()
+    void Startx()
     {
         if (PlayerPrefs.GetInt("PlayingGame", 0) == 1)
         {
