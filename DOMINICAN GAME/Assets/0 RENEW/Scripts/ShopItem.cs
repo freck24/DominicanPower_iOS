@@ -19,8 +19,8 @@ public class ShopItem : MonoBehaviour
 
     [Header("Boton Color")]
     public Image ComprarImg;
-    public Color PuedeComprarlo = new Color32(255, 255, 255, 255);
-    public Color NoPuedeComprarlo = new Color32(255, 255, 255, 255);
+    public Sprite PuedeComprarlo;
+    public Sprite NoPuedeComprarlo;
 
 
     private void Update()
@@ -29,8 +29,8 @@ public class ShopItem : MonoBehaviour
         {
         float coins = PlayerPrefs.GetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0));
 
-        if (coins >= Precio) ComprarImg.color = PuedeComprarlo;
-        else ComprarImg.color = NoPuedeComprarlo;
+        if (coins >= Precio) ComprarImg.sprite = PuedeComprarlo;
+        else ComprarImg.sprite = NoPuedeComprarlo;
         }
 
     }

@@ -182,11 +182,8 @@ public class controler : MonoBehaviour
 	public Color color3;
 	public Color color4;
 	public Color color5;
-	public Image d;
-	public Image iz;
-	public Image a;
-	public Image p;
-	public Image c;
+
+	public GameObject ControlPanel;
 
 
 	Vector3 rota;
@@ -503,11 +500,6 @@ public class controler : MonoBehaviour
 
 		electric = new Vector3(elec.transform.localScale.x, elec.transform.localScale.y, elec.transform.localScale.z);
 
-		color1 = d.color;
-		color2 = iz.color;
-		color3 = a.color;
-		color4 = p.color;
-		color5 = c.color;
 
 		dias.text = "DÍA " + PlayerPrefs.GetFloat("dia", 1);
 
@@ -4209,11 +4201,9 @@ public class controler : MonoBehaviour
 			//a3.SetActive(true);
 			audio2.PlayOneShot(d2);
 			dia3.SetActive(true);
-			d.color = gris;
-			iz.color = gris;
-			a.color = gris;
-			p.color = gris;
-			c.color = color5;
+
+			ControlPanel.SetActive(false);
+
 			paneles.SetActive(true);
 			h = 0;
 			StartCoroutine(v1());
@@ -4227,11 +4217,9 @@ public class controler : MonoBehaviour
 			h = 0;
 			dia4.SetActive(true);
 			dia5.SetActive(true);
-			d.color = gris;
-			iz.color = gris;
-			a.color = gris;
-			p.color = color4;
-			c.color = gris;
+
+			ControlPanel.SetActive(false);
+
 			a2.SetActive(true);
 
 			StartCoroutine(v3());
@@ -4320,11 +4308,8 @@ public class controler : MonoBehaviour
 	{
 		yield return new WaitForSecondsRealtime(3f);
 		paneles.SetActive(false);
-		d.color = color1;
-		iz.color = color2;
-		a.color = color3;
-		p.color = color4;
-		c.color = color5;
+		ControlPanel.SetActive(false);
+
 		a1.SetActive(false);
 		a2.SetActive(false);
 		yield return new WaitForSecondsRealtime(1f);
@@ -4351,11 +4336,9 @@ public class controler : MonoBehaviour
 	{
 
 		yield return new WaitForSecondsRealtime(3f);
-		d.color = color1;
-		iz.color = color2;
-		a.color = color3;
-		p.color = color4;
-		c.color = color5;
+
+		ControlPanel.SetActive(true);
+
 		paneles.SetActive(false);
 		a1.SetActive(false);
 		a2.SetActive(false);

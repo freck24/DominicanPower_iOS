@@ -13,23 +13,23 @@ public class jugarnumero : MonoBehaviour
     public AudioClip dinero;
     public AudioClip facil;
     public Image yo;
-    void Start()
-    {
-        
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
+    public Sprite Selected;
+    public Sprite NoSelected;
+
+
+    public void Start()
+    {
+        numero = transform.GetSiblingIndex();
+        t.text = "" + numero;
+
+    }
     public void jugar()
     {
         if (PlayerPrefs.GetFloat("dinero", 0) > 99)
         {
             PlayerPrefs.SetString("fecha", DateTime.Now.ToString());
-            yo.color = Color.green;
+            yo.sprite = Selected;
             PlayerPrefs.SetInt("n" + numero, PlayerPrefs.GetInt("n" + numero, 0) + 100);
             PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 100);
             a.PlayOneShot(dinero);
