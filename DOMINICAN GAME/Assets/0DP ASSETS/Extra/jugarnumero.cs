@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using System;
 public class jugarnumero : MonoBehaviour
 {
-   
+    public bool Jugado;
     // Start is called before the first frame update
     public Text t;
     public int numero = 0;
@@ -23,11 +23,19 @@ public class jugarnumero : MonoBehaviour
         numero = transform.GetSiblingIndex();
         t.text = "" + numero;
 
+        if(PlayerPrefs.GetInt("n" + numero, 0) != 0)
+        {
+            Jugado = true;
+            yo.sprite = Selected;
+        }
+
     }
     public void jugar()
     {
         if (PlayerPrefs.GetFloat("dinero", 0) > 99)
         {
+            Jugado = true;
+
             PlayerPrefs.SetString("fecha", DateTime.Now.ToString());
             yo.sprite = Selected;
             PlayerPrefs.SetInt("n" + numero, PlayerPrefs.GetInt("n" + numero, 0) + 100);
@@ -39,19 +47,6 @@ public class jugarnumero : MonoBehaviour
         else
         {
             a.PlayOneShot(facil); //quise decir faile
-        }
-       
-    }
-
-    public void ponmenumero()
-    {
-        if (numero <= 9)
-        {
-            t.text = "0" + numero;
-        }
-        else
-        {
-            t.text = "" + numero;
         }
        
     }

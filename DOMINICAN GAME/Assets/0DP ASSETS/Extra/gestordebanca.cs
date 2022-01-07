@@ -7,10 +7,26 @@ using TMPro;
 
 public class gestordebanca : MonoBehaviour
 {
-    // Start is called before the first frame update
 
-    public jugarnumero[] j;
-    public Text numerosjugados;
+    [Header("Lista Numeros Jugados")]
+    public Transform JugadosItems;
+    public GameObject ItemLayout;
+
+
+    public void LimpiarTicket()
+    {
+      foreach (Transform child in JugadosItems) Destroy(child.gameObject);
+    }
+    public void CreateNewNumero(int Number)
+    {
+        GameObject obj = Instantiate(ItemLayout, JugadosItems);
+        obj.GetComponent<jugarnumero>().t.text = Number + "";
+    }
+
+
+    [Space(5)]
+    public bool Cobrar;
+
     public GameObject jugar;
     public GameObject revisartiket;
     public GameObject COBRAR;
@@ -18,21 +34,35 @@ public class gestordebanca : MonoBehaviour
     public int primern;
     public int segundon;
     public int tercern;
-    DateTime tiempoactual;
-    TimeSpan diferencia;
+    public DateTime tiempoactual;
+    public TimeSpan diferencia;
 
     public TextMeshPro n1;
     public TextMeshPro n2;
     public TextMeshPro n3;
 
     public Text timpo;
+    bool puedeabrir = true;
+
+    public Text textcobrar;
+    public Text textcobrart;
+
+    public int total;
+
+    public AudioSource a;
+    public AudioClip faile;
+
+    public GameObject men;
+    public GameObject mensaje;
+    public GameObject MenuBanca;
+
+
     void Start()
     {
-       // PlayerPrefs.SetFloat("dinero",10000);
         tiempoactual = DateTime.Now;
- 
-        diferencia = tiempoactual - Convert.ToDateTime( PlayerPrefs.GetString("fecha", tiempoactual.ToString()));
-      //  timpo.text = "Tiempo para proximo sorteo: " + diferencia.Hours.ToString() + " horas " + diferencia.Minutes.ToString() + " minutos" + diferencia.Days.ToString();
+
+        diferencia = tiempoactual - Convert.ToDateTime(PlayerPrefs.GetString("fecha", tiempoactual.ToString()));
+        //  timpo.text = "Tiempo para proximo sorteo: " + diferencia.Hours.ToString() + " horas " + diferencia.Minutes.ToString() + " minutos" + diferencia.Days.ToString();
         if (diferencia.Days > 0)
         {
             LOTERIA();
@@ -40,20 +70,9 @@ public class gestordebanca : MonoBehaviour
         n1.text = PlayerPrefs.GetInt("nnn1", 24).ToString();
         n2.text = PlayerPrefs.GetInt("nnn2", 20).ToString();
         n3.text = PlayerPrefs.GetInt("nnn3", 28).ToString();
-        for (int i = 0; i<j.Length; i++)
-        {
-            j[i].numero = i;
-            j[i].ponmenumero();
-        }
+    }
 
 
-    }
-    
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
     public void LOTERIA()
     {
@@ -63,51 +82,36 @@ public class gestordebanca : MonoBehaviour
         PlayerPrefs.SetInt("nnn1", primern);
         PlayerPrefs.SetInt("nnn2", segundon);
         PlayerPrefs.SetInt("nnn3", tercern);
-       
-
     }
-    bool puedeabrir = true;
 
     public void numerojugados()
     {
-        numerosjugados.text = "";
-        for (int i = 0; i < j.Length; i++)
+        LimpiarTicket();
+
+        for (int i = 0; i < 101; i++)
         {
-            if (PlayerPrefs.GetInt("n" + i,0) > 0)
+            if (PlayerPrefs.GetInt("n" + i, 0) > 0)
             {
-                numerosjugados.text += " $"+PlayerPrefs.GetInt("n" + i,0).ToString()+ " al "+i;
+                CreateNewNumero(i);
                 puedeabrir = false;
             }
-        
+
         }
-        } 
-    
-    
-    
+    }
+
+
+
     public void borrar()
     {
-        numerosjugados.text = "";
-        for (int i = 0; i < j.Length; i++)
-        {
+        for (int i = 0; i < 101; i++) PlayerPrefs.SetInt("n" + i, 0);
+    }
 
-            PlayerPrefs.SetInt("n" + i, 0);
-               
-           
-        
-        }
-        }
-
-    public Text textcobrar;
-    public Text textcobrart;
-
-    public int total;
 
     public void numerojugadosCOBRAR()
     {
         textcobrar.text = "";
         if (PlayerPrefs.GetInt("n" + PlayerPrefs.GetInt("nnn1", 0)) > 0)
         {
-           
             textcobrar.text += "Te sacaste en primera\n";
             total = 80 * PlayerPrefs.GetInt("n" + PlayerPrefs.GetInt("nnn1", 0));
         }
@@ -135,11 +139,8 @@ public class gestordebanca : MonoBehaviour
     }
 
 
-    public AudioSource a;
-    public AudioClip faile;
     
 
-    public GameObject mensaje;
     public void abrirj()
     {
         puedeabrir = true;
@@ -152,24 +153,33 @@ public class gestordebanca : MonoBehaviour
         {
             mensaje.SetActive(false);
             mensaje.SetActive(true);
+            MenuBanca.SetActive(true);
         }
-    }   public void cerrarj()
+    }
+
+    public void cerrarj()
     {
         jugar.SetActive(false);
-    }  public void abrirT()
+    }
+
+    public void abrirT()
     {
         revisartiket.SetActive(true);
         numerojugados();
-    }   public void cerrarT()
+    }
+
+    public void cerrarT()
     {
         revisartiket.SetActive(false);
     }
-    public GameObject men;
+
     public void abrirC()
     {
         diferencia = tiempoactual - Convert.ToDateTime(PlayerPrefs.GetString("fecha", tiempoactual.ToString()));
         print(diferencia.Days);
-        if (diferencia.Days > 0 && PlayerPrefs.GetInt("hoycobre",1)==0)
+        if (diferencia.Days > 0) Cobrar = true;
+
+        if (Cobrar && PlayerPrefs.GetInt("hoycobre", 1) == 0)
         {
             COBRAR.SetActive(true);
             numerojugadosCOBRAR();
@@ -177,13 +187,17 @@ public class gestordebanca : MonoBehaviour
 
             PlayerPrefs.SetInt("hoycobre", 1);
         }
-        else{
+        else
+        {
             a.PlayOneShot(faile);
 
             men.SetActive(false);
             men.SetActive(true);
+            MenuBanca.SetActive(true);
         }
-    }   public void cerrarC()
+    }
+
+    public void cerrarC()
     {
         COBRAR.SetActive(false);
     }

@@ -27,14 +27,14 @@ public class inicietion : MonoBehaviour
         Application.OpenURL(Url);
         PromoManager.ActualUrl = Url;
 
-        Invoke("InstanciarAdRed", 4f);
+       // Invoke("InstanciarAdRed", 4f);
     }
 
     public void SetTempValue(string Url) => PromoManager.FollowingTemp = Url;
 
     public void InstanciarAdRed()
     {
-        Instantiate(AdVar);
+    Instantiate(AdVar);
     }
 
     public void you()
@@ -450,6 +450,7 @@ public class inicietion : MonoBehaviour
         PlayerPrefs.SetFloat("v", 1);
         valoracion.SetActive(false);
         PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + 5000);
+        InstanciarAdRed();
     }
     public void igs()
     {
