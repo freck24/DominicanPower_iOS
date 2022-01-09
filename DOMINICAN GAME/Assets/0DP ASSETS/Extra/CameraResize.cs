@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+﻿/*using UnityEngine;
 
 
     [RequireComponent(typeof(Camera))]
@@ -83,3 +83,4 @@
             cam.gameObject.name = "BackGround_Camera";
         }
     }
+*/
