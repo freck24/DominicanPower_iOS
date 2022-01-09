@@ -47,21 +47,28 @@ public class ProductoSetup : MonoBehaviour
     {
        if(SolaCompra)
         {
-            Obj1.SetActive(PlayerPrefs.GetFloat("gafas", 0) == 1);
-            Obj2.SetActive(PlayerPrefs.GetFloat("gafas", 0) != 1);
+            Obj1.SetActive(Cantidad < 1);
+            Obj2.SetActive(Cantidad > 0);
         }
 
     }
 
     void Update()
     {
-        if (Setup) SetupMe();
-        if (GiveOne) Give();
+       if (Setup) SetupMe();
 
         if (Application.isPlaying)
         { 
+        if (GiveOne) Give();
+
         Cantidad = PlayerPrefs.GetFloat(PrefsCantidad, 0f);
         CantidadTx.text = Cantidad.ToString("f0");
+
+        if (SolaCompra)
+        {
+            Obj1.SetActive(Cantidad < 1);
+            Obj2.SetActive(Cantidad > 0);
+        }
         }
 
 

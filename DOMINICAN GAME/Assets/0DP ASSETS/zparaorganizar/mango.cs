@@ -5,25 +5,19 @@ using UnityEngine;
 public class mango : MonoBehaviour
 {
     public controler con;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public GameObject Fx;
+    public AudioClip MangoFx;
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter2D(Collider2D otro)
     {
         if (otro.gameObject.tag == "Player")
         {
-            Destroy(gameObject);
-            PlayerPrefs.SetFloat("mango", PlayerPrefs.GetFloat("mango", 0) + 1);
-           // con.g = con.platano;
+            controler.statico.audio2.PlayOneShot(MangoFx);
 
+            Destroy(gameObject);
+            Instantiate(Fx, transform.position, Quaternion.identity);
+            PlayerPrefs.SetFloat("mango", PlayerPrefs.GetFloat("mango", 0) + 1);
+            // con.g = con.platano;
         }
     }
 }

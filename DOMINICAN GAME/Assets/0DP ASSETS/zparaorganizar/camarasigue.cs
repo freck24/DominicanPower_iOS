@@ -7,6 +7,9 @@ public class camarasigue : MonoBehaviour
     public Transform player;
     public float BaseY;
     public float PosicionXminima;
+    public float PosicionXmaxima;
+    public float offsetMax;
+    
     public Vector3 offsetCamera;
 
     public float diastanciamax=2;
@@ -30,6 +33,11 @@ public class camarasigue : MonoBehaviour
 
     public void start()
     {
+
+        GetComponent<Camera>().enabled = false;
+        GetComponent<Camera>().enabled = true;
+
+        PosicionXmaxima = FindObjectOfType<eliminatodo>().transform.position.x;
     }
 
     public void powerfuncion()
@@ -63,6 +71,7 @@ public class camarasigue : MonoBehaviour
         posView.z = player.position.z + offsetCamera.z;
 
         if (posView.x < PosicionXminima) posView.x = PosicionXminima;
+        if (posView.x > PosicionXmaxima + offsetMax) posView.x = PosicionXmaxima + offsetMax;
         transform.position = Vector3.Lerp(transform.position, posView, velocidad);
     }
 }

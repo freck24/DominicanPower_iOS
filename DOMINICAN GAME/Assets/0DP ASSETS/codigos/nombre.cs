@@ -10,75 +10,53 @@ public class nombre : MonoBehaviour
     public Font fuente;
     public string nombr = "";
     public GameObject stupido;
-    public Text n; 
-    // Start is called before the first frame update
+    public Text n;
+    public Button BotonAceptar;
+    public GameObject AnimEnter;
+    public GameObject Grounder;
+
+    public float p1;
+
     void Start()
     {
         p1 = PlayerPrefs.GetFloat("p1", 0);
         if (p1 == 1)
         {
-            PreLoaderLevel.preload.CargaLvl("inicio");
-
+            Grounder.SetActive(true);
+            Invoke("LoadMenu", 0.4f);
         }
+    }
 
-
+    void LoadMenu()
+    {
+        PreLoaderLevel.preload.CargaLvl("inicio");
 
     }
 
-    // Update is called once per frame
     void Update()
     {
         nombr = n.text;
-        if (nombr != "")
-        {
-            no.SetActive(false);
-            aceptar.SetActive(true);
-        }
-        else
-        {
-            no.SetActive(true);
-            aceptar.SetActive(false);
-        }    
 
-
-
+        AnimEnter.SetActive(nombr != "" && nombr.Length > 3);
+        BotonAceptar.interactable = (nombr != "" && nombr.Length > 3);
     }
 
-    private void OnGUI()
-    {
 
 
-      
-
-    }
-    
-
-    public GameObject pantalla;
-    public float p1;
-    public GameObject no;
-    public bool una = true;
-    public GameObject aceptar;
     public void seguir()
     {
-        if (p1==0)
-        {
-
-
-            if (nombr == "")
+            if (nombr == "" || nombr.Length < 3)
             {
                 stupido.SetActive(true);
             }
             else
             {
-                pantalla.SetActive(true);
+                print("Nombre Bien, Cargando Intro...");
                 PlayerPrefs.SetString("nombre", nombr);
                 PreLoaderLevel.preload.CargaLvl("introa");
-
             }
-        }
-        
     }
-    
+
 }
 
 

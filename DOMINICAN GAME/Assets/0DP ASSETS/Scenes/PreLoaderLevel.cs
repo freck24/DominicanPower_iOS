@@ -21,7 +21,7 @@ using Lovatto.SceneLoader;
         public int i = 0;
         public Text datitos;
 
-    private void Start()
+    private void Awake()
     {
         preload = this;
         datoscuriosos();

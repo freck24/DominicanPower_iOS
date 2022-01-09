@@ -290,7 +290,8 @@ public class MovimientoPlayer : MonoBehaviour
 				Time.timeScale = 0.3f;
 				CONJURO.SetActive(true);
 				brujeriaactiva = true;
-				bruj.abrir();
+				bruj.gameObject.SetActive(true);
+
 				puedeembrujar = false;
 
 				PlayerPrefs.SetFloat("local", 0);

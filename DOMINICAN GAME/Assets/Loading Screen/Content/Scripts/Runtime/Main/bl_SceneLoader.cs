@@ -163,6 +163,8 @@ public class bl_SceneLoader : MonoBehaviour
     /// <param name="level">The scene name</param>
     public void LoadLevel(string level)
     {
+
+        if (level == "inicio") level = "inicio 1";
         if (IsLoading) return;
         print("toload; " + level);
 
@@ -194,13 +196,11 @@ public class bl_SceneLoader : MonoBehaviour
     /// </summary>
     void SkipWithKey()
     {
+        
         if (!canSkipWithKey)
             return;
 
-        if (Input.anyKeyDown)
-        {
-            TransitionToScene();
-        }
+        if (Input.anyKeyDown) TransitionToScene();
     }
 
     /// <summary>

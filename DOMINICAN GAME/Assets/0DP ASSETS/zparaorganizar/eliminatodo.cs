@@ -9,15 +9,10 @@ public class eliminatodo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        FindObjectOfType<camarasigue>().PosicionXmaxima = transform.position.x;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-    
+     
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.tag== "Player")
