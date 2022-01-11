@@ -57,7 +57,6 @@ public class colmado : MonoBehaviour
     public GameObject comprae;
     public GameObject mens4;
     public GameObject x;
-    public Text dr = null;
 
     public GameObject m1;
     public GameObject m2;
@@ -88,8 +87,6 @@ public class colmado : MonoBehaviour
         comprae.SetActive(false);
         j = GetComponent<AudioSource>();
         dinero = PlayerPrefs.GetFloat("dinero", 0f);
-         
-        dr.text = "RD$" + dinero;
 
 
         if (PlayerPrefs.GetFloat("nivel", 0) < 3)
@@ -148,7 +145,7 @@ public class colmado : MonoBehaviour
     void Update()
     {
         dinero = PlayerPrefs.GetFloat("dinero", 0f);
-        dr.text = "RD$" + dinero;
+       
     }
   
 
@@ -168,7 +165,6 @@ public class colmado : MonoBehaviour
             dinero -= 5000;
             PlayerPrefs.SetFloat("dinero", dinero);
             j.PlayOneShot(regist);
-            dr.text = "RD$" + dinero;
             comprado[1].SetActive(false);
             comprado[1].SetActive(true);
 
@@ -189,7 +185,6 @@ public class colmado : MonoBehaviour
             j.PlayOneShot(regist);
             dinero -= 20000;
             PlayerPrefs.SetFloat("dinero", dinero);
-            dr.text = "RD$" + dinero;
         }
         else
         {
@@ -207,7 +202,7 @@ public class colmado : MonoBehaviour
             j.PlayOneShot(regist);
             dinero -= 8000;
             PlayerPrefs.SetFloat("dinero", dinero);
-            dr.text = "RD$" + dinero;
+          
             comprado[2].SetActive(false);
             comprado[2].SetActive(true);
 

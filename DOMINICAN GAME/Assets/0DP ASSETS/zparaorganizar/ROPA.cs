@@ -10,8 +10,7 @@ public class ROPA : MonoBehaviour
     public Material m1;
     public Material m2;
     public Material m3;
-    public Material m4;
-    public Text t;
+    public Material m4; 
     public Text inmo;
     public Text MENSAinmo;
     public GameObject torbellino;
@@ -44,8 +43,7 @@ public class ROPA : MonoBehaviour
     void Start()
     {
         a = GetComponent<AudioSource>();
-        rend = GetComponent<Renderer>();
-        ActualizarTextoDinero();
+        rend = GetComponent<Renderer>(); 
         inmo.text = "TE QUEDAN " + PlayerPrefs.GetFloat("inmortal", 0);
 
 
@@ -57,9 +55,7 @@ public class ROPA : MonoBehaviour
         if (PlayerPrefs.GetInt("r4", 0) == 1) rend.material = m4;
     }
 
-   
-           
-    public void ActualizarTextoDinero() => t.text = "$RD " + PlayerPrefs.GetFloat("dinero", 0);
+    
 
     public void PlayFail() => a.PlayOneShot(fail);
 
@@ -74,7 +70,7 @@ public class ROPA : MonoBehaviour
             a.Play();
             PlayerPrefs.SetFloat("inmortal", 10);
             PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 1000000);
-            ActualizarTextoDinero();
+            
         }
         else PlayFail();
     }
@@ -89,7 +85,7 @@ public class ROPA : MonoBehaviour
             PlayerPrefs.SetInt("r2", 0);
             PlayerPrefs.SetInt("r3", 0);
             PlayerPrefs.SetInt("r4", 0);
-            ActualizarTextoDinero();
+            
             rend.material = m1;
     }
     public void R2()
@@ -100,8 +96,7 @@ public class ROPA : MonoBehaviour
             PlayerPrefs.SetInt("r1", 0);
             PlayerPrefs.SetInt("r2", 1);
             PlayerPrefs.SetInt("r3", 0);
-            PlayerPrefs.SetInt("r4", 0);
-            ActualizarTextoDinero();
+            PlayerPrefs.SetInt("r4", 0); 
             rend.material = m2;
     }
     public void R3()
@@ -112,8 +107,7 @@ public class ROPA : MonoBehaviour
             PlayerPrefs.SetInt("r1", 0);
             PlayerPrefs.SetInt("r2", 0);
             PlayerPrefs.SetInt("r3", 1);
-            PlayerPrefs.SetInt("r4", 0);
-            ActualizarTextoDinero();
+            PlayerPrefs.SetInt("r4", 0); 
             rend.material = m3;
     }
     public void r4()
@@ -124,8 +118,7 @@ public class ROPA : MonoBehaviour
             PlayerPrefs.SetInt("r1", 0);
             PlayerPrefs.SetInt("r2", 0);
             PlayerPrefs.SetInt("r3", 0);
-            PlayerPrefs.SetInt("r4", 1);
-            ActualizarTextoDinero();
+            PlayerPrefs.SetInt("r4", 1); 
             rend.material = m4;
     }
 

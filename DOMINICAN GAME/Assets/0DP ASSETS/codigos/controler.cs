@@ -38,7 +38,6 @@ public class controler : MonoBehaviour
 
     public GameObject CONJURO;
     public Transform botonbruja;
-    public bool puedeembrujar = false;
     public Color COLORVEREE;
     public Color COLORROSA;
     public Image BRUJAIMAGE;
@@ -47,8 +46,6 @@ public class controler : MonoBehaviour
     public GameObject panelconjuro;
     public BRUJERIA bruj;
     public GameObject menobruja;
-
-    public bool brujeriaactiva = false;
 
     public float vidasi = 3;
     public Text dias;
@@ -265,7 +262,6 @@ public class controler : MonoBehaviour
 
         }
 
-        puedeembrujar = true;
         BRUJAIMAGE.color = COLORVEREE;
 
 
@@ -278,16 +274,14 @@ public class controler : MonoBehaviour
 
     public void HizoMagia()
     {
-        puedeembrujar = false;
-        brujeriaactiva = true;
+        PlayerPrefs.SetFloat("ConjuroPower", contadorConjuro-=1);
+        ConjuroPower.text = "" + contadorConjuro.ToString("f0");
     }
 
     public void CONJUROS()
     {
-        if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas > 0)
+        if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas > 0 && contadorConjuro > 0)
         {
-            if (puedeembrujar && brujeriaactiva == false)
-            {
                 MovePlayer(1);
                 h = 0;
                 anim.SetInteger("conjuro", 0);
@@ -297,16 +291,15 @@ public class controler : MonoBehaviour
                 Time.timeScale = 0.3f;
                 CONJURO.SetActive(true);
                 bruj.gameObject.SetActive(true);
-               
+
                 PlayerPrefs.SetFloat("local", 0);
                 botonbruja.localScale = new Vector3(botonbruja.localScale.x, 0, botonbruja.localScale.z);
-
-            }
         }
         else
         {
             menobruja.SetActive(false);
             menobruja.SetActive(true);
+            audio2.PlayOneShot(fail);
         }
 
     }
@@ -423,7 +416,10 @@ public class controler : MonoBehaviour
 
         couna = true;
         contadorpoder = PlayerPrefs.GetFloat("poder", 0);
+        contadorConjuro = PlayerPrefs.GetFloat("ConjuroPower", 0);
+
         PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+        ConjuroPower.text = "" + contadorConjuro.ToString("f0");
 
         vidasi = PlayerPrefs.GetFloat("vidas", 3);
         vidas = PlayerPrefs.GetFloat("vidas", 3);
@@ -1380,6 +1376,25 @@ public class controler : MonoBehaviour
     {
         audio.PlayOneShot(tin);
     }
+
+    public void comprarConjuro()
+    {
+        if (PlayerPrefs.GetFloat("dinero", 0) >= 500)
+        {
+            pop();
+            contadorConjuro += 1;
+            ConjuroPower.text = "" + contadorConjuro.ToString("f0");
+            PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) - 500);
+            textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
+            PlayerPrefs.SetFloat("ConjuroPower", contadorConjuro);
+        }
+        else
+        {
+            audio.PlayOneShot(fail);
+        }
+    }
+
+
     public void comprarpower()
     {
         if (PlayerPrefs.GetFloat("dinero", 0) >= 500)
@@ -1726,7 +1741,7 @@ public class controler : MonoBehaviour
     public GameObject reflejo2;
     public GameObject reflejo3;
     public float contadorpoder = 0;
-
+    public float contadorConjuro = 0;
 
     public IEnumerator LACALLEBOTAFUEGO()
     {
@@ -2953,7 +2968,9 @@ public class controler : MonoBehaviour
     }
 
     public bool power = false;
+
     public Text PLATANOPOWER;
+    public Text ConjuroPower;
 
 
 
@@ -2979,8 +2996,10 @@ public class controler : MonoBehaviour
             // ESTABA AQUI -=1
 
             PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+            ConjuroPower.text = "" + contadorConjuro.ToString("f0");
 
         }
+        else audio2.PlayOneShot(fail);
     }
     public bool couna = true;
     public IEnumerator coquitos()
@@ -3005,7 +3024,9 @@ public class controler : MonoBehaviour
 
         Time.timeScale = 1;
 
-        text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
+        //
+        //33
+        //text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
         gestora.sto();
 
 
@@ -3081,7 +3102,8 @@ public class controler : MonoBehaviour
     {
         if (otr.gameObject.tag == "pocima")
         {
-            puedeembrujar = true;
+            contadorConjuro += 1;
+            PlayerPrefs.SetFloat("ConjuroPower", contadorConjuro);
             botonbruja.localScale = new Vector3(botonbruja.localScale.x, 3.06f, botonbruja.localScale.z);
             pop();
 
@@ -3112,6 +3134,8 @@ public class controler : MonoBehaviour
                 gest.bril = true;
                 contadorpoder += 1;
                 PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
+                ConjuroPower.text = "" + contadorConjuro.ToString("f0");
+
                 PlayerPrefs.SetFloat("poder", contadorpoder);
                 cplatano = 0;
 
@@ -4117,7 +4141,7 @@ public class controler : MonoBehaviour
             dia4.SetActive(true);
             dia5.SetActive(true);
             ControlPanel.SetActive(false);
-             
+
             StartCoroutine(v3());
             audio2.PlayOneShot(d3);
         }
@@ -4227,7 +4251,7 @@ public class controler : MonoBehaviour
         paneles.SetActive(false);
         ControlPanel.SetActive(false);
 
-        
+
         yield return new WaitForSecondsRealtime(1f);
         a1.SetActive(false);
         a2.SetActive(false);

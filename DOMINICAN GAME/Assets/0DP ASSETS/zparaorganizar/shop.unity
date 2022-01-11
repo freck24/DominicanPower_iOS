@@ -1359,84 +1359,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 176151378}
   m_Mesh: {fileID: 4644328383296187608, guid: 018524aed0647754ea6aa281a3a6b122, type: 3}
---- !u!1 &235518064
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 235518067}
-  - component: {fileID: 235518066}
-  - component: {fileID: 235518065}
-  m_Layer: 9
-  m_Name: Text (2)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &235518065
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235518064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 0, b: 0, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_FontData:
-    m_Font: {fileID: 12800000, guid: 9312bb0149456e44db743aa123de6c7d, type: 3}
-    m_FontSize: 75
-    m_FontStyle: 1
-    m_BestFit: 0
-    m_MinSize: 10
-    m_MaxSize: 119
-    m_Alignment: 4
-    m_AlignByGeometry: 0
-    m_RichText: 1
-    m_HorizontalOverflow: 0
-    m_VerticalOverflow: 0
-    m_LineSpacing: 1.22
-  m_Text: $3000000000
---- !u!222 &235518066
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235518064}
-  m_CullTransparentMesh: 0
---- !u!224 &235518067
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 235518064}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.09470301, y: 0.18091074, z: 0.34568495}
-  m_Children: []
-  m_Father: {fileID: 735967941}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 0}
-  m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0.000030517578, y: -0.000061035156}
-  m_SizeDelta: {x: 756.933, y: 512.5395}
-  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &269960628
 GameObject:
   m_ObjectHideFlags: 0
@@ -3496,81 +3418,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 694429113}
   m_CullTransparentMesh: 0
---- !u!1 &735967940
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 735967941}
-  - component: {fileID: 735967943}
-  - component: {fileID: 735967942}
-  m_Layer: 9
-  m_Name: Dinero
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!224 &735967941
-RectTransform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735967940}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.130138, y: 2.1620417, z: 1.1314827}
-  m_Children:
-  - {fileID: 235518067}
-  m_Father: {fileID: 864957164}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 18.800049, y: -12.299927}
-  m_SizeDelta: {x: 100, y: 100}
-  m_Pivot: {x: 0, y: 1}
---- !u!114 &735967942
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735967940}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_RaycastTarget: 1
-  m_Maskable: 1
-  m_OnCullStateChanged:
-    m_PersistentCalls:
-      m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 7b105ffcaa7cdc44abdcd93b38848483, type: 3}
-  m_Type: 0
-  m_PreserveAspect: 0
-  m_FillCenter: 1
-  m_FillMethod: 4
-  m_FillAmount: 1
-  m_FillClockwise: 1
-  m_FillOrigin: 0
-  m_UseSpriteMesh: 0
-  m_PixelsPerUnitMultiplier: 1
---- !u!222 &735967943
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 735967940}
-  m_CullTransparentMesh: 0
 --- !u!1 &769146073
 GameObject:
   m_ObjectHideFlags: 0
@@ -3790,7 +3637,6 @@ GameObject:
   - component: {fileID: 830465579}
   - component: {fileID: 830465582}
   - component: {fileID: 830465581}
-  - component: {fileID: 830465580}
   m_Layer: 9
   m_Name: Filler
   m_TagString: Untagged
@@ -3817,43 +3663,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 121.84973, y: 159.85083}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &830465580
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 830465578}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a04e6a97a0c23f4fac2b76ce0873c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjetoName: Ropa1
-  Precio: 100
-  CompradoX: 0
-  ComprarBtn: {fileID: 0}
-  CompradoBtn: {fileID: 0}
-  EventoEquipar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443535032}
-        m_MethodName: R1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  EventoComprar:
-    m_PersistentCalls:
-      m_Calls: []
-  ComprarImg: {fileID: 0}
-  PuedeComprarlo: {fileID: 0}
-  NoPuedeComprarlo: {fileID: 0}
 --- !u!114 &830465581
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4176,7 +3985,7 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
-  - {fileID: 735967941}
+  - {fileID: 869044257}
   - {fileID: 580894507}
   - {fileID: 1340936165}
   - {fileID: 1367325539}
@@ -4250,6 +4059,131 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1001 &869044256
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 864957164}
+    m_Modifications:
+    - target: {fileID: 7060380459654958349, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_Name
+      value: DINERO-CANVAS
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -6
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 442.0943
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_Pivot.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+        type: 3}
+      propertyPath: m_Pivot.y
+      value: 1
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 26b9e29579322864fba538535a1d266a, type: 3}
+--- !u!224 &869044257 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 7060380459654958354, guid: 26b9e29579322864fba538535a1d266a,
+    type: 3}
+  m_PrefabInstance: {fileID: 869044256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &920270931
 GameObject:
   m_ObjectHideFlags: 0
@@ -4261,7 +4195,6 @@ GameObject:
   - component: {fileID: 920270932}
   - component: {fileID: 920270935}
   - component: {fileID: 920270934}
-  - component: {fileID: 920270933}
   m_Layer: 9
   m_Name: Filler
   m_TagString: Untagged
@@ -4288,43 +4221,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 121.84973, y: 159.85083}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &920270933
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 920270931}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a04e6a97a0c23f4fac2b76ce0873c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjetoName: Ropa1
-  Precio: 100
-  CompradoX: 0
-  ComprarBtn: {fileID: 0}
-  CompradoBtn: {fileID: 0}
-  EventoEquipar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443535032}
-        m_MethodName: R1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  EventoComprar:
-    m_PersistentCalls:
-      m_Calls: []
-  ComprarImg: {fileID: 0}
-  PuedeComprarlo: {fileID: 0}
-  NoPuedeComprarlo: {fileID: 0}
 --- !u!114 &920270934
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4840,7 +4736,6 @@ GameObject:
   - component: {fileID: 1067779446}
   - component: {fileID: 1067779449}
   - component: {fileID: 1067779448}
-  - component: {fileID: 1067779447}
   m_Layer: 9
   m_Name: Filler
   m_TagString: Untagged
@@ -4867,43 +4762,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 121.84973, y: 159.85083}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1067779447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1067779445}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a04e6a97a0c23f4fac2b76ce0873c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjetoName: Ropa1
-  Precio: 100
-  CompradoX: 0
-  ComprarBtn: {fileID: 0}
-  CompradoBtn: {fileID: 0}
-  EventoEquipar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443535032}
-        m_MethodName: R1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  EventoComprar:
-    m_PersistentCalls:
-      m_Calls: []
-  ComprarImg: {fileID: 0}
-  PuedeComprarlo: {fileID: 0}
-  NoPuedeComprarlo: {fileID: 0}
 --- !u!114 &1067779448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6816,7 +6674,7 @@ MonoBehaviour:
   m2: {fileID: 2100000, guid: d9c4d3c6363ae324eae866932041d8f1, type: 2}
   m3: {fileID: 2100000, guid: c1f3f8ce8ec8f2f45832449a6935efd0, type: 2}
   m4: {fileID: 2100000, guid: bf2cd955456b3b842b9854b7b0fefcd9, type: 2}
-  t: {fileID: 235518065}
+  t: {fileID: 0}
   inmo: {fileID: 694429115}
   MENSAinmo: {fileID: 829068167}
   torbellino: {fileID: 679107473}
@@ -6931,7 +6789,6 @@ GameObject:
   - component: {fileID: 1444861168}
   - component: {fileID: 1444861171}
   - component: {fileID: 1444861170}
-  - component: {fileID: 1444861169}
   m_Layer: 9
   m_Name: Filler
   m_TagString: Untagged
@@ -6958,43 +6815,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 121.84973, y: 159.85083}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1444861169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444861167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a04e6a97a0c23f4fac2b76ce0873c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjetoName: Ropa1
-  Precio: 100
-  CompradoX: 0
-  ComprarBtn: {fileID: 0}
-  CompradoBtn: {fileID: 0}
-  EventoEquipar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443535032}
-        m_MethodName: R1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  EventoComprar:
-    m_PersistentCalls:
-      m_Calls: []
-  ComprarImg: {fileID: 0}
-  PuedeComprarlo: {fileID: 0}
-  NoPuedeComprarlo: {fileID: 0}
 --- !u!114 &1444861170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7043,7 +6863,6 @@ GameObject:
   - component: {fileID: 1474883144}
   - component: {fileID: 1474883147}
   - component: {fileID: 1474883146}
-  - component: {fileID: 1474883145}
   m_Layer: 9
   m_Name: Filler
   m_TagString: Untagged
@@ -7070,43 +6889,6 @@ RectTransform:
   m_AnchoredPosition: {x: -0.00012207031, y: 0}
   m_SizeDelta: {x: 121.84973, y: 159.85083}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1474883145
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1474883143}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a04e6a97a0c23f4fac2b76ce0873c1b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ObjetoName: Ropa1
-  Precio: 100
-  CompradoX: 0
-  ComprarBtn: {fileID: 0}
-  CompradoBtn: {fileID: 0}
-  EventoEquipar:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 1443535032}
-        m_MethodName: R1
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  EventoComprar:
-    m_PersistentCalls:
-      m_Calls: []
-  ComprarImg: {fileID: 0}
-  PuedeComprarlo: {fileID: 0}
-  NoPuedeComprarlo: {fileID: 0}
 --- !u!114 &1474883146
 MonoBehaviour:
   m_ObjectHideFlags: 0

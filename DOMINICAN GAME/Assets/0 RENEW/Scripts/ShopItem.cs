@@ -50,7 +50,6 @@ public class ShopItem : MonoBehaviour
         }
         else FindObjectOfType<ROPA>().PlayFail();
 
-         FindObjectOfType<ROPA>().ActualizarTextoDinero();
 
         CheckDisponible();
 

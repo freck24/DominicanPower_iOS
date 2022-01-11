@@ -180,6 +180,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
             una = false;
             cont.tiempoespera = 2;
             cont.PowerOff.SetActive(true);
+            cont.cabeza.SetActive(false);
         }
 
     }

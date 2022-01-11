@@ -180,7 +180,6 @@ public class BRUJERIA : MonoBehaviour
         contador = 0;
         codigos = 0;
         cerrar();
-        cont.brujeriaactiva = false;
         cont.corutinabrujeria();
         yield return new WaitForSecondsRealtime(2);
         yield return new WaitForSecondsRealtime(tiempoespera);
