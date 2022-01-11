@@ -7,7 +7,7 @@ using Lovatto.SceneLoader;
     public class PreLoaderLevel : MonoBehaviour
     {
         public static PreLoaderLevel preload;
-
+    public bool ActualLoading;
         public bl_ButtonSceneLoad miClickLoad;
         public string scena;
         public GameObject letra;
@@ -30,6 +30,9 @@ using Lovatto.SceneLoader;
 
     public void CargaLvl(string Lvl)
         {
+
+        if (ActualLoading) return;
+        ActualLoading = true;
         if (Lvl.Length > 2) scena = Lvl;
 
 
@@ -64,8 +67,7 @@ using Lovatto.SceneLoader;
 
         }
 
-
-        
+     
         public void datoscuriosos()
         {
 

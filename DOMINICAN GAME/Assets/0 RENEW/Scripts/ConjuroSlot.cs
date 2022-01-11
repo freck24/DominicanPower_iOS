@@ -41,9 +41,11 @@ public class ConjuroSlot : MonoBehaviour
 
     public void ComprarConjuro()
     {
+
         if (PlayerPrefs.GetFloat("dinero", 0) >= PrecioConjuro && !Comprado)
         {
-            print("Se - Compro");
+            LIBRO.Libro.Audio.PlayOneShot(LIBRO.Libro.CompraCorrecta);
+    print("Se - Compro");
             Comprado = true;
             LIBRO.Libro.Informacion.SetActive(false);
             PlayerPrefs.SetInt("conjuro" + IDConjuro, 1);
@@ -53,6 +55,7 @@ public class ConjuroSlot : MonoBehaviour
         }
         else
         {
+            LIBRO.Libro.Audio.PlayOneShot(LIBRO.Libro.CompraFallada);
             //  a.PlayOneShot(faile);
         }
 

@@ -17,9 +17,11 @@ public class LIBRO : MonoBehaviour
     public Text DescripcionTx;
     public Text PrecioTx;
     public static LIBRO Libro;
-    public AudioSource sou;
-
+    
     public ConjuroSlot OpenedSlot;
+    public AudioSource Audio;
+    public AudioClip CompraCorrecta;
+    public AudioClip CompraFallada;
 
     public void AbrirInfo(ConjuroSlot slot)
     {

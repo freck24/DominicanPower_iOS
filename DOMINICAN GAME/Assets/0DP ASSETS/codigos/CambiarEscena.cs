@@ -21,12 +21,6 @@ public void cargares()
 
     public void NewCargaID(int id)
     {
-
-        if (id == 2 || id == 3)
-        {
-            FindObjectOfType<GESTORPRINCIPAL>().siguientenivel();
-        }
-
         if (id == 0 && PlayerPrefs.GetInt("anuncios", 1) == 1)
         {
             int ran = Random.Range(0, 2);
@@ -36,19 +30,11 @@ public void cargares()
 
         transform.SetParent(null);
 
-        if(id < 3)
         ScreenLoader.scena = NombreEscenas[id];
 
-        PreLoaderLevel.preload.CargaLvl(NombreEscenas[id]);
+          PreLoaderLevel.preload.CargaLvl(NombreEscenas[id]);
 
-
-        if (id == 2) ScreenLoader.isnivelactualsiguiente = true;
-
-        if (id == 3) ScreenLoader.isnivelactualsiguiente = true;
-        if (id == 3) SceneManager.LoadSceneAsync("LEVEL 1 CLONE");
-
-
-        if(DestruirGrupo != null)DestroyImmediate(DestruirGrupo);
+        if (DestruirGrupo != null)DestroyImmediate(DestruirGrupo);
 
         if (FindObjectOfType<controler>() != null && PlayerPrefs.GetInt("anuncios", 1) == 1)
         {

@@ -394,6 +394,7 @@ public class controler : MonoBehaviour
         PlayerPrefs.SetInt("ff", 0); // investuigar que es esi
 
         if (PlayerPrefs.GetInt("vibrar", 1) == 0) vibraniun = false;
+        if (PlayerPrefs.GetInt("vibrar", 1) == 1) vibraniun = true;
 
         textodinero.text = "" + PlayerPrefs.GetFloat("dinero", 0).ToString();
 
@@ -3852,9 +3853,7 @@ public class controler : MonoBehaviour
             //recoger provicion
             provisiones = platano + PlayerPrefs.GetFloat("mango", 0) + PlayerPrefs.GetFloat("pollo", 0) + PlayerPrefs.GetFloat("cate", 0) + PlayerPrefs.GetFloat("coca", 0) + PlayerPrefs.GetFloat("salami", 0) + PlayerPrefs.GetFloat("fruticas", 0);
             contador.text = provisiones.ToString();
-            textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
-
-            text.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
+            
         }
 
 

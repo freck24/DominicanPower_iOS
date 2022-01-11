@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GestorVolumen : MonoBehaviour
 {
-  
+    public string Prefs = "GameVolume";
     public GameObject AudioOn;
     public GameObject AudioOff;
     
@@ -13,14 +13,19 @@ public class GestorVolumen : MonoBehaviour
     public int Volumen;
     public bool VolumenBool;
 
+
+    private void Start()
+    {
+        GetActual();
+    }
     void ManageSprite()
     {
-        AudioOn.SetActive(VolumenBool);
+    AudioOn.SetActive(VolumenBool);
     AudioOff.SetActive(!VolumenBool);
     }
     public void GetActual()
     {
-        Volumen = PlayerPrefs.GetInt("GameVolume", 1);
+        Volumen = PlayerPrefs.GetInt(Prefs, 1);
         VolumenBool = (Volumen == 1);
         ManageSprite();
 
@@ -30,8 +35,8 @@ public class GestorVolumen : MonoBehaviour
     {
         VolumenBool = !VolumenBool;
         Volumen = (VolumenBool ? 1 : 0);
-        AudioListener.volume = Volumen;
-        PlayerPrefs.SetInt("GameVolume", Volumen);
+        if(Prefs == "GameVolume") AudioListener.volume = Volumen;
+        PlayerPrefs.SetInt(Prefs, Volumen);
         ManageSprite();
 
     }

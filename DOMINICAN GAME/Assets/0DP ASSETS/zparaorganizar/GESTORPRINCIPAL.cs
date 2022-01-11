@@ -260,14 +260,12 @@ public class GESTORPRINCIPAL : MonoBehaviour
             if (PlayerPrefs.GetFloat("nivel", 1) > 15)
             {
                 mostrarreco();
-                
             }
             else
             {
                if( PlayerPrefs.GetFloat("nivel", 1)%2 == 0)
                 {
                     mostrarinter();
-                   
                 }
                
             }
