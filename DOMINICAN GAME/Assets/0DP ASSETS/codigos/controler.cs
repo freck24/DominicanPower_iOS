@@ -280,7 +280,7 @@ public class controler : MonoBehaviour
 
     public void CONJUROS()
     {
-        if (PlayerPrefs.GetInt("brujeria", 0) == 1 && vidas > 0 && contadorConjuro > 0)
+        if (vidas > 0 && contadorConjuro > 0)
         {
                 MovePlayer(1);
                 h = 0;
@@ -297,8 +297,6 @@ public class controler : MonoBehaviour
         }
         else
         {
-            menobruja.SetActive(false);
-            menobruja.SetActive(true);
             audio2.PlayOneShot(fail);
         }
 
@@ -1835,7 +1833,7 @@ public class controler : MonoBehaviour
                         StartCoroutine(romp());
                         cabeza.SetActive(true);
                     }
-                    anim.SetBool("golpe", false);
+                    QuitarGolpe();
                     anim.SetBool("salto", true);
                     StartCoroutine(se());
 
@@ -2376,6 +2374,7 @@ public class controler : MonoBehaviour
         cabeza.SetActive(false);
     }
 
+    public void QuitarGolpe() => anim.SetBool("golpe", false);
 
 
 
@@ -2396,7 +2395,7 @@ public class controler : MonoBehaviour
                 StartCoroutine(romp());
                 cabeza.SetActive(true);
             }
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
             anim.SetBool("salto", true);
             StartCoroutine(se());
 
@@ -2422,7 +2421,7 @@ public class controler : MonoBehaviour
                 cabeza.SetActive(true);
             }
 
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
             StartCoroutine(se());
 
             //velocidadsalto();
@@ -2479,7 +2478,8 @@ public class controler : MonoBehaviour
                 cabeza.SetActive(true);
             }
 
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
+
             StartCoroutine(se());
 
             //velocidadsalto();
@@ -2503,7 +2503,8 @@ public class controler : MonoBehaviour
                 cabeza.SetActive(true);
             }
 
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
+
             //velocidadsalto();
             //Handheld.Vibrate();
             un = true;
@@ -2571,7 +2572,8 @@ public class controler : MonoBehaviour
         rotacionplayer = transform.rotation.y;
         if (vidas > 0)
         {
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
+
             atr = false;
             alan = true;
             elec.localScale = new Vector3(electric.x, electric.y, electric.z);
@@ -2621,7 +2623,8 @@ public class controler : MonoBehaviour
     {
         if (vidas > 0)
         {
-            anim.SetBool("golpe", false);
+            QuitarGolpe();
+
             atr = true;
             alan = false;
             elec.localScale = new Vector3(electric.x, electric.y, -electric.z);
@@ -2984,11 +2987,13 @@ public class controler : MonoBehaviour
             PowerDisponible = false;
             PowerOn.SetActive(true);
             PowerLoop.SetActive(true);
+
             CameraPlay.Zoom(CameraPlay.PosScreenX(transform.position), CameraPlay.PosScreenY(transform.position), 2.35f, 4f);
             CameraPlay.Pinch(CameraPlay.PosScreenX(transform.position), 10f, 1.2f);
             CameraPlay.Pitch(1.8f, 1.3f);
             CameraPlay.Glitch3(1.6f);
             CameraPlay.EarthQuakeShake(2.5f, 7.1f, 1.4f);
+
             cabeza.SetActive(true);
             power = true;
             contadorpoder -= 1;
@@ -3268,6 +3273,7 @@ public class controler : MonoBehaviour
                     couna = false;
                     StartCoroutine(coquitos());
                     anim.SetBool("golpe", true);
+                    Invoke("QuitarGolpe", 1f);
                     h = 0;
                     vidas -= 1;
 
@@ -3316,6 +3322,8 @@ public class controler : MonoBehaviour
                     couna = false;
                     StartCoroutine(coquitos());
                     anim.SetBool("golpe", true);
+                    Invoke("QuitarGolpe", 1f);
+
                     h = 0;
                     vidas -= 1;
                     print("Corazon Roto 2");

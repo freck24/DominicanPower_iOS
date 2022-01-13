@@ -15,11 +15,6 @@ public class gestorsonidogallina : MonoBehaviour
         a = GetComponent<AudioSource>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
     public void comido()
     {
         a.clip = comer;

@@ -26,30 +26,16 @@ public class codigogallina : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-
-
-
-      
         r.AddForce(Vector2.right*velocidad*Time.deltaTime);
     }
   
-
-    public void OnCollisionStay2D(Collision2D collision)
-    {
-       
-       
-    }
-    public void OnCollisionExit2D(Collision2D collision)
-    {
-       
-    }
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
      
         if (collision.tag == "enemy" || collision.tag == "destroy" )
         {
+            print("GallinaKill: " + collision.name);
+            collision.name = "@@@@@@@@@@@@@";
             Destroy(gameObject);
             PlayerPrefs.SetInt("cg", PlayerPrefs.GetInt("cg", 0) - 1);
            

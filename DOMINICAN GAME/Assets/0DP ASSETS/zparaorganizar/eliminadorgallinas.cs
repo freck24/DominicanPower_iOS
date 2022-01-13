@@ -9,11 +9,7 @@ public class eliminadorgallinas : MonoBehaviour
   
     public bool sal = false;
     public float time = 0;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    
 
     void Update()
     {
@@ -33,20 +29,15 @@ public class eliminadorgallinas : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            
             sal = false;
             time = 0;
         }
-
-
-
     }
 
     public void OnTriggerExit2D(Collider2D collision)
     {
         if (collision.tag == "Player")
         {
-
             sal = true;
         }
     }

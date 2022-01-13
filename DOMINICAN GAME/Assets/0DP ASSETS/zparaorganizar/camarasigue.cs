@@ -64,6 +64,7 @@ public class camarasigue : MonoBehaviour
 
     public void FixedUpdate()
     {
+        offsetCamera.y = !sube ? 8.2f : 1.48f;
         Vector3 posView = new Vector3 (0,0,0);
         posView.x = player.position.x + offsetCamera.x;
         if(sube) posView.y = player.position.y + offsetCamera.y;

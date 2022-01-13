@@ -420,7 +420,7 @@ public class inicietion : MonoBehaviour
     {
         POP();
         ni.SetActive(true);
-        tni.SetActive(true);
+        //  tni.SetActive(true);
         TEMPORADA.SetActive(true);
 
     }
@@ -591,8 +591,8 @@ public class inicietion : MonoBehaviour
     public GameObject animacion;
     public void trancicion()//nocompletado
     {
-        animacion.SetActive(false);
-        animacion.SetActive(true);
+     //   animacion.SetActive(false);
+     //   animacion.SetActive(true);
     }
 
     public string[] FCUBOS = new string[5];
