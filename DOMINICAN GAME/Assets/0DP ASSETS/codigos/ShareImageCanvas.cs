@@ -17,7 +17,7 @@ public class ShareImageCanvas : MonoBehaviour
     //function called from a button
     public void ButtonShare()
     {
-        buttonShare.enabled = false;
+        gameObject.SetActive(false);
         if (!isProcessing)
         {
             StartCoroutine(ShareScreenshot());
@@ -28,13 +28,9 @@ public class ShareImageCanvas : MonoBehaviour
 
     IEnumerator ima()
     {
-        imagen.SetActive(true);
-     
         yield return new WaitForSecondsRealtime(2f);
-        imagen.SetActive(false);
     }
 
-    public GameObject imagen;
     public IEnumerator ShareScreenshot()
     {
         {
@@ -52,7 +48,7 @@ public class ShareImageCanvas : MonoBehaviour
 
             string Link = selectLink.Get_PlatformLink();
             new NativeShare().AddFile(filePath)
-                .SetSubject("Descargalo ").SetText(Link).Share();
+                .SetSubject("Descargalo e intenta superarme:").SetText(Link).Share();
             // .SetCallback((result, shareTarget) => Debug.Log("Share result: " + result + ", selected app: " + shareTarget))
             //  .Share();
 

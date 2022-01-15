@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+    public GameObject[] ListaGanador2;
     public static controler statico;
     public bool AvaibleMove = true;
     [Header("DOMINICAN POWER FX")]
@@ -377,6 +378,8 @@ public class controler : MonoBehaviour
     void Start()
     {
         statico = this;
+
+        ListaGanador2 = GameObject.FindGameObjectsWithTag("ganar2");
         AudioListener.volume = PlayerPrefs.GetInt("GameVolume", 1);
 
         calidadgrafica();
@@ -2980,8 +2983,6 @@ public class controler : MonoBehaviour
 
     public void activapower()
     {
-
-
         if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
         {
             PowerDisponible = false;
@@ -3018,6 +3019,11 @@ public class controler : MonoBehaviour
     public IEnumerator muert()
     {
         vidas = -4;
+
+        power = false;
+        cabeza.SetActive(false);
+        gest.tiem = gest.tiempopoder;
+
         audio.clip = muerteaudio;
         audio.Play();
         yield return new WaitForSecondsRealtime(2.5f);

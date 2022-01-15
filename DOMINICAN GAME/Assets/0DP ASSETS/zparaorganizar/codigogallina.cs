@@ -34,8 +34,7 @@ public class codigogallina : MonoBehaviour
      
         if (collision.tag == "enemy" || collision.tag == "destroy" )
         {
-            print("GallinaKill: " + collision.name);
-            collision.name = "@@@@@@@@@@@@@";
+         
             Destroy(gameObject);
             PlayerPrefs.SetInt("cg", PlayerPrefs.GetInt("cg", 0) - 1);
            
