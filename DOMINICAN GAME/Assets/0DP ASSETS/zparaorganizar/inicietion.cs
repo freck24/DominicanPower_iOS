@@ -609,7 +609,7 @@ public class inicietion : MonoBehaviour
         d = c / (c + i);
         if (d > 0)
         {
-            correctast.localScale = new Vector3(correctast.localScale.x * d, correctast.localScale.y, correctast.localScale.z);
+           // correctast.localScale = new Vector3(correctast.localScale.x * d, correctast.localScale.y, correctast.localScale.z);
             correctas.text = c.ToString("f0");
             incorrectas.text = i.ToString("f0");
         }
