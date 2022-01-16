@@ -757,7 +757,7 @@ public class inicietion : MonoBehaviour
         PlayerPrefs.SetFloat("jn", 0);
         NIVELDOMI.text = "" + PlayerPrefs.GetFloat("niveld", 0);
         NIVELDOMI2.text = "" + PlayerPrefs.GetFloat("niveld", 0);
-        NIVELDOMI23.text = "" + ((PlayerPrefs.GetFloat("niveld", 0) / 500) * 100).ToString("f0") + "%";
+
         if (PlayerPrefs.GetFloat("dia", 1) == 30)
         {
             m30.SetActive(true);
@@ -798,7 +798,8 @@ public class inicietion : MonoBehaviour
                  mision1.SetActive(false);
              }*/
         StartCoroutine(VER());
-       
+
+        NIVELDOMI23.text = "" + ((PlayerPrefs.GetFloat("niveld", 0) / 500) * 100).ToString("f0") + "%";
 
     }
 

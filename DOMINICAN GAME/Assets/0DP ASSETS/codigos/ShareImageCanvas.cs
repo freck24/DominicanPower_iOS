@@ -17,7 +17,7 @@ public class ShareImageCanvas : MonoBehaviour
     //function called from a button
     public void ButtonShare()
     {
-        gameObject.SetActive(false);
+        gameObject.transform.localScale = Vector3.zero;
         if (!isProcessing)
         {
             StartCoroutine(ShareScreenshot());

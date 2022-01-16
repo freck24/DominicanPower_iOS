@@ -173,6 +173,8 @@ public class GESTORPRINCIPAL : MonoBehaviour
             tiemposaya = false;
             cont.PowerLoop.SetActive(false);
             cont.PowerDisponible = true;
+            cont.pawerArea.SetActive(false);
+            
             cont.fuerza = 85;
             cont.rompe = false;
             a.clip = baja;

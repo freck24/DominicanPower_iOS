@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+    public GameObject pawerArea;
     public GameObject[] ListaGanador2;
     public static controler statico;
     public bool AvaibleMove = true;
@@ -193,7 +194,6 @@ public class controler : MonoBehaviour
 
 
 
-    public Text text = null;
     public GameObject perdermensaje;
 
 
@@ -1919,6 +1919,7 @@ public class controler : MonoBehaviour
             h1 = 0;
             r.velocity = new Vector2(0, 0);
             power = false;
+            pawerArea.SetActive(false);
             StartCoroutine(LACALLEBOTAFUEGO());
 
 
@@ -2914,7 +2915,6 @@ public class controler : MonoBehaviour
             perdermensaje.SetActive(true);
             print("se activo canvas perder 2");
 
-            text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
             gestora.sto();
 
 
@@ -2976,6 +2976,7 @@ public class controler : MonoBehaviour
 
     public bool power = false;
 
+
     public Text PLATANOPOWER;
     public Text ConjuroPower;
 
@@ -2985,6 +2986,7 @@ public class controler : MonoBehaviour
     {
         if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
         {
+            pawerArea.SetActive(true);
             PowerDisponible = false;
             PowerOn.SetActive(true);
             PowerLoop.SetActive(true);
@@ -2997,6 +2999,7 @@ public class controler : MonoBehaviour
 
             cabeza.SetActive(true);
             power = true;
+            pawerArea.SetActive(true);
             contadorpoder -= 1;
             PlayerPrefs.SetFloat("poder", contadorpoder);
             contadorpoder = PlayerPrefs.GetFloat("poder", 0);
@@ -3021,6 +3024,7 @@ public class controler : MonoBehaviour
         vidas = -4;
 
         power = false;
+        pawerArea.SetActive(false);
         cabeza.SetActive(false);
         gest.tiem = gest.tiempopoder;
 
@@ -3038,7 +3042,6 @@ public class controler : MonoBehaviour
 
         //
         //33
-        //text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
         gestora.sto();
 
 
@@ -3170,8 +3173,6 @@ public class controler : MonoBehaviour
                 audio.clip = blillantico;
                 audio.Play();
                 textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
-
-                text.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
                 StartCoroutine(mi());
 
 
@@ -3186,7 +3187,6 @@ public class controler : MonoBehaviour
             {
                 textodinero.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
-                text.text = "$" + PlayerPrefs.GetFloat("dinero", 0).ToString("f0");
 
                 audio.clip = blillantico;
                 audio.Play();
@@ -3698,7 +3698,6 @@ public class controler : MonoBehaviour
                         perdermensaje.SetActive(true);
                         print("se activo canvas perder 4");
 
-                        text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
                         audio.Stop();
                         audio2.Stop();
 
@@ -3949,8 +3948,6 @@ public class controler : MonoBehaviour
                     {
                         perdermensaje.SetActive(true);
                         print("se activo canvas perder 5");
-
-                        text.text = PlayerPrefs.GetFloat("dinero", 0).ToString();
                         audio.Stop();
                         audio.clip = aah;
                         audio.Play();
@@ -3982,9 +3979,6 @@ public class controler : MonoBehaviour
                             audio.Play();
                             man.text = "-50";
                             subecuenta();
-
-
-
 
                         }
                         else

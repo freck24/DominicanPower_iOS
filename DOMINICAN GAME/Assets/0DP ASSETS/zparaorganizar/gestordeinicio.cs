@@ -11,7 +11,9 @@ public class gestordeinicio : MonoBehaviour
     public string nomb;
 
     public GameObject po;
+    public GameObject po2;
     public int delete=1;
+
     void Start()
     {
         PlayerPrefs.SetInt("unavezanu", 0);
@@ -43,6 +45,7 @@ public class gestordeinicio : MonoBehaviour
         if (i > 1)
         {
             po.SetActive(true);
+            po2.SetActive(true);
         }
         yield return new WaitForSecondsRealtime(0.5f);
 
@@ -68,6 +71,10 @@ public class gestordeinicio : MonoBehaviour
             yield return new WaitForSecondsRealtime(1f);
             i--;
         }
+
+        po.SetActive(true);
+        po2.SetActive(true);
+
         if (nomb == "tonypendejo")
         {
             PreLoaderLevel.preload.CargaLvl("GRAFICOS");
