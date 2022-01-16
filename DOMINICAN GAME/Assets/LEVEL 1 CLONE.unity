@@ -832,6 +832,11 @@ PrefabInstance:
       propertyPath: Resucite
       value: 
       objectReference: {fileID: 1685274139}
+    - target: {fileID: 8179437063731569222, guid: 224274a3c932dca45b529e5b22451273,
+        type: 3}
+      propertyPath: pawerArea
+      value: 
+      objectReference: {fileID: 662515416}
     m_RemovedComponents:
     - {fileID: 727056123, guid: 224274a3c932dca45b529e5b22451273, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 224274a3c932dca45b529e5b22451273, type: 3}
@@ -1281,7 +1286,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &662515417
 Transform:
   m_ObjectHideFlags: 0
@@ -1308,6 +1313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 246cc59c7a84ea44f87f6b70acfe30c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SetParentNull: 1
   target: {fileID: 2110481867}
   offset: {x: 0, y: 0, z: 0}
 --- !u!61 &662515419
