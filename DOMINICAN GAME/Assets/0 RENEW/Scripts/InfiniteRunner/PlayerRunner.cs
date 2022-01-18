@@ -15,6 +15,8 @@ public class PlayerRunner : MonoBehaviour
     public AudioClip Perder;            //
     public AudioClip CalibrarFx;            //
     public AudioClip RecogerDinero;         //
+    public AudioClip RecogerTelefono;         //
+    public AudioClip GeneracionTelefono;         //
     public AudioClip PerderCalibrarChoque;  //
     public AudioClip PerderCalibrarTiempo;
     public AudioClip Empezar;

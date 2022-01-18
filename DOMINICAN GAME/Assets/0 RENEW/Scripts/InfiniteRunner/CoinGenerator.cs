@@ -17,26 +17,65 @@ public class CoinGenerator : MonoBehaviour
 
     [Header("Tiempo Entre Cadena")]
     public float EveryTime;
-        
+
     public int PosicionToGenerate;
     public int CurveToGenerate;
     public int CoinsParaGenerar;
+
+
+    [Header("Generador De Movil")]
+    public int MaxRange = 3;
+    public bool TestGenerarTelefono;
+    public bool GenerarTelefono;
+
+    private void Update()
+    {
+        if (TestGenerarTelefono)
+        {
+            TestGenerarTelefono = false;
+            GenerarMovil();
+        }
+    }
     void Start()
     {
         cg = this;
     }
 
+    public void GenerarMovil()
+    {
+        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.GeneracionTelefono);
+        GenerarTelefono = false;
+        Vector3 posGen = Posiciones[1].position;
+        posGen.z = offsetZ + PlayerRunner.pr.transform.position.z;
+
+        coin.DineroValor = Coin3D.Dinero._Celular;
+        GameObject generated = Instantiate(coin.gameObject, posGen, Quaternion.identity);
+        generated.SetActive(true);
+    }
     public void CheckRound()
     {
-    CoinsParaGenerar = Random.Range(4, 12);
-    StartCoroutine(GenerateCoins());
+
+        CoinsParaGenerar = Random.Range(4, 12);
+        StartCoroutine(GenerateCoins());
+
+       
     }
 
 
     IEnumerator GenerateCoins()
     {
-        while(CoinsParaGenerar > 0)
+        while (CoinsParaGenerar > 0)
         {
+            if(CoinsParaGenerar == 1)
+            {
+
+                print("Checking Telefono");
+                if (Random.Range(0, MaxRange) == 0 && !GenerarTelefono)
+                {
+                    GenerarTelefono = true;
+                    Invoke("GenerarMovil", Random.Range(3f, 5f));
+                }
+            }
             // POSICION
             PosicionToGenerate = Random.Range(0, 3);
             if (PosicionToGenerate == 0) CurveToGenerate = Random.Range(1, 3);
@@ -51,19 +90,14 @@ public class CoinGenerator : MonoBehaviour
             GameObject generated = Instantiate(coin.gameObject, posGen, Quaternion.identity);
             generated.SetActive(true);
 
-
-            if (CoinsParaGenerar > 4) print("GENERAR UNA MONEDA EN LA POSICION:" + PosicionToGenerate);
-            else print("GENERAR UNA MONEDA EN LA POSICION CURVA:" + CurveToGenerate);
-
-
             yield return new WaitForSeconds(EveryTime);
         }
 
 
-        Invoke("CheckRound", Random.Range(2f, 5f));
+        Invoke("CheckRound", Random.Range(2f, 6f));
         yield return null;
     }
-    
+
 
     public Coin3D.Dinero RandomCoinLevel()
     {

@@ -131,7 +131,7 @@ public class colmado : MonoBehaviour
             tpp = Mathf.Pow(10, tp + 2)/2;
             preciotiempo.text = "$"+tpp.ToString();
             float r = 10 + tp*2;
-            ptiempo.text = "TIEMPO POWER: " + r+" s";
+            ptiempo.text = r + "s";
         }
         else
         {

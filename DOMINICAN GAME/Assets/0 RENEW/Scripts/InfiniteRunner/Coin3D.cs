@@ -5,7 +5,7 @@ using UnityEngine;
 public class Coin3D : MonoBehaviour
 {
     public enum Dinero
-        {
+    {
         _5,
         _10,
         _20,
@@ -15,7 +15,8 @@ public class Coin3D : MonoBehaviour
         _200,
         _500,
         _1000,
-        _2000
+        _2000,
+        _Celular
     }
 
     public Dinero DineroValor;
@@ -36,19 +37,31 @@ public class Coin3D : MonoBehaviour
 
     private void Start()
     {
-    string DineroValorX = DineroValor.ToString().Replace("_", "");
-        
-    Instantiate(Dineros[(int)DineroValor], transform);
-    Valor = System.Convert.ToInt32(DineroValorX.ToString());
-    StartCoroutine(Corrutinin());
+        Instantiate(Dineros[(int)DineroValor], transform);
+        StartCoroutine(Corrutinin());
 
-}
+        if (DineroValor == Dinero._Celular) return;
 
-public void ObtenerMonedas()
+        string DineroValorX = DineroValor.ToString().Replace("_", "");
+
+        Valor = System.Convert.ToInt32(DineroValorX.ToString());
+        StartCoroutine(Corrutinin());
+
+    }
+
+    public void ObtenerMonedas()
     {
-    PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
-    PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + Valor);
-    Destroy(gameObject);
+        if (DineroValor == Dinero._Celular)
+        {
+        PlayerPrefs.SetFloat("celular", PlayerPrefs.GetFloat("celular", 0) + 1);
+        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerTelefono);
+        Destroy(gameObject);
+        return;
+        }
+
+        PlayerRunner.pr.Player.PlayOneShot(PlayerRunner.pr.RecogerDinero);
+        PlayerPrefs.SetFloat("dinero", PlayerPrefs.GetFloat("dinero", 0) + Valor);
+        Destroy(gameObject);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -56,7 +69,7 @@ public void ObtenerMonedas()
         if (other.tag == "yun")
         {
             DestroyImmediate(gameObject);
-            print("coin mala destruyendo"); 
+            print("coin mala destruyendo");
         }
     }
 }

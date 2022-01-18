@@ -420,7 +420,7 @@ public class inicietion : MonoBehaviour
     {
         POP();
         ni.SetActive(true);
-        //  tni.SetActive(true);
+        //  //  tni.SetActive(true);
         TEMPORADA.SetActive(true);
 
     }
@@ -429,7 +429,7 @@ public class inicietion : MonoBehaviour
         POP();
         ni.SetActive(false);
         tni.SetActive(false);
-        TEMPORADA.SetActive(false);
+        //   TEMPORADA.SetActive(false);
     }
 
     public GameObject valoracion;

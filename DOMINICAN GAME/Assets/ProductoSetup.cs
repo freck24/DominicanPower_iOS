@@ -9,6 +9,12 @@ using UnityEngine.UI;
 
 public class ProductoSetup : MonoBehaviour
 {
+    [Header("IS VENTA")]
+    public bool IsVenta;
+    public Sprite VentaDisponible;
+    public Sprite VentaBloqueada;
+    public Image SpriteEdit;
+
     public bool Setup;
     public bool GiveOne;
     public string PrefsCantidad;
@@ -63,6 +69,9 @@ public class ProductoSetup : MonoBehaviour
 
         Cantidad = PlayerPrefs.GetFloat(PrefsCantidad, 0f);
         CantidadTx.text = Cantidad.ToString("f0");
+
+            if (IsVenta)
+                SpriteEdit.sprite = (Cantidad > 0) ? VentaDisponible : VentaBloqueada;
 
         if (SolaCompra)
         {
