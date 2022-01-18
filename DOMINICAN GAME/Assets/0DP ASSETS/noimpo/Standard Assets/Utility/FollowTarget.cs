@@ -12,7 +12,11 @@ namespace UnityStandardAssets.Utility
 
         private void Start()
         {
-            if (SetParentNull) transform.SetParent(null);
+            if (SetParentNull)
+            {
+                transform.SetParent(null);
+                gameObject.SetActive(false);
+            }
         }
 
         private void LateUpdate()

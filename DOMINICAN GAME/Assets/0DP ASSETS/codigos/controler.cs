@@ -1747,6 +1747,7 @@ public class controler : MonoBehaviour
 
     public IEnumerator LACALLEBOTAFUEGO()
     {
+
         while (!animacion)
         {
             yield return new WaitForSecondsRealtime(0.001f);
@@ -1919,7 +1920,6 @@ public class controler : MonoBehaviour
             h1 = 0;
             r.velocity = new Vector2(0, 0);
             power = false;
-            pawerArea.SetActive(false);
             StartCoroutine(LACALLEBOTAFUEGO());
 
 
@@ -2986,7 +2986,7 @@ public class controler : MonoBehaviour
     {
         if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
         {
-            pawerArea.SetActive(true);
+         //   pawerArea.SetActive(true);
             PowerDisponible = false;
             PowerOn.SetActive(true);
             PowerLoop.SetActive(true);
@@ -2998,8 +2998,7 @@ public class controler : MonoBehaviour
             CameraPlay.EarthQuakeShake(2.5f, 7.1f, 1.4f);
 
             cabeza.SetActive(true);
-            power = true;
-            pawerArea.SetActive(true);
+            power = true; 
             contadorpoder -= 1;
             PlayerPrefs.SetFloat("poder", contadorpoder);
             contadorpoder = PlayerPrefs.GetFloat("poder", 0);
@@ -3007,6 +3006,7 @@ public class controler : MonoBehaviour
 
             PLATANOPOWER.text = "" + contadorpoder.ToString("f0");
             ConjuroPower.text = "" + contadorConjuro.ToString("f0");
+            pawerArea.SetActive(true);
 
         }
         else audio2.PlayOneShot(fail);
