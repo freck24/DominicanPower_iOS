@@ -1859,7 +1859,9 @@ public class controler : MonoBehaviour
     }
     public IEnumerator puedemorir()
     {
-        yield return new WaitForSecondsRealtime(5);
+        yield return new WaitForSecondsRealtime(3.5f);
+        if(!perdermensaje.activeSelf) AvaibleMove = true;
+        yield return new WaitForSecondsRealtime(4.8f);
         canmuere = true;
     }
 
@@ -1920,6 +1922,7 @@ public class controler : MonoBehaviour
             h1 = 0;
             r.velocity = new Vector2(0, 0);
             power = false;
+        pawerArea.SetActive(false);
             StartCoroutine(LACALLEBOTAFUEGO());
 
 
@@ -2838,7 +2841,10 @@ public class controler : MonoBehaviour
 
             if (!inmortal)
             {
+                AvaibleMove = false;
+
                 vidas -= 1;
+                AvaibleMove = false;
                 print("Corazon Roto (Caid)");
                 CameraPlay.Glitch3(1.3f);
                 PlayerPrefs.SetFloat("vidas", vidas);
@@ -2913,6 +2919,7 @@ public class controler : MonoBehaviour
             yield return new WaitForSecondsRealtime(2f);
 
             perdermensaje.SetActive(true);
+            AvaibleMove = false;
             print("se activo canvas perder 2");
 
             gestora.sto();
@@ -3022,6 +3029,7 @@ public class controler : MonoBehaviour
     public IEnumerator muert()
     {
         vidas = -4;
+        AvaibleMove = false;
 
         power = false;
         pawerArea.SetActive(false);
@@ -3035,6 +3043,7 @@ public class controler : MonoBehaviour
         if (vidas <= 0)
         {
             perdermensaje.SetActive(true);
+            AvaibleMove = false;
             print("se activo canvas perder 3");
         }
 
@@ -3282,6 +3291,8 @@ public class controler : MonoBehaviour
                     Invoke("QuitarGolpe", 1f);
                     h = 0;
                     vidas -= 1;
+                    AvaibleMove = false;
+                    StartCoroutine(puedemorir());
 
                     print("Corazon Roto 1");
                     GenSangre();
@@ -3318,6 +3329,7 @@ public class controler : MonoBehaviour
 
             if (canmuere)
             {
+                AvaibleMove = false;
                 canmuere = false;
                 JUICI.SetActive(false);
                 JUICI.SetActive(true);
@@ -3333,6 +3345,8 @@ public class controler : MonoBehaviour
                     h = 0;
                     vidas -= 1;
                     print("Corazon Roto 2");
+                    AvaibleMove = false;
+                    StartCoroutine(puedemorir());
 
                     GenSangre();
                     CameraPlay.Shockwave();
@@ -3658,6 +3672,8 @@ public class controler : MonoBehaviour
                 if (PlayerPrefs.GetFloat("dinero", 0) == 0 && PlayerPrefs.GetFloat("mango", 0) == 0 && platano == 0)
                 {
                     vidas -= 1;
+                AvaibleMove = false;
+                StartCoroutine(puedemorir());
                     print("Corazon Roto 3 (punala)");
                     GenSangre();
 
@@ -3696,6 +3712,7 @@ public class controler : MonoBehaviour
                     else
                     {
                         perdermensaje.SetActive(true);
+            AvaibleMove = false;
                         print("se activo canvas perder 4");
 
                         audio.Stop();
@@ -3912,6 +3929,8 @@ public class controler : MonoBehaviour
                 {
                     vidas -= 1;
                     print("Corazon Roto 5 (punala 2)");
+                AvaibleMove = false;
+                StartCoroutine(puedemorir());
                     GenSangre();
 
                     PlayerPrefs.SetFloat("vidas", vidas);
@@ -3947,6 +3966,7 @@ public class controler : MonoBehaviour
                     else
                     {
                         perdermensaje.SetActive(true);
+            AvaibleMove = false;
                         print("se activo canvas perder 5");
                         audio.Stop();
                         audio.clip = aah;
@@ -4103,6 +4123,7 @@ public class controler : MonoBehaviour
         if (otr.gameObject.tag == "alcantarilla" && u[0])
         {
             AvaibleMove = false;
+                StartCoroutine(puedemorir());
             ControlPanel.SetActive(false);
             audio2.PlayOneShot(alcantarilla);
             dia2.SetActive(true);
@@ -4244,7 +4265,7 @@ public class controler : MonoBehaviour
         dia2.SetActive(false);
         dia3.SetActive(false);
         dia6.SetActive(false);
-        AvaibleMove = true;
+         AvaibleMove = true;
         a1.SetActive(false);
         a2.SetActive(false);
         ControlPanel.SetActive(true);
@@ -4266,7 +4287,7 @@ public class controler : MonoBehaviour
         dia2.SetActive(false);
         dia3.SetActive(false);
         dia6.SetActive(false);
-        AvaibleMove = true;
+         AvaibleMove = true;
         a1.SetActive(false);
         a2.SetActive(false);
         ControlPanel.SetActive(true);
@@ -4314,7 +4335,7 @@ public class controler : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         bo1.color = Color.white;
         paneles.SetActive(false);
-        AvaibleMove = true;
+         AvaibleMove = true;
         ControlPanel.SetActive(true);
 
     }
@@ -4328,7 +4349,7 @@ public class controler : MonoBehaviour
         yield return new WaitForSecondsRealtime(0.5f);
         bo5.color = Color.white;
         paneles.SetActive(false);
-        AvaibleMove = true;
+         AvaibleMove = true;
         ControlPanel.SetActive(true);
 
     }
@@ -4353,6 +4374,8 @@ public class controler : MonoBehaviour
     }
     IEnumerator pld()
     {
+        print("CALLED PLD IN PLAYER");
+
         PlayerPrefs.SetFloat("local", botonbruja.localScale.y);
         yield return new WaitForSecondsRealtime(1f);
         if (norepetir)
@@ -4360,11 +4383,12 @@ public class controler : MonoBehaviour
             norepetir = false;
             if (PlayerPrefs.GetFloat("jn", 0) == 0)
             {
-
+                print("JN ES IGUAL A 0");
                 PlayerPrefs.SetFloat("bugs", 1);
                 bugs = false;
                 ssd += 1f;
                 PlayerPrefs.SetFloat("dia", PlayerPrefs.GetFloat("dia", 1) + 2);
+
                 if (PlayerPrefs.GetFloat("nivel", 1) == 15)
                 {
                     if (PlayerPrefs.GetFloat("dinero", 0) >= 100000)
@@ -4391,41 +4415,38 @@ public class controler : MonoBehaviour
                 }
                 else
                 {
-                    minimenu.SetActive(true);
-
-                    if (!SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
-                        planeta.inicio();
+              
+                if (!SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
+                planeta.inicio();
+                minimenu.SetActive(true);
                 }
 
 
+                nivel += 1f;
 
                 canva.SetActive(false);
-
                 PlayerPrefs.SetFloat("platanos", platano);
                 StartCoroutine(paras());
                 generarp.cancelargen();
-
-
-
-                nivel += 1f;
                 PlayerPrefs.SetFloat("nivel", nivel);
-
-
                 PlayerPrefs.SetFloat("sd", ssd);
-
-
-
                 PlayerPrefs.SetFloat("gd", PlayerPrefs.GetFloat("dinero", 0));
                 PlayerPrefs.SetFloat("gp", PlayerPrefs.GetFloat("poder", 0));
                 PlayerPrefs.SetFloat("gpl", PlayerPrefs.GetFloat("platano", 0));
                 PlayerPrefs.SetFloat("gpo", PlayerPrefs.GetFloat("pollo", 0));
                 PlayerPrefs.SetFloat("gma", PlayerPrefs.GetFloat("mango", 0));
-
-
-
             }
             else
             {
+                print("JN ES IGUAL A 1");
+                if (PlayerPrefs.GetInt("NivelSaltado", 0) == 1)
+                {
+                    PreLoaderLevel.preload.CargaLvl("inicio");
+                }
+
+             //   planeta.inicio();
+                minimenu.SetActive(true);
+
                 PlayerPrefs.SetFloat("platanos", platano);
                 if (PlayerPrefs.GetInt("anuncios", 1) == 1)
                 { gest.mostrarinter(); }

@@ -1845,6 +1845,7 @@ public class MovimientoPlayer : MonoBehaviour
 			h1 = 0;
 			r.velocity = new Vector2(0, 0);
 			power = false;
+       // cont.pawerArea.SetActive(false);
 			StartCoroutine(LACALLEBOTAFUEGO());
 
 

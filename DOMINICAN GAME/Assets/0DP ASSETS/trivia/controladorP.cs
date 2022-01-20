@@ -44,9 +44,7 @@ public class controladorP : MonoBehaviour {
 	{
 		quiz.Construir(gepre.random(), GiveAnswer);
 		PANEL.SetActive(false);
-					
-			
-			}
+	}
 
 	private void GiveAnswer(Opcionesbotones opcionesbotones)
 	{
@@ -59,7 +57,7 @@ public class controladorP : MonoBehaviour {
 	private IEnumerator Giveco( Opcionesbotones opcionesbotones)
 
 	{
-		
+		print("GIVE CO CALLED");
 		opcionesbotones.SetColor(opcionesbotones.Opciones.correcta ? ccolor : incolor);
 
 		PANEL.SetActive(true);
@@ -71,23 +69,28 @@ public class controladorP : MonoBehaviour {
 				PlayerPrefs.SetInt("correct", PlayerPrefs.GetInt("correct", 0) + 1);
 			}
 
+
+
 			if(SceneManager.GetActiveScene().name.Contains("INSIGNIA"))
             {
 				print("SE GANO UNA INSIGNIA");
 				FindObjectOfType<LoaderLevSign>().CompletarNivel();
-
-
             }
 
 
 
 			if (PlayerPrefs.GetInt("ff", 0) == 0)
 			{
+			//	ProxPre();
+
+				print("FF ES = 0");
 				contr.f = true;
 				contr.ga = true;
 				contr.h = 1;
 				//	activar.gameObject.SetActive(true);
 				contr.iniciarpld();
+
+			//	contr.planeta.
 
 				yield return new WaitForSeconds(wait);
 
@@ -97,16 +100,17 @@ public class controladorP : MonoBehaviour {
 			}
             else
             {
-a.PlayOneShot(win);
+				print("FF ES = 1");
+
+				a.PlayOneShot(win);
             }
+
+
 			yield return new WaitForSeconds(1);
-			
 			
 			ProxPre(); 
 
 		//	pregunt.gameObject.SetActive(false);
-			
-
 
 		}
 

@@ -11,7 +11,7 @@ namespace EliezerYT.UIAdjust
     public class UIA_Manager : MonoBehaviour
     {
         [Header("Base")]
-        [HideInInspector] public bool ActiveSystem;
+          public bool ActiveSystem;
         [HideInInspector] bool Moving;
         UIA_Item Selected_Element;
 

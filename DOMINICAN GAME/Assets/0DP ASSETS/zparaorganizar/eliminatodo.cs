@@ -11,10 +11,13 @@ public class eliminatodo : MonoBehaviour
     {
         FindObjectOfType<camarasigue>().PosicionXmaxima = transform.position.x;
 
-        Vector3 localpos = transform.position;
+        Vector3 localpos = transform.localPosition;
 
-        localpos.x = -3.68f;
+        localpos.y = -7.959991f;
+     //   localpos.x = -3.68f;
         localpos.z = -17.51398f;
+
+        transform.localPosition = localpos;
     }
 
      

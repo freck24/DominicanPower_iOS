@@ -55,18 +55,15 @@ public class inicietion : MonoBehaviour
         });
     }
 
-    public void Boton_IniciarSaltado( int LevelSaltado)
+    public void Boton_IniciarSaltado(int LevelSaltado)
     {
-
         print("Iniciar Saltado A: " + LevelSaltado); 
         PlayerPrefs.SetInt("NivelSaltado", 1);
         PlayerPrefs.SetFloat("NivelSaltado_ID", LevelSaltado-1);
-
         print("NivelJugar: " + (LevelSaltado - 1).ToString());
         NewCargaID(0);
-
-
     }
+
     public void Boton_IniciarAventura()
     {
         print("Iniciar Saltado");

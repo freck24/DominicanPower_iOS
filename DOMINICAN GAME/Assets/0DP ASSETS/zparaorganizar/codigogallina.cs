@@ -6,36 +6,51 @@ using UnityEngine;
 public class codigogallina : MonoBehaviour
 {
 
-    
-   public Animator anim;
+
+    public Animator anim;
     private Rigidbody2D r;
     public float velocidad = -5;
     public GESTORPRINCIPAL gestor;
-  
+    public GameObject Boom;
 
-   
+
+
     // Start is called before the first frame update
     void Start()
     {
-       
- 
+
+
         r = GetComponent<Rigidbody2D>();
-      
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        r.AddForce(Vector2.right*velocidad*Time.deltaTime);
+        r.AddForce(Vector2.right * velocidad * Time.deltaTime);
     }
-  
+
+    void Destruyesion()
+    {
+
+        if (Boom != null)
+        {
+            Boom.SetActive(true);
+            Boom.transform.SetParent(null);
+        }
+
+        Destroy(gameObject);
+    }
+
     public void OnTriggerEnter2D(Collider2D collision)
     {
-     
-        if (collision.tag == "enemy" || collision.tag == "destroy" )
+     //   
+        if (collision.tag == "enemy" ||  collision.tag == "destroy" )
         {
-         
-            Destroy(gameObject);
+            collision.gameObject.name = "ABCDEF";
+            Invoke("Destruyesion", 1f);
+
+
             PlayerPrefs.SetInt("cg", PlayerPrefs.GetInt("cg", 0) - 1);
            
         
