@@ -810,7 +810,17 @@ PrefabInstance:
     - target: {fileID: 8078124861535237174, guid: 224274a3c932dca45b529e5b22451273,
         type: 3}
       propertyPath: NivelActual
-      value: 4
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078124861619919645, guid: 224274a3c932dca45b529e5b22451273,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078124861619919646, guid: 224274a3c932dca45b529e5b22451273,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8078124861841133180, guid: 224274a3c932dca45b529e5b22451273,
         type: 3}
@@ -832,6 +842,16 @@ PrefabInstance:
       propertyPath: offsetMax
       value: -18.31
       objectReference: {fileID: 0}
+    - target: {fileID: 8078124862601866557, guid: 224274a3c932dca45b529e5b22451273,
+        type: 3}
+      propertyPath: m_RaycastTarget
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8078124862601866557, guid: 224274a3c932dca45b529e5b22451273,
+        type: 3}
+      propertyPath: m_Color.a
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8078124862900311542, guid: 224274a3c932dca45b529e5b22451273,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -847,7 +867,8 @@ PrefabInstance:
       propertyPath: Resucite
       value: 
       objectReference: {fileID: 1685274139}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8078124861619919645, guid: 224274a3c932dca45b529e5b22451273, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 224274a3c932dca45b529e5b22451273, type: 3}
 --- !u!95 &207972050 stripped
 Animator:
