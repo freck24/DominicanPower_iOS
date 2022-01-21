@@ -1617,6 +1617,7 @@ public class controler : MonoBehaviour
             PlayerPrefs.SetFloat("vidas", 3);
 
             perdermensaje.SetActive(false);
+            AvaibleMove = true;
             print("se DESACTIVO canvas perder ");
 
             if (preguntas.activeSelf)
@@ -1655,6 +1656,8 @@ public class controler : MonoBehaviour
     {
         if (PlayerPrefs.GetFloat("dinero", 0) > 4999) // 4999
         {
+            AvaibleMove = true;
+
             CallThemBug();
             if (preguntas.activeSelf) controladorp.ProxPre();
 
@@ -1795,6 +1798,7 @@ public class controler : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.1f);
         //CDNOVA //CDNOVA PLATA.SetActive(false);
+            AvaibleMove = true;
         Resucite.GenPlat();
         transform.position = Resucite.PlayerRespawn.position;
         //CDNOVA seguirp.s();
@@ -1859,9 +1863,9 @@ public class controler : MonoBehaviour
     }
     public IEnumerator puedemorir()
     {
-        yield return new WaitForSecondsRealtime(3.5f);
+        yield return new WaitForSecondsRealtime(1.5f);
         if(!perdermensaje.activeSelf) AvaibleMove = true;
-        yield return new WaitForSecondsRealtime(4.8f);
+        yield return new WaitForSecondsRealtime(1.8f);
         canmuere = true;
     }
 
@@ -1922,7 +1926,7 @@ public class controler : MonoBehaviour
             h1 = 0;
             r.velocity = new Vector2(0, 0);
             power = false;
-        pawerArea.SetActive(false);
+      // pawerArea.SetActive(false);
             StartCoroutine(LACALLEBOTAFUEGO());
 
 
@@ -2615,7 +2619,7 @@ public class controler : MonoBehaviour
     {
         h = MoveInt;
 
-        if (!AvaibleMove) h = 0;
+        if (!AvaibleMove || !muerte) h = 0;
 
     }
 
@@ -2900,6 +2904,7 @@ public class controler : MonoBehaviour
                 yield return new WaitForSecondsRealtime(2);
                 transform.position = Resucite.PlayerRespawn.position;
                 Resucite.GenPlat();
+            AvaibleMove = true;
                 print("BugFixing 1");
 
             }
@@ -2993,7 +2998,7 @@ public class controler : MonoBehaviour
     {
         if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
         {
-         //   pawerArea.SetActive(true);
+          pawerArea.SetActive(true);
             PowerDisponible = false;
             PowerOn.SetActive(true);
             PowerLoop.SetActive(true);

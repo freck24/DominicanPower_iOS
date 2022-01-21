@@ -51,7 +51,8 @@ public class camarasigue : MonoBehaviour
     {
         yield return new WaitForSecondsRealtime(0.7f);
         power = false;
-        cont.pawerArea.SetActive(false);
+        print("deshabilitado power");
+      //  cont.pawerArea.SetActive(false);
         yield return new WaitForSecondsRealtime(0.3f);
         power2 = false;
     }

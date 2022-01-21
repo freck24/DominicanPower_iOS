@@ -129,16 +129,12 @@ public class GESTORPRINCIPAL : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-       
-
         g = PlayerPrefs.GetInt("cg", 0);
         if (bril)
         {
             a.clip = brilla;
             a.Play();
             bril = false;
-
         }
 
 
@@ -173,8 +169,9 @@ public class GESTORPRINCIPAL : MonoBehaviour
             tiemposaya = false;
             cont.PowerLoop.SetActive(false);
             cont.PowerDisponible = true;
-        //    cont.pawerArea.SetActive(false);
-            
+            cont.pawerArea.SetActive(false);
+            //    cont.pawerArea.SetActive(false);
+
             cont.fuerza = 85;
             cont.rompe = false;
             a.clip = baja;
