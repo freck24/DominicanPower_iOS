@@ -2160,7 +2160,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3938572831622594039}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -231.14, y: -16.4, z: 0}
+  m_LocalPosition: {x: -231.14, y: -15.6, z: 0}
   m_LocalScale: {x: 75.01324, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 3938572830227636813}
@@ -5750,7 +5750,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.1827004
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114194312377525914, guid: bc4f23d04e42f4b559542ad840db6530, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc4f23d04e42f4b559542ad840db6530, type: 3}
 --- !u!4 &3942981848473968072 stripped
 Transform:
@@ -8505,6 +8506,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 3938572830227636813}
     m_Modifications:
+    - target: {fileID: 1122878287109675639, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 4164078024103358567, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_StaticEditorFlags

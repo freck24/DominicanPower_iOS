@@ -2007,7 +2007,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6970443638599860196}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -292.32, y: -15.645502, z: -12}
+  m_LocalPosition: {x: -292.32, y: -14.5, z: -12}
   m_LocalScale: {x: 60.56748, y: 1, z: 1}
   m_Children:
   - {fileID: 5525902121823564176}
@@ -2267,7 +2267,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6970443638869695476}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -292.32, y: -15.645502, z: 0}
+  m_LocalPosition: {x: -292.32, y: -15.6, z: 0}
   m_LocalScale: {x: 60.56748, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 6970443638080515050}
@@ -4810,7 +4810,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 3.1827
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114194312377525914, guid: bc4f23d04e42f4b559542ad840db6530, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: bc4f23d04e42f4b559542ad840db6530, type: 3}
 --- !u!4 &6965709112649329748 stripped
 Transform:
@@ -9855,6 +9856,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6970443638080515050}
     m_Modifications:
+    - target: {fileID: 1122878287109675639, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 1380314533850432214, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_StaticEditorFlags

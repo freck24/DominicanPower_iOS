@@ -96,6 +96,8 @@ public class planeta : MonoBehaviour
 
     public void inicio()
     {
+        transform.parent.gameObject.SetActive(true);
+        gameObject.SetActive(true);
         fondo.SetActive(false);
         a = GetComponent<AudioSource>();
         StartCoroutine(plan());
@@ -290,11 +292,6 @@ public class planeta : MonoBehaviour
     public IEnumerator plan()
     {
         niv = PlayerPrefs.GetFloat("nivel", 1);
-
-
-
-
-
 
         if (niv > 1)
         {

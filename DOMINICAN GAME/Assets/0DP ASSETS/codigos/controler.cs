@@ -3133,6 +3133,7 @@ public class controler : MonoBehaviour
         {
             contadorConjuro += 1;
             PlayerPrefs.SetFloat("ConjuroPower", contadorConjuro);
+                ConjuroPower.text = "" + contadorConjuro.ToString("f0");
             botonbruja.localScale = new Vector3(botonbruja.localScale.x, 3.06f, botonbruja.localScale.z);
             pop();
 
