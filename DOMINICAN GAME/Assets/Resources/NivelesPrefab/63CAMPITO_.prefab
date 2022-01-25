@@ -407,6 +407,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7479881884764544370}
+  - component: {fileID: 4817027678902318300}
   m_Layer: 0
   m_Name: 63CAMPITO_
   m_TagString: niveles
@@ -456,6 +457,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4817027678902318300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7479881884764544371}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6e7e90887f17442b57c436b08e5766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EliminarPiso: 0
+  Colorear: 1
+  colors: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 1}
 --- !u!1 &7479881884861823959
 GameObject:
   m_ObjectHideFlags: 0
@@ -1584,7 +1600,7 @@ Transform:
   m_Children:
   - {fileID: 7479881885449105988}
   m_Father: {fileID: 3488771817404080926}
-  m_RootOrder: 21
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &7479881885750706479
 SpriteRenderer:
@@ -8761,6 +8777,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 1545316240048878771, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 22
+      objectReference: {fileID: 0}
     - target: {fileID: 1568967260741645074, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -8866,6 +8887,11 @@ PrefabInstance:
       propertyPath: m_StaticEditorFlags
       value: 16
       objectReference: {fileID: 0}
+    - target: {fileID: 5939566297857660459, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 21
+      objectReference: {fileID: 0}
     - target: {fileID: 6316152835326053746, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -8879,7 +8905,7 @@ PrefabInstance:
     - target: {fileID: 6316152835779036081, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6316152835779036082, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -8974,7 +9000,7 @@ PrefabInstance:
     - target: {fileID: 6316152836719107539, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6316152836719107540, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}

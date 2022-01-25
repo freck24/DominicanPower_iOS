@@ -10989,6 +10989,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6966403951430642918}
+  - component: {fileID: 6373185539615954702}
   m_Layer: 0
   m_Name: 4SABANA PERDIDA_
   m_TagString: niveles
@@ -11028,6 +11029,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6373185539615954702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966403951430642919}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6e7e90887f17442b57c436b08e5766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EliminarPiso: 0
+  Colorear: 1
+  colors: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 1}
 --- !u!1 &6966403951481144449
 GameObject:
   m_ObjectHideFlags: 0
@@ -12038,7 +12054,7 @@ PrefabInstance:
     - target: {fileID: 2679656675793250035, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 2692044481114976935, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -12089,6 +12105,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_RootOrder
       value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 5515746368277487135, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 5832208511153140504, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -12228,7 +12249,7 @@ PrefabInstance:
     - target: {fileID: 7273644580212021522, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7443127900531843225, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}

@@ -6273,6 +6273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6002164170601511238}
   - component: {fileID: 7946403148792750277}
+  - component: {fileID: -4776473521662005813}
   m_Layer: 0
   m_Name: 2LOS MINA_
   m_TagString: Untagged
@@ -6363,6 +6364,21 @@ MonoBehaviour:
     Carro: {fileID: 3570867987936813834, guid: 680fb0d4916d29d45b64d188756ce75a, type: 3}
   - ID_List: 7
     Carro: {fileID: 3570867987936813834, guid: 680fb0d4916d29d45b64d188756ce75a, type: 3}
+--- !u!114 &-4776473521662005813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6002164170601511233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6e7e90887f17442b57c436b08e5766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EliminarPiso: 0
+  Colorear: 1
+  colors: {r: 0.5686275, g: 0.5686275, b: 0.5686275, a: 1}
 --- !u!1 &6002164170668265887
 GameObject:
   m_ObjectHideFlags: 0
@@ -18128,15 +18144,20 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 15
       objectReference: {fileID: 0}
+    - target: {fileID: 5515746368277487135, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5832208511153140504, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 22
+      value: 21
       objectReference: {fileID: 0}
     - target: {fileID: 5939566297857660459, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 21
+      value: 22
       objectReference: {fileID: 0}
     - target: {fileID: 6083101170217780432, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}

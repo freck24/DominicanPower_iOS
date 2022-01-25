@@ -146,6 +146,8 @@ public class GESTORPRINCIPAL : MonoBehaviour
             tiem = 0;
             tiemposaya = true;
             cont.PowerOn.SetActive(true);
+            cont.pawerArea.SetActive(true);
+
             s = false;
         }
 
@@ -170,6 +172,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
             cont.PowerLoop.SetActive(false);
             cont.PowerDisponible = true;
             cont.pawerArea.SetActive(false);
+            print("power apagado");
             //    cont.pawerArea.SetActive(false);
 
             cont.fuerza = 85;

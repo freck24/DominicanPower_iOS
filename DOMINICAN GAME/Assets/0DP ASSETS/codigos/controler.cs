@@ -1925,8 +1925,7 @@ public class controler : MonoBehaviour
             h = 0;
             h1 = 0;
             r.velocity = new Vector2(0, 0);
-            power = false;
-      // pawerArea.SetActive(false);
+            power = false; 
             StartCoroutine(LACALLEBOTAFUEGO());
 
 
@@ -2057,8 +2056,8 @@ public class controler : MonoBehaviour
         GameObject var = GameObject.FindObjectOfType<eliminatodo>().gameObject;
 
         Vector3 var2 = var.transform.position;
-        var2.y += 30;
-        var2.z = 0;
+        var2.y = transform.position.y;
+        var2.z = transform.position.z;
 
         transform.position = var2;
 
@@ -2998,7 +2997,7 @@ public class controler : MonoBehaviour
     {
         if (contadorpoder > 0 && vidas > 0 && PowerDisponible)
         {
-          pawerArea.SetActive(true);
+            pawerArea.SetActive(true);
             PowerDisponible = false;
             PowerOn.SetActive(true);
             PowerLoop.SetActive(true);
@@ -3037,6 +3036,7 @@ public class controler : MonoBehaviour
         AvaibleMove = false;
 
         power = false;
+        print("desactiva power");
         pawerArea.SetActive(false);
         cabeza.SetActive(false);
         gest.tiem = gest.tiempopoder;

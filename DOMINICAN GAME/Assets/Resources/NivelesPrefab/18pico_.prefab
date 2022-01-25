@@ -93,7 +93,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875365767516
 GameObject:
   m_ObjectHideFlags: 0
@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875378743390
 GameObject:
   m_ObjectHideFlags: 0
@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875418392113
 GameObject:
   m_ObjectHideFlags: 0
@@ -402,6 +402,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5108343875418392112}
+  - component: {fileID: 1325007298057889618}
   m_Layer: 0
   m_Name: 18pico_
   m_TagString: niveles
@@ -570,6 +571,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1325007298057889618
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5108343875418392113}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c6e7e90887f17442b57c436b08e5766, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  EliminarPiso: 0
+  Colorear: 1
+  colors: {r: 0.6392157, g: 0.5686275, b: 0.4431373, a: 1}
 --- !u!1 &5108343875420732188
 GameObject:
   m_ObjectHideFlags: 0
@@ -848,7 +864,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875565706088
 GameObject:
   m_ObjectHideFlags: 0
@@ -942,7 +958,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875572660685
 GameObject:
   m_ObjectHideFlags: 0
@@ -1066,7 +1082,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875612032210
 GameObject:
   m_ObjectHideFlags: 0
@@ -1380,7 +1396,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875719257534
 GameObject:
   m_ObjectHideFlags: 0
@@ -1649,7 +1665,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875814495306
 GameObject:
   m_ObjectHideFlags: 0
@@ -2103,7 +2119,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875850174360
 GameObject:
   m_ObjectHideFlags: 0
@@ -2197,7 +2213,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875864716208
 GameObject:
   m_ObjectHideFlags: 0
@@ -2291,7 +2307,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875872215555
 GameObject:
   m_ObjectHideFlags: 0
@@ -2530,7 +2546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875919048076
 GameObject:
   m_ObjectHideFlags: 0
@@ -2654,7 +2670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875944793797
 GameObject:
   m_ObjectHideFlags: 0
@@ -2748,7 +2764,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875945076839
 GameObject:
   m_ObjectHideFlags: 0
@@ -2872,7 +2888,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875965263266
 GameObject:
   m_ObjectHideFlags: 0
@@ -2966,7 +2982,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343875976692926
 GameObject:
   m_ObjectHideFlags: 0
@@ -3150,7 +3166,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876064739453
 GameObject:
   m_ObjectHideFlags: 0
@@ -3412,7 +3428,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876115287951
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,7 +3552,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876151078393
 GameObject:
   m_ObjectHideFlags: 0
@@ -4048,7 +4064,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876262601578
 GameObject:
   m_ObjectHideFlags: 0
@@ -8896,7 +8912,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876307786438
 GameObject:
   m_ObjectHideFlags: 0
@@ -8990,7 +9006,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876314011669
 GameObject:
   m_ObjectHideFlags: 0
@@ -9303,7 +9319,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876400112400
 GameObject:
   m_ObjectHideFlags: 0
@@ -9457,7 +9473,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876502897469
 GameObject:
   m_ObjectHideFlags: 0
@@ -9659,7 +9675,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876564450496
 GameObject:
   m_ObjectHideFlags: 0
@@ -9791,7 +9807,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876637896960
 GameObject:
   m_ObjectHideFlags: 0
@@ -9952,7 +9968,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876700683447
 GameObject:
   m_ObjectHideFlags: 0
@@ -10046,7 +10062,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876725516532
 GameObject:
   m_ObjectHideFlags: 0
@@ -10140,7 +10156,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876774018080
 GameObject:
   m_ObjectHideFlags: 0
@@ -10173,7 +10189,7 @@ Transform:
   m_Children:
   - {fileID: 5108343876322175736}
   m_Father: {fileID: 1243838175395625914}
-  m_RootOrder: 13
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5108343876774018084
 SpriteRenderer:
@@ -10467,7 +10483,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876843228875
 GameObject:
   m_ObjectHideFlags: 0
@@ -10642,7 +10658,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876882939032
 GameObject:
   m_ObjectHideFlags: 0
@@ -10780,7 +10796,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876924998203
 GameObject:
   m_ObjectHideFlags: 0
@@ -10969,7 +10985,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343876963067568
 GameObject:
   m_ObjectHideFlags: 0
@@ -11171,7 +11187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343877054518544
 GameObject:
   m_ObjectHideFlags: 0
@@ -11418,7 +11434,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343877287667779
 GameObject:
   m_ObjectHideFlags: 0
@@ -11644,7 +11660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343877359644306
 GameObject:
   m_ObjectHideFlags: 0
@@ -11881,7 +11897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ene: {fileID: 9114893869407147098, guid: d8cda1253c7612540b968eb6e3900190, type: 3}
-  gestor: {fileID: 0}
+  espera: 1
 --- !u!1 &5108343877457067156
 GameObject:
   m_ObjectHideFlags: 0
@@ -23536,17 +23552,17 @@ PrefabInstance:
     - target: {fileID: 1002536214729329364, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 1068315261108647870, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 19
+      value: 18
       objectReference: {fileID: 0}
     - target: {fileID: 1390652549671230974, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 18
+      value: 16
       objectReference: {fileID: 0}
     - target: {fileID: 1568967260741645074, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -23561,17 +23577,17 @@ PrefabInstance:
     - target: {fileID: 2679656675793250035, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 17
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 2692044481114976935, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 15
+      value: 13
       objectReference: {fileID: 0}
     - target: {fileID: 3397235915197212095, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 20
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 4036827836942767610, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -23586,12 +23602,17 @@ PrefabInstance:
     - target: {fileID: 4379105038962330301, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 4467817728248666476, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
       value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 4615190231742275149, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5342594835209717184, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -23608,6 +23629,11 @@ PrefabInstance:
       propertyPath: m_RootOrder
       value: 21
       objectReference: {fileID: 0}
+    - target: {fileID: 5939566297857660459, guid: d6bc788fa594231419cbaa3809b876eb,
+        type: 3}
+      propertyPath: m_RootOrder
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6316152835326053746, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
@@ -23621,7 +23647,7 @@ PrefabInstance:
     - target: {fileID: 6316152835779036081, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6316152835779036082, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
@@ -23736,12 +23762,12 @@ PrefabInstance:
     - target: {fileID: 7273644580212021522, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 16
+      value: 17
       objectReference: {fileID: 0}
     - target: {fileID: 7443127900531843225, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 7552161055812424580, guid: d6bc788fa594231419cbaa3809b876eb,
         type: 3}
