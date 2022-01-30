@@ -83,7 +83,7 @@ public class Quality : MonoBehaviour
 
     private void Start()
     {
-        newQuality = PlayerPrefs.GetInt("Q", 5);
+        newQuality = PlayerPrefs.GetInt("Q", 4);
         switch (newQuality)
         {
             case 0://Very Low
@@ -107,6 +107,6 @@ public class Quality : MonoBehaviour
                 break;
         }
         qualityText.text = qualitysNames;
-
+        Aplicar();
     }
 }

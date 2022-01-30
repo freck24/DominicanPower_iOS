@@ -7,6 +7,9 @@ using UnityEngine.Events;
 public class bl_SceneLoader : MonoBehaviour
 {
 
+          
+    public bool HasLoad = false;
+
     public bool IsLoading;
     #region Public members
     [Header("Settings")]
@@ -200,7 +203,13 @@ public class bl_SceneLoader : MonoBehaviour
         if (!canSkipWithKey)
             return;
 
-        if (Input.anyKeyDown) TransitionToScene();
+
+        if (HasLoad) return;
+        if (Input.anyKeyDown)
+        {
+            HasLoad = true;
+            TransitionToScene();
+    }
     }
 
     /// <summary>
