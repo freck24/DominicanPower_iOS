@@ -83,7 +83,11 @@ public class gestortragador : MonoBehaviour
             JUGAR.SetActive(false);
             PARAR.SetActive(true);
         ANIM.SetBool("PARAR", true);
-        if(PlayerPrefs.GetInt("anuncios", 1) == 1) scriptEjemploVR.instance.AdsByCall_Intersticial();
+        if (PlayerPrefs.GetInt("anuncios", 1) == 1)
+        {
+            print("entro");
+            scriptEjemploVR.instance.AdsByCall_Intersticial();
+        }
         
     }
     public void llamar()

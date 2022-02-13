@@ -5,6 +5,10 @@ using UnityEngine.UI;
 
 public class controler : MonoBehaviour
 {
+    public void Awake()
+    {
+       // PlayerPrefs.SetFloat("nivel", 20);
+    }
     public GameObject pawerArea;
     public GameObject[] ListaGanador2;
     public static controler statico;
@@ -385,7 +389,7 @@ public class controler : MonoBehaviour
         calidadgrafica();
 
         //PlayerPrefs.SetInt("brujeria", 1); // quitar
-        //	PlayerPrefs.SetFloat("nivel", 86);
+        //	PlayerPrefs.SetFloat("nivel", 20);
 
         if (PlayerPrefs.GetInt("brujeria", 0) == 1)
         {
@@ -4415,10 +4419,7 @@ public class controler : MonoBehaviour
                 {
                     SceneManager.LoadScene("final");
                 }
-                else if (PlayerPrefs.GetFloat("nivel", 0) == 20)
-                {
-                    cargarmenu.SetActive(true);
-                }
+               
                 else
                 {
               
