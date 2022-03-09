@@ -45,6 +45,7 @@ namespace EliezerYT.UIAdjust
         }
         public void Initialize()
         {
+
             for (int i = 0; i < UI_Elements.Count; i++)
             {
                 UIA_Item _item = UI_Elements[i].gameObject.AddComponent<UIA_Item>();
@@ -70,8 +71,27 @@ namespace EliezerYT.UIAdjust
 
         private void Update()
         {
-            if (!ActiveSystem) return;
-            TouchMove_Manager();
+          //  if (!ActiveSystem) return;
+           // TouchMove_Manager();
+        }
+
+        public void SelectItem(Transform item)
+        {
+            Selected_Element = item.GetComponent<UIA_Item>();
+
+            ScaleModifier.value = item.transform.localScale.x;
+        }
+
+        public void MovePosition(Transform trans)
+        {
+            Vector2 movePos;
+
+            RectTransformUtility.ScreenPointToLocalPointInRectangle(
+            GetComponentInParent<Canvas>().transform as RectTransform,
+            Input.mousePosition, GetComponentInParent<Canvas>().worldCamera,
+            out movePos);
+
+            trans.position = GetComponentInParent<Canvas>().transform.TransformPoint(movePos);
         }
 
 
@@ -79,7 +99,6 @@ namespace EliezerYT.UIAdjust
         {
             for (int i = 0; i < UI_Items.Count; i++) UI_Items[i].Load();
         }
-
         public void All_Save()
         {
             for (int i = 0; i < UI_Items.Count; i++) UI_Items[i].Save();
@@ -88,12 +107,10 @@ namespace EliezerYT.UIAdjust
         {
             for (int i = 0; i < UI_ItemsEditor.Count; i++) UI_ItemsEditor[i].Reset();
         }
-
         public void All_Load2()
         {
             for (int i = 0; i < UI_ItemsEditor.Count; i++) UI_ItemsEditor[i].Load();
         }
-
         public void All_Save2()
         {
             for (int i = 0; i < UI_ItemsEditor.Count; i++) UI_ItemsEditor[i].Save();
@@ -104,18 +121,18 @@ namespace EliezerYT.UIAdjust
             for (int i = 0; i < UI_ItemsEditor.Count; i++) UI_ItemsEditor[i].Reset();
         }
 
-
         public void TouchMove_Manager()
         {
             if (Input.GetMouseButtonDown(0))
             {
+                Moving = true;
+
                 if (EventSystem.current.IsPointerOverGameObject())
                 {
                     GameObject _obj = EventSystem.current.currentSelectedGameObject;
-                    print("clicked on: " + _obj.name);
+                 
                     if (_obj.tag == "EliezerYT/UIA_Editable")
                     {
-                        Moving = true;
                         Selected_Element = _obj.GetComponent<UIA_Item>();
                         ScaleModifier.value = _obj.transform.localScale.x;
                     }
@@ -134,7 +151,11 @@ namespace EliezerYT.UIAdjust
                         Selected_Element.transform.position = GetComponentInParent<Canvas>().transform.TransformPoint(movePos);
                     }
 
-                    if (Input.GetMouseButtonUp(0)) Moving = false;
+            if (Input.GetMouseButtonUp(0))
+            {
+                Moving = false;
+                Selected_Element = null;
+            }
                 }
 
         public void ChangeScale(Slider _slider) => Selected_Element.transform.localScale = new Vector2(_slider.value, _slider.value);
