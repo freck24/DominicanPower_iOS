@@ -28,7 +28,7 @@ namespace DigitalRubyShared
 
         [Tooltip("The distance (in units, default is inches) for simulated fingers to start at for a mouse zoom or rotate.")]
         [Range(0.1f, 10.0f)]
-        public float MouseDistanceInUnitsForScaleAndRotate = .10f;
+        public float MouseDistanceInUnitsForScaleAndRotate = 2.0f;
 
         [Tooltip("Mouse wheel delta multiplier.")]
         [Range(0.0001f, 1.0f)]
@@ -84,7 +84,7 @@ namespace DigitalRubyShared
         private readonly HashSet<GestureTouch> tempTouches = new HashSet<GestureTouch>();
 
         private float rotateAngle;
-        private float pinchScale = 0.10f;
+        private float pinchScale = 1.0f;
         private GestureTouch rotatePinch1;
         private GestureTouch rotatePinch2;
         private System.DateTime lastMouseWheelTime;
@@ -1013,7 +1013,7 @@ namespace DigitalRubyShared
             touches.Clear();
             previousTouchPositions.Clear();
             rotateAngle = 0.0f;
-            pinchScale = 1f;
+            pinchScale = 1.0f;
             rotatePinch1 = new GestureTouch();
             rotatePinch2 = new GestureTouch();
             lastMouseWheelTime = System.DateTime.MinValue;

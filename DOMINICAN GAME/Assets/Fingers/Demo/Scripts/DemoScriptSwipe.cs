@@ -70,14 +70,5 @@ namespace DigitalRubyShared
 
             }
         }
-
-
-        public void derecha()
-        {
-            PlayerRunner.pr.MovePlayer(1);
-        } public void izquierda()
-        {
-            PlayerRunner.pr.MovePlayer(-1);
-        }
     }
 }

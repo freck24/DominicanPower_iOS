@@ -412,13 +412,13 @@ public class inicietion : MonoBehaviour
         POP();
         compartir.SetActive(false);
     }
-   // public GameObject TEMPORADA;
+    public GameObject TEMPORADA;
     public void anio()
     {
         POP();
         ni.SetActive(true);
         //  //  tni.SetActive(true);
-      //  TEMPORADA.SetActive(true);
+        TEMPORADA.SetActive(true);
 
     }
     public void canio()
@@ -621,53 +621,11 @@ public class inicietion : MonoBehaviour
     public Text SONIDO;
     public Text FALTANCU;
     public GameObject A;
-    public Text cubosfaltantes;
-    int numerodecubos;
-    int[] numerodecubo=new int[5];
-    public void contarcubor()
-    {
-        if(PlayerPrefs.GetFloat("cuboa", 0) > 0)
-        {
-            numerodecubo[0] = 1;
 
-        }if(PlayerPrefs.GetFloat("cubor", 0) > 0)
-        {
-            numerodecubo[1] = 1;
-
-        }if(PlayerPrefs.GetFloat("cubov", 0) > 0)
-        {
-            numerodecubo[2] = 1;
-
-        }
-        if (PlayerPrefs.GetFloat("cuboro", 0) > 0)
-        {
-            numerodecubo[3] = 1;
-
-        }if (PlayerPrefs.GetFloat("cuboaz", 0) > 0)
-        {
-            numerodecubo[4] = 1;
-
-        }
-
-
-        numerodecubos =
-        numerodecubo[0] + numerodecubo[1] + numerodecubo[2] + numerodecubo[3] + numerodecubo[4];
-        cubosfaltantes.text = numerodecubos + "/5";
-
-      
-           
-            
-        
-
-
-
-
-    }
 
 
     void Start()
     {
-        contarcubor();
         Time.timeScale = 1;
         // PlayerPrefs.SetFloat("dinero", 1231200);
         // PlayerPrefs.SetFloat("nivel", NivelMod);
@@ -724,7 +682,7 @@ public class inicietion : MonoBehaviour
         // PlayerPrefs.SetFloat("nivel", 30);
         if (PlayerPrefs.GetFloat("cubosm", 0) == 0 && PlayerPrefs.GetFloat("nivel", 0) == 21)
         {
-          //  botonnocubos.SetActive(true);
+            botonnocubos.SetActive(true);
             mensajecubos.SetActive(true);
         }
 

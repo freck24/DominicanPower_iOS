@@ -273,10 +273,8 @@ public class planeta : MonoBehaviour
 
     private void Start()
     {
-        //PlayerPrefs.SetFloat("nivel", 2);
         UIA_Manager uia = FindObjectOfType<UIA_Manager>();
         uia.GroupOriginal.SetActive(false);
-        StartCoroutine(plan());
     }
 
     void Update()
@@ -381,7 +379,7 @@ public class planeta : MonoBehaviour
 
             if (niv < 5 || niv == 7 || niv==9 || niv==10 || niv == 12|| niv == 17 ) // SANTO DOMINGO
             {
-                if (niv == 3)
+                if (niv == 2)
                 {
                     mensajeminijuego.SetActive(true);
                     ActivedCounter = true;
