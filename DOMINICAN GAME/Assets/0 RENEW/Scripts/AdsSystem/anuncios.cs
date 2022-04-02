@@ -6,7 +6,7 @@ public class anuncios : MonoBehaviour
 {
 
     public static anuncios ads; 
-    private InterstitialAd inter;
+   // private InterstitialAd inter;
    
     [SerializeField] private string appID = "";
     [SerializeField] private string interID = "";
@@ -16,50 +16,50 @@ public class anuncios : MonoBehaviour
     public void muestravideo()
     {
         print("mostrando video anuncio");
-        mostrarreco();
+      //  mostrarreco();
     }
 
     public void muestrainterticial()
     {
-        mostrarinter();
+     //   mostrarinter();
     }
 
 
 
     private void pedirinter()
     {
-        inter = new InterstitialAd(interID);
-        AdRequest pedir = new AdRequest.Builder().Build();
-        inter.LoadAd(pedir);
+        //inter = new InterstitialAd(interID);
+        //AdRequest pedir = new AdRequest.Builder().Build();
+        //inter.LoadAd(pedir);
 
     }
-    private RewardedAd rewardedAd;
+   // private RewardedAd rewardedAd;
     public void reco()
     {
 
-        AdRequest request = new AdRequest.Builder().Build();
-        // Load the rewarded ad with the request.
-        this.rewardedAd.LoadAd(request);
+    //    AdRequest request = new AdRequest.Builder().Build();
+    //    // Load the rewarded ad with the request.
+    //    this.rewardedAd.LoadAd(request);
 
     }
 
     public void mostrarinter()
     {
-        inter.Show();
-        inter.Destroy();
+     //   inter.Show();
+     //   inter.Destroy();
         pedirinter();
     }
     public void mostrarreco()
     {
 
-        if (this.rewardedAd.IsLoaded())
-        {
-          this.rewardedAd.Show();
-            Time.timeScale = 1;
-            llamar();
-        }
+      //  if (this.rewardedAd.IsLoaded())
+   //     {
+  //        this.rewardedAd.Show();
+   //         Time.timeScale = 1;
+   //         llamar();
+   //     }
 
-        Time.timeScale = 1;
+  //     Time.timeScale = 1;
 
     }
 
@@ -67,17 +67,17 @@ public class anuncios : MonoBehaviour
     private void Awake()
     {
 
-         ads = this;
+ //        ads = this;
 
 
-        MobileAds.Initialize(initStatus => { });
+     //   MobileAds.Initialize(initStatus => { });
         llamar();
 
     }
 
     public void llamar()
     {
-        this.rewardedAd = new RewardedAd(recoID);
+    //    this.rewardedAd = new RewardedAd(recoID);
 
         // Called when an ad request has successfully loaded.
 
@@ -86,46 +86,46 @@ public class anuncios : MonoBehaviour
         // Called when an ad is shown.
 
         // Called when an ad request failed to show.
-        this.rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
+     //   this.rewardedAd.OnAdFailedToShow += HandleRewardedAdFailedToShow;
         // Called when the user should be rewarded for interacting with the ad.
-        this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
+    //    this.rewardedAd.OnUserEarnedReward += HandleUserEarnedReward;
         // Called when the ad is closed.
-        AdRequest request = new AdRequest.Builder().Build();
+    //    AdRequest request = new AdRequest.Builder().Build();
         // Load the rewarded ad with the request.
-        this.rewardedAd.LoadAd(request);
+     //   this.rewardedAd.LoadAd(request);
         //   MobileAds.Initialize(appID);
 
     }
 
 
 
-    public void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args)
-    {
-        MonoBehaviour.print(
-            "HandleRewardedAdFailedToLoad event received with message: "
-                             + args.Message);
-    }
+    //public void HandleRewardedAdFailedToLoad(object sender, AdErrorEventArgs args)
+    //{
+    //    MonoBehaviour.print(
+    //        "HandleRewardedAdFailedToLoad event received with message: "
+    //                         + args.Message);
+    //}
 
 
 
-    public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
-    {
-        MonoBehaviour.print(
-            "HandleRewardedAdFailedToShow event received with message: "
-                             + args.Message);
-    }
+    //public void HandleRewardedAdFailedToShow(object sender, AdErrorEventArgs args)
+    //{
+    //    MonoBehaviour.print(
+    //        "HandleRewardedAdFailedToShow event received with message: "
+    //                         + args.Message);
+    //}
 
 
 
-    public void HandleUserEarnedReward(object sender, Reward args)
-    {
-        string type = args.Type;
-        double amount = args.Amount;
-        MonoBehaviour.print(
-            "HandleRewardedAdRewarded event received for "
-                        + amount.ToString() + " " + type);
-        //quiero darle una moneda 
-    }
+    //public void HandleUserEarnedReward(object sender, Reward args)
+    //{
+    //    string type = args.Type;
+    //    double amount = args.Amount;
+    //    MonoBehaviour.print(
+    //        "HandleRewardedAdRewarded event received for "
+    //                    + amount.ToString() + " " + type);
+    //    //quiero darle una moneda 
+    //}
 
      
 }

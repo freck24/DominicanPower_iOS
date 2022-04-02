@@ -16,8 +16,8 @@ public class scriptEjemploVR : MonoBehaviour
     public static scriptEjemploVR instance;
 
 
-    private RewardedAd rewaredAD;
-    private InterstitialAd interstitial;
+  //  private RewardedAd rewaredAD;
+  //  private InterstitialAd interstitial;
 
 
     public void AdsByCall_Intersticial()
@@ -46,7 +46,7 @@ public class scriptEjemploVR : MonoBehaviour
 
     private void Awake()
     {
-        MobileAds.Initialize(initStatus => { });
+     //   MobileAds.Initialize(initStatus => { });
         if (instance == null)
         {
             instance = this;
@@ -62,10 +62,10 @@ public class scriptEjemploVR : MonoBehaviour
         // 1 menor que 13
         if (PlayerPrefs.GetInt("edad", 0) == 1)
         {
-            RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
-           .SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
-            .build();
-            MobileAds.SetRequestConfiguration(requestConfiguration);
+           // RequestConfiguration requestConfiguration = new RequestConfiguration.Builder()
+           //.SetTagForChildDirectedTreatment(TagForChildDirectedTreatment.True)
+           // .build();
+           // MobileAds.SetRequestConfiguration(requestConfiguration);
         }
         RequestInterstitial();
         RequestVideoReward();
@@ -82,41 +82,41 @@ public class scriptEjemploVR : MonoBehaviour
 
     public void Mostrar_Video()
     {
-    if (rewaredAD.IsLoaded())
-    rewaredAD.Show();
-    else RequestVideoReward();
+    //if (rewaredAD.IsLoaded())
+    //rewaredAD.Show();
+    //else RequestVideoReward();
     }
 
     public void Mostrar_Intersticial()
     {
-    if (interstitial.IsLoaded()) 
-            interstitial.Show();
-    else RequestInterstitial();
+    //if (interstitial.IsLoaded()) 
+    //        interstitial.Show();
+    //else RequestInterstitial();
     }
 
     private void RequestVideoReward()
     {
-        rewaredAD = new RewardedAd(Ids.ID_VideoReward);
-        rewaredAD.OnAdLoaded += HandleRewardedAdLoaded;
-        rewaredAD.OnUserEarnedReward += HandleUserEarnedReward; 
-        rewaredAD.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
-        rewaredAD.OnAdClosed += HandleRewardedAdClosed;
+       // rewaredAD = new RewardedAd(Ids.ID_VideoReward);
+        //rewaredAD.OnAdLoaded += HandleRewardedAdLoaded;
+        //rewaredAD.OnUserEarnedReward += HandleUserEarnedReward; 
+        //rewaredAD.OnAdFailedToLoad += HandleRewardedAdFailedToLoad;
+        //rewaredAD.OnAdClosed += HandleRewardedAdClosed;
 
         // AdRequest adRECu = new AdRequest.Builder().AddExtra("npa", PlayerPrefs.GetInt("anu", 0).ToString()).Build();
-         AdRequest adRECu = new AdRequest.Builder().Build();
-        rewaredAD.LoadAd(adRECu);
+      //   AdRequest adRECu = new AdRequest.Builder().Build();
+     //   rewaredAD.LoadAd(adRECu);
     }
 
     private void RequestInterstitial()
 {
-    interstitial = new InterstitialAd(Ids.ID_Intersticial);
-    interstitial.OnAdLoaded += HandleOnAdLoaded;
-    interstitial.OnAdClosed += HandleOnAdClosed;
-    interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
+    //interstitial = new InterstitialAd(Ids.ID_Intersticial);
+    //interstitial.OnAdLoaded += HandleOnAdLoaded;
+    //interstitial.OnAdClosed += HandleOnAdClosed;
+    //interstitial.OnAdFailedToLoad += HandleOnAdFailedToLoad;
 
-    // AdRequest request = new AdRequest.Builder().AddExtra("npa", PlayerPrefs.GetInt("anu", 0).ToString()).Build();
-    AdRequest request = new AdRequest.Builder().Build();
-    interstitial.LoadAd(request);
+    //// AdRequest request = new AdRequest.Builder().AddExtra("npa", PlayerPrefs.GetInt("anu", 0).ToString()).Build();
+    //AdRequest request = new AdRequest.Builder().Build();
+    //interstitial.LoadAd(request);
 }
 
 
@@ -124,11 +124,11 @@ public class scriptEjemploVR : MonoBehaviour
     public void HandleOnAdLoaded(object sender, EventArgs args) => print("SE CARGO ANUNCIO INTERSTICIAL");
 
 
-    public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
-    {
-        print("ANUNCIO INTERSTICIAL FALLO LA CARGA");
-        RequestInterstitial();
-    }
+    //public void HandleOnAdFailedToLoad(object sender, AdFailedToLoadEventArgs args)
+    //{
+    //    print("ANUNCIO INTERSTICIAL FALLO LA CARGA");
+    //    RequestInterstitial();
+    //}
     public void HandleRewardedAdFailedToLoad(object sender, EventArgs args)
     {
         print("ANUNCIO VIDEO FALLO LA CARGA");
@@ -150,11 +150,11 @@ public class scriptEjemploVR : MonoBehaviour
 
 
 
-    private void HandleUserEarnedReward(object sender, Reward e)
-    {
-        Debug.Log("SE TERMINO DE VER EL VIDEO BONIFICADO");
-        if (FindObjectOfType<controler>() != null) FindObjectOfType<controler>().volverajugaranuncio();
-    }
+    //private void HandleUserEarnedReward(object sender, Reward e)
+    //{
+    //    Debug.Log("SE TERMINO DE VER EL VIDEO BONIFICADO");
+    //    if (FindObjectOfType<controler>() != null) FindObjectOfType<controler>().volverajugaranuncio();
+    //}
 
 
 }

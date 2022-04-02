@@ -1,23 +1,23 @@
 Using pre-set license
-Built from '2021.2/release' branch; Version is '2021.2.0f1 (4bf1ec4b23c9) revision 4977132'; Using compiler version '192829333'; Build Type 'Release'
-OS: 'Windows 10 Pro; OS build 19043.1466; Version 2009; 64bit' Language: 'es' Physical Memory: 49080 MB
+Built from '2021.2/staging' branch; Version is '2021.2.10f1 (ee872746220e) revision 15632167'; Using compiler version '192829333'; Build Type 'Release'
+OS: 'Windows 11  (10.0.22000) 64bit Core' Language: 'es' Physical Memory: 7556 MB
 BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
 
 COMMAND LINE ARGUMENTS:
-D:\Unity\Hub\Editor\2021.2.0f1\Editor\Unity.exe
+C:\Program Files\Unity\Hub\Editor\2021.2.10f1\Editor\Unity.exe
 -adb2
 -batchMode
 -noUpm
 -name
 AssetImportWorker0
 -projectPath
-E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
+C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
 -logFile
 Logs/AssetImportWorker0.log
 -srvPort
-54474
-Successfully changed project path to: E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
-E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
+56427
+Successfully changed project path to: C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
+C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
     "memorysetup-bucket-allocator-granularity=16"
     "memorysetup-bucket-allocator-bucket-count=8"
@@ -47,108 +47,131 @@ E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 154.18 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 649.88 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Initialize engine version: 2021.2.0f1 (4bf1ec4b23c9)
-[Subsystems] Discovering subsystems at path D:/Unity/Hub/Editor/2021.2.0f1/Editor/Data/Resources/UnitySubsystems
-[Subsystems] Discovering subsystems at path E:/new domincanpower/DominicanPower_iOS/DOMINICAN GAME/Assets
+Initialize engine version: 2021.2.10f1 (ee872746220e)
+[Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME/Assets
 GfxDevice: creating device client; threaded=0; jobified=0
 Direct3D:
     Version:  Direct3D 11.0 [level 11.1]
-    Renderer: Radeon RX 580 Series (ID=0x67df)
+    Renderer: AMD Radeon(TM) Graphics (ID=0x1636)
     Vendor:   ATI
-    VRAM:     8171 MB
-    Driver:   30.0.14011.3017
+    VRAM:     3778 MB
+    Driver:   30.0.13026.3
 Initialize mono
-Mono path[0] = 'D:/Unity/Hub/Editor/2021.2.0f1/Editor/Data/Managed'
-Mono path[1] = 'D:/Unity/Hub/Editor/2021.2.0f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
-Mono config path = 'D:/Unity/Hub/Editor/2021.2.0f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56136
+Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
+Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
+Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56448
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
-Register platform support module: D:/Unity/Hub/Editor/2021.2.0f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.003844 seconds.
+Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.083792 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 139.78 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 146.81 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  0.991 seconds
+- Completed reload, in  3.696 seconds
 Domain Reload Profiling:
-	ReloadAssembly (991ms)
-		BeginReloadAssembly (56ms)
+	ReloadAssembly (3697ms)
+		BeginReloadAssembly (2644ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (459ms)
-			LoadAssemblies (55ms)
+		EndReloadAssembly (752ms)
+			LoadAssemblies (2642ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (91ms)
+			SetupTypeCache (351ms)
 			ReleaseScriptCaches (0ms)
-			RebuildScriptCaches (21ms)
-			SetupLoadedEditorAssemblies (288ms)
+			RebuildScriptCaches (25ms)
+			SetupLoadedEditorAssemblies (316ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (5ms)
+				InitializePlatformSupportModulesInManaged (14ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (140ms)
+				RefreshPlugins (147ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (103ms)
-				ProcessInitializeOnLoadMethodAttributes (39ms)
+				ProcessInitializeOnLoadAttributes (111ms)
+				ProcessInitializeOnLoadMethodAttributes (43ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 0.009618 seconds.
+Registered in 1.031571 seconds.
 Begin MonoManager ReloadAssembly
+Could not load signature of TestController:HandleInitCompleteAction due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of TestController:CreateAdRequest due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:get_RewardedInterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<LoadAd>m__0 due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<ShowIfLoaded>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:get_RewardedAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__2 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
 OnLevelWasLoaded was found on scriptEjemploVR
 This message has been deprecated and will be removed in a later version of Unity.
 Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
-Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Unity.dll, this assembly can cause crashes in the runtime
+Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:get_InterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:get_BannerView due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Placement.dll, this assembly can cause crashes in the runtime
+Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Platforms.dll, this assembly can cause crashes in the runtime
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 2.97 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.00 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  1.122 seconds
+- Completed reload, in  3.075 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1122ms)
-		BeginReloadAssembly (143ms)
+	ReloadAssembly (3076ms)
+		BeginReloadAssembly (121ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (18ms)
-		EndReloadAssembly (894ms)
-			LoadAssemblies (59ms)
+			CreateAndSetChildDomain (24ms)
+		EndReloadAssembly (2769ms)
+			LoadAssemblies (2085ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (158ms)
+			SetupTypeCache (148ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (69ms)
-			SetupLoadedEditorAssemblies (404ms)
+			RebuildScriptCaches (58ms)
+			SetupLoadedEditorAssemblies (457ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (10ms)
+				InitializePlatformSupportModulesInManaged (11ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (3ms)
-				BeforeProcessingInitializeOnLoad (55ms)
-				ProcessInitializeOnLoadAttributes (273ms)
-				ProcessInitializeOnLoadMethodAttributes (61ms)
-				AfterProcessingInitializeOnLoad (3ms)
+				BeforeProcessingInitializeOnLoad (57ms)
+				ProcessInitializeOnLoadAttributes (227ms)
+				ProcessInitializeOnLoadMethodAttributes (153ms)
+				AfterProcessingInitializeOnLoad (5ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (4ms)
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
-Refreshing native plugins compatible for Editor in 2.28 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
+Refreshing native plugins compatible for Editor in 3.20 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2684 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 126 unused Assets / (0.6 MB). Loaded Objects now: 3118.
-Memory consumption went from 148.4 MB to 147.8 MB.
-Total: 5.519900 ms (FindLiveObjects: 0.268900 ms CreateObjectMapping: 0.099200 ms MarkObjects: 4.872500 ms  DeleteObjects: 0.278300 ms)
+Unloading 2756 Unused Serialized files (Serialized files now loaded: 0)
+Unloading 187 unused Assets / (0.6 MB). Loaded Objects now: 3122.
+Memory consumption went from 147.9 MB to 147.4 MB.
+Total: 7.848500 ms (FindLiveObjects: 0.426500 ms CreateObjectMapping: 0.091600 ms MarkObjects: 6.761700 ms  DeleteObjects: 0.564900 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -162,56 +185,29 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 4119.743592 seconds.
-  path: Assets/GoogleMobileAds/Resources/GoogleMobileAdsPlacements.asset
-  artifactKey: Guid(1d70abd2997b467eb235a85c8ac3cb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/GoogleMobileAds/Resources/GoogleMobileAdsPlacements.asset using Guid(1d70abd2997b467eb235a85c8ac3cb67) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a12782fad11432e7dd0ee7f66a4cbffe') in 0.033179 seconds 
+  Time since last request: 1250.125036 seconds.
+  path: Assets/0CASASNUEVAS/camion jugete.obj
+  artifactKey: Guid(34989c64e5a032c4d924acc968c030f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0CASASNUEVAS/camion jugete.obj using Guid(34989c64e5a032c4d924acc968c030f1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98149732453afccb5f5e6626d89bef46') in 0.391315 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 11.140441 seconds.
-  path: Assets/0DP ASSETS/imagenes/old2/menu/INICIAR.png
-  artifactKey: Guid(2187d8f5f6109b049ab6610791443c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/imagenes/old2/menu/INICIAR.png using Guid(2187d8f5f6109b049ab6610791443c91) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '042b59b8a0ee7f68da5a6deea1a8d1f1') in 0.225202 seconds 
+  Time since last request: 0.000032 seconds.
+  path: Assets/0CASASNUEVAS/image8sd43.png
+  artifactKey: Guid(1266c37c57f35be47b8b1f8fbf2c873e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0CASASNUEVAS/image8sd43.png using Guid(1266c37c57f35be47b8b1f8fbf2c873e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '78f1fddf68533f2247ef02cf6731b109') in 0.070679 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 1.079493 seconds.
-  path: Assets/Escenas Nuevas/inicio 1.unity
-  artifactKey: Guid(b4cf2d54126693e47aa143ea44e2fb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/Escenas Nuevas/inicio 1.unity using Guid(b4cf2d54126693e47aa143ea44e2fb38) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc99faf6bfc6fcd804a6ac5909b452a4') in 0.020938 seconds 
+  Time since last request: 0.000062 seconds.
+  path: Assets/0 iNTERFAZpREFAB/descarga el tono de messenguer (msn).mp3
+  artifactKey: Guid(a2e9e5e3094e0f84bbfeccda6ae5d76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 iNTERFAZpREFAB/descarga el tono de messenguer (msn).mp3 using Guid(a2e9e5e3094e0f84bbfeccda6ae5d76f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7c647246662fe3b195739ed8aa11ba60') in 0.099005 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 37.010576 seconds.
-  path: Assets/0DP ASSETS/zparaorganizar/gestordeinicio.cs
-  artifactKey: Guid(9e75a2b2e556462448094f0265b29e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/zparaorganizar/gestordeinicio.cs using Guid(9e75a2b2e556462448094f0265b29e2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd9cf1a6118f80a4d127515a07f655cb5') in 0.011411 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 5.206759 seconds.
-  path: Assets/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef
-  artifactKey: Guid(cbb42e4cfd9484f52972c8f05e1c3252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/GoogleMobileAds/Editor/GoogleMobileAds.Editor.asmdef using Guid(cbb42e4cfd9484f52972c8f05e1c3252) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c7704ed3c157fbf980c72f84d9cf0c1') in 0.006164 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 100.786519 seconds.
-  path: Assets/GoogleMobileAds/Resources/GoogleMobileAdsSettings.asset
-  artifactKey: Guid(76248df14d6adae49923213b49d74dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/GoogleMobileAds/Resources/GoogleMobileAdsSettings.asset using Guid(76248df14d6adae49923213b49d74dce) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '612a3d2a9f49b36203bc5764dd45d558') in 0.003219 seconds 
-========================================================================
-Received Prepare
-Refreshing native plugins compatible for Editor in 16.58 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 108 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 107 unused Assets / (0.6 MB). Loaded Objects now: 3126.
-Memory consumption went from 91.2 MB to 90.6 MB.
-Total: 6.423600 ms (FindLiveObjects: 0.287300 ms CreateObjectMapping: 0.075300 ms MarkObjects: 5.740800 ms  DeleteObjects: 0.319200 ms)
-
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+  Time since last request: 0.000046 seconds.
+  path: Assets/0 iNTERFAZpREFAB/POWERTXT.png
+  artifactKey: Guid(2c5e96d151bacbe489f7aeb07e4c67b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 iNTERFAZpREFAB/POWERTXT.png using Guid(2c5e96d151bacbe489f7aeb07e4c67b0) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ba4bcf39c6c90c81497c6f80f5759490') in 0.034498 seconds 
+Editor requested this worker to shutdown with reason: Scaling down because of idle timeout
+AssetImportWorker is now disconnected from the server
+Process exiting
+Exiting without the bug reporter. Application will terminate with return code 0

@@ -27,7 +27,7 @@ public class GESTORPRINCIPAL : MonoBehaviour
 
   //  public GameObject Nivel_data;
 
-    private InterstitialAd inter;
+   // private InterstitialAd inter;
     private RewardBasedVideoAd recompensa;
     [SerializeField] private string appID = "";
     [SerializeField] private string interID = "";
@@ -55,30 +55,30 @@ public class GESTORPRINCIPAL : MonoBehaviour
     //Load interstitial
     private void pedirinter()
     {
-        if(inter!=null)
-            inter.Destroy();
+        //if(inter!=null)
+        //    inter.Destroy();
 
-        inter = new InterstitialAd(interID);
-        inter.OnAdClosed += HandleInterstitialClosed;
+        //inter = new InterstitialAd(interID);
+        //inter.OnAdClosed += HandleInterstitialClosed;
 
-        if (PlayerPrefs.GetInt("anu", 0) == 1)
-        {
-            AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "1").Build();
-            inter.LoadAd(pedir);
-        }
-        else
-        {
-            AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "0").Build();
-            inter.LoadAd(pedir);
+        //if (PlayerPrefs.GetInt("anu", 0) == 1)
+        //{
+        //    AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "1").Build();
+        //    inter.LoadAd(pedir);
+        //}
+        //else
+        //{
+        //    AdRequest pedir = new AdRequest.Builder().AddExtra("rdp", "0").Build();
+        //    inter.LoadAd(pedir);
 
-        }
+        //}
 
     }
     void HandleInterstitialClosed(object sender, System.EventArgs args)
     {
         pedirinter();
     }
-    private RewardedAd rewardedAd;
+   // private RewardedAd rewardedAd;
     //Load rewarded ad
     /*
     public void reco()

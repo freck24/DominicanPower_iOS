@@ -22,11 +22,11 @@ public class IniciadorAnuncios : MonoBehaviour
     // Update is called once per frame
     void Iniciar()
     {
-        MobileAds.Initialize(initStatus =>
-        {
-            Debug.Log("Ads iniciados " + initStatus);
+    //    MobileAds.Initialize(initStatus =>
+       // {
+           // Debug.Log("Ads iniciados " + initStatus);
           //  llamar();
-        });
+      //  });
 
         Iniciado = true;
 
