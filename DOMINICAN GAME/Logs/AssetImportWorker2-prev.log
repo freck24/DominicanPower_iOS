@@ -15,7 +15,7 @@ C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
 -logFile
 Logs/AssetImportWorker2.log
 -srvPort
-56427
+52936
 Successfully changed project path to: C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
 C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
 [UnityMemory] Configuration Parameters - Can be set up in boot.config
@@ -47,7 +47,7 @@ C:/Users/Eliam Paredes/Documents/GitHub/DominicanPower_iOS/DOMINICAN GAME
     "memorysetup-temp-allocator-size-cloud-worker=32768"
     "memorysetup-temp-allocator-size-gi-baking-worker=262144"
     "memorysetup-temp-allocator-size-gfx=262144"
-Refreshing native plugins compatible for Editor in 179.89 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 176.18 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Initialize engine version: 2021.2.10f1 (ee872746220e)
 [Subsystems] Discovering subsystems at path C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Resources/UnitySubsystems
@@ -63,45 +63,45 @@ Initialize mono
 Mono path[0] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/Managed'
 Mono path[1] = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit-win32'
 Mono config path = 'C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/MonoBleedingEdge/etc'
-Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56044
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56160
 Begin MonoManager ReloadAssembly
 Registering precompiled unity dll's ...
 Register platform support module: C:/Program Files/Unity/Hub/Editor/2021.2.10f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
-Registered in 0.083628 seconds.
+Registered in 0.003199 seconds.
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 150.12 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 150.31 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Mono: successfully reloaded assembly
-- Completed reload, in  1.260 seconds
+- Completed reload, in  0.614 seconds
 Domain Reload Profiling:
-	ReloadAssembly (1260ms)
-		BeginReloadAssembly (207ms)
+	ReloadAssembly (615ms)
+		BeginReloadAssembly (61ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (0ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
 			CreateAndSetChildDomain (1ms)
-		EndReloadAssembly (752ms)
-			LoadAssemblies (205ms)
+		EndReloadAssembly (477ms)
+			LoadAssemblies (60ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (348ms)
+			SetupTypeCache (94ms)
 			ReleaseScriptCaches (0ms)
 			RebuildScriptCaches (24ms)
-			SetupLoadedEditorAssemblies (320ms)
+			SetupLoadedEditorAssemblies (309ms)
 				LogAssemblyErrors (0ms)
 				InitializePlatformSupportModulesInManaged (13ms)
 				SetLoadedEditorAssemblies (0ms)
 				RefreshPlugins (150ms)
 				BeforeProcessingInitializeOnLoad (1ms)
-				ProcessInitializeOnLoadAttributes (109ms)
-				ProcessInitializeOnLoadMethodAttributes (47ms)
+				ProcessInitializeOnLoadAttributes (106ms)
+				ProcessInitializeOnLoadMethodAttributes (38ms)
 				AfterProcessingInitializeOnLoad (0ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
 			AwakeInstancesAfterBackupRestoration (0ms)
 Platform modules already initialized, skipping
 Registering precompiled user dll's ...
-Registered in 1.032215 seconds.
+Registered in 0.007341 seconds.
 Begin MonoManager ReloadAssembly
 Could not load signature of TestController:HandleInitCompleteAction due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
 Could not load signature of TestController:CreateAdRequest due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
@@ -131,56 +131,33 @@ Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to
 Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Placement.dll, this assembly can cause crashes in the runtime
 Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Platforms.dll, this assembly can cause crashes in the runtime
 Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 3.69 ms, found 3 plugins.
+Refreshing native plugins compatible for Editor in 3.03 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
-Unable to write to 'ProjectSettings\GvhProjectSettings.xml' (System.IO.IOException: Sharing violation on path C:\Users\Eliam Paredes\Documents\GitHub\DominicanPower_iOS\DOMINICAN GAME\ProjectSettings\GvhProjectSettings.xml
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean anonymous, System.IO.FileOptions options) [0x0019e] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.IO.FileOptions options) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at System.IO.FileStream..ctor (System.String path, System.IO.FileMode mode, System.IO.FileAccess access, System.IO.FileShare share, System.Int32 bufferSize, System.Boolean useAsync) [0x00000] in <7b935204f5ff4bcab44b3b0ebca330bf>:0 
-  at (wrapper remoting-invoke-with-check) System.IO.FileStream..ctor(string,System.IO.FileMode,System.IO.FileAccess,System.IO.FileShare,int,bool)
-  at System.Xml.XmlWriterSettings.CreateWriter (System.String outputFileName) [0x00051] in <71718d0cdca74d5fa70588392f9ad113>:0 
-  at System.Xml.XmlWriter.Create (System.String outputFileName, System.Xml.XmlWriterSettings settings) [0x0000a] in <71718d0cdca74d5fa70588392f9ad113>:0 
-  at Google.ProjectSettings.Save () [0x00095] in Z:\tmp\tmp.cirhDnLU30\third_party\unity\unity_jar_resolver\source\VersionHandlerImpl\src\ProjectSettings.cs:826 , Project settings were not saved!
-UnityEngine.StackTraceUtility:ExtractStackTrace ()
-UnityEngine.DebugLogHandler:LogFormat (UnityEngine.LogType,UnityEngine.Object,string,object[])
-UnityEngine.Logger:Log (UnityEngine.LogType,object)
-UnityEngine.Debug:LogError (object)
-Google.Logger:Log (string,Google.LogLevel) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/Logger.cs:136)
-Google.ProjectSettings:Save () (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:842)
-Google.ProjectSettings:SetBool (string,bool,Google.SettingsLocation) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:484)
-Google.ProjectSettings:SetBool (string,bool) (at Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs:496)
-Google.IOSResolver:set_VerboseLoggingEnabled (bool) (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:986)
-Google.IOSResolver:.cctor () (at Z:/tmp/tmp.28Sut6pFVt/third_party/unity/unity_jar_resolver/source/IOSResolver/src/IOSResolver.cs:689)
-System.Runtime.CompilerServices.RuntimeHelpers:RunClassConstructor (System.RuntimeTypeHandle)
-UnityEditor.EditorAssemblies:ProcessInitializeOnLoadAttributes (System.Type[])
-
-(Filename: Z:/tmp/tmp.cirhDnLU30/third_party/unity/unity_jar_resolver/source/VersionHandlerImpl/src/ProjectSettings.cs Line: 842)
-
 Package Manager log level set to [2]
 Mono: successfully reloaded assembly
-- Completed reload, in  3.068 seconds
+- Completed reload, in  0.817 seconds
 Domain Reload Profiling:
-	ReloadAssembly (3069ms)
-		BeginReloadAssembly (115ms)
+	ReloadAssembly (818ms)
+		BeginReloadAssembly (92ms)
 			ExecutionOrderSort (0ms)
 			DisableScriptedObjects (5ms)
 			BackupInstance (0ms)
 			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (25ms)
-		EndReloadAssembly (2762ms)
-			LoadAssemblies (2079ms)
+			CreateAndSetChildDomain (19ms)
+		EndReloadAssembly (641ms)
+			LoadAssemblies (59ms)
 			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (147ms)
+			SetupTypeCache (136ms)
 			ReleaseScriptCaches (1ms)
-			RebuildScriptCaches (57ms)
-			SetupLoadedEditorAssemblies (454ms)
+			RebuildScriptCaches (56ms)
+			SetupLoadedEditorAssemblies (355ms)
 				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (11ms)
+				InitializePlatformSupportModulesInManaged (10ms)
 				SetLoadedEditorAssemblies (0ms)
-				RefreshPlugins (4ms)
-				BeforeProcessingInitializeOnLoad (54ms)
-				ProcessInitializeOnLoadAttributes (223ms)
-				ProcessInitializeOnLoadMethodAttributes (158ms)
+				RefreshPlugins (3ms)
+				BeforeProcessingInitializeOnLoad (55ms)
+				ProcessInitializeOnLoadAttributes (217ms)
+				ProcessInitializeOnLoadMethodAttributes (64ms)
 				AfterProcessingInitializeOnLoad (4ms)
 				EditorAssembliesLoaded (0ms)
 			ExecutionOrderSort2 (0ms)
@@ -188,13 +165,13 @@ Domain Reload Profiling:
 Platform modules already initialized, skipping
 ========================================================================
 Worker process is ready to serve import requests
-Launched and connected shader compiler UnityShaderCompiler.exe after 0.19 seconds
-Refreshing native plugins compatible for Editor in 3.15 ms, found 3 plugins.
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.07 seconds
+Refreshing native plugins compatible for Editor in 2.54 ms, found 3 plugins.
 Preloading 0 native plugins for Editor in 0.00 ms.
 Unloading 2756 Unused Serialized files (Serialized files now loaded: 0)
 Unloading 187 unused Assets / (0.6 MB). Loaded Objects now: 3122.
 Memory consumption went from 147.9 MB to 147.4 MB.
-Total: 8.095300 ms (FindLiveObjects: 0.405100 ms CreateObjectMapping: 0.086600 ms MarkObjects: 6.931600 ms  DeleteObjects: 0.668800 ms)
+Total: 6.286500 ms (FindLiveObjects: 0.291700 ms CreateObjectMapping: 0.096400 ms MarkObjects: 5.619300 ms  DeleteObjects: 0.277600 ms)
 
 AssetImportParameters requested are different than current active one (requested -> active):
   custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
@@ -208,206 +185,318 @@ AssetImportParameters requested are different than current active one (requested
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
 ========================================================================
 Received Import Request.
-  Time since last request: 1250.125144 seconds.
-  path: Assets/0DP ASSETS/Respawn PT.prefab
-  artifactKey: Guid(dda2959fdacf9cd41a335817314b8fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/Respawn PT.prefab using Guid(dda2959fdacf9cd41a335817314b8fa1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'aef3397a9d234b429a08b4c49ab2b29e') in 0.082363 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000053 seconds.
-  path: Assets/0 iNTERFAZpREFAB/SAMURAITXT.png
-  artifactKey: Guid(619b53aad1786304991adbc6e7ea6bc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0 iNTERFAZpREFAB/SAMURAITXT.png using Guid(619b53aad1786304991adbc6e7ea6bc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2c76b35265de7a5af42c8c47ffaf7541') in 0.114529 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000044 seconds.
-  path: Assets/0 iNTERFAZpREFAB/POWER2TXT.png
-  artifactKey: Guid(d10b687e858f3b84a82e8459c721135c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0 iNTERFAZpREFAB/POWER2TXT.png using Guid(d10b687e858f3b84a82e8459c721135c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4b54b6aabc23fe376664da7ae3a97324') in 0.029125 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000042 seconds.
-  path: Assets/0 RENEW/Material.mat
-  artifactKey: Guid(0cdc134a252b2fc4cb48cf14e761ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0 RENEW/Material.mat using Guid(0cdc134a252b2fc4cb48cf14e761ecf4) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bff349c303d2af4f995b65b0cbaffc51') in 0.076777 seconds 
-========================================================================
-Received Import Request.
-  Time since last request: 0.000033 seconds.
+  Time since last request: 67687.651151 seconds.
   path: Assets/0 RENEW/DESTRUIR.prefab
   artifactKey: Guid(224274a3c932dca45b529e5b22451273) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
 Start importing Assets/0 RENEW/DESTRUIR.prefab using Guid(224274a3c932dca45b529e5b22451273) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
- -> (artifact id: '66816f85ea35632c9448a80cc2d163a2') in 13.113480 seconds 
+ -> (artifact id: 'db670cadef61984bb16df057cca4c241') in 5.713051 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 49.685241 seconds.
-  path: Assets/JJDEV FIX/Scripts/MovimientoPlayer.cs
-  artifactKey: Guid(3cccdc44f3b42fb488707b462d2d2744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JJDEV FIX/Scripts/MovimientoPlayer.cs using Guid(3cccdc44f3b42fb488707b462d2d2744) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '942f6734950d6836ab104c2e08dfed9d') in 0.018322 seconds 
+  Time since last request: 3.299474 seconds.
+  path: Assets/0 RENEW/Prefabs/Mensaje/Mensaje (xxx).prefab
+  artifactKey: Guid(6fe1f88041d82694abae011ae57fdf7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Prefabs/Mensaje/Mensaje (xxx).prefab using Guid(6fe1f88041d82694abae011ae57fdf7c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'cf673c66891c9c441fd3fccf5f906187') in 0.112803 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 548.557448 seconds.
-  path: Assets/LEVEL 1 CLONE.unity
-  artifactKey: Guid(f441af22559f3b04a958e805691f45f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/LEVEL 1 CLONE.unity using Guid(f441af22559f3b04a958e805691f45f3) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b9f2f26cea943534dc5ab1181ea7e5f') in 0.122283 seconds 
+  Time since last request: 50.527868 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/008630731_prev.mp3
+  artifactKey: Guid(d3fe863bb5bdf5041820e97e70cb45a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/008630731_prev.mp3 using Guid(d3fe863bb5bdf5041820e97e70cb45a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '289303d94c30dd9fcaa8c8f4b5191013') in 0.096721 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 25.663059 seconds.
-  path: Assets/JJDEV FIX/Scripts
-  artifactKey: Guid(6a17a38175c3f9b47be82ad2c13b9fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/JJDEV FIX/Scripts using Guid(6a17a38175c3f9b47be82ad2c13b9fcb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'fc4b498990fae03e9fae23f483c37322') in 0.009305 seconds 
+  Time since last request: 0.000030 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/GameObjectBRUJA.prefab
+  artifactKey: Guid(36d93deed9839f441b4b9c51682f0cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/GameObjectBRUJA.prefab using Guid(36d93deed9839f441b4b9c51682f0cd1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0e166bd498042fc44c7f2b662b8ba050') in 0.218453 seconds 
 ========================================================================
-Received Prepare
-Registering precompiled user dll's ...
-Registered in 0.008626 seconds.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:get_BannerView due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:get_InterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:get_RewardedAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__2 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:get_RewardedInterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<LoadAd>m__0 due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<ShowIfLoaded>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of TestController:HandleInitCompleteAction due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of TestController:CreateAdRequest due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-OnLevelWasLoaded was found on scriptEjemploVR
-This message has been deprecated and will be removed in a later version of Unity.
-Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
-Begin MonoManager ReloadAssembly
-OnLevelWasLoaded was found on scriptEjemploVR
-This message has been deprecated and will be removed in a later version of Unity.
-Add a delegate to SceneManager.sceneLoaded instead to get notifications after scene loading has completed
-Could not load signature of TestController:HandleInitCompleteAction due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of TestController:CreateAdRequest due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:get_RewardedInterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<LoadAd>m__0 due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<ShowIfLoaded>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedInterstitialAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:get_RewardedAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__2 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.RewardedAdGameObject:<AddCallbacks>m__4 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:get_InterstitialAd due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.InterstitialAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:get_BannerView due to: Could not load file or assembly 'GoogleMobileAds, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.BannerAdGameObject:<AddCallbacks>m__1 due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Could not load signature of GoogleMobileAds.Placement.AdGameObject:LoadAd due to: Could not load file or assembly 'GoogleMobileAds.Core, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null' or one of its dependencies.
-Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Placement.dll, this assembly can cause crashes in the runtime
-Unloading broken assembly Assets/GoogleMobileAds/GoogleMobileAds.Platforms.dll, this assembly can cause crashes in the runtime
-Native extension for WindowsStandalone target not found
-Refreshing native plugins compatible for Editor in 8.73 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Mono: successfully reloaded assembly
-- Completed reload, in  1.827 seconds
-Domain Reload Profiling:
-	ReloadAssembly (1829ms)
-		BeginReloadAssembly (271ms)
-			ExecutionOrderSort (0ms)
-			DisableScriptedObjects (15ms)
-			BackupInstance (0ms)
-			ReleaseScriptingObjects (0ms)
-			CreateAndSetChildDomain (114ms)
-		EndReloadAssembly (1403ms)
-			LoadAssemblies (122ms)
-			RebuildTransferFunctionScriptingTraits (0ms)
-			SetupTypeCache (227ms)
-			ReleaseScriptCaches (3ms)
-			RebuildScriptCaches (92ms)
-			SetupLoadedEditorAssemblies (865ms)
-				LogAssemblyErrors (0ms)
-				InitializePlatformSupportModulesInManaged (18ms)
-				SetLoadedEditorAssemblies (1ms)
-				RefreshPlugins (9ms)
-				BeforeProcessingInitializeOnLoad (62ms)
-				ProcessInitializeOnLoadAttributes (684ms)
-				ProcessInitializeOnLoadMethodAttributes (82ms)
-				AfterProcessingInitializeOnLoad (8ms)
-				EditorAssembliesLoaded (0ms)
-			ExecutionOrderSort2 (0ms)
-			AwakeInstancesAfterBackupRestoration (14ms)
-Platform modules already initialized, skipping
-Switching build target platform(19) subTarget(0) extendedPlatform(0) -> platform(13) subTarget(0) extendedPlatform(0)
-Refreshing native plugins compatible for Editor in 2.83 ms, found 3 plugins.
-Preloading 0 native plugins for Editor in 0.00 ms.
-Unloading 2708 Unused Serialized files (Serialized files now loaded: 0)
-Unloading 266 unused Assets / (0.6 MB). Loaded Objects now: 3209.
-Memory consumption went from 154.2 MB to 153.6 MB.
-Total: 7.459400 ms (FindLiveObjects: 0.572900 ms CreateObjectMapping: 0.090500 ms MarkObjects: 6.317300 ms  DeleteObjects: 0.475900 ms)
+Received Import Request.
+  Time since last request: 0.000196 seconds.
+  path: Assets/0DP ASSETS/0CASASNUEVAS/BUTI.fbx
+  artifactKey: Guid(018524aed0647754ea6aa281a3a6b122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/0CASASNUEVAS/BUTI.fbx using Guid(018524aed0647754ea6aa281a3a6b122) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '20e4615ff98a0d8458929fc0a997af6f') in 2.591100 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 44.894748 seconds.
+  path: Assets/0DP ASSETS/EFECTOS/aparecedor.prefab
+  artifactKey: Guid(4684095041dfea6479bae58dd46f3864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/EFECTOS/aparecedor.prefab using Guid(4684095041dfea6479bae58dd46f3864) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9f31902df9b6875f95435b40230328e7') in 0.573603 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 5.829543 seconds.
+  path: Assets/0DP ASSETS/MUSICA Y SONIDOS/24929__acclivity__phoneringing.mp3
+  artifactKey: Guid(3da1a8f4c344936449e684e531a8c31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/MUSICA Y SONIDOS/24929__acclivity__phoneringing.mp3 using Guid(3da1a8f4c344936449e684e531a8c31c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f36a115a0378455cd61f52da3fd56ed2') in 0.038465 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/0DP ASSETS/MUSICA Y SONIDOS/contactmic_1.mp3
+  artifactKey: Guid(59cb214f56853b946b948901dc9baef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/MUSICA Y SONIDOS/contactmic_1.mp3 using Guid(59cb214f56853b946b948901dc9baef5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0a2c75d46aec8b999287b7c1b2481c99') in 0.041330 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/0DP ASSETS/MUSICA Y SONIDOS/coro-celestial-efecto-de-sonido-heavenly-choir-sound-effect (mp3cut.net).mp3
+  artifactKey: Guid(4d6a6fc3b0669bf4ca308fc9f00e2164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/MUSICA Y SONIDOS/coro-celestial-efecto-de-sonido-heavenly-choir-sound-effect (mp3cut.net).mp3 using Guid(4d6a6fc3b0669bf4ca308fc9f00e2164) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3dbe23d90a9c44cebc0c2cec8727cf08') in 0.038525 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000154 seconds.
+  path: Assets/0DP ASSETS/MUSICA Y SONIDOS/atracao.wav
+  artifactKey: Guid(544a3a5d7fbd0ed438b3c3c921b12d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/MUSICA Y SONIDOS/atracao.wav using Guid(544a3a5d7fbd0ed438b3c3c921b12d68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8a3f2cbd77d074ed1c56bfa6d570280d') in 0.038358 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 18.030337 seconds.
+  path: Assets/0DP ASSETS/CANVAS/water/hg.png
+  artifactKey: Guid(af0827ad041bafd4685db50e0782b02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/CANVAS/water/hg.png using Guid(af0827ad041bafd4685db50e0782b02c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '50b5bc6f77c20364e73efbe2bfff2c80') in 0.163950 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/0DP ASSETS/CANVAS/water/water_02.png
+  artifactKey: Guid(58124577abeb3bb4d874abafaeb69d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/CANVAS/water/water_02.png using Guid(58124577abeb3bb4d874abafaeb69d10) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b7c1522aba787570374b734714b0b692') in 0.038031 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000049 seconds.
+  path: Assets/0DP ASSETS/CANVAS/water/water_07.png
+  artifactKey: Guid(2be08be0d0764d24b802fce97d46055a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/CANVAS/water/water_07.png using Guid(2be08be0d0764d24b802fce97d46055a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a3ec4df5c26ed6f25b67e02413404d28') in 0.033437 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000032 seconds.
+  path: Assets/0DP ASSETS/CANVAS/water/water_09.png
+  artifactKey: Guid(674c9f44731f97048b61afe4b5fe6100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/CANVAS/water/water_09.png using Guid(674c9f44731f97048b61afe4b5fe6100) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9a5fabca99155c90c5bdcbcb940f7f06') in 0.028561 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 259.489611 seconds.
+  path: Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/1 (Pesos).prefab
+  artifactKey: Guid(ea1afd6bd6de9e346badfa5c7d489a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/1 (Pesos).prefab using Guid(ea1afd6bd6de9e346badfa5c7d489a50) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd61100c14f2f42ef7cdd8200903652fc') in 0.029356 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/NivelesPrefab/2LOS MINA_.prefab
+  artifactKey: Guid(ee16c120d9317144c9abab4c837333ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/2LOS MINA_.prefab using Guid(ee16c120d9317144c9abab4c837333ad) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '0729314864e98175633baf6039b040e0') in 2.231979 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000058 seconds.
+  path: Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/ATM_prefab.prefab
+  artifactKey: Guid(971885f35036d834d9e87999c41920fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/ATM_prefab.prefab using Guid(971885f35036d834d9e87999c41920fe) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '13c515c3e17fa5e889af75eb72fe6f9c') in 0.098208 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000106 seconds.
+  path: Assets/0DP ASSETS/Prefabs/Mix/AlarmLamp.prefab
+  artifactKey: Guid(f1810cf6e69160546ba17fff7468b752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/Prefabs/Mix/AlarmLamp.prefab using Guid(f1810cf6e69160546ba17fff7468b752) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7bb54bd5187b2511f72d9e0e7720b1b5') in 0.145203 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000025 seconds.
+  path: Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/Bank_sign Prefab.prefab
+  artifactKey: Guid(d11c03cec4369ea4aa3d29744046d625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/Bank_sign Prefab.prefab using Guid(d11c03cec4369ea4aa3d29744046d625) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3a5d113c0d08f3e4d96707214988c611') in 0.037058 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000020 seconds.
+  path: Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/50 (Pesos).prefab
+  artifactKey: Guid(28129340d09529a4cbfd082e0bbfdd05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/50 (Pesos).prefab using Guid(28129340d09529a4cbfd082e0bbfdd05) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '461fd2f6b81e9deddf7b3cf8eef49edb') in 0.037976 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000031 seconds.
+  path: Assets/Resources/NivelesPrefab/18pico_.prefab
+  artifactKey: Guid(ef4d268110266964faf77cba4f238008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/18pico_.prefab using Guid(ef4d268110266964faf77cba4f238008) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ca649a8164d88330954474cdbe64874') in 1.793351 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000047 seconds.
+  path: Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/air conditioner roof Prefab.prefab
+  artifactKey: Guid(a56a9ff0410540141a4b57353191a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/POLYGON city pack/Prefabs/Props/air conditioner roof Prefab.prefab using Guid(a56a9ff0410540141a4b57353191a959) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '21a7d0ba799c4fcf23df3e6eba49c80a') in 0.051006 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000035 seconds.
+  path: Assets/Resources/NivelesPrefab/63CAMPITO_.prefab
+  artifactKey: Guid(732ca79cef9a8c2468149809c2ff0477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/63CAMPITO_.prefab using Guid(732ca79cef9a8c2468149809c2ff0477) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '04bb83940549491651e815406a11e11e') in 4.282443 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000045 seconds.
+  path: Assets/Resources/NivelesPrefab/46los alcarrisos_.prefab
+  artifactKey: Guid(cec5a021e0b9c7e4987dda9d3be486df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/46los alcarrisos_.prefab using Guid(cec5a021e0b9c7e4987dda9d3be486df) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '98906389eb740adb31f4b062c353a204') in 6.653474 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/20 (Pesos).prefab
+  artifactKey: Guid(eb7671ce1663e33439ecec2d0cc4e6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/20 (Pesos).prefab using Guid(eb7671ce1663e33439ecec2d0cc4e6a6) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '3b646b7179108de0dd435035128577df') in 0.103217 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000038 seconds.
+  path: Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/500 (Pesos).prefab
+  artifactKey: Guid(754961eebf38f7140847ca471c43f0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/500 (Pesos).prefab using Guid(754961eebf38f7140847ca471c43f0c5) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd93fece827772a89fca2e5d6a6b8b629') in 0.029953 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000023 seconds.
+  path: Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/100 (Pesos).prefab
+  artifactKey: Guid(24073a078d1e5c647a7579508a5fde68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0 RENEW/Scripts/InfiniteRunner/prefabs/CoinsPatron/100 (Pesos).prefab using Guid(24073a078d1e5c647a7579508a5fde68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a58bfad6345484ce24fb557d64072e2c') in 0.131201 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000029 seconds.
+  path: Assets/Resources/NivelesPrefab/30los guaricano_.prefab
+  artifactKey: Guid(df2454b2046da2e4d819e3c99eee3a3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/30los guaricano_.prefab using Guid(df2454b2046da2e4d819e3c99eee3a3f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bd4f43c841a73407f597fcdf9e16d832') in 5.206853 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000066 seconds.
+  path: Assets/Resources/NivelesPrefab/9SAMANA_.prefab
+  artifactKey: Guid(d03272bdb23947747a380f34d6d1bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/9SAMANA_.prefab using Guid(d03272bdb23947747a380f34d6d1bbc8) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'dcedbf2bcdf7a61bb5feb990ef72555c') in 0.365052 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/NivelesPrefab/33alma rosa_.prefab
+  artifactKey: Guid(d4501d271c7064348a90053b02d1ba68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/33alma rosa_.prefab using Guid(d4501d271c7064348a90053b02d1ba68) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '59b767558e67abb666cc795a93303508') in 3.553232 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000092 seconds.
+  path: Assets/Resources/NivelesPrefab/47SAN ISIDRO 2_.prefab
+  artifactKey: Guid(16f7c84dcd93ab347b734cea5c2455dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/47SAN ISIDRO 2_.prefab using Guid(16f7c84dcd93ab347b734cea5c2455dd) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bfbeb1a2a81a377a87889ecfa93c48ec') in 6.451143 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Resources/NivelesPrefab/61OYM.prefab
+  artifactKey: Guid(ed8eed4ccdd7cd148827ba11500ec9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/61OYM.prefab using Guid(ed8eed4ccdd7cd148827ba11500ec9e9) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '84499a93d379b4c2b20aba944644e2f1') in 0.844852 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000060 seconds.
+  path: Assets/Resources/NivelesPrefab/4SABANA PERDIDA_.prefab
+  artifactKey: Guid(b4fdb788136aa5b448972403deb0f6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/4SABANA PERDIDA_.prefab using Guid(b4fdb788136aa5b448972403deb0f6bb) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Tried select unknown importer for id '-2' '00000000000000000000000000000000'
+ -> (artifact id: '55abed76a789da9035974dbef679328c') in 1.134921 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000070 seconds.
+  path: Assets/Resources/NivelesPrefab/35villa faro_.prefab
+  artifactKey: Guid(6d80d45352ce5b0458a6175748f6d98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/35villa faro_.prefab using Guid(6d80d45352ce5b0458a6175748f6d98a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '38d469f3695a7592a795658f7d65f027') in 3.233980 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000051 seconds.
+  path: Assets/Resources/NivelesPrefab/45.5PLAYASALINA_ 1.prefab
+  artifactKey: Guid(9186e5bd5243e5d4f82e8fbb366f5e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/45.5PLAYASALINA_ 1.prefab using Guid(9186e5bd5243e5d4f82e8fbb366f5e1b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd407ca557d3dc9237584ebfb76358c98') in 0.763550 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000037 seconds.
+  path: Assets/Resources/NivelesPrefab/55SALCEDO.prefab
+  artifactKey: Guid(645b55ad27ced3146a8a64a2bab51c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/55SALCEDO.prefab using Guid(645b55ad27ced3146a8a64a2bab51c4f) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f59dbfef1bf5db23138a203482738009') in 1.510063 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000068 seconds.
+  path: Assets/Resources/NivelesPrefab/36constanza.prefab
+  artifactKey: Guid(5c498316660695240876ec66aac3cd2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/36constanza.prefab using Guid(5c498316660695240876ec66aac3cd2a) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '2ba75adde644d0e7375ed900e08b07e5') in 0.419810 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000080 seconds.
+  path: Assets/Resources/NivelesPrefab/39INVIVIENDA_.prefab
+  artifactKey: Guid(029e90bb0f6d4b3458a9790c663d3983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/39INVIVIENDA_.prefab using Guid(029e90bb0f6d4b3458a9790c663d3983) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '02e7d562a37783d9b69bc1d0bc85230b') in 3.329822 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000078 seconds.
+  path: Assets/GoogleMobileAds/Editor/Resources/DummyAds/AppOpen/768x1024.prefab
+  artifactKey: Guid(7d86e5c9e525f4fadbbea7ee54246b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/GoogleMobileAds/Editor/Resources/DummyAds/AppOpen/768x1024.prefab using Guid(7d86e5c9e525f4fadbbea7ee54246b94) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd4139d6e3ba708b0fb947f16e88dd482') in 0.084918 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000026 seconds.
+  path: Assets/Resources/NivelesPrefab/51.5PLAYASALINA_ 2.prefab
+  artifactKey: Guid(6447cb40160d6904a889fef9e7bd9d85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/51.5PLAYASALINA_ 2.prefab using Guid(6447cb40160d6904a889fef9e7bd9d85) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6aec2bbe0ed5df3c8e961b920fac33be') in 0.755992 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000054 seconds.
+  path: Assets/0DP ASSETS/prefabricados/ATRAPADO.prefab
+  artifactKey: Guid(3a51573b574759140b83e761c83ddb95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/prefabricados/ATRAPADO.prefab using Guid(3a51573b574759140b83e761c83ddb95) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '6af22e0b3990c122fd4539ca98331f57') in 0.018972 seconds 
+========================================================================
+Received Import Request.
+  Time since last request: 0.000065 seconds.
+  path: Assets/Resources/NivelesPrefab/48constanza 4.prefab
+  artifactKey: Guid(500fd0ff195faf445a8ae2d245ae5c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/48constanza 4.prefab using Guid(500fd0ff195faf445a8ae2d245ae5c53) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Asset 'hielo': Transition 'hielo -> otrahielo' in state 'hielo' doesn't have an Exit Time or any condition, transition will be ignored
+UnityEngine.StackTraceUtility:ExtractStackTrace ()
+UnityEditor.EditorUtility:Internal_InstantiateRemoveAllNonAnimationComponentsSingle (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateRemoveAllNonAnimationComponents (UnityEngine.Object,UnityEngine.Vector3,UnityEngine.Quaternion)
+UnityEditor.EditorUtility:InstantiateForAnimatorPreview (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:UpdateGameObject (UnityEngine.Object)
+UnityEditor.GameObjectInspector/PreviewData:.ctor (UnityEngine.Object)
+UnityEditor.GameObjectInspector:GetPreviewData ()
+UnityEditor.GameObjectInspector:RenderStaticPreview (string,UnityEngine.Object[],int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreview (UnityEngine.Object,UnityEngine.Object[],string,int,int)
+UnityEditor.AssetPreviewUpdater:CreatePreviewForAsset (UnityEngine.Object,UnityEngine.Object[],string)
 
-AssetImportParameters requested are different than current active one (requested -> active):
-  custom:video-decoder-ogg-theora: a1e56fd34408186e4bbccfd4996cb3dc -> 
-  custom:container-muxer-webm: aa71ff27fc2769a1b78a27578f13a17b -> 
-  custom:container-demuxer-webm: 4f35f7cbe854078d1ac9338744f61a02 -> 
-  custom:video-encoder-webm-vp8: eb34c28f22e8b96e1ab97ce403110664 -> 
-  custom:graphics/normal-map-encoding: 02000000000000000000000000000000 -> 01000000000000000000000000000000
-  custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
-  custom:framework-win-MediaFoundation: 216162199b28c13a410421893ffa2e32 -> 
-  custom:container-demuxer-ogg: 62fdf1f143b41e24485cea50d1cbac27 -> 
-  custom:video-decoder-webm-vp8: 9c59270c3fd7afecdb556c50c9e8de78 -> 
-  custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+[C:\buildslave\unity\build\Editor\Src\Animation\StateMachine.cpp line 1845]
+
+ -> (artifact id: 'fd79706156f11f31070d533fdf7f9b3d') in 0.179059 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 256.316209 seconds.
-  path: Assets/0DP ASSETS/codigos/animacaminao 1.prefab
-  artifactKey: Guid(49ff4a8347aff704088ec0b2d79ad512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/animacaminao 1.prefab using Guid(49ff4a8347aff704088ec0b2d79ad512) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'a03a996f9e406da64637ad0113c06e8c') in 0.094822 seconds 
+  Time since last request: 0.000103 seconds.
+  path: Assets/0DP ASSETS/Scenes/unnamed (1).jpg
+  artifactKey: Guid(da7e6035b7aa57244adbade5a575b45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/Scenes/unnamed (1).jpg using Guid(da7e6035b7aa57244adbade5a575b45d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b003932144668eb76790b0582e8e0efb') in 0.029662 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.014138 seconds.
-  path: Assets/0DP ASSETS/codigos/controler.cs
-  artifactKey: Guid(f211164a2e7b78c4d9a86a99f50cd25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/controler.cs using Guid(f211164a2e7b78c4d9a86a99f50cd25c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '63820713a350608118b24a576d478988') in 0.006875 seconds 
+  Time since last request: 0.000030 seconds.
+  path: Assets/0DP ASSETS/CASITAS/PReFAs/BANCA (2).prefab
+  artifactKey: Guid(1ef22415634197148a1118d369931e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/CASITAS/PReFAs/BANCA (2).prefab using Guid(1ef22415634197148a1118d369931e64) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b70778b856c0687c15cc1ba423765e8e') in 0.016680 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 413.721428 seconds.
-  path: Assets/0DP ASSETS/codigos/CUERDA.cs
-  artifactKey: Guid(54485ace6417e26458ad26932618fbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/CUERDA.cs using Guid(54485ace6417e26458ad26932618fbbf) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce3e6a0c605792d956269712b54748c9') in 0.008932 seconds 
+  Time since last request: 0.000041 seconds.
+  path: Assets/Resources/NivelesPrefab/12bani_.prefab
+  artifactKey: Guid(b06882e6fa7733b479295f7c216e37c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/12bani_.prefab using Guid(b06882e6fa7733b479295f7c216e37c1) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '75d597be8a414cd7269feaa6d3cf3a15') in 1.971961 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 5.243211 seconds.
-  path: Assets/0DP ASSETS/codigos/destruir.cs
-  artifactKey: Guid(15ca78238e7c5074a882dae88eaa7259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/destruir.cs using Guid(15ca78238e7c5074a882dae88eaa7259) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '593cbbc13b5d23db28297da2154f1f42') in 0.008506 seconds 
+  Time since last request: 0.000055 seconds.
+  path: Assets/Resources/NivelesPrefab/43VILLA MELLA 3_.prefab
+  artifactKey: Guid(73820d6fffc5eb64ea9cffc8c2175271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Resources/NivelesPrefab/43VILLA MELLA 3_.prefab using Guid(73820d6fffc5eb64ea9cffc8c2175271) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'b669727774fe0efc147d903e8abede7b') in 3.501638 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.654430 seconds.
-  path: Assets/0DP ASSETS/codigos/Generador.cs
-  artifactKey: Guid(de24c98749754f749895d504e9c7b9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/Generador.cs using Guid(de24c98749754f749895d504e9c7b9af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '624363f238d1af3275df814c92c8047e') in 0.008522 seconds 
+  Time since last request: 38.727439 seconds.
+  path: Assets/0DP ASSETS/Scenes/nivel1_Profiles/efecto Profile.asset
+  artifactKey: Guid(5a03fb1fa9d9061439d6c4cbaab18c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/Scenes/nivel1_Profiles/efecto Profile.asset using Guid(5a03fb1fa9d9061439d6c4cbaab18c7b) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '64fae9f6cf078db2a01ec7148782ad74') in 0.052529 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 8.895337 seconds.
-  path: Assets/0DP ASSETS/codigos/nombre.cs
-  artifactKey: Guid(7a038f113baf8434f990643f60ef5597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/nombre.cs using Guid(7a038f113baf8434f990643f60ef5597) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '05d8815fbc7c6da6ab2aa1b30e87403d') in 0.006637 seconds 
+  Time since last request: 1.683492 seconds.
+  path: Assets/0DP ASSETS/Scenes/nivel1/LightingData.asset
+  artifactKey: Guid(1ea11cac7e2e91647ad783eb0eed3da2) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/Scenes/nivel1/LightingData.asset using Guid(1ea11cac7e2e91647ad783eb0eed3da2) Importer(815301076,1909f56bfc062723c751e8b465ee728b) Lighting data asset ‘LightingData’ is incompatible with the current Unity version because the scene it was baked for was not serialized. Please use Generate Lighting to rebuild the lighting data, or assign the target scene to the Lighting Data Asset in the inspector.
+ -> (artifact id: '3c161c0d3b145e0e6d1a13d5cbc3f300') in 0.016915 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 4.482871 seconds.
-  path: Assets/0DP ASSETS/codigos/publicidad.cs
-  artifactKey: Guid(ef5c7344ae2ad7d4d85e0a1b8afe41af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/publicidad.cs using Guid(ef5c7344ae2ad7d4d85e0a1b8afe41af) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'e38b81fb058eac063aa387f5ceec8372') in 0.009220 seconds 
+  Time since last request: 1.586871 seconds.
+  path: Assets/0DP ASSETS/Scenes/Materials/d4c59888e5d1a5126a534caf4edc7958.mat
+  artifactKey: Guid(c6483a1bec4e90e42bcfafebc8ee1773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/Scenes/Materials/d4c59888e5d1a5126a534caf4edc7958.mat using Guid(c6483a1bec4e90e42bcfafebc8ee1773) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'ce36b7faad6508858b53ea8eba5d97fb') in 0.047098 seconds 
 ========================================================================
 Received Import Request.
-  Time since last request: 2.621081 seconds.
-  path: Assets/0DP ASSETS/codigos/SONIDOALERTA.cs
-  artifactKey: Guid(1e8ae7f9c1e5b86498012cf2af808593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
-Start importing Assets/0DP ASSETS/codigos/SONIDOALERTA.cs using Guid(1e8ae7f9c1e5b86498012cf2af808593) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '669616e0022962f9973dfab1a03c6b45') in 0.009570 seconds 
+  Time since last request: 11.366580 seconds.
+  path: Assets/0DP ASSETS/FBX/PropsFBX.fbx
+  artifactKey: Guid(fde463d1640be964dad05cce1c744989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/0DP ASSETS/FBX/PropsFBX.fbx using Guid(fde463d1640be964dad05cce1c744989) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '293d557a5d9ab393400ee6cb172420bf') in 7.093240 seconds 
