@@ -188,7 +188,7 @@ public class player1 : MonoBehaviour
           y = CrossPlatformInputManager.GetAxis("Vertical");
            x = CrossPlatformInputManager.GetAxis("Horizontal");
         angulo = Mathf.Atan2(y, x) * Mathf.Rad2Deg;
-        print("estoy_en_update");
+//        print("estoy_en_update");
 
         if (y != 0 && x != 0)
             transform.eulerAngles = new Vector3(0, -angulo, 0);

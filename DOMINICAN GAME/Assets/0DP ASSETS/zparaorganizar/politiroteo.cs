@@ -29,7 +29,7 @@ public class politiroteo : MonoBehaviour
     }
     public void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "caminao")
+        if(collision.CompareTag("caminao"))
         {
            
             part.SetActive(true);
@@ -43,7 +43,7 @@ public class politiroteo : MonoBehaviour
                 comenzado = true;
             }
         }
-        if(collision.tag == "walk")
+        if(collision.CompareTag("walk"))
         {
             part.SetActive(false);
             a.Stop();

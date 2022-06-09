@@ -5,7 +5,7 @@ using UnityEngine;
 public class TiendaControl : MonoBehaviour {
 	public GameObject bt_NoAds;
 	public GameObject buttonRestore;
-	//public GameObject bannerAnuncio;
+	public GameObject bannerAnuncio;
 	void OnEnable()
 	{
 		EventPurchaser.onStateCompraNoAds += EventTienda;
@@ -19,12 +19,12 @@ public class TiendaControl : MonoBehaviour {
 		if (s) {
 			//HAY ANUNCIOS
 			bt_NoAds.SetActive(true);
-		//	bannerAnuncio.SetActive (true); //aqui activa los anuncios
+			bannerAnuncio.SetActive (true); //aqui activa los anuncios
 			
 		} else {
 			//NO HAY ANUNCIOS
 			bt_NoAds.SetActive(false);
-			//bannerAnuncio.SetActive (false);
+			bannerAnuncio.SetActive (false);
 		}
 	}
 	//
@@ -47,11 +47,11 @@ public class TiendaControl : MonoBehaviour {
 	void Start()
 	{
 #if UNITY_IOS
-		buttonRestore.SetActive(true);
+		//buttonRestore.SetActive(true);
 #else
-		buttonRestore.SetActive(false);
-	//	iOsButtonsContainer.SetActive(false);
-	//	androidButtonsContainer.SetActive(true);
+		// buttonRestore.SetActive(false);
+		// iOsButtonsContainer.SetActive(false);
+		// androidButtonsContainer.SetActive(true);
 #endif
 		//es init!
 		if (IAP_Purchase.instance.isInit == 1) {

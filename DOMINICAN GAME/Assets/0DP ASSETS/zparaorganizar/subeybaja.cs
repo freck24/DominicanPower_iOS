@@ -23,8 +23,7 @@ public class subeybaja : MonoBehaviour
         {
             baja = true;
             sube = false;
-          
-           
+
         } 
         
         
@@ -32,9 +31,6 @@ public class subeybaja : MonoBehaviour
         {
             baja = false;
             sube = true;
-          
-
-
           
         }
 

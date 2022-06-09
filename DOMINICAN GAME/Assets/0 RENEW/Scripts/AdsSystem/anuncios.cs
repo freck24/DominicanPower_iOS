@@ -67,7 +67,7 @@ public class anuncios : MonoBehaviour
     private void Awake()
     {
 
- //        ads = this;
+ //       ads = this;
 
 
      //   MobileAds.Initialize(initStatus => { });

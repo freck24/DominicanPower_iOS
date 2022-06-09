@@ -4,24 +4,24 @@ using UnityEngine;
 
 public class CODIFI : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
     public GameObject ob;
 
+
+    private void Awake() {
+        ob.SetActive(false);        
+    }
+    
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.tag == "Player")
+        if(collision.CompareTag("Player"))
         {
             ob.SetActive(true);
+        }
+    }
+    private void OnTriggerExit2D(Collider2D other) {
+        if(other.CompareTag("Player"))
+        {
+            ob.SetActive(false);
         }
     }
    
